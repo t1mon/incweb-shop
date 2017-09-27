@@ -11,6 +11,7 @@ use shop\readModels\Shop\ProductReadRepository;
 use shop\readModels\Shop\TagReadRepository;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use shop\useCases\manage\Shop\ReviewManageService;
 
 class CatalogController extends Controller
 {
@@ -20,6 +21,7 @@ class CatalogController extends Controller
     private $categories;
     private $brands;
     private $tags;
+    private $review;
 
     public function __construct(
         $id,
@@ -28,6 +30,7 @@ class CatalogController extends Controller
         CategoryReadRepository $categories,
         BrandReadRepository $brands,
         TagReadRepository $tags,
+        ReviewManageService $review,
         $config = []
     )
     {
@@ -36,6 +39,7 @@ class CatalogController extends Controller
         $this->categories = $categories;
         $this->brands = $brands;
         $this->tags = $tags;
+        $this->review = $review;
     }
 
     /**
@@ -138,11 +142,11 @@ class CatalogController extends Controller
         }
 
         $this->layout = 'blank';
-
         $cartForm = new AddToCartForm($product);
         $reviewForm = new ReviewForm();
         if ($reviewForm->load(\Yii::$app->request->post()))
-        $product->addReview(\Yii::$app->user->id,$reviewForm->vote,$reviewForm->text,$id);
+            $this->review->addReview(\Yii::$app->user->id,$id,$reviewForm);
+        $this->review->activate(1,6);
         return $this->render('product', [
             'product' => $product,
             'cartForm' => $cartForm,

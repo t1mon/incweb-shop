@@ -24,7 +24,6 @@ class Review extends ActiveRecord
         $review->created_at = time();
         $review->active = false;
         $review->product_id = $product_id;
-        $review->save();
         return $review;
     }
 
@@ -41,7 +40,7 @@ class Review extends ActiveRecord
 
     public function draft(): void
     {
-        $this->active = true;
+        $this->active = false;
     }
 
     public function isActive(): bool
@@ -49,7 +48,7 @@ class Review extends ActiveRecord
         return $this->active === true;
     }
 
-    public function getRating(): bool
+    public function getRating(): int
     {
         return $this->vote;
     }

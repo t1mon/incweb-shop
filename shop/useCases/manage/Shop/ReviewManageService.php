@@ -1,8 +1,9 @@
 <?php
 
-namespace shop\useCases;
+namespace shop\useCases\manage\Shop;
 
 use shop\forms\manage\Shop\Product\ReviewEditForm;
+use shop\forms\Shop\ReviewForm;
 use shop\repositories\Shop\ProductRepository;
 
 class ReviewManageService
@@ -13,7 +14,12 @@ class ReviewManageService
     {
         $this->products = $products;
     }
-
+    public function addReview($user_id,$id,ReviewForm $form):void
+    {
+        $product = $this->products->get($id);
+        $product->addReview($user_id,$form->vote,$form->text,$id);
+        $product->save($product);
+    }
     public function edit($id, $reviewId, ReviewEditForm $form): void
     {
         $product = $this->products->get($id);
