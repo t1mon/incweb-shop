@@ -17,6 +17,7 @@ $this->registerMetaTag(['name' =>'description', 'content' => $product->meta->des
 $this->registerMetaTag(['name' =>'keywords', 'content' => $product->meta->keywords]);
 
 $this->params['breadcrumbs'][] = ['label' => 'Catalog', 'url' => ['index']];
+$reviews = $product->reviews;
 foreach ($product->category->parents as $parent) {
     if (!$parent->isRoot()) {
         $this->params['breadcrumbs'][] = ['label' => $parent->name, 'url' => ['category', 'id' => $parent->id]];
@@ -52,7 +53,7 @@ MagnificPopupAsset::register($this);
         <ul class="nav nav-tabs">
             <li class="active"><a href="#tab-description" data-toggle="tab">Description</a></li>
             <li><a href="#tab-specification" data-toggle="tab">Specification</a></li>
-            <li><a href="#tab-review" data-toggle="tab">Reviews (0)</a></li>
+            <li><a href="#tab-review" data-toggle="tab">Reviews (<?=$product->getActiveReviewCount($reviews)?>)</a></li>
         </ul>
         <div class="tab-content">
             <div class="tab-pane active" id="tab-description"><p>
@@ -81,7 +82,13 @@ MagnificPopupAsset::register($this);
             <div class="tab-pane" id="tab-review">
                 <div id="review"></div>
                 <h2>Write a review</h2>
+                <?php
+                foreach ($reviews as $review){
+                    if ($review->isActive())
+                    echo '<div>'.$review->text.'</div></br>';
 
+                }
+                ?>
                 <?php if (Yii::$app->user->isGuest): ?>
 
                     <div class="panel-panel-info">

@@ -45,7 +45,7 @@ class Review extends ActiveRecord
 
     public function isActive(): bool
     {
-        return $this->active === true;
+        return $this->active == true;
     }
 
     public function getRating(): int

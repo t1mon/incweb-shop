@@ -492,7 +492,7 @@ class Product extends ActiveRecord implements AggregateRoot
         $total = 0;
 
         foreach ($reviews as $review) {
-            if ($review->active == true) {
+            if ($review->isActive()) {
                 $amount++;
                 $total += $review->getRating();
             }
@@ -500,6 +500,18 @@ class Product extends ActiveRecord implements AggregateRoot
 
         $this->reviews = $reviews;
         $this->rating = $amount ? $total / $amount : null;
+    }
+
+    public function getActiveReviewCount(array $reviews): int
+    {
+        $amount = 0;
+
+        foreach ($reviews as $review) {
+            if ($review->isActive())
+                $amount++;
+
+        }
+        return $amount;
     }
 
     ##########################
