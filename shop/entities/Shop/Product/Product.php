@@ -17,6 +17,7 @@ use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
 use yii\db\Exception;
 use yii\web\UploadedFile;
+use shop\entities\Shop\Product\Review;
 
 /**
  * @property integer $id
@@ -516,6 +517,7 @@ class Product extends ActiveRecord implements AggregateRoot
 
     ##########################
 
+
     public function getBrand(): ActiveQuery
     {
         return $this->hasOne(Brand::class, ['id' => 'brand_id']);
@@ -578,7 +580,8 @@ class Product extends ActiveRecord implements AggregateRoot
 
     public function getReviews(): ActiveQuery
     {
-        return $this->hasMany(Review::class, ['product_id' => 'id']);
+        return $this->hasMany(Review::class, ['product_id' => 'id'])->orderBy(['active'=>SORT_ASC]);
+        //return Review::find()->where(['product_id'=>$this->id])->orderBy('active')->all();
     }
 
     public function getWishlistItems(): ActiveQuery

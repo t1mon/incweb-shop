@@ -3,12 +3,16 @@
 namespace backend\controllers\shop;
 
 use shop\entities\Shop\Product\Modification;
+use shop\entities\Shop\Product\Review;
 use shop\forms\manage\Shop\Product\QuantityForm;
 use shop\forms\manage\Shop\Product\PhotosForm;
 use shop\forms\manage\Shop\Product\PriceForm;
 use shop\forms\manage\Shop\Product\ProductCreateForm;
 use shop\forms\manage\Shop\Product\ProductEditForm;
+use shop\forms\manage\Shop\Product\ReviewEditForm;
+use shop\forms\Shop\ReviewForm;
 use shop\useCases\manage\Shop\ProductManageService;
+use shop\useCases\manage\Shop\ReviewManageService;
 use Yii;
 use shop\entities\Shop\Product\Product;
 use backend\forms\Shop\ProductSearch;
@@ -20,11 +24,13 @@ use yii\filters\VerbFilter;
 class ProductController extends Controller
 {
     private $service;
+    private $review_service;
 
-    public function __construct($id, $module, ProductManageService $service, $config = [])
+    public function __construct($id, $module, ProductManageService $service,ReviewManageService $review_service, $config = [])
     {
         parent::__construct($id, $module, $config);
         $this->service = $service;
+        $this->review_service = $review_service;
     }
 
     public function behaviors(): array
@@ -39,6 +45,9 @@ class ProductController extends Controller
                     'delete-photo' => ['POST'],
                     'move-photo-up' => ['POST'],
                     'move-photo-down' => ['POST'],
+                    'activate-review' => ['POST'],
+                    'draft-review' => ['POST'],
+                    'delete-review' =>['POST'],
                 ],
             ],
         ];
@@ -65,7 +74,6 @@ class ProductController extends Controller
     public function actionView($id)
     {
         $product = $this->findModel($id);
-
         $modificationsProvider = new ActiveDataProvider([
             'query' => $product->getModifications()->orderBy('name'),
             'key' => function (Modification $modification) use ($product) {
@@ -228,6 +236,58 @@ class ProductController extends Controller
         }
         return $this->redirect(['view', 'id' => $id]);
     }
+
+    public function actionActivateReview($id,$review_id){
+        try {
+            $this->review_service->activate($id,$review_id);
+        } catch (\DomainException $e) {
+            Yii::$app->session->setFlash('error', $e->getMessage());
+        }
+        return $this->redirect(['view', 'id' => $id]);
+    }
+
+    public function actionDraftReview($id,$review_id){
+        try {
+            $this->review_service->draft($id,$review_id);
+        } catch (\DomainException $e) {
+            Yii::$app->session->setFlash('error', $e->getMessage());
+        }
+        return $this->redirect(['view', 'id' => $id]);
+    }
+
+    public function actionDeleteReview($id,$review_id){
+        try {
+            $this->review_service->remove($id,$review_id);
+        } catch (\DomainException $e) {
+            Yii::$app->session->setFlash('error', $e->getMessage());
+        }
+        return $this->redirect(['view', 'id' => $id]);
+    }
+    public function actionUpdateReview($id,$review_id)
+    {
+        $product = $this->findModel($id);
+        $review = Review::findOne($review_id);
+
+        $review_form = new ReviewEditForm($review);
+        if ($review_form->load(Yii::$app->request->post()) && $review_form->validate()) {
+            try {
+                $this->review_service->edit($id,$review_id, $review_form);
+                Yii::$app->session->setFlash('success_update', 'Отзыв обновлен');
+                return $this->redirect(['view', 'id' => $product->id]);
+            } catch (\DomainException $e) {
+                Yii::$app->errorHandler->logException($e);
+                Yii::$app->session->setFlash('error', $e->getMessage());
+            }
+        }
+        return $this->render('update-review', [
+            'review_form' => $review_form,
+            'product' => $product,
+            'review_id' => $review_id,
+            'review' => $review,
+        ]);
+    }
+
+
 
     /**
      * @param integer $id

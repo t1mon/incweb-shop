@@ -39,6 +39,15 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
     </p>
+    <?php if(Yii::$app->session->getFlash('success_update'))
+        { ?>
+            <div class="alert alert-info alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h4><i class="icon fa fa-info"></i> Оповещение!</h4>
+                <?=Yii::$app->session->getFlash('success_update')?>
+            </div>
+        <?php } ?>
+
 
     <div class="row">
         <div class="col-md-6">
@@ -233,5 +242,88 @@ $this->params['breadcrumbs'][] = $this->title;
 
         </div>
     </div>
+ <?php   /*
 
+
+           <?php if ($product->isActive()): ?>
+            <?= Html::a('Draft', ['draft', 'id' => $product->id], ['class' => 'btn btn-primary', 'data-method' => 'post']) ?>
+        <?php else: ?>
+            <?= Html::a('Activate', ['activate', 'id' => $product->id], ['class' => 'btn btn-success', 'data-method' => 'post']) ?>
+        <?php endif; ?>
+
+  */ ?>
+    <!------ Вывод отзывов ------->
+    <?php if ($reviews=$product->reviews):?>
+        <h2 id="reviews">Отзывы к продукту</h2>
+        <?php
+        foreach ($reviews as $review ):
+            $user = \shop\entities\User\User::findOne($review->user_id);
+            if ($review->isActive()){
+                ?>
+                <div class="box box-success collapsed-box ">
+                    <div class="box-header with-border">
+                        <h3 class="box-title"><?=date('G:h:m d/m/y',$review->created_at)." ".$user['username']."  ".\shop\helpers\StarHelper::drawStar($review->vote).  '  <span class="label label-success">Активен</span><br />';?></h3>
+
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="" data-original-title="Remove">
+                                <i class="fa fa-times"></i></button>
+                        </div>
+                        <!-- /.box-tools -->
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <pre><?=$review->text."<br />"?></pre>
+                        <?= Html::a('Дезактивировать', ['draft-review', 'id' => $product->id,'review_id'=>$review->id], ['class' => 'btn btn-danger', 'data-method' => 'post']) ?>
+                        <?= Html::a('', ['remove-review', 'id' => $product->id,'review_id'=>$review->id], ['class' => 'btn btn-box-tool', 'type'=>'button','data-method' => 'post','data-widget'=>'remove', 'data-toggle'=>'tooltip', 'title'=>'', 'data-original-title'=>'Remove']) ?>
+                        <?= Html::a('Редактировать', ['update-review', 'id' => $product->id,'review_id'=>$review->id], ['class' => 'btn btn-danger', 'data-method' => 'post']) ?>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+            <?php }else{ ?>
+                <div class="box box-danger collapsed-box ">
+                    <div class="box-header with-border">
+                        <h3 class="box-title"><?=date('G:h:m d/m/y',$review->created_at)." ".$user['username']."  ".\shop\helpers\StarHelper::drawStar($review->vote).  '  <span class="label label-danger">Не активен</span><br />';?></h3>
+
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                        </div>
+                        <!-- /.box-tools -->
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <pre><?=$review->text."<br />"?></pre>
+                        <?= Html::a('Активировать', ['activate-review', 'id' => $product->id,'review_id'=>$review->id], ['class' => 'btn btn-success', 'data-method' => 'post']) ?>
+                        <?= Html::a('', ['remove-review', 'id' => $product->id,'review_id'=>$review->id], ['class' => 'btn btn-box-tool', 'type'=>'button','data-method' => 'post','data-widget'=>'remove', 'data-toggle'=>'tooltip', 'title'=>'', 'data-original-title'=>'Remove']) ?>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+
+            <?php      }
+
+        endforeach;
+        ?>
+    <?php endif;?>
+   <!--------------Модальное окно----------------------->
+    <div class="modal modal-warning fade" id="modal-warning" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title">Warning Modal</h4>
+                </div>
+                <div class="modal-body">
+                    <p>One fine body…</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-outline">Save changes</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!--------------Модальное окно конец----------------------->
 </div>

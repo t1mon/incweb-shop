@@ -101,7 +101,7 @@ MagnificPopupAsset::register($this);
 
                     <?php $form = ActiveForm::begin(['id' => 'form-review']) ?>
 
-                    <?= $form->field($reviewForm, 'vote')->dropDownList($reviewForm->votesList(), ['prompt' => '--- Select ---']) ?>
+                    <?= $form->field($reviewForm, 'vote')->dropDownList($reviewForm->votesList(), ['prompt' => '--- Выбор ---']) ?>
                     <?= $form->field($reviewForm, 'text')->textarea(['rows' => 5]) ?>
 
                     <div class="form-group">
