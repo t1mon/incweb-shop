@@ -28,6 +28,7 @@
 
         <?= dmstr\widgets\Menu::widget(
             [
+
                 'options' => ['class' => 'sidebar-menu','data-widget'=> 'tree'],
                 'items' => [
                     ['label' => 'Management', 'options' => ['class' => 'header']],
