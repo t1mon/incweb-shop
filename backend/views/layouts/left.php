@@ -42,7 +42,7 @@
                             ['label' => 'Delivery Methods', 'icon' => 'file-o', 'url' => ['/shop/delivery/index'], 'active' => $this->context->id == 'shop/delivery'],
                             ['label' => 'Отзывы', 'icon' => 'file-o', 'url' => ['/shop/review/index'], 'active' => $this->context->id == 'shop/review'],
                         ]],
-                        ['label' => 'Blog', 'icon' => 'folder', 'items' => [
+                        ['label' => 'Blog', 'icon' => 'folder text-red', 'items' => [
                             ['label' => 'Posts', 'icon' => 'file-o', 'url' => ['/blog/post/index'], 'active' => $this->context->id == 'blog/post'],
                             ['label' => 'Comments', 'icon' => 'file-o', 'url' => ['/blog/comment/index'], 'active' => $this->context->id == 'blog/comment'],
                             ['label' => 'Tags', 'icon' => 'file-o', 'url' => ['/blog/tag/index'], 'active' => $this->context->id == 'blog/tag'],
