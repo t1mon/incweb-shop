@@ -28,10 +28,10 @@
 
         <?= dmstr\widgets\Menu::widget(
             [
-                'options' => ['class' => 'sidebar-menu'],
+                'options' => ['class' => 'sidebar-menu','data-widget'=> 'tree'],
                 'items' => [
                     ['label' => 'Management', 'options' => ['class' => 'header']],
-                        ['label' => 'Shop', 'icon' => 'folder', 'items' => [
+                        ['label' => 'Shop', 'icon' => 'tags text-aqua', 'items' => [
                             ['label' => 'Orders', 'icon' => 'file-o', 'url' => ['/shop/order/index'], 'active' => $this->context->id == 'shop/order'],
                             ['label' => 'Products', 'icon' => 'file-o', 'url' => ['/shop/product/index'], 'active' => $this->context->id == 'shop/product'],
                             ['label' => 'Brands', 'icon' => 'file-o', 'url' => ['/shop/brand/index'], 'active' => $this->context->id == 'shop/brand'],
