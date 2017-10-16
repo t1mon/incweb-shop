@@ -30,6 +30,9 @@ $this->params['breadcrumbs'][] = 'Update';
                 <div class="col-md-6">
                     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
                 </div>
+                <div class="col-md-6">
+                    <?= $form->field($model, 'slug')->textInput(['maxlength' => true]) ?>
+                </div>
             </div>
             <?= $form->field($model, 'description')->widget(CKEditor::className()) ?>
         </div>

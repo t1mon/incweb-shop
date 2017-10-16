@@ -34,6 +34,7 @@ use shop\entities\Shop\Product\Review;
  * @property integer $status
  * @property integer $weight
  * @property integer $quantity
+ *  * @property string $slug
  *
  * @property Meta $meta
  * @property Brand $brand
@@ -58,7 +59,7 @@ class Product extends ActiveRecord implements AggregateRoot
 
     public $meta;
 
-    public static function create($brandId, $categoryId, $code, $name, $description, $weight, $quantity, Meta $meta): self
+    public static function create($brandId, $categoryId, $code, $name, $description, $weight, $quantity, Meta $meta,$slug): self
     {
         $product = new static();
         $product->brand_id = $brandId;
@@ -71,6 +72,7 @@ class Product extends ActiveRecord implements AggregateRoot
         $product->meta = $meta;
         $product->status = self::STATUS_DRAFT;
         $product->created_at = time();
+        $product->slug = $slug;
         return $product;
     }
 
@@ -88,7 +90,7 @@ class Product extends ActiveRecord implements AggregateRoot
         $this->setQuantity($quantity);
     }
 
-    public function edit($brandId, $code, $name, $description, $weight, Meta $meta): void
+    public function edit($brandId, $code, $name, $description, $weight, Meta $meta,$slug): void
     {
         $this->brand_id = $brandId;
         $this->code = $code;
@@ -96,6 +98,7 @@ class Product extends ActiveRecord implements AggregateRoot
         $this->description = $description;
         $this->weight = $weight;
         $this->meta = $meta;
+        $this->slug = $slug;
     }
 
     public function changeMainCategory($categoryId): void

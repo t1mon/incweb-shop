@@ -5,6 +5,7 @@ namespace shop\useCases\manage\Shop;
 use shop\entities\Shop\Tag;
 use shop\forms\manage\Shop\TagForm;
 use shop\repositories\Shop\TagRepository;
+use yii\helpers\Inflector;
 
 class TagManageService
 {
@@ -19,7 +20,7 @@ class TagManageService
     {
         $tag = Tag::create(
             $form->name,
-            $form->slug
+            $form->slug ? $form->slug : Inflector::slug($form->name)
         );
         $this->tags->save($tag);
         return $tag;

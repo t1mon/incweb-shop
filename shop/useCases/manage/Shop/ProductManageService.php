@@ -17,6 +17,7 @@ use shop\repositories\Shop\CategoryRepository;
 use shop\repositories\Shop\ProductRepository;
 use shop\repositories\Shop\TagRepository;
 use shop\services\TransactionManager;
+use yii\helpers\Inflector;
 
 class ProductManageService
 {
@@ -58,7 +59,8 @@ class ProductManageService
                 $form->meta->title,
                 $form->meta->description,
                 $form->meta->keywords
-            )
+            ),
+            $form->slug ? $form->slug : Inflector::slug($form->name)
         );
 
         $product->setPrice($form->price->new, $form->price->old);
@@ -111,7 +113,8 @@ class ProductManageService
                 $form->meta->title,
                 $form->meta->description,
                 $form->meta->keywords
-            )
+            ),
+            $form->slug ? $form->slug : Inflector::slug($form->name)
         );
 
         $product->changeMainCategory($category->id);

@@ -7,7 +7,9 @@ use shop\entities\Shop\Characteristic;
 use shop\entities\Shop\Product\Product;
 use shop\forms\CompositeForm;
 use shop\forms\manage\MetaForm;
+use shop\validators\SlugValidator;
 use yii\helpers\ArrayHelper;
+use yii\helpers\Inflector;
 
 /**
  * @property PriceForm $price
@@ -25,6 +27,7 @@ class ProductCreateForm extends CompositeForm
     public $name;
     public $description;
     public $weight;
+    public $slug;
 
     public function __construct($config = [])
     {
@@ -44,11 +47,13 @@ class ProductCreateForm extends CompositeForm
     {
         return [
             [['brandId', 'code', 'name', 'weight'], 'required'],
-            [['code', 'name'], 'string', 'max' => 255],
+            [['code', 'name','slug'], 'string', 'max' => 255],
             [['brandId'], 'integer'],
-            [['code'], 'unique', 'targetClass' => Product::class],
+            [['name'], 'unique','targetClass' => Product::class, 'filter' => $this->name ? Inflector::slug($this->name) : null],
+            [['code','slug'], 'unique', 'targetClass' => Product::class],
             ['description', 'string'],
             ['description', 'string'],
+            ['slug', SlugValidator::class],
             ['weight', 'integer', 'min' => 0],
         ];
     }

@@ -7,6 +7,7 @@ use shop\entities\Shop\Category;
 use shop\forms\manage\Shop\CategoryForm;
 use shop\repositories\Shop\CategoryRepository;
 use shop\repositories\Shop\ProductRepository;
+use yii\helpers\Inflector;
 
 class CategoryManageService
 {
@@ -24,7 +25,7 @@ class CategoryManageService
         $parent = $this->categories->get($form->parentId);
         $category = Category::create(
             $form->name,
-            $form->slug,
+            $form->slug ? $form->slug : Inflector::slug($form->name),
             $form->title,
             $form->description,
             new Meta(

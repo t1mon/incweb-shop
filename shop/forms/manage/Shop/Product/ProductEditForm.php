@@ -7,7 +7,9 @@ use shop\entities\Shop\Characteristic;
 use shop\entities\Shop\Product\Product;
 use shop\forms\CompositeForm;
 use shop\forms\manage\MetaForm;
+use shop\validators\SlugValidator;
 use yii\helpers\ArrayHelper;
+use yii\helpers\Inflector;
 
 /**
  * @property MetaForm $meta
@@ -22,6 +24,7 @@ class ProductEditForm extends CompositeForm
     public $name;
     public $description;
     public $weight;
+    public $slug;
 
     private $_product;
 
@@ -34,6 +37,7 @@ class ProductEditForm extends CompositeForm
         $this->weight = $product->weight;
         $this->meta = new MetaForm($product->meta);
         $this->categories = new CategoriesForm($product);
+        $this->slug = $product->slug;
         $this->tags = new TagsForm($product);
         $this->values = array_map(function (Characteristic $characteristic) use ($product) {
             return new ValueForm($characteristic, $product->getValue($characteristic->id));
@@ -47,9 +51,11 @@ class ProductEditForm extends CompositeForm
         return [
             [['brandId', 'code', 'name', 'weight'], 'required'],
             [['brandId'], 'integer'],
-            [['code', 'name'], 'string', 'max' => 255],
+            [['code', 'name','slug'], 'string', 'max' => 255],
             [['code'], 'unique', 'targetClass' => Product::class, 'filter' => $this->_product ? ['<>', 'id', $this->_product->id] : null],
+            [['name'], 'unique','targetClass' => Product::class, 'filter' => $this->_product ? ['<>', 'name', Inflector::slug($this->_product->slug)] : null],
             ['description', 'string'],
+            ['slug', SlugValidator::class],
             ['weight', 'integer', 'min' => 0],
         ];
     }
