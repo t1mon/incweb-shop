@@ -36,6 +36,7 @@ class SignupForm extends Model
 
             ['phone', 'required'],
             ['phone', 'integer'],
+            ['phone', 'unique', 'targetClass' => User::class, 'message' => 'Такой телефон уже зарегистрирован.'],
         ];
     }
 }
