@@ -36,7 +36,7 @@ class PasswordResetService
                 ['user' => $user]
             )
             ->setTo($user->email)
-            ->setSubject('Password reset for ' . Yii::$app->name)
+            ->setSubject('Сброс пароля ' . Yii::$app->name)
             ->send();
 
         if (!$sent) {

@@ -51,7 +51,7 @@ class SignupService
                 ['user' => $user]
             )
             ->setTo($user->email)
-            ->setSubject('Password reset for ' . Yii::$app->name)
+            ->setSubject('Подтверждение регистрации ' . Yii::$app->name)
             ->send();
         if (!$sent) {
             throw new \RuntimeException('Sending error.');

@@ -53,7 +53,7 @@ class ProductEditForm extends CompositeForm
             [['brandId'], 'integer'],
             [['code', 'name','slug'], 'string', 'max' => 255],
             [['code'], 'unique', 'targetClass' => Product::class, 'filter' => $this->_product ? ['<>', 'id', $this->_product->id] : null],
-            [['name'], 'unique','targetClass' => Product::class, 'filter' => $this->_product ? ['<>', 'name', Inflector::slug($this->_product->slug)] : null],
+            [['slug'], 'unique','targetClass' => Product::class, 'filter' => $this->_product ? ['<>', 'id', $this->_product->id] : null],
             ['description', 'string'],
             ['slug', SlugValidator::class],
             ['weight', 'integer', 'min' => 0],

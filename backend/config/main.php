@@ -8,6 +8,7 @@ $params = array_merge(
 
 return [
     'id' => 'app-backend',
+    'name'=>'Онлайн магазин мебели в Самаре',
     'basePath' => dirname(__DIR__),
     'aliases' => [
         '@staticRoot' => $params['staticPath'],
