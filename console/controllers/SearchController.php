@@ -37,4 +37,9 @@ class SearchController extends Controller
 
         $this->stdout('Done!' . PHP_EOL);
     }
+
+    public function actionClearCache () : void
+    {
+        \Yii::$app->cache->flush();
+    }
 }

@@ -1,6 +1,7 @@
 <?php
 return [
     'language' => 'ru-RU',
+    'name' => 'My',
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'bootstrap' => [
         'queue',
