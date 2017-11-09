@@ -86,7 +86,7 @@ use frontend\widgets\Shop\FeaturedProductsWidget;
     </div>
 </div>
 
-<?php $this->registerJs('
+<?php /*$this->registerJs('
 $(\'#slideshow0\').owlCarousel({
     items: 1,
     loop: true,
@@ -108,6 +108,6 @@ $(\'#carousel0\').owlCarousel({
     nav: true,
     navText: [\'<i class="fa fa-chevron-left fa-5x"></i>\', \'<i class="fa fa-chevron-right fa-5x"></i>\'],
     dots: true
-});') ?>
+});') */?>
 
 <?php $this->endContent() ?>

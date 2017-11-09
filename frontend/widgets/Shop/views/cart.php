@@ -6,7 +6,7 @@ use shop\helpers\PriceHelper;
 use yii\helpers\Html;
 use yii\helpers\Url;
 ?>
-
+<!--
 <div id="cart" class="btn-group btn-block">
     <button type="button" data-toggle="dropdown" data-loading-text="Loading..." class="btn btn-inverse btn-block btn-lg dropdown-toggle" aria-expanded="false">
         <i class="fa fa-shopping-cart"></i>
@@ -70,3 +70,58 @@ use yii\helpers\Url;
         </li>
     </ul>
 </div>
+
+-->
+
+<li class="shop-cart"><a href="#."><i class="fa fa-shopping-cart"></i></a> <span class="numb"><?= $cart->getAmount() ?></span>
+    <ul class="dropdown">
+        <?php foreach ($cart->getItems() as $item): ?>
+        <?php
+        $product = $item->getProduct();
+        $modification = $item->getModification();
+        $url = Url::to(['/shop/catalog/product', 'id' => $product->id]);
+        ?>
+
+        <li>
+
+            <div class="media">
+                <div class="media-left">
+                    <?php if ($product->mainPhoto): ?>
+                        <div class="cart-img"> <a href="<?= $url ?>"> <img class="media-object img-responsive" src="<?= $product->mainPhoto->getThumbFileUrl('file', 'cart_widget_list') ?>" alt="<?= Html::encode($product->name) ?>"> </a> </div>
+                    <?php endif; ?>
+                </div>
+                <div class="media-body">
+                     <h6 class="media-heading"><?= Html::encode($product->name) ?></h6>
+                        <?php if ($modification): ?>
+                            <span><?= Html::encode($modification->name) ?></span>
+                        <?php endif; ?>
+                        <span class="price">Цена: <?= PriceHelper::format($item->getCost()) ?> <i class="fa fa-rub" aria-hidden="true"></i></span>
+                        <span class="qty">Кол-во: <?= $item->getQuantity() ?></span>
+                </div>
+                <!--<a href="<?= Url::to(['/shop/cart/remove', 'id' => $item->getId()]) ?>" title="Remove" class="btn btn-danger btn-xs" data-method="post"><i class="fa fa-times"></i></a>-->
+            </div>
+        </li>
+        <?php endforeach; ?>
+        <?php $cost = $cart->getCost(); ?>
+        <li class="no-padding no-border">
+            <h6 class="text-center">Промежуточный итог: <?= PriceHelper::format($cost->getOrigin()) ?> <i class="fa fa-rub" aria-hidden="true"></i>
+            </h6>
+        </li>
+        <?php foreach ($cost->getDiscounts() as $discount): ?>
+            <tr>
+                <td class="text-right"><strong><?= Html::encode($discount->getName()) ?>:</strong></td>
+                <td class="text-right"><?= PriceHelper::format($discount->getValue()) ?></td>
+            </tr>
+        <?php endforeach; ?>
+        <li class="no-padding no-border">
+            <h5 class="text-center">Сумма к оплате: <?= PriceHelper::format($cost->getTotal()) ?> <i class="fa fa-rub" aria-hidden="true"></i>
+            </h5>
+        </li>
+        <li class="no-padding no-border">
+            <div class="row">
+                <div class="col-xs-6"> <a href="<?= Url::to(['/shop/cart/index']) ?>" class="btn btn-small">Корзина</a></div>
+                <div class="col-xs-6 "> <a href="<?= Url::to(['/shop/checkout/index']) ?>" class="btn btn-1 btn-small">Заказать</a></div>
+            </div>
+        </li>
+    </ul>
+</li>
