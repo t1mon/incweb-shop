@@ -185,7 +185,7 @@ MagnificPopupAsset::register($this);
     </div>
 </div>
 
-<?php $js = <<<EOD
+<?php  /*$js = <<<EOD
 $('.thumbnails').magnificPopup({
     type: 'image',
     delegate: 'a',
@@ -194,7 +194,7 @@ $('.thumbnails').magnificPopup({
     }
 });
 EOD;
-$this->registerJs($js); ?>
+$this->registerJs($js); */ ?>
 
 
 

@@ -116,6 +116,7 @@ a {
 .font-montserrat {
 	font-family: 'Montserrat', sans-serif;
 }
+
 .font-playfair {
 	font-family: 'Playfair Display', serif !important;
 }
@@ -4969,7 +4970,7 @@ footer .flicker img {
 	border-color: #af5875;
 }
 .short-by {
-	width: 400px;
+	width: 500px;
 	float: left;
 }
 .short-by .bootstrap-select.btn-group {

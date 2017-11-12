@@ -14,6 +14,7 @@ class AppAsset extends AssetBundle
     public $css = [
         '//fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic',
         '//fonts.googleapis.com/css?family=Montserrat:400,700',
+        'css/font-awesome.min.css',
         'css/main.css',
         'css/style.css',
         'css/responsive.css',
@@ -22,24 +23,25 @@ class AppAsset extends AssetBundle
         'rs-plugin/css/settings.css',
     ];
     public $js = [
-        //'js/common.js',
+        //'js/jquery-1.11.3.js',
         'js/modernizr.js',
+        'js/bootstrap.min.js',
         'js/wow.min.js',
         'js/own-menu.js',
         'js/owl.carousel.min.js',
         'js/jquery.magnific-popup.min.js',
+        'js/jquery.nouislider.min.js',
         'js/jquery.flexslider-min.js',
         'js/jquery.isotope.min.js',
         'rs-plugin/js/jquery.themepunch.tools.min.js',
         'rs-plugin/js/jquery.themepunch.revolution.min.js',
-        'js/bootstrap.min.js',
         'js/main.js',
 
     ];
     public $depends = [
-        'frontend\assets\FontAwesomeAsset',
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
-        //'yii\bootstrap\BootstrapPluginAsset',
+       // 'frontend\assets\FontAwesomeAsset',
+
     ];
 }

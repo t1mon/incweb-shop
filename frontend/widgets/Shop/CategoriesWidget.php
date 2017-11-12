@@ -23,16 +23,21 @@ class CategoriesWidget extends Widget
 
     public function run(): string
     {
-        return Html::tag('div', implode(PHP_EOL, array_map(function (CategoryView $view) {
+
+                 return Html::tag('ul', implode(PHP_EOL, array_map(function (CategoryView $view) {
+            $plus = $view->category->depth > 1 ? 'drop-menu' : null;
             $indent = ($view->category->depth > 1 ? str_repeat('&nbsp;&nbsp;&nbsp;', $view->category->depth - 1) . '- ' : '');
             $active = $this->active && ($this->active->id == $view->category->id || $this->active->isChildOf($view->category));
-            return Html::a(
-                $indent . Html::encode($view->category->name) . ' (' . $view->count . ')',
-                ['/shop/catalog/category', 'id' => $view->category->id],
-                ['class' => $active ? 'list-group-item active' : 'list-group-item']
-            );
+            return Html::beginTag('li',['class'=>'drop-menu']).Html::a(
+                $indent . Html::encode($view->category->name) . ' <span>(' . $view->count . ')</span>',
+                ['/shop/catalog/category', 'id' => $view->category->id]
+               // ['class' => $active ? 'list-group-item active' : 'list-group-item']
+            ).Html::endTag('li');
         }, $this->categories->getTreeWithSubsOf($this->active))), [
-            'class' => 'list-group',
+            'class' => 'cate',
         ]);
+
+
+
     }
 }

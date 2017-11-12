@@ -8,22 +8,19 @@ use yii\helpers\Url;
 use yii\widgets\LinkPager;
 
 ?>
-<div class="row">
-    <div class="col-md-2 col-sm-6 hidden-xs">
-        <div class="btn-group btn-group-sm">
-            <button type="button" id="list-view" class="btn btn-default" data-toggle="tooltip" title="List"><i class="fa fa-th-list"></i></button>
-            <button type="button" id="grid-view" class="btn btn-default" data-toggle="tooltip" title="Grid"><i class="fa fa-th"></i></button>
-        </div>
-    </div>
-    <div class="col-md-3 col-sm-6">
-        <div class="form-group">
-            <a href="/index.php?route=product/compare" id="compare-total" class="btn btn-link">Product Compare (0)</a>
-        </div>
-    </div>
-    <div class="col-md-4 col-xs-6">
-        <div class="form-group input-group input-group-sm">
-            <label class="input-group-addon" for="input-sort">Sort By:</label>
-            <select id="input-sort" class="form-control" onchange="location = this.value;">
+
+<!------------------------------------------>
+<!--======= ITEMS =========-->
+<div class="col-sm-9 animate fadeInUp" data-wow-delay="0.2s">
+    <div class="items-short-type animate fadeInUp" data-wow-delay="0.4s">
+
+        <!--======= GRID LIST STYLE =========-->
+        <div class="grid-list"> <a href="#."><i class="fa fa-th-large"></i></a> <a href="#."><i class="fa fa-th-list"></i></a> </div>
+
+        <!--======= SHORT BY =========-->
+        <div class="short-by">
+            <p>Фильтр:</p>
+            <select class="selectpicker" onchange="location = this.value;">
                 <?php
                 $values = [
                     '' => 'Default',
@@ -40,12 +37,8 @@ use yii\widgets\LinkPager;
                     <option value="<?= Html::encode(Url::current(['sort' => $value ?: null])) ?>" <?php if ($current == $value): ?>selected="selected"<?php endif; ?>><?= $label ?></option>
                 <?php endforeach; ?>
             </select>
-        </div>
-    </div>
-    <div class="col-md-3 col-xs-6">
-        <div class="form-group input-group input-group-sm">
-            <label class="input-group-addon" for="input-limit">Show:</label>
-            <select id="input-limit" class="form-control" onchange="location = this.value;">
+            <p>Кол-во элементов:</p>
+            <select class="selectpicker" onchange="location = this.value;">
                 <?php
                 $values = [15, 25, 50, 75, 100];
                 $current = $dataProvider->getPagination()->getPageSize();
@@ -55,16 +48,35 @@ use yii\widgets\LinkPager;
                 <?php endforeach; ?>
             </select>
         </div>
-    </div>
-</div>
 
-<div class="row">
-    <?php foreach ($dataProvider->getModels() as $product): ?>
-        <?= $this->render('_product', [
-            'product' => $product
-        ]) ?>
-    <?php endforeach; ?>
-</div>
+        <!--======= VIEW ITEM NUMBER =========-->
+        <div class="view-num">
+            <p>Показано <?= $dataProvider->getCount() ?> из <?= $dataProvider->getTotalCount() ?></p>
+        </div>
+    </div>
+
+
+    <!--======= PAGINATION =========-->
+    <ul class="pagination animate fadeInUp" data-wow-delay="0.4s">
+        <li><a href="#.">1</a></li>
+        <li><a href="#.">2</a></li>
+        <li><a href="#.">3</a></li>
+        <li><a href="#.">4</a></li>
+        <li><a href="#.">5</a></li>
+        <li><a href="#."><i class="fa fa-angle-right"></i></a></li>
+    </ul>
+
+
+
+    <div class="popurlar_product">
+        <ul class="row">
+            <?php foreach ($dataProvider->getModels() as $product): ?>
+                <?= $this->render('_product', [
+                    'product' => $product
+                ]) ?>
+            <?php endforeach; ?>
+        </ul>
+    </div>
 
 <div class="row">
     <div class="col-sm-6 text-left">
@@ -73,4 +85,6 @@ use yii\widgets\LinkPager;
         ]) ?>
     </div>
     <div class="col-sm-6 text-right">Showing <?= $dataProvider->getCount() ?> of <?= $dataProvider->getTotalCount() ?></div>
+</div>
+
 </div>
