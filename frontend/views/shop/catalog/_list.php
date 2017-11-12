@@ -11,7 +11,6 @@ use yii\widgets\LinkPager;
 
 <!------------------------------------------>
 <!--======= ITEMS =========-->
-<div class="col-sm-9 animate fadeInUp" data-wow-delay="0.2s">
     <div class="items-short-type animate fadeInUp" data-wow-delay="0.4s">
 
         <!--======= GRID LIST STYLE =========-->
@@ -55,19 +54,6 @@ use yii\widgets\LinkPager;
         </div>
     </div>
 
-
-    <!--======= PAGINATION =========-->
-    <ul class="pagination animate fadeInUp" data-wow-delay="0.4s">
-        <li><a href="#.">1</a></li>
-        <li><a href="#.">2</a></li>
-        <li><a href="#.">3</a></li>
-        <li><a href="#.">4</a></li>
-        <li><a href="#.">5</a></li>
-        <li><a href="#."><i class="fa fa-angle-right"></i></a></li>
-    </ul>
-
-
-
     <div class="popurlar_product">
         <ul class="row">
             <?php foreach ($dataProvider->getModels() as $product): ?>
@@ -77,14 +63,20 @@ use yii\widgets\LinkPager;
             <?php endforeach; ?>
         </ul>
     </div>
+    <!--======= PAGINATION =========-->
 
-<div class="row">
+        <?= LinkPager::widget([
+            'pagination' => $dataProvider->getPagination(),
+            'nextPageLabel' => '&rsaquo;',
+            'prevPageLabel' => '&lsaquo;',
+            //'disabledPageCssClass'=>'',
+            'options'=> ['class' =>'pagination animate fadeInUp','data-wow-delay'=>'0.4s']
+        ]) ?>
+<!--<div class="row">
     <div class="col-sm-6 text-left">
         <?= LinkPager::widget([
             'pagination' => $dataProvider->getPagination(),
         ]) ?>
     </div>
     <div class="col-sm-6 text-right">Showing <?= $dataProvider->getCount() ?> of <?= $dataProvider->getTotalCount() ?></div>
-</div>
-
-</div>
+</div> -->

@@ -6,18 +6,17 @@
 
 use yii\helpers\Html;
 
-$this->title = 'Products with tag ' . $tag->name;
+$this->title = 'Продукт с тэгом ' . $tag->name;
 
-$this->params['breadcrumbs'][] = ['label' => 'Catalog', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Каталог продукции', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $tag->name;
 ?>
 
-<h1>Products with tag &laquo;<?= Html::encode($tag->name) ?>&raquo;</h1>
 
-<hr />
-
+<div class="col-sm-9 animate fadeInUp" data-wow-delay="0.2s">
 <?= $this->render('_list', [
     'dataProvider' => $dataProvider
 ]) ?>
+</div>
 
 

@@ -26,5 +26,25 @@ return [
             'class' => 'yii\queue\redis\Queue',
             'as log' => 'yii\queue\LogBehavior',
         ],
+        'assetManager' => [
+            'class' => 'yii\web\AssetManager',
+            'bundles' => [
+                'yii\web\JqueryAsset' => [
+                    'js' => [
+                        YII_ENV_DEV ? '//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js' : '//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
+                    ]
+                ],
+                'yii\bootstrap\BootstrapAsset' => [
+                    'css' => [
+                        YII_ENV_DEV ? 'css/bootstrap.css' :         'css/bootstrap.min.css',
+                    ]
+                ],
+                'yii\bootstrap\BootstrapPluginAsset' => [
+                    'js' => [
+                        YII_ENV_DEV ? 'js/bootstrap.js' : 'js/bootstrap.min.js',
+                    ]
+                ]
+            ],
+        ],
     ],
 ];

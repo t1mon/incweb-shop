@@ -129,7 +129,7 @@ AppAsset::register($this);
                   <li><a href="index-12-watches.html">Index Watches</a></li>
                 </ul> -->
               </li>
-              <li class="active"><a href="<?=Url::to(['/shop/catalog/index'])?>">Каталог</a></li>
+              <li class="active"><a href="<?=Url::to(['/shop/catalog/index','per-page'=>15])?>">Каталог</a></li>
               <li class="active"><a href="<?=Url::to(['/blog/post/index'])?>">Блог</a></li>
               <li class="active"><a href="<?=Url::to(['/contact/index'])?>">Контакты</a></li>
               <!--
@@ -401,6 +401,7 @@ AppAsset::register($this);
     </div>
   </header>
   <!-- Header End -->
+    <div class="content">
     <!--======= SUB BANNER =========-->
     <section class="sub-banner animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
         <div class="container">
@@ -412,13 +413,16 @@ AppAsset::register($this);
             ]) ?>
         </div>
     </section>
-
-    <?= Alert::widget() ?>
+<div class="container">
+        <div class="row">
+            <?= Alert::widget() ?>
+        </div>
+</div>
 
 
     <?= $content ?>
 
-
+    </div>
 
   <!--======= Footer =========-->
   <footer>
@@ -473,12 +477,12 @@ AppAsset::register($this);
             <li class="col-sm-6">
               <h5>FLICKR PHOTO</h5>
               <ul class="flicker">
-                <li><a href="#."><img src="image/flicker-1.jpg" alt=""></a></li>
-                <li><a href="#."><img src="image/flicker-2.jpg" alt=""></a></li>
-                <li><a href="#."><img src="image/flicker-3.jpg" alt=""></a></li>
-                <li><a href="#."><img src="image/flicker-4.jpg" alt=""></a></li>
-                <li><a href="#."><img src="image/flicker-5.jpg" alt=""></a></li>
-                <li><a href="#."><img src="image/flicker-6.jpg" alt=""></a></li>
+                <li><a href="#."><img src="/image/flicker-1.jpg" alt=""></a></li>
+                <li><a href="#."><img src="/image/flicker-2.jpg" alt=""></a></li>
+                <li><a href="#."><img src="/image/flicker-3.jpg" alt=""></a></li>
+                <li><a href="#."><img src="/image/flicker-4.jpg" alt=""></a></li>
+                <li><a href="#."><img src="/image/flicker-5.jpg" alt=""></a></li>
+                <li><a href="#."><img src="/image/flicker-6.jpg" alt=""></a></li>
               </ul>
             </li>
           </ul>

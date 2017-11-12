@@ -23,6 +23,8 @@ class AppAsset extends AssetBundle
         'rs-plugin/css/settings.css',
     ];
     public $js = [
+        //'//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js',
+        //'js/jqueryMy.js',
         //'js/jquery-1.11.3.js',
         'js/modernizr.js',
         'js/bootstrap.min.js',
@@ -41,6 +43,7 @@ class AppAsset extends AssetBundle
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
+        //'yii\bootstrap\BootstrapPluginAsset',
        // 'frontend\assets\FontAwesomeAsset',
 
     ];

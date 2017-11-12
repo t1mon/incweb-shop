@@ -11,7 +11,7 @@ $this->title = $category->getSeoTitle();
 $this->registerMetaTag(['name' =>'description', 'content' => $category->meta->description]);
 $this->registerMetaTag(['name' =>'keywords', 'content' => $category->meta->keywords]);
 
-$this->params['breadcrumbs'][] = ['label' => 'Catalog', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Каталог продукции', 'url' => ['index']];
 foreach ($category->parents as $parent) {
     if (!$parent->isRoot()) {
         $this->params['breadcrumbs'][] = ['label' => $parent->name, 'url' => ['category', 'id' => $parent->id]];
@@ -21,8 +21,8 @@ $this->params['breadcrumbs'][] = $category->name;
 
 $this->params['active_category'] = $category;
 ?>
-
-<h1><?= Html::encode($category->getHeadingTile()) ?></h1>
+<div class="col-sm-9 animate fadeInUp" data-wow-delay="0.2s">
+<!--<h1><?= Html::encode($category->getHeadingTile()) ?></h1>-->
 
 <?= $this->render('_subcategories', [
     'category' => $category
@@ -45,5 +45,5 @@ $this->params['active_category'] = $category;
 <?= $this->render('_list', [
     'dataProvider' => $dataProvider
 ]) ?>
-
+</div>
 

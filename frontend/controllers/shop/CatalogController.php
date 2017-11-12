@@ -144,8 +144,10 @@ class CatalogController extends Controller
         $this->layout = 'blank';
         $cartForm = new AddToCartForm($product);
         $reviewForm = new ReviewForm();
-        if ($reviewForm->load(\Yii::$app->request->post()) && $reviewForm->validate())
-            $this->review->addReview(\Yii::$app->user->id,$id,$reviewForm);
+        if ($reviewForm->load(\Yii::$app->request->post()) && $reviewForm->validate()) {
+            $this->review->addReview(\Yii::$app->user->id, $id, $reviewForm);
+            \Yii::$app->session->setFlash('success', 'Спасибо! Ваш отзыв добавлен (отзыв появится после проверки модератором)!');
+        }
         return $this->render('product', [
             'product' => $product,
             'cartForm' => $cartForm,

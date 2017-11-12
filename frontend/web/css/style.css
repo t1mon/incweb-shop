@@ -115,6 +115,7 @@ a {
 }
 .font-montserrat {
 	font-family: 'Montserrat', sans-serif;
+	color: #9c3328;
 }
 
 .font-playfair {
@@ -375,7 +376,7 @@ section {
       BACKGROUNDS
 ========================================================*/
 .bg-1 {
-	background: url(../images/bg/bg-1.jpg) fixed no-repeat;
+	background: url(../image/bg/bg-1.jpg) fixed no-repeat;
 	background-size: cover;
 }
 .text-line {
@@ -937,19 +938,19 @@ header .ownmenu .look-book .media-body a {
 	right:0px;
 }
 .home-6-style #sec-1 {
-	background: url(../images/bg/fes-img-1.jpg) fixed no-repeat;
+	background: url(../image/bg/fes-img-1.jpg) fixed no-repeat;
 	background-size: cover;
 }
 .home-6-style #sec-2 {
-	background: url(../images/bg/fes-img-2.jpg) fixed no-repeat;
+	background: url(../image/bg/fes-img-2.jpg) fixed no-repeat;
 	background-size: cover;
 }
 .home-6-style #sec-3 {
-	background: url(../images/bg/fes-img-3.jpg) fixed no-repeat;
+	background: url(../image/bg/fes-img-3.jpg) fixed no-repeat;
 	background-size: cover;
 }
 .home-6-style #sec-4 {
-	background: url(../images/bg/fes-img-4.jpg) fixed no-repeat;
+	background: url(../image/bg/fes-img-4.jpg) fixed no-repeat;
 	background-size: cover;
 }
 .home-6-style .content .huge-txt {
@@ -989,7 +990,7 @@ header .ownmenu .look-book .media-body a {
 	color: #fff;
 	height: 70px;
 	width: 70px;
-	background: url(../images/play-icon.png) no-repeat;
+	background: url(../image/play-icon.png) no-repeat;
 	display: inline-block;
 	margin: 0 auto;
 	margin-top: 50px;
@@ -1316,7 +1317,7 @@ header .ownmenu .look-book .media-body a {
 	margin-bottom: 10px;
 }
 .popurlar_product .details-sec span {
-	font-size: 10px;
+	font-size: 15px;
 	letter-spacing: 2px;
 }
 .popurlar_product .owl-nav {
@@ -1837,7 +1838,7 @@ header .ownmenu .look-book .media-body a {
     Parallax
 ===========================================*/
 .parallex {
-	background: url(../images/bg/bg-4.jpg) fixed no-repeat;
+	background: url(../image/bg/bg-4.jpg) fixed no-repeat;
 	text-align: center;
 	background-size: cover;
 }
@@ -1858,7 +1859,7 @@ header .ownmenu .look-book .media-body a {
 	color: #fff;
 }
 .parallex-simle {
-	background: url(../images/bg/bg-8.jpg) fixed no-repeat;
+	background: url(../image/bg/bg-8.jpg) fixed no-repeat;
 	text-align: center;
 	background-size: cover;
 	padding: 120px 0;
@@ -1879,7 +1880,7 @@ header .ownmenu .look-book .media-body a {
     Testimonial
 ===========================================*/
 .testimonial {
-	background: url(../images/bg/bg-5.jpg) no-repeat;
+	background: url(../image/bg/bg-5.jpg) no-repeat;
 	background-size: cover;
 }
 .testimonial .testi {
@@ -2399,7 +2400,7 @@ header .ownmenu .look-book .media-body a {
 	color: #fff;
 	height: 70px;
 	width: 70px;
-	background: url(../images/play-icon.png) no-repeat;
+	background: url(../image/play-icon.png) no-repeat;
 	float: left;
 }
 .blog-posts .owl-nav {
@@ -2725,7 +2726,7 @@ header .ownmenu .look-book .media-body a {
       VIDEO SECTION
 ========================================================*/
 .video-part {
-	background: url(../images/bg/bg-2.jpg) fixed no-repeat;
+	background: url(../image/bg/bg-2.jpg) fixed no-repeat;
 	background-size: cover;
 }
 .video-part .overlay {
@@ -2834,7 +2835,7 @@ header .ownmenu .look-book .media-body a {
       Subcribe
 ========================================================*/
 .subcribe {
-	background: url(../images/bg/bg-3.jpg) fixed no-repeat;
+	background: url(../image/bg/bg-3.jpg) fixed no-repeat;
 	background-size: cover;
 }
 .subcribe .overlay {
@@ -2876,7 +2877,7 @@ header .ownmenu .look-book .media-body a {
 	margin-top: -40px;
 }
 .news-letter {
-	background: url(../images/bg/bg-6.jpg) fixed no-repeat;
+	background: url(../image/bg/bg-6.jpg) fixed no-repeat;
 	background-size: cover;
 }
 .news-letter .news-letter-form {
@@ -2891,7 +2892,7 @@ header .ownmenu .look-book .media-body a {
       END OF DEADON
 ========================================================*/
 .end-season {
-	background: url(../images/bg/bg-7.jpg) fixed no-repeat;
+	background: url(../image/bg/bg-7.jpg) fixed no-repeat;
 	background-size: cover;
 }
 .end-season h5 {
@@ -3783,7 +3784,7 @@ footer .flicker img {
 	background: #f9f9f9;
 }
 .construction .services-style-2 {
-	background: url(../images/bg/bg-12.jpg) fixed no-repeat;
+	background: url(../image/bg/bg-12.jpg) fixed no-repeat;
 	background-size: cover;
 }
 .construction .services .icon {
@@ -3831,7 +3832,7 @@ footer .flicker img {
 	margin-bottom: 0px;
 }
 .construction .services-style-2 {
-	background: url(../images/bg/bg-12.jpg) fixed no-repeat;
+	background: url(../image/bg/bg-12.jpg) fixed no-repeat;
 	background-size: cover;
 }
 .construction .services-style-2 li {
@@ -4052,7 +4053,7 @@ footer .flicker img {
 	background: #ffc000;
 }
 .constra {
-	background: url(../images/bg/bg-9.jpg) center center fixed no-repeat;
+	background: url(../image/bg/bg-9.jpg) center center fixed no-repeat;
 	background-size: cover;
 }
 .constra h2 {
@@ -4079,7 +4080,7 @@ footer .flicker img {
       TESTIMONIALS
 ========================================================*/
 .construction .testimonial {
-	background: url(../images/bg/bg-11.jpg) fixed no-repeat;
+	background: url(../image/bg/bg-11.jpg) fixed no-repeat;
 	background-size: cover;
 }
 .construction .testimonial p {
@@ -4116,7 +4117,7 @@ footer .flicker img {
 	text-align: center;
 }
 .who-we-are .vid {
-	background: url(../images/bg/bg-10.jpg) fixed no-repeat;
+	background: url(../image/bg/bg-10.jpg) fixed no-repeat;
 	background-size: cover;
 	max-height: 380px;
 	display: inline-block;
@@ -4127,7 +4128,7 @@ footer .flicker img {
 	color: #fff;
 	height: 70px;
 	width: 70px;
-	background: url(../images/play-icon.png) no-repeat;
+	background: url(../image/play-icon.png) no-repeat;
 	float: left;
 	margin-top: 35px;
 }
@@ -4623,7 +4624,7 @@ footer .flicker img {
 	margin-top: -50px;
 }
 .furniture .parallex-fur {
-	background: url(../images/bg/bg-13.jpg) fixed no-repeat;
+	background: url(../image/bg/bg-13.jpg) fixed no-repeat;
 	background-size: cover;
 }
 .furniture .parallex-fur h3 {
@@ -4636,7 +4637,7 @@ footer .flicker img {
       SPORTS
 ========================================================*/
 .sports .parallex-simle {
-	background: url(../images/bg/bg-8-1.jpg) fixed no-repeat;
+	background: url(../image/bg/bg-8-1.jpg) fixed no-repeat;
 	background-size: cover;
 }
 /*=======================================================
@@ -4651,11 +4652,11 @@ footer .flicker img {
 	background: #f04863;
 }
 .beauty .bg-1 {
-	background: url(../images/bg/bg-14.jpg) fixed no-repeat;
+	background: url(../image/bg/bg-14.jpg) fixed no-repeat;
 	background-size: cover;
 }
 .beauty .video-part {
-	background: url(../images/bg/bg-15.jpg) fixed no-repeat;
+	background: url(../image/bg/bg-15.jpg) fixed no-repeat;
 	background-size: cover;
 }
 .beauty .video-part .overlay {
@@ -4672,7 +4673,7 @@ footer .flicker img {
 	color: #fff;
 }
 .beauty .subcribe {
-	background: url(../images/bg/bg-16.jpg) fixed no-repeat;
+	background: url(../image/bg/bg-16.jpg) fixed no-repeat;
 	background-size: cover;
 }
 .beauty .overlay {
@@ -4687,7 +4688,7 @@ footer .flicker img {
 	background: #5c7ac4;
 }
 .watches .end-season {
-	background: #ededed url(../images/watches/watch-1.png) right no-repeat;
+	background: #ededed url(../image/watches/watch-1.png) right no-repeat;
 }
 .watches .end-season h2 {
 	color: #272727;
@@ -4919,6 +4920,12 @@ footer .flicker img {
 .pagination>li {
 	display: inline-block;
 }
+
+.pagination > .active > a,.pagination > .active >  a:hover{
+    background-color: #af5875;
+    border-color: #af5875;
+
+}
 .pagination>li>a, .pagination>li>span {
 	border: none;
 	border-radius: 50% !important;
@@ -5080,7 +5087,7 @@ footer .flicker img {
 	width: 100%;
 }
 .small-banr {
-	background: url(../images/bg/bg-17-small.jpg) fixed no-repeat;
+	background: url(../image/bg/bg-17-small.jpg) fixed no-repeat;
 	background-size: cover;
 	height: 270px;
 	text-align: center;
@@ -5184,6 +5191,9 @@ footer .flicker img {
 .item-detail-page .item-select .bootstrap-select .dropdown-menu>li>a {
 	font-size: 10px;
 	line-height: 22px;
+}
+.item-detail-page .fun-share .form-group {
+	margin-bottom: 0px;
 }
 .item-detail-page .fun-share {
 	display: inline-block;
@@ -5756,7 +5766,7 @@ input:focus {
 	color: #fff;
 	height: 70px;
 	width: 70px;
-	background: url(../images/play-icon.png) no-repeat;
+	background: url(../image/play-icon.png) no-repeat;
 	float: left;
 }
 .about-us .media-heading {
@@ -5895,7 +5905,7 @@ input:focus {
 	border: none;
 }
 .coming-soon {
-	background: url(../images/bg/coming-soon.jpg) center center fixed no-repeat;
+	background: url(../image/bg/coming-soon.jpg) center center fixed no-repeat;
 	background-size: cover;
 	padding: 150px 0;
 	text-align: center;

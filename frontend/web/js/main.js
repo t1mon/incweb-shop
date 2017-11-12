@@ -296,6 +296,8 @@ $back_to_top.on('click', function(event){
 	 	}, scroll_top_duration
 );
 });
+
+
 });
 
 

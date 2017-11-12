@@ -22,6 +22,14 @@ class ReviewForm extends Model
         ];
     }
 
+    public function attributeLabels()
+    {
+        return [
+            'vote' => 'Оценка',
+            'text' => 'Текст отзыва',
+        ];
+    }
+
     public function votesList(): array
     {
         return [
