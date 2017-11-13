@@ -107,7 +107,7 @@ $reviews_count =$product->getActiveReviewCount($reviews);
                                         <?= $form->field($cartForm, 'quantity')->textInput()->label(false) ?>
                                         <?= Html::submitButton('Добавить в корзину', ['class' => 'btn btn-small btn-dark']) ?>
                                         <a href="#." class="share-sec" onclick="compare.add('47');"><i class="ion-shuffle"></i></a>
-                                        <button type="button" data-toggle="tooltip" class="btn btn-default" title="Compare this Product" onclick="compare.add('47');"><i class="fa fa-exchange"></i></button>
+                                        <button type="button" data-toggle="tooltip" class="btn btn-default" title="Compare this Product" onclick="compare.add('');"><i class="fa fa-exchange"></i></button>
                                         <a class="share-sec" href="<?= Url::to(['/cabinet/wishlist/add', 'id' => $product->id]) ?>" data-method="post"><i class="fa fa-heart-o"></i></a> </div>
                                 </div>
                                 <!-- SHARE -->
@@ -204,7 +204,7 @@ $reviews_count =$product->getActiveReviewCount($reviews);
                                                 <?= $form->field($reviewForm, 'text')->textarea(['rows' => 5]) ?>
                                         </li>
 
-                                    </ul>
+                                        <li class="col-sm-6">
                                     <?php echo $form->field($reviewForm, 'vote')->widget(StarRating::classname(), [
                                         'pluginOptions' => [
                                             'step' => 1,
@@ -220,39 +220,15 @@ $reviews_count =$product->getActiveReviewCount($reviews);
 
                                         ]
                                     ]);?>
-                                    <div class="form-group">
+                                        </li>
+                                        <li class="col-sm-6">
                                         <?= Html::submitButton('ДОБАВИТЬ ОТЗЫВ', ['class' => 'btn btn-dark btn-small pull-right no-margin']) ?>
-                                    </div>
+                                        </li>
 
                                     <?php ActiveForm::end() ?>
-
-                                <?php endif; ?>
-                                <form id="review-form">
-                                    <ul class="row">
-                                        <li class="col-sm-6">
-                                            <label> *NAME
-                                                <input type="text" value="" placeholder="">
-                                            </label>
-                                        </li>
-                                        <li class="col-sm-6">
-                                            <label> *EMAIL
-                                                <input type="email" value="" placeholder="">
-                                            </label>
-                                        </li>
-                                        <li class="col-sm-12">
-                                            <label> *YOUR REVIEW
-                                                <textarea></textarea>
-                                            </label>
-                                        </li>
-                                        <li class="col-sm-6">
-                                            <!-- Rating Stars -->
-                                            <div class="stars"> <span>YOUR RATING</span> <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                                        </li>
-                                        <li class="col-sm-6">
-                                            <button type="submit" class="btn btn-dark btn-small pull-right no-margin">POST REVIEW</button>
-                                        </li>
                                     </ul>
-                                </form>
+                                <?php endif; ?>
+
                             </div>
 
                             <!-- TAGS -->
