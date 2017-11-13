@@ -40,12 +40,12 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 <!-- LOADER ===========================================-->
-<!--
+
 <div id="loader">
   <div class="loader">
-    <div class="position-center-center"> <img src="image/logo-dark.png" alt="">
+    <div class="position-center-center"> <img src="/image/logo-dark-new.png" alt="">
       
-      <p class="font-playfair text-center">Please Wait...</p>
+      <p class="font-playfair text-center">Загрузка...</p>
       <div class="loading">
       	<div class="ball"></div>
         <div class="ball"></div>
@@ -54,7 +54,7 @@ AppAsset::register($this);
     </div>
   </div>
 </div>
--->
+
 <!-- Page Wrap -->
 <div id="wrap">
   
@@ -129,7 +129,7 @@ AppAsset::register($this);
                   <li><a href="index-12-watches.html">Index Watches</a></li>
                 </ul> -->
               </li>
-              <li class="active"><a href="<?=Url::to(['/shop/catalog/index','per-page'=>15])?>">Каталог</a></li>
+              <li class="active"><a href="<?=Url::to(['/shop/catalog/index'])?>">Каталог</a></li>
               <li class="active"><a href="<?=Url::to(['/blog/post/index'])?>">Блог</a></li>
               <li class="active"><a href="<?=Url::to(['/contact/index'])?>">Контакты</a></li>
               <!--

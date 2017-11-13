@@ -29,6 +29,7 @@ return [
         'blog/<slug:[\w\-]+>' => 'blog/post/category',
 
         'catalog' => 'shop/catalog/index',
+        //'<catalog:\w+>/page/<page:\d+>' => 'shop/catalog/index',
         ['class' => 'frontend\urls\CategoryUrlRule'],
         'catalog/<id:\d+>' => 'shop/catalog/product',
 

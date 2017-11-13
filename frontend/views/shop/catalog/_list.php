@@ -64,7 +64,6 @@ use yii\widgets\LinkPager;
         </ul>
     </div>
     <!--======= PAGINATION =========-->
-
         <?= LinkPager::widget([
             'pagination' => $dataProvider->getPagination(),
             'nextPageLabel' => '&rsaquo;',
