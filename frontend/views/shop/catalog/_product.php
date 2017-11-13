@@ -13,11 +13,11 @@ $url = Url::to(['product', 'id' =>$product->id]);
 ?>
 
         <!-- New Products -->
-        <li class="col-sm-4 animate fadeIn" data-wow-delay="0.4s">
-            <div class="items-in">
+        <span><li class="col-sm-4 animate fadeIn" data-wow-delay="0.4s">
+            <div style="cursor: pointer" class="items-in"  onclick="location.href='<?= Html::encode($url) ?>'">
                 <!-- Image -->
                 <?php if ($product->mainPhoto): ?>
-                <img src="<?= Html::encode($product->mainPhoto->getThumbFileUrl('file', 'catalog_list')) ?>" alt="<?=Html::encode($product->name)?>">
+                    <img src="<?= Html::encode($product->mainPhoto->getThumbFileUrl('file', 'catalog_list')) ?>" alt="<?=Html::encode($product->name)?>">
                     <?php else:?>
                     <img src="<?= Url::to(['@web/image/new-item-1.jpg']) ?>" alt="">
                 <?php endif; ?>
@@ -25,13 +25,13 @@ $url = Url::to(['product', 'id' =>$product->id]);
                 <div class="over-item">
                     <ul class="animated fadeIn">
                         <?php if ($product->mainPhoto): ?>
-                            <li> <a href="<?= Html::encode($product->mainPhoto->getThumbFileUrl('file', 'catalog_origin')) ?>" data-lighter><i class="ion-search"></i></a></li>
+                            <li class="rs"> <a href="<?= Html::encode($product->mainPhoto->getThumbFileUrl('file', 'catalog_origin')) ?>" data-lighter><i class="ion-search"></i></a></li>
                         <?php else:?>
-                            <li> <a href="<?= Url::to(['@web/image/new-item-1.jpg']) ?>" data-lighter><i class="ion-search"></i></a></li>
+                            <li class="rs"> <a href="<?= Url::to(['@web/image/new-item-1.jpg']) ?>" data-lighter><i class="ion-search"></i></a></li>
                         <?php endif; ?>
-                        <li> <a href="#" onclick="compare.add('<?= $product->id ?>');"><i class="ion-shuffle"></i></a></li>
-                        <li> <a data-method="post" href="<?= Url::to(['/cabinet/wishlist/add', 'id' => $product->id]) ?> "><i class="fa fa-heart-o"></i></a></li>
-                        <li class="full-w"> <a href="<?= Url::to(['/shop/cart/add', 'id' => $product->id]) ?>" class="btn">Добавить в Корзину</a></li>
+                        <li class="rs"> <a href="#" onclick="compare.add('<?= $product->id ?>');"><i class="ion-shuffle"></i></a></li>
+                        <li class="rs"> <a data-method="post" href="<?= Url::to(['/cabinet/wishlist/add', 'id' => $product->id]) ?> "><i class="fa fa-heart-o"></i></a></li>
+                        <li class="full-w rs"> <a href="<?= Url::to(['/shop/cart/add', 'id' => $product->id]) ?>" class="btn">Добавить в Корзину</a></li>
                         <!-- Rating Stars -->
                             <li class="stars">
                                 <?php
@@ -56,5 +56,25 @@ $url = Url::to(['product', 'id' =>$product->id]);
             </div>
         </li>
 
+<!---onclick="location.href='<?= Html::encode($url) ?>'"-->
+<?php
+$script = <<<JS
+var url;
+    $('.rs').hover(
 
+ 
+         function(){
+             url = $(this).parents("div.items-in").attr('onclick');
+             $(this).parents("div.items-in").removeAttr('onclick');            
+        },
+        function(){ 
+            $(this).parents("div.items-in").attr('onclick',url);
+        }
+    
+    
+    
+    );
+JS;
 
+$this->registerJs($script,yii\web\View::POS_READY);
+?>
