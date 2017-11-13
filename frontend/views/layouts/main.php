@@ -59,10 +59,10 @@ AppAsset::register($this);
 <div id="wrap">
   
   <!-- Header -->
-  <header class="header-style-2 header-style-3"> 
+  <header class="header-style-2 header-style-3">
     <!-- Top Bar -->
     <div class="top-bar">
-      <div class="container"> 
+      <div class="container">
         <!-- Language -->
         <div class="language"> <a href="#." class="active">EN</a> <a href="#.">FR</a> <a href="#.">GE</a> </div>
         <div class="top-links">
@@ -101,7 +101,7 @@ AppAsset::register($this);
         </div>
       </div>
     </div>
-    
+
     <!-- Logo -->
     <div class="sticky">
     <div class="container">
@@ -109,7 +109,7 @@ AppAsset::register($this);
 
         <!-- Nav -->
       <!-- Nav -->
-        <nav class="webimenu"> 
+        <nav class="webimenu">
           <!-- MENU BUTTON RESPONSIVE -->
           <div class="menu-toggle"> <i class="fa fa-bars"> </i> </div>
           <ul class="ownmenu">
@@ -342,7 +342,7 @@ AppAsset::register($this);
               <li><a href="08-08-blog-04-col.html">Blog 04 Col</a></li>
             </ul>
           </li>
-          
+
             <ul class="dropdown">
               <li><a href="09-01-portfolio-grid.html">PORTFOLIO GRID </a>
                 <ul class="dropdown">
@@ -376,11 +376,11 @@ AppAsset::register($this);
           <!--======= Shopping Cart =========-->
               <?= CartWidget::widget() ?>
           <!--======= SEARCH ICON =========-->
-              <?= Html::beginForm(['/shop/catalog/search'], 'get') ?>
-                  <li class="search-nav">
+                  <li class="search-nav sub-menu">
                       <a href="#."><i class="fa fa-search"></i></a>
                     <ul class="dropdown">
                       <li class="row">
+                          <?= Html::beginForm(['/shop/catalog/search'], 'get') ?>
                         <div class="col-sm-4 no-padding">
                             <?php
                             $items = \yii\helpers\ArrayHelper::map(Category::find()->where(['<>','id',1])->all(),'id','name');
@@ -391,10 +391,10 @@ AppAsset::register($this);
                           <input type="search" name="text" class="form-control" placeholder="Поиск...">
                           <button type="submit"> <i class="fa fa-search"></i> </button>
                         </div>
+                          <?= Html::endForm() ?>
                       </li>
                     </ul>
                   </li>
-              <?= Html::endForm() ?>
         </ul>
       </nav>
     </div>
