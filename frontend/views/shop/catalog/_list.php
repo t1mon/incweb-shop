@@ -18,17 +18,17 @@ use yii\widgets\LinkPager;
 
         <!--======= SHORT BY =========-->
         <div class="short-by">
-            <p>Фильтр:</p>
+            <p>Сортировать:</p>
             <select class="selectpicker" onchange="location = this.value;">
                 <?php
                 $values = [
-                    '' => 'Default',
-                    'name' => 'Name (A - Z)',
-                    '-name' => 'Name (Z - A)',
-                    'price' => 'Price (Low &gt; High)',
-                    '-price' => 'Price (High &gt; Low)',
-                    '-rating' => 'Rating (Highest)',
-                    'rating' => 'Rating (Lowest)',
+                    '' => 'пусто',
+                    'name' => 'По имени (А - Я)',
+                    '-name' => 'По имени (Я - А)',
+                    'price' => 'По возрастанию цены',
+                    '-price' => 'По убыванию цены',
+                    '-rating' => 'По рейтингу (высокий)',
+                    'rating' => 'По рейтингу (низкий)',
                 ];
                 $current = Yii::$app->request->get('sort');
                 ?>

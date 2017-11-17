@@ -73,7 +73,7 @@ use yii\helpers\Url;
 
 -->
 
-<li class="shop-cart"><a href="#."><i class="fa fa-shopping-cart"></i></a> <span class="numb"><?= $cart->getAmount() ?></span>
+<li class="shop-cart"><a onclick="location.href = '<?= Url::to(['/shop/cart/index']) ?>'" href="#."><i class="fa fa-shopping-cart"></i></a> <span class="numb"><?= $cart->getAmount() ?></span>
     <ul class="dropdown">
         <?php foreach ($cart->getItems() as $item): ?>
         <?php

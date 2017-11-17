@@ -115,7 +115,8 @@ a {
 }
 .font-montserrat {
 	font-family: 'Montserrat', sans-serif;
-	color: #9c3328;
+	/*color: #9c3328;*/
+	color:rgba(221,0,31);
 }
 
 .font-playfair {
@@ -1699,13 +1700,14 @@ header .ownmenu .look-book .media-body a {
 	width: 58px;
 	float: right;
 	position: absolute;
-	background: #af5875;
+	/*background: #af5875;*/
+	background: rgba(221,0,31);
 	line-height: 58px;
 	text-align: center;
 	color: #fff;
 	font-size: 11px;
 	font-family: 'Montserrat', sans-serif;
-	z-index: 999;
+	z-index: 900;
 	right: 20px;
 	top: 20px;
 	border-radius: 50%;
@@ -3236,7 +3238,7 @@ header .ownmenu .look-book .media-body a {
 ========================================================*/
 .contact {
 }
-.contact #contact_form {
+.contact .contact_form {
 	text-align: center;
 }
 .contact .error {
@@ -3260,11 +3262,11 @@ header .ownmenu .look-book .media-body a {
 	border: 1px solid #ABD0A8;
 	margin-right: 10px;
 }
-#contact_form li {
+.contact_form li {
 	text-align: left;
 	margin-bottom: 40px;
 }
-#contact_form li input {
+.contact_form li input {
 	display: inline-block;
 	width: 100%;
 	padding: 0 30px;
@@ -3275,7 +3277,7 @@ header .ownmenu .look-book .media-body a {
 	letter-spacing: 3px;
 	height: 45px;
 }
-#contact_form li .form-control {
+.contact_form li .form-control {
 	height: 45px;
 	border: none;
 	display: inline-block;
@@ -3285,21 +3287,21 @@ header .ownmenu .look-book .media-body a {
 	background: #fff;
 	border: 1px solid #ebebeb;
 }
-#contact_form label {
+.contact_form label {
 	width: 100%;
 }
-#contact_form .btn {
+.contact_form .btn {
 	color: #272727;
 	font-family: 'Montserrat', sans-serif;
 	border: 1px solid #272727;
 	margin: 0px;
 	float: right;
 }
-#contact_form .btn:hover {
+.contact_form .btn:hover {
 	color: #fff;
 	border-color: #fff;
 }
-#contact_form li textarea {
+.contact_form li textarea {
 	height: 130px !important;
 	font-size: 11px;
 	font-family: 'Montserrat', sans-serif;
@@ -3330,7 +3332,7 @@ header .ownmenu .look-book .media-body a {
 }
 .conact-us-2 {
 }
-.conact-us-2 #contact_form li .form-control {
+.conact-us-2 .contact_form li .form-control {
 	border: none;
 	border-bottom: 1px solid #ebebeb;
 	padding-left: 0px;
@@ -3339,13 +3341,13 @@ header .ownmenu .look-book .media-body a {
 	border: none !important;
 	border-bottom: 1px solid #272727 !important;
 }
-.conact-us-2 #contact_form li {
+.conact-us-2 .contact_form li {
 	margin-bottom: 30px;
 }
 .conact-us-2 #map {
 	height: 630px;
 }
-.conact-us-2 #contact_form li textarea {
+.conact-us-2 .contact_form li textarea {
 	height: 120px !important;
 }
 .conact-us-2 .social_icons {
@@ -4977,7 +4979,7 @@ footer .flicker img {
 	border-color: #af5875;
 }
 .short-by {
-	width: 500px;
+	width: 515px;
 	float: left;
 }
 .short-by .bootstrap-select.btn-group {

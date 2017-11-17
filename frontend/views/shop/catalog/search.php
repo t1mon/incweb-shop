@@ -7,13 +7,51 @@
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 
-$this->title = 'Search';
+$this->title = 'Поиск по каталогу';
 
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<section class="section-p-30px conact-us no-padding-b animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
+    <!--======= CONTACT FORM =========-->
+    <div class="container">
+        <div class="contact section-p-30px no-padding-b">
+            <div class="contact-form">
+                <!--======= FORM  =========-->
+                <?php $form = ActiveForm::begin(['action' => [''], 'method' => 'get','options'=>['class'=>'contact-form contact_form']]) ?>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="row">
+                                <li class="col-sm-12">
+                                    <label>
+                                        <?= $form->field($searchForm, 'text')->textInput(['placeholder'=>'Введите текст для поиска...'])->label(false) ?>
+                                    </label>
+                                </li>
+                                <li class="col-sm-6">
+                                    <label>
+                                        <?= $form->field($searchForm, 'category')->dropDownList($searchForm->categoriesList(), ['prompt' => 'Не выбрано','class'=>'selectpicker'])->label(false) ?>
+                                    </label>
+                                </li>
+                                <li class="col-sm-6">
+                                    <label>
+                                        <?= $form->field($searchForm, 'category')->dropDownList($searchForm->brandsList(), ['prompt' => 'Не выбрано','class'=>'selectpicker'])->label(false) ?>
+                                    </label>
+                                </li>
+                            </ul>
+                            <ul class="row">
+                                <li class="col-sm-12 no-margin">
+                                    <?= Html::submitButton('Поиск', ['class' => 'btn']) ?>
+                                    <?= Html::a('Очистить', [''], ['class' => 'btn']) ?>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                <?php ActiveForm::end() ?>
+            </div>
+        </div>
+    </div>
+</section>
 
-<h1><?= Html::encode($this->title) ?></h1>
-
+<!--
 <div class="panel panel-default">
     <div class="panel-body">
         <?php $form = ActiveForm::begin(['action' => [''], 'method' => 'get']) ?>
@@ -63,8 +101,11 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 </div>
 
+-->
+
+<?php if ($dataProvider != null):?>
 <?= $this->render('_list', [
     'dataProvider' => $dataProvider
 ]) ?>
 
-
+<?php endif;?>

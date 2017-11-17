@@ -15,6 +15,10 @@ $url = Url::to(['product', 'id' =>$product->id]);
         <!-- New Products -->
         <span><li class="col-sm-4 animate fadeIn" data-wow-delay="0.4s">
             <div style="cursor: pointer" class="items-in"  onclick="location.href='<?= Html::encode($url) ?>'">
+                <!-- Tags -->
+                <?php if ($product->price_old && $percent = PriceHelper::percent($product->price_new,$product->price_old)): ?>
+                <div class="hot-tag"> -<?=Html::encode($percent)?>% </div>
+                <?php endif;?>
                 <!-- Image -->
                 <?php if ($product->mainPhoto): ?>
                     <img src="<?= Html::encode($product->mainPhoto->getThumbFileUrl('file', 'catalog_list')) ?>" alt="<?=Html::encode($product->name)?>">
@@ -67,7 +71,7 @@ var url;
              url = $(this).parents("div.items-in").attr('onclick');
              $(this).parents("div.items-in").removeAttr('onclick');            
         },
-        function(){ 
+            function(){ 
             $(this).parents("div.items-in").attr('onclick',url);
         }
     

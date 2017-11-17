@@ -24,9 +24,9 @@ $this->params['active_category'] = $category;
 <div class="col-sm-9 animate fadeInUp" data-wow-delay="0.2s">
 <!--<h1><?= Html::encode($category->getHeadingTile()) ?></h1>-->
 
-<?= $this->render('_subcategories', [
+<?php /*= $this->render('_subcategories', [
     'category' => $category
-]) ?>
+]) */?>
 
 <?php if (trim($category->description)): ?>
     <div class="panel panel-default">
