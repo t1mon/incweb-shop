@@ -12,12 +12,12 @@ class OrderHelper
     public static function statusList(): array
     {
         return [
-            Status::NEW => 'New',
-            Status::PAID => 'Paid',
-            Status::SENT => 'Sent',
-            Status::COMPLETED => 'Completed',
-            Status::CANCELLED => 'Cancelled',
-            Status::CANCELLED_BY_CUSTOMER => 'Cancelled by customer',
+            Status::NEW => 'Новый',
+            Status::PAID => 'Оплачен',
+            Status::SENT => 'Доставляется',
+            Status::COMPLETED => 'Завершен',
+            Status::CANCELLED => 'Отменен',
+            Status::CANCELLED_BY_CUSTOMER => 'Отменен клиентом',
         ];
     }
 
@@ -30,10 +30,10 @@ class OrderHelper
     {
         switch ($status) {
             case Product::STATUS_DRAFT:
-                $class = 'label label-default';
+                $class = 'label label-warning';
                 break;
             case Product::STATUS_ACTIVE:
-                $class = 'label label-success';
+                $class = 'label label-danger';
                 break;
             default:
                 $class = 'label label-default';

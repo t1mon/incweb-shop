@@ -7,41 +7,48 @@
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 
-$this->title = 'Update Order: ' . $order->id;
-$this->params['breadcrumbs'][] = ['label' => 'Orders', 'url' => ['index']];
+$this->title = 'Редактирование заказа: ' . $order->id;
+$this->params['breadcrumbs'][] = ['label' => 'Заказы', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $order->id, 'url' => ['view', 'id' => $order->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Редактирование';
 ?>
 <div class="order-update">
 
     <?php $form = ActiveForm::begin() ?>
 
     <div class="box box-default">
-        <div class="box-header with-border">Customer</div>
+        <div class="box-header with-border">Клиент</div>
         <div class="box-body">
-            <?= $form->field($model->customer, 'phone')->textInput() ?>
-            <?= $form->field($model->customer, 'name')->textInput() ?>
+            <?= $form->field($model->customer, 'phone')->textInput()->label('Телефон') ?>
+            <?= $form->field($model->customer, 'name')->textInput()->label('Имя') ?>
+        </div>
+    </div>
+    <div class="box box-default">
+        <div class="box-header with-border">Статус</div>
+        <div class="box-body">
+            <?= $form->field($model, 'current_status')->dropDownList(\shop\helpers\OrderHelper::statusList())->label('Статус') ?>
         </div>
     </div>
 
     <div class="box box-default">
-        <div class="box-header with-border">Delivery</div>
+        <div class="box-header with-border">Доставка</div>
         <div class="box-body">
-            <?= $form->field($model->delivery, 'method')->dropDownList($model->delivery->deliveryMethodsList(), ['prompt' => '--- Select ---']) ?>
-            <?= $form->field($model->delivery, 'index')->textInput() ?>
-            <?= $form->field($model->delivery, 'address')->textarea(['rows' => 3]) ?>
+            <?= $form->field($model->delivery, 'method')->dropDownList($model->delivery->deliveryMethodsList(), ['prompt' => '--- Select ---','class'=>''])->label('Метод доставки') ?>
+            <?= $form->field($model->delivery, 'index')->textInput()->label('Индекс') ?>
+            <?= $form->field($model->delivery, 'address')->textarea(['rows' => 3])->label('Адрес доставки') ?>
         </div>
     </div>
 
     <div class="box box-default">
-        <div class="box-header with-border">Note</div>
+        <div class="box-header with-border">Комментарий к заказу</div>
         <div class="box-body">
-            <?= $form->field($model, 'note')->textarea(['rows' => 3]) ?>
+            <?= $form->field($model, 'note')->textarea(['rows' => 3])->label('Комментарий') ?>
         </div>
     </div>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Отмена',\yii\helpers\Url::previous(), ['class' => 'btn btn-danger']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

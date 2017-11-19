@@ -4,6 +4,7 @@ namespace shop\forms\manage\Shop\Order;
 
 use shop\entities\Shop\Order\Order;
 use shop\forms\CompositeForm;
+use shop\helpers\OrderHelper;
 
 /**
  * @property DeliveryForm $delivery
@@ -12,10 +13,12 @@ use shop\forms\CompositeForm;
 class OrderEditForm extends CompositeForm
 {
     public $note;
+    public $current_status;
 
     public function __construct(Order $order, array $config = [])
     {
         $this->note = $order->note;
+        $this->current_status = $order->current_status;
         $this->delivery = new DeliveryForm($order);
         $this->customer = new CustomerForm($order);
         parent::__construct($config);
@@ -25,6 +28,7 @@ class OrderEditForm extends CompositeForm
     {
         return [
             [['note'], 'string'],
+            [['current_status'], 'integer'],
         ];
     }
 

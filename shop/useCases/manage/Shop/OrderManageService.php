@@ -22,13 +22,13 @@ class OrderManageService
     public function edit($id, OrderEditForm $form): void
     {
         $order = $this->orders->get($id);
-
         $order->edit(
             new CustomerData(
                 $form->customer->phone,
                 $form->customer->name
             ),
-            $form->note
+            $form->note,
+            $form->current_status
         );
 
         $order->setDeliveryInfo(
@@ -38,7 +38,6 @@ class OrderManageService
                 $form->delivery->address
             )
         );
-
         $this->orders->save($order);
     }
 

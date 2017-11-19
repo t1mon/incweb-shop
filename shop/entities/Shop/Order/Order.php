@@ -5,8 +5,10 @@ namespace shop\entities\Shop\Order;
 use lhs\Yii2SaveRelationsBehavior\SaveRelationsBehavior;
 use shop\entities\Shop\DeliveryMethod;
 use shop\entities\User\User;
+use shop\helpers\OrderHelper;
 use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
+use yii\db\Exception;
 use yii\helpers\Json;
 
 /**
@@ -46,10 +48,13 @@ class Order extends ActiveRecord
         return $order;
     }
 
-    public function edit(CustomerData $customerData, $note): void
+    public function edit(CustomerData $customerData, $note, $current_status): void
     {
         $this->customerData = $customerData;
         $this->note = $note;
+       // $this->current_status = $current_status;
+        $this->addStatus($current_status);
+
     }
 
     public function setDeliveryInfo(DeliveryMethod $method, DeliveryData $deliveryData): void
@@ -131,6 +136,10 @@ class Order extends ActiveRecord
 
     private function addStatus($value): void
     {
+        foreach ($this->statuses as $status){
+            if ($status->value === $value && $this->current_status!=$value)
+                throw  new \DomainException('Выбранный вами статус заказа уже был создан ранее');
+        }
         $this->statuses[] = new Status($value, time());
         $this->current_status = $value;
     }
