@@ -11,6 +11,7 @@ class QuantityForm extends Model
 
     public function __construct(Product $product = null, $config = [])
     {
+        $this->quantity = $this->quantity ? $this->quantity : 1000;
         if ($product) {
             $this->quantity = $product->quantity;
         }

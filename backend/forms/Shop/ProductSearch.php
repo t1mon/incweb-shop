@@ -39,6 +39,7 @@ class ProductSearch extends Model
             'query' => $query,
             'sort' => [
                 'defaultOrder' => ['id' => SORT_DESC]
+                //'defaultOrder'=>['quantity' => SORT_ASC]
             ]
         ]);
 

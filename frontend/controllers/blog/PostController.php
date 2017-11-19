@@ -8,6 +8,7 @@ use shop\readModels\Blog\PostReadRepository;
 use shop\readModels\Blog\TagReadRepository;
 use shop\useCases\Blog\CommentService;
 use Yii;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 
@@ -19,6 +20,21 @@ class PostController extends Controller
     private $posts;
     private $categories;
     private $tags;
+
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                          'roles' => ['admin'],
+                    ],
+                ],
+            ],
+        ];
+    }
 
     public function __construct(
         $id,

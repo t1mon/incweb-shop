@@ -19,6 +19,7 @@ use yii\helpers\Inflector;
  * @property PhotosForm $photos
  * @property TagsForm $tags
  * @property ValueForm[] $values
+ * * @property $weight
  */
 class ProductCreateForm extends CompositeForm
 {
@@ -37,6 +38,7 @@ class ProductCreateForm extends CompositeForm
         $this->categories = new CategoriesForm();
         $this->photos = new PhotosForm();
         $this->tags = new TagsForm();
+        $this->weight = $this->weight ? $this->weight : 0;
         $this->values = array_map(function (Characteristic $characteristic) {
             return new ValueForm($characteristic);
         }, Characteristic::find()->orderBy('sort')->all());
@@ -46,7 +48,7 @@ class ProductCreateForm extends CompositeForm
     public function rules(): array
     {
         return [
-            [['brandId', 'code', 'name', 'weight'], 'required'],
+            [['brandId', 'code', 'name','weight'], 'required'],
             [['code', 'name','slug'], 'string', 'max' => 255],
             [['brandId'], 'integer'],
             [['name'], 'unique','targetClass' => Product::class, 'filter' => $this->name ? Inflector::slug($this->name) : null],

@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'dataProvider' => $dataProvider,
                 'filterModel' => $searchModel,
                 'rowOptions' => function (Product $model) {
-                    return $model->quantity <= 0 ? ['style' => 'background: #fdc'] : [];
+                    return $model->quantity <= 1 ? ['style' => 'background: #fdc'] : [];
                 },
                 'columns' => [
                     [

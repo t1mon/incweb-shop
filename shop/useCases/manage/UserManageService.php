@@ -75,4 +75,5 @@ class UserManageService
         $this->repository->remove($user);
         $this->newsletter->unsubscribe($user->email);
     }
+
 }

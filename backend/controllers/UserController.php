@@ -2,8 +2,10 @@
 
 namespace backend\controllers;
 
+use DrewM\MailChimp\MailChimp;
 use shop\forms\manage\User\UserCreateForm;
 use shop\forms\manage\User\UserEditForm;
+use shop\services\newsletter\Newsletter;
 use shop\useCases\manage\UserManageService;
 use Yii;
 use shop\entities\User\User;
@@ -79,7 +81,7 @@ class UserController extends Controller
             try {
                 $user = $this->service->create($form);
                 return $this->redirect(['view', 'id' => $user->id]);
-            } catch (\DomainException $e) {
+            } catch (\Exception $e) {
                 Yii::$app->errorHandler->logException($e);
                 Yii::$app->session->setFlash('error', $e->getMessage());
             }
@@ -123,7 +125,12 @@ class UserController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->service->remove($id);
+        try {
+            $this->service->remove($id);
+        }catch (\Exception $e){
+            Yii::$app->errorHandler->logException($e);
+            Yii::$app->session->setFlash('error', $e->getMessage());
+    }
         return $this->redirect(['index']);
     }
 

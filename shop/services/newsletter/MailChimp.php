@@ -32,4 +32,5 @@ class MailChimp implements Newsletter
             throw new \RuntimeException($error);
         }
     }
+
 }
