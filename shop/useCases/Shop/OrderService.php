@@ -43,8 +43,8 @@ class OrderService
 
     public function checkout($userId, OrderForm $form): Order
     {
-        $user = $this->users->get($userId);
-
+        $user = $userId ? $this->users->get($userId) : $userId ;
+        $user_id = $user ? $user->id : null ;
         $products = [];
 
         $items = array_map(function (CartItem $item) {
@@ -60,7 +60,7 @@ class OrderService
         }, $this->cart->getItems());
 
         $order = Order::create(
-            $user->id,
+            $user_id,
             new CustomerData(
                 $form->customer->phone,
                 $form->customer->name
