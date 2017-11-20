@@ -5137,7 +5137,7 @@ footer .flicker img {
 	margin-bottom: 20px;
 	padding-bottom: 20px;
 }
-.item-detail-page .in-stoke {
+.item-detail-page .in-stoke, .not-stoke {
 	border: 1px solid #ebebeb;
 	display: inline-block;
 	padding: 10px 20px;
@@ -5148,6 +5148,13 @@ footer .flicker img {
 	margin-right: 5px;
 	font-size: 14px;
 }
+.item-detail-page .not-stoke i {
+	color: rgb(69, 145, 221);
+	margin-right: 5px;
+	font-size: 14px;
+}
+.item-detail-page .blue-tooltip + .tooltip > .tooltip-inner {background-color: rgb(69, 145, 221);}
+.item-detail-page .blue-tooltip + .tooltip > .tooltip-arrow { border-bottom-color:rgb(69, 145, 221); }
 .item-detail-page .stars {
 	display: inline-block;
 	width: auto;

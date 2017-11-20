@@ -43,8 +43,8 @@ $reviews_count =$product->getActiveReviewCount($reviews);
                                 <ul class="slides">
                                 <?php foreach ($product->photos as $i => $photo): ?>
 
-                                   <li data-thumb="<?= $photo->getThumbFileUrl('file', 'catalog_origin') ?>">
-                                       <img class="img-responsive" src="<?= $photo->getThumbFileUrl('file', 'catalog_product_main') ?>"  alt="<?= Html::encode($product->name) ?>">
+                                   <li data-thumb="<?= $photo->getThumbFileUrl('file', 'thumb') ?>">
+                                       <img class="img-responsive zoom_05" data-zoom-image="<?= $photo->getImageFileUrl('file') ?>" src="<?= $photo->getThumbFileUrl('file', 'catalog_product_main') ?>"  alt="<?= Html::encode($product->name) ?>">
                                     </li>
 
                                 <?php endforeach; ?>
@@ -67,7 +67,8 @@ $reviews_count =$product->getActiveReviewCount($reviews);
                                     <?php endforeach; ?>
                                     </span>
                                     <div class="some-info no-border"> <br>
-                                        <div class="in-stoke"> <i class="fa fa-check-circle"></i> В наличии</div>
+                                        <!--<div class="in-stoke"> <i class="fa fa-check-circle"></i> В наличии</div>-->
+                                        <div class="not-stoke blue-tooltip" data-toggle="tooltip" title='Под заказ. Срок выполнения заказа от 10 рабочих дней'> <i class="fa fa-info-circle" ></i>Под заказ </div>
                                         <div class="stars">
                                             <?php
                                             echo StarRating::widget([
@@ -106,9 +107,9 @@ $reviews_count =$product->getActiveReviewCount($reviews);
 
                                         <?= $form->field($cartForm, 'quantity')->textInput()->label(false) ?>
                                         <?= Html::submitButton('Добавить в корзину', ['class' => 'btn btn-small btn-dark']) ?>
-                                        <a href="#." class="share-sec" onclick="compare.add('47');"><i class="ion-shuffle"></i></a>
-                                        <button type="button" data-toggle="tooltip" class="btn btn-default" title="Compare this Product" onclick="compare.add('');"><i class="fa fa-exchange"></i></button>
-                                        <a class="share-sec" href="<?= Url::to(['/cabinet/wishlist/add', 'id' => $product->id]) ?>" data-method="post"><i class="fa fa-heart-o"></i></a> </div>
+
+                                        <a href="#."  class="share-sec" onclick="compare.add('47');"><i class="ion-shuffle"></i></a>
+                                        <a class="share-sec"  href="<?= Url::to(['/cabinet/wishlist/add', 'id' => $product->id]) ?>" data-method="post"><i class="fa fa-heart-o"></i></a> </div>
                                 </div>
                                 <!-- SHARE -->
                                 <div class="col-sm-12">
@@ -250,6 +251,7 @@ $reviews_count =$product->getActiveReviewCount($reviews);
                     </div>
                 </div>
 
+
                 <!--======= RELATED PRODUCTS =========-->
                 <section class="section-p-60px new-arrival new-arri-w-slide">
                     <div class="container">
@@ -350,13 +352,19 @@ $reviews_count =$product->getActiveReviewCount($reviews);
             </section>
 
 <?php
+$this->registerJs('$("[data-toggle=\'tooltip\']").tooltip(); $("[data-toggle=\'popover\']").popover(); ', \yii\web\View::POS_READY);
 $script = <<<JS
-$(".zoom_05").elevateZoom({ 
-	zoomType	: "inner", 
-	cursor		: "crosshair"
+ 
+$(".zoom_05").elevateZoom({
+tint:true, 
+tintColour:'#F90', 
+tintOpacity:0.5 
 }); 
+
 
 JS;
 
 $this->registerJs($script,yii\web\View::POS_READY);
+//$this->registerJsFile('js/zoomsl-3.0.min.js');
+//$this->registerJsFile('/js/zoomsl-3.0.min.js');
 ?>

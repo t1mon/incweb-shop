@@ -26,6 +26,7 @@ class AppAsset extends AssetBundle
         //'//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js',
         //'js/jqueryMy.js',
         //'js/jquery-1.11.3.js',
+        'js/jquery.elevatezoom.js',
         'js/modernizr.js',
         'js/bootstrap.min.js',
         'js/wow.min.js',

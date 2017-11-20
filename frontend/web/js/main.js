@@ -2,12 +2,13 @@
 /* 		SEBIAN MAIN JS FILE
 /*-----------------------------------------------------------------------------------*/
 $(document).ready(function($) {
-"use strict"
+"use strict";
+
 /*-----------------------------------------------------------------------------------*/
 /* 	LOADER
 /*-----------------------------------------------------------------------------------*/
 $(window).load(function() {
-	$("#loader").delay(500).fadeOut("slow");
+	$("#loader").fadeOut("slow");
 });
 
 /*-----------------------------------------------------------------------------------*/
@@ -27,7 +28,7 @@ wow.init();
 /*-----------------------------------------------------------------------------------*/
 /* 	PRODUCTS SLIDER
 /*-----------------------------------------------------------------------------------*/
-$(".product-slides").owlCarousel({ 
+$(".product-slides").owlCarousel({
     items : 1,
 	autoplay:false,
 	autoplayHoverPause:true,
@@ -35,12 +36,12 @@ $(".product-slides").owlCarousel({
 	navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
 	lazyLoad:true,
 	nav: true,
-	animateOut: 'fadeOut'	
+	animateOut: 'fadeOut'
 });
 /*-----------------------------------------------------------------------------------*/
 /* 	ABOUT CLIENT SLIDER
 /*-----------------------------------------------------------------------------------*/
-$(".clients-about-slider").owlCarousel({ 
+$(".clients-about-slider").owlCarousel({
 	autoplay:false,
 	autoplayHoverPause:true,
 	singleItem	: true,
@@ -63,7 +64,7 @@ $(".clients-about-slider").owlCarousel({
 /*-----------------------------------------------------------------------------------*/
 /* 	PRODUCTS SLIDER
 /*-----------------------------------------------------------------------------------*/
-$(".testi-slides").owlCarousel({ 
+$(".testi-slides").owlCarousel({
     items : 1,
 	autoplay:true,
 	loop:true,
@@ -72,13 +73,13 @@ $(".testi-slides").owlCarousel({
 	navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
 	lazyLoad:true,
 	nav: true,
-	animateOut: 'fadeOut'	
+	animateOut: 'fadeOut'
 });
 
 /*-----------------------------------------------------------------------------------*/
 /* 	ABOUT CLIENT SLIDER
 /*-----------------------------------------------------------------------------------*/
-$(".new-col-slide").owlCarousel({ 
+$(".new-col-slide").owlCarousel({
 	autoplay:false,
 	autoplayHoverPause:true,
 	singleItem	: true,
@@ -100,7 +101,7 @@ $(".new-col-slide").owlCarousel({
 /*-----------------------------------------------------------------------------------*/
 /* 		FEATURE SLIDER
 /*-----------------------------------------------------------------------------------*/
-$(".fur-slide").owlCarousel({ 
+$(".fur-slide").owlCarousel({
 	autoplay:true,
 	autoplayHoverPause:true,
 	singleItem	: true,
@@ -119,7 +120,7 @@ $(".fur-slide").owlCarousel({
 /*-----------------------------------------------------------------------------------*/
 /* 		CLIENTS LOGO SLIDE
 /*-----------------------------------------------------------------------------------*/
-$(".client-slide").owlCarousel({ 
+$(".client-slide").owlCarousel({
 	autoplay:true,
 	autoplayHoverPause:true,
 	singleItem	: true,
@@ -128,7 +129,7 @@ $(".client-slide").owlCarousel({
 	nav: false,
 	loop:true,
 	margin:30,
-	animateOut: 'fadeOut',	
+	animateOut: 'fadeOut',
 	responsive:{
         0:{
             items:1
@@ -141,12 +142,12 @@ $(".client-slide").owlCarousel({
         },
         1200:{
             items:4
-        }}	
+        }}
 });
 /*-----------------------------------------------------------------------------------*/
 /* 		BANNER ITEMS SLIDER
 /*-----------------------------------------------------------------------------------*/
-$(".bnr-items-slider").owlCarousel({ 
+$(".bnr-items-slider").owlCarousel({
 	autoplay:true,
 	autoplayHoverPause:true,
 	singleItem	: true,
@@ -155,7 +156,7 @@ $(".bnr-items-slider").owlCarousel({
 	nav: false,
 	loop:true,
 	margin:0,
-	animateOut: 'fadeOut',	
+	animateOut: 'fadeOut',
 	responsive:{
         0:{
             items:1
@@ -171,7 +172,7 @@ $(".bnr-items-slider").owlCarousel({
         },
         1600:{
             items:4
-        }}	
+        }}
 });
 
 /*-----------------------------------------------------------------------------------*/
@@ -216,15 +217,15 @@ jQuery('.tp-banner').show().revolution({
 	navigationStyle:"preview4",
 	parallax:"mouse",
 	parallaxBgFreeze:"on",
-	parallaxLevels:[7,4,3,2,5,4,3,2,1,0],												
-	keyboardNavigation:"on",						
+	parallaxLevels:[7,4,3,2,5,4,3,2,1,0],
+	keyboardNavigation:"on",
 	shadow:0,
 	fullWidth:"on",
 	fullScreen:"on",
-	shuffle:"off",						
-	autoHeight:"off",						
-	forceFullWidth:"off",	
-	fullScreenOffsetContainer:""	
+	shuffle:"off",
+	autoHeight:"off",
+	forceFullWidth:"off",
+	fullScreenOffsetContainer:""
 });
 
 /*-----------------------------------------------------------------------------------*/
@@ -240,8 +241,8 @@ jQuery('.tp-banner-fix').show().revolution({
 	navigationStyle:"preview4",
 	parallax:"mouse",
 	parallaxBgFreeze:"on",
-	parallaxLevels:[7,4,3,2,5,4,3,2,1,0],												
-	keyboardNavigation:"on",						
+	parallaxLevels:[7,4,3,2,5,4,3,2,1,0],
+	keyboardNavigation:"on",
 	fullWidth:"off",
 	fullScreen:"off"
 });
@@ -258,8 +259,8 @@ jQuery('.tp-banner-box').show().revolution({
 	navigationStyle:"preview4",
 	parallax:"mouse",
 	parallaxBgFreeze:"on",
-	parallaxLevels:[7,4,3,2,5,4,3,2,1,0],												
-	keyboardNavigation:"on",						
+	parallaxLevels:[7,4,3,2,5,4,3,2,1,0],
+	keyboardNavigation:"on",
 	fullWidth:"on",
 	fullScreen:"off"
 });
@@ -284,7 +285,7 @@ var offset = 300,
 //hide or show the "back to top" link
 $(window).scroll(function(){
 	( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
-	if( $(this).scrollTop() > offset_opacity ) { 
+	if( $(this).scrollTop() > offset_opacity ) {
 		$back_to_top.addClass('cd-fade-out');
 	}
 });
