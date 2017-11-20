@@ -141,7 +141,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <table class="table table-bordered" style="margin-bottom: 0">
                     <thead>
                     <tr>
-                        <th class="text-left">Дата заказа</th>
+                        <th class="text-left">Дата изменения статуса</th>
                         <th class="text-left">Статус</th>
                     </tr>
                     </thead>

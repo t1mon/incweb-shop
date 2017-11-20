@@ -9,13 +9,13 @@ use yii\grid\GridView;
 /* @var $searchModel backend\forms\Shop\CategorySearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Categories';
+$this->title = 'Категории';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-index">
 
     <p>
-        <?= Html::a('Create Category', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Добавить Категорию', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <div class="box">
@@ -25,6 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'filterModel' => $searchModel,
                 'columns' => [
                     [
+                        'label'=>'Имя Категории',
                         'attribute' => 'name',
                         'value' => function (Category $model) {
                             $indent = ($model->depth > 1 ? str_repeat('&nbsp;&nbsp;', $model->depth - 1) . ' ' : '');
@@ -41,8 +42,13 @@ $this->params['breadcrumbs'][] = $this->title;
                         'format' => 'raw',
                         'contentOptions' => ['style' => 'text-align: center'],
                     ],
-                    'slug',
+                   // 'slug',
                     'title',
+                    [
+                        'label'=>'ЧПУ для Категории',
+                        'attribute' => 'slug',
+                    ],
+
                     ['class' => ActionColumn::class],
                 ],
             ]); ?>

@@ -16,11 +16,11 @@ use yii\widgets\ActiveForm;
     <div class="box box-default">
         <div class="box-header with-border">Common</div>
         <div class="box-body">
-            <?= $form->field($model, 'parentId')->dropDownList($model->parentCategoriesList()) ?>
-            <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
-            <?= $form->field($model, 'slug')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'parentId')->dropDownList($model->parentCategoriesList())->label('Родительская категория') ?>
+            <?= $form->field($model, 'name')->textInput(['maxlength' => true])->label('Имя Категории') ?>
+            <?= $form->field($model, 'slug')->textInput(['maxlength' => true])->label('ЧПУ для Категории') ?>
             <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
-            <?= $form->field($model, 'description')->widget(CKEditor::className()) ?>
+            <?= $form->field($model, 'description')->widget(CKEditor::className())->label('Описание Категории') ?>
 
         </div>
     </div>
@@ -35,7 +35,7 @@ use yii\widgets\ActiveForm;
     </div>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

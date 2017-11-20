@@ -7,17 +7,17 @@ use yii\widgets\DetailView;
 /* @var $method shop\entities\Shop\DeliveryMethod */
 
 $this->title = $method->name;
-$this->params['breadcrumbs'][] = ['label' => 'DeliveryMethods', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Способы Доставки', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-view">
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $method->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $method->id], [
+        <?= Html::a('Редактировать', ['update', 'id' => $method->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Удалить', ['delete', 'id' => $method->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Вы уверены, что хотите удалить способ доставки: '.$method->name.'?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -29,8 +29,16 @@ $this->params['breadcrumbs'][] = $this->title;
                 'model' => $method,
                 'attributes' => [
                     'id',
-                    'name',
-                    'cost',
+                    //'name',
+                    [
+                        'label' => 'Имя Доставки',
+                        'attribute' => 'name',
+                    ],
+                    //'cost',
+                    [
+                        'label' => 'Стоимость',
+                        'attribute' => 'cost',
+                    ],
                     'min_weight',
                     'max_weight',
                 ],

@@ -3,8 +3,8 @@
 /* @var $this yii\web\View */
 /* @var $model shop\forms\manage\Shop\DeliveryMethodForm */
 
-$this->title = 'Create Delivery Method';
-$this->params['breadcrumbs'][] = ['label' => 'DeliveryMethods', 'url' => ['index']];
+$this->title = 'Добавление способа доставки';
+$this->params['breadcrumbs'][] = ['label' => 'Способы доставки', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="method-create">

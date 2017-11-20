@@ -4,10 +4,10 @@
 /* @var $method shop\entities\Shop\DeliveryMethod */
 /* @var $model shop\forms\manage\Shop\DeliveryMethodForm */
 
-$this->title = 'Update Delivery Method: ' . $method->name;
-$this->params['breadcrumbs'][] = ['label' => 'DeliveryMethods', 'url' => ['index']];
+$this->title = 'Редактирование способа доставки: ' . $method->name;
+$this->params['breadcrumbs'][] = ['label' => 'Способы Доставки', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $method->name, 'url' => ['view', 'id' => $method->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Редактирование';
 ?>
 <div class="method-update">
 

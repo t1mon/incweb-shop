@@ -10,13 +10,13 @@ use yii\grid\GridView;
 /* @var $searchModel backend\forms\Shop\CharacteristicSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Characteristics';
+$this->title = 'Характеристики';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-index">
 
     <p>
-        <?= Html::a('Create Characteristic', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Добавить Характеристику', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <div class="box">
@@ -26,6 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'filterModel' => $searchModel,
                 'columns' => [
                     [
+                        'label'=>'Имя Характеристики',
                         'attribute' => 'name',
                         'value' => function (Characteristic $model) {
                             return Html::a(Html::encode($model->name), ['view', 'id' => $model->id]);
@@ -40,6 +41,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         },
                     ],
                     [
+                        'label'=>'Обязательное поле',
                         'attribute' => 'required',
                         'filter' => $searchModel->requiredList(),
                         'format' => 'boolean',

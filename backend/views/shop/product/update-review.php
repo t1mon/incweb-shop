@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <?php if ($review->isActive())
-        echo Html::a('Дезактивировать', ['draft-review', 'id' => $product->id,'review_id'=>$review_id], ['class' => 'btn btn-danger', 'data-method' => 'post']);
+        echo Html::a('Деактивировать', ['draft-review', 'id' => $product->id,'review_id'=>$review_id], ['class' => 'btn btn-danger', 'data-method' => 'post']);
     else
         echo Html::a('Активировать', ['activate-review', 'id' => $product->id,'review_id'=>$review_id], ['class' => 'btn btn-success', 'data-method' => 'post']);
 

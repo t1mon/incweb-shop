@@ -4,10 +4,10 @@
 /* @var $category shop\entities\Shop\Category */
 /* @var $model shop\forms\manage\Shop\CategoryForm */
 
-$this->title = 'Update Category: ' . $category->name;
-$this->params['breadcrumbs'][] = ['label' => 'Categories', 'url' => ['index']];
+$this->title = 'Редактирование Категории: ' . $category->name;
+$this->params['breadcrumbs'][] = ['label' => 'Категории', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $category->name, 'url' => ['view', 'id' => $category->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Редактирование';
 ?>
 <div class="category-update">
 

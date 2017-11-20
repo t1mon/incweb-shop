@@ -4,10 +4,10 @@
 /* @var $characteristic shop\entities\Shop\Characteristic */
 /* @var $model shop\forms\manage\Shop\CharacteristicForm */
 
-$this->title = 'Update Characteristic: ' . $characteristic->name;
-$this->params['breadcrumbs'][] = ['label' => 'Characteristics', 'url' => ['index']];
+$this->title = 'Редактирование Характеристики: ' . $characteristic->name;
+$this->params['breadcrumbs'][] = ['label' => 'Характеристики', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $characteristic->name, 'url' => ['view', 'id' => $characteristic->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Редактирование';
 ?>
 <div class="characteristic-update">
 

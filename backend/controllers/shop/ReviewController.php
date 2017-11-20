@@ -37,10 +37,11 @@ class ReviewController extends Controller
     {
         $searchModel = new ReviewSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
+        $data = Review::find()->asArray(false)->all();
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'data' => $data
         ]);
     }
 

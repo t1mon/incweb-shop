@@ -14,8 +14,8 @@ use yii\widgets\ActiveForm;
 
     <div class="box box-default">
         <div class="box-body">
-            <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
-            <?= $form->field($model, 'cost')->textInput() ?>
+            <?= $form->field($model, 'name')->textInput(['maxlength' => true])->label('Имя Доставки') ?>
+            <?= $form->field($model, 'cost')->textInput()->label('Стоимость') ?>
             <?= $form->field($model, 'minWeight')->textInput() ?>
             <?= $form->field($model, 'maxWeight')->textInput() ?>
             <?= $form->field($model, 'sort')->textInput() ?>

@@ -8,17 +8,17 @@ use yii\widgets\DetailView;
 /* @var $characteristic shop\entities\Shop\Characteristic */
 
 $this->title = $characteristic->name;
-$this->params['breadcrumbs'][] = ['label' => 'Characteristics', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Характеристики', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-view">
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $characteristic->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $characteristic->id], [
+        <?= Html::a('Редактировать', ['update', 'id' => $characteristic->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Удалить', ['delete', 'id' => $characteristic->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Вы уверены, что хотите удалить характеристику: '.$characteristic->name.'?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -30,15 +30,33 @@ $this->params['breadcrumbs'][] = $this->title;
                 'model' => $characteristic,
                 'attributes' => [
                     'id',
-                    'name',
+                    //'name',
+                    [
+                        'label' => 'Имя Характеристики',
+                        'attribute' => 'name',
+                    ],
                     [
                         'attribute' => 'type',
                         'value' => CharacteristicHelper::typeName($characteristic->type),
                     ],
-                    'sort',
-                    'required:boolean',
-                    'default',
+                    //'sort',
                     [
+                        'label' => 'Сортировка',
+                        'attribute' => 'sort',
+                    ],
+                    //'required:boolean',
+                    [
+                        'label' => 'Обязательно для заполнения',
+                        'attribute' => 'required',
+                        'format' => 'boolean',
+                    ],
+                    //'default',
+                    [
+                        'label' => 'Значение по умолчанию',
+                        'attribute' => 'default',
+                    ],
+                    [
+                        'label' => 'Варианты',
                         'attribute' => 'variants',
                         'value' => implode(PHP_EOL, $characteristic->variants),
                         'format' => 'ntext',

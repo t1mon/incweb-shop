@@ -9,13 +9,13 @@ use yii\grid\GridView;
 /* @var $searchModel backend\forms\Shop\TagSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Tags';
+$this->title = 'Тэги';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-index">
 
     <p>
-        <?= Html::a('Create Tag', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Создать Тэг', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <div class="box">
@@ -26,13 +26,18 @@ $this->params['breadcrumbs'][] = $this->title;
                 'columns' => [
                     'id',
                     [
+                        'label'=>'Имя Тэга',
                         'attribute' => 'name',
                         'value' => function (Tag $model) {
                             return Html::a(Html::encode($model->name), ['view', 'id' => $model->id]);
                         },
                         'format' => 'raw',
                     ],
-                    'slug',
+                    //'slug',
+                    [
+                        'label'=>'ЧПУ для Тэга',
+                        'attribute' => 'slug'
+                    ],
                     ['class' => ActionColumn::class],
                 ],
             ]); ?>

@@ -8,66 +8,66 @@ use yii\bootstrap\ActiveForm;
 /* @var $product shop\entities\Shop\Product\Product */
 /* @var $model shop\forms\manage\Shop\Product\ProductEditForm */
 
-$this->title = 'Update Product: ' . $product->name;
-$this->params['breadcrumbs'][] = ['label' => 'Products', 'url' => ['index']];
+$this->title = 'Редактирование продукта: ' . $product->name;
+$this->params['breadcrumbs'][] = ['label' => 'Продукты', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $product->name, 'url' => ['view', 'id' => $product->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Редактирование';
 ?>
 <div class="product-update">
 
     <?php $form = ActiveForm::begin(); ?>
 
     <div class="box box-default">
-        <div class="box-header with-border">Common</div>
+        <div class="box-header with-border">Общее заполнение</div>
         <div class="box-body">
             <div class="row">
                 <div class="col-md-4">
-                    <?= $form->field($model, 'brandId')->dropDownList($model->brandsList()) ?>
+                    <?= $form->field($model, 'brandId')->dropDownList($model->brandsList())->label('Бренд') ?>
                 </div>
                 <div class="col-md-2">
-                    <?= $form->field($model, 'code')->textInput(['maxlength' => true]) ?>
+                    <?= $form->field($model, 'code')->textInput(['maxlength' => true])->label('Код продукта') ?>
                 </div>
                 <div class="col-md-6">
-                    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+                    <?= $form->field($model, 'name')->textInput(['maxlength' => true])->label('Название продукта') ?>
                 </div>
                 <div class="col-md-6">
-                    <?= $form->field($model, 'slug')->textInput(['maxlength' => true]) ?>
+                    <?= $form->field($model, 'slug')->textInput(['maxlength' => true])->label('ЧПУ Продукта (адрес формируется автоматически)') ?>
                 </div>
             </div>
-            <?= $form->field($model, 'description')->widget(CKEditor::className()) ?>
+            <?= $form->field($model, 'description')->widget(CKEditor::className())->label('Описание продукта') ?>
         </div>
     </div>
 
     <div class="box box-default">
-        <div class="box-header with-border">Warehouse</div>
+        <div class="box-header with-border">Склад</div>
         <div class="box-body">
-            <?= $form->field($model, 'weight')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'weight')->textInput(['maxlength' => true])->label('Вес') ?>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-6">
             <div class="box box-default">
-                <div class="box-header with-border">Categories</div>
+                <div class="box-header with-border">Категории продукта</div>
                 <div class="box-body">
-                    <?= $form->field($model->categories, 'main')->dropDownList($model->categories->categoriesList(), ['prompt' => '']) ?>
-                    <?= $form->field($model->categories, 'others')->checkboxList($model->categories->categoriesList()) ?>
+                    <?= $form->field($model->categories, 'main')->dropDownList($model->categories->categoriesList(), ['prompt' => ''])->label('Основная категория') ?>
+                    <?= $form->field($model->categories, 'others')->checkboxList($model->categories->categoriesList())->label('Остальные') ?>
                 </div>
             </div>
         </div>
         <div class="col-md-6">
             <div class="box box-default">
-                <div class="box-header with-border">Tags</div>
+                <div class="box-header with-border">Тэги</div>
                 <div class="box-body">
-                    <?= $form->field($model->tags, 'existing')->checkboxList($model->tags->tagsList()) ?>
-                    <?= $form->field($model->tags, 'textNew')->textInput() ?>
+                    <?= $form->field($model->tags, 'existing')->checkboxList($model->tags->tagsList())->label('Существующие тэги') ?>
+                    <?= $form->field($model->tags, 'textNew')->textInput()->label('Новый тэг') ?>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="box box-default">
-        <div class="box-header with-border">Characteristics</div>
+        <div class="box-header with-border">Характеристики</div>
         <div class="box-body">
             <?php foreach ($model->values as $i => $value): ?>
                 <?php if ($variants = $value->variantsList()): ?>
@@ -89,7 +89,7 @@ $this->params['breadcrumbs'][] = 'Update';
     </div>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

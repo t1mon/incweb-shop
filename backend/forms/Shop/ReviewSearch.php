@@ -41,7 +41,7 @@ class ReviewSearch extends Review
      */
     public function search($params)
     {
-        $query = Review::find();
+        $query = Review::find()->orderBy(['active'=>SORT_ASC]);
 
         // add conditions that should always apply here
 

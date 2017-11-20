@@ -4,10 +4,10 @@
 /* @var $tag shop\entities\Shop\Tag */
 /* @var $model shop\forms\manage\Shop\TagForm */
 
-$this->title = 'Update Tag: ' . $tag->name;
-$this->params['breadcrumbs'][] = ['label' => 'Tags', 'url' => ['index']];
+$this->title = 'Редактирование Тэга: ' . $tag->name;
+$this->params['breadcrumbs'][] = ['label' => 'Тэги', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $tag->name, 'url' => ['view', 'id' => $tag->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Редактирование';
 ?>
 <div class="tag-update">
 

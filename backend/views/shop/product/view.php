@@ -19,22 +19,22 @@ use yii\widgets\DetailView;
 /* @var $modificationsProvider yii\data\ActiveDataProvider */
 
 $this->title = $product->name;
-$this->params['breadcrumbs'][] = ['label' => 'Products', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Продукты', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-view">
 
     <p>
         <?php if ($product->isActive()): ?>
-            <?= Html::a('Draft', ['draft', 'id' => $product->id], ['class' => 'btn btn-primary', 'data-method' => 'post']) ?>
+            <?= Html::a('Снять с публикации', ['draft', 'id' => $product->id], ['class' => 'btn btn-warning', 'data-method' => 'post']) ?>
         <?php else: ?>
-            <?= Html::a('Activate', ['activate', 'id' => $product->id], ['class' => 'btn btn-success', 'data-method' => 'post']) ?>
+            <?= Html::a('Активировать', ['activate', 'id' => $product->id], ['class' => 'btn btn-success', 'data-method' => 'post']) ?>
         <?php endif; ?>
-        <?= Html::a('Update', ['update', 'id' => $product->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $product->id], [
+        <?= Html::a('Редактировать', ['update', 'id' => $product->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Удалить', ['delete', 'id' => $product->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Вы уверены, что хотите удалить продукт ' .$product->name.'?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -52,45 +52,63 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="row">
         <div class="col-md-6">
             <div class="box">
-                <div class="box-header with-border">Common</div>
+                <div class="box-header with-border">Общее описание</div>
                 <div class="box-body">
                     <?= DetailView::widget([
                         'model' => $product,
                         'attributes' => [
                             'id',
                             [
+                                'label'=>'Статус',
                                 'attribute' => 'status',
                                 'value' => ProductHelper::statusLabel($product->status),
                                 'format' => 'raw',
                             ],
                             [
+                                'label'=>'Бренд',
                                 'attribute' => 'brand_id',
                                 'value' => ArrayHelper::getValue($product, 'brand.name'),
                             ],
-                            'code',
-                            'name',
+                            //'code',
                             [
+                                'label' => 'Код продукта',
+                                'attribute' => 'code',
+                            ],
+                           // 'name',
+                            [
+                                'label' => 'Название товара',
+                                'attribute' => 'name',
+                            ],
+                            [
+                                'label' => 'Категория',
                                 'attribute' => 'category_id',
                                 'value' => ArrayHelper::getValue($product, 'category.name'),
                             ],
                             [
-                                'label' => 'Other categories',
+                                'label' => 'Остальные категории',
                                 'value' => implode(', ', ArrayHelper::getColumn($product->categories, 'name')),
                             ],
                             [
-                                'label' => 'Tags',
+                                'label' => 'Тэги',
                                 'value' => implode(', ', ArrayHelper::getColumn($product->tags, 'name')),
                             ],
-                            'quantity',
+                            //'quantity',
                             [
+                                'label' => 'Кол-во на складе',
+                                'attribute' => 'quantity',
+                            ],
+                            [
+                                'label' => 'Вес',
                                 'attribute' => 'weight',
                                 'value' => WeightHelper::format($product->weight),
                             ],
                             [
+                                'label' => 'Текущая цена продукта',
                                 'attribute' => 'price_new',
                                 'value' => PriceHelper::format($product->price_new),
                             ],
                             [
+                                'label' => 'Цена без скидки',
                                 'attribute' => 'price_old',
                                 'value' => PriceHelper::format($product->price_old),
                             ],
@@ -98,9 +116,9 @@ $this->params['breadcrumbs'][] = $this->title;
                     ]) ?>
                     <br />
                     <p>
-                        <?= Html::a('Change Price', ['price', 'id' => $product->id], ['class' => 'btn btn-primary']) ?>
+                        <?= Html::a('Изменить цену', ['price', 'id' => $product->id], ['class' => 'btn btn-primary']) ?>
                         <?php if ($product->canChangeQuantity()): ?>
-                            <?= Html::a('Change Quantity', ['quantity', 'id' => $product->id], ['class' => 'btn btn-primary']) ?>
+                            <?= Html::a('Изменить количество', ['quantity', 'id' => $product->id], ['class' => 'btn btn-primary']) ?>
                         <?php endif; ?>
                     </p>
                 </div>
@@ -109,7 +127,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="col-md-6">
 
             <div class="box box-default">
-                <div class="box-header with-border">Characteristics</div>
+                <div class="box-header with-border">Характеристики</div>
                 <div class="box-body">
 
                     <?= DetailView::widget([
@@ -127,7 +145,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 
     <div class="box">
-        <div class="box-header with-border">Description</div>
+        <div class="box-header with-border">Описание продукта</div>
         <div class="box-body">
             <?= Yii::$app->formatter->asHtml($product->description, [
                 'Attr.AllowedRel' => array('nofollow'),
@@ -140,23 +158,36 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 
     <div class="box" id="modifications">
-        <div class="box-header with-border">Modifications</div>
+        <div class="box-header with-border">Модификации продукта</div>
         <div class="box-body">
             <p>
-                <?= Html::a('Add Modification', ['shop/modification/create', 'product_id' => $product->id], ['class' => 'btn btn-success']) ?>
+                <?= Html::a('Добавить модификацию', ['shop/modification/create', 'product_id' => $product->id], ['class' => 'btn btn-success']) ?>
             </p>
             <?= GridView::widget([
                 'dataProvider' => $modificationsProvider,
                 'columns' => [
-                    'code',
-                    'name',
+                    //'code',
                     [
+                        'label' => 'Код продукта',
+                        'attribute' => 'code',
+                    ],
+                    //'name',
+                    [
+                        'label' => 'Имя продукта',
+                        'attribute' => 'name',
+                    ],
+                    [
+                        'label' => 'Цена',
                         'attribute' => 'price',
                         'value' => function (Modification $model) {
                             return PriceHelper::format($model->price);
                         },
                     ],
-                    'quantity',
+                   // 'quantity',
+                    [
+                        'label' => 'Количество',
+                        'attribute' => 'quantity',
+                    ],
                     [
                         'class' => ActionColumn::class,
                         'controller' => 'shop/modification',
@@ -191,7 +222,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 
     <div class="box" id="photos">
-        <div class="box-header with-border">Photos</div>
+        <div class="box-header with-border">Фото продукта</div>
         <div class="box-body">
 
             <div class="row">
@@ -235,7 +266,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ]) ?>
 
             <div class="form-group">
-                <?= Html::submitButton('Upload', ['class' => 'btn btn-success']) ?>
+                <?= Html::submitButton('Загрузить', ['class' => 'btn btn-success']) ?>
             </div>
 
             <?php ActiveForm::end(); ?>

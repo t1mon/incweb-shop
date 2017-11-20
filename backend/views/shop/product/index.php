@@ -11,13 +11,13 @@ use yii\grid\GridView;
 /* @var $searchModel backend\forms\Shop\ProductSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Products';
+$this->title = 'Продукты';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-index">
 
     <p>
-        <?= Html::a('Create Product', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Добавить продукт', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <div class="box">
@@ -30,14 +30,20 @@ $this->params['breadcrumbs'][] = $this->title;
                 },
                 'columns' => [
                     [
+                            'label' => 'Фото',
                         'value' => function (Product $model) {
                             return $model->mainPhoto ? Html::img($model->mainPhoto->getThumbFileUrl('file', 'admin')) : null;
                         },
                         'format' => 'raw',
                         'contentOptions' => ['style' => 'width: 100px'],
                     ],
-                    'id',
                     [
+                        'label' => 'Код продукта',
+                        'attribute' => 'code',
+                    ],
+                    //'id',
+                    [
+                        'label' => 'Название товара',
                         'attribute' => 'name',
                         'value' => function (Product $model) {
                             return Html::a(Html::encode($model->name), ['view', 'id' => $model->id]);
@@ -45,19 +51,26 @@ $this->params['breadcrumbs'][] = $this->title;
                         'format' => 'raw',
                     ],
                     [
+                        'label' => 'Категория',
                         'attribute' => 'category_id',
                         'filter' => $searchModel->categoriesList(),
                         'value' => 'category.name',
                     ],
                     [
+                        'label' => 'Цена',
                         'attribute' => 'price_new',
                         'value' => function (Product $model) {
                             return PriceHelper::format($model->price_new);
                         },
                     ],
-                    'quantity',
-                    'code',
+                    //'quantity',
                     [
+                        'label' => 'Кол-во на складе',
+                        'attribute' => 'quantity',
+                    ],
+                    //'code',
+                    [
+                        'label' => 'Статус',
                         'attribute' => 'status',
                         'filter' => $searchModel->statusList(),
                         'value' => function (Product $model) {

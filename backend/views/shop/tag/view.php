@@ -7,17 +7,17 @@ use yii\widgets\DetailView;
 /* @var $tag shop\entities\Shop\Tag */
 
 $this->title = $tag->name;
-$this->params['breadcrumbs'][] = ['label' => 'Tags', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Тэги', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-view">
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $tag->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $tag->id], [
+        <?= Html::a('Редактировать', ['update', 'id' => $tag->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Удалить', ['delete', 'id' => $tag->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Вы уверены, что хотите удалить Бренд: '.$tag->name.'?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -29,8 +29,16 @@ $this->params['breadcrumbs'][] = $this->title;
                 'model' => $tag,
                 'attributes' => [
                     'id',
-                    'name',
-                    'slug',
+                    //'name',
+                    //'slug',
+                    [
+                        'label'=>'Имя Тэга',
+                        'attribute' => 'name'
+                    ],
+                    [
+                        'label'=>'ЧПУ для Тэга',
+                        'attribute' => 'slug'
+                    ],
                 ],
             ]) ?>
         </div>
