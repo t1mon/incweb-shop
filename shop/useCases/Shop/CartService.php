@@ -31,6 +31,8 @@ class CartService
 
     public function set($id, $quantity): void
     {
+        if(!$quantity)
+            throw new \DomainException('<strong>Ошибка!</strong> Проверьте вводимое количество продукта');
         $this->cart->set($id, $quantity);
     }
 

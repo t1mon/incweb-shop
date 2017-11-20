@@ -405,7 +405,7 @@ AppAsset::register($this);
     <!--======= SUB BANNER =========-->
     <section class="sub-banner animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
         <div class="container">
-            <h4><?=isset($this->params['breadcrumbs']) ? $this->title: ''?></h4>
+            <h1><?=isset($this->params['breadcrumbs']) ? $this->title: ''?></h1>
             <!-- Breadcrumb -->
             <?= Breadcrumbs::widget([
                 'tag' => 'ol class="breadcrumb"',

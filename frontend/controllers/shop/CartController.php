@@ -120,4 +120,16 @@ class CartController extends Controller
         }
         return $this->redirect(['index']);
     }
+
+    public function actionClear()
+    {
+        try {
+            $this->service->clear();
+            Yii::$app->session->setFlash('success', '<strong>Корзина</strong> очищена');
+        } catch (\DomainException $e) {
+            Yii::$app->errorHandler->logException($e);
+            Yii::$app->session->setFlash('error', $e->getMessage());
+        }
+        return $this->redirect(['index']);
+    }
 }
