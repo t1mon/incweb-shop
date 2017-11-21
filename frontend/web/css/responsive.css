@@ -517,6 +517,12 @@ p.intro-small {
 .header-style-2.header-style-3 nav{
 	background:#fff;
 }
+	.shopping-cart .cart-details li{
+		min-height: 60px;
+	}
+	.discount-margin{
+		margin-bottom: 10px;
+	}
 }
  @media (max-width:640px) {
 .seasonals ul li {

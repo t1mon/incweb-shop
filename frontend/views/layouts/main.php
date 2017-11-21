@@ -14,6 +14,7 @@ use yii\widgets\Breadcrumbs;
 use shop\entities\Shop\Category;
 
 AppAsset::register($this);
+\frontend\widgets\JgrowlWidget::widget();
 ?>
 <?php $this->beginPage() ?>
 
@@ -413,12 +414,13 @@ AppAsset::register($this);
             ]) ?>
         </div>
     </section>
+<!---
 <div class="container">
         <div class="row">
             <?= Alert::widget() ?>
         </div>
 </div>
-
+--->
 
     <?= $content ?>
 

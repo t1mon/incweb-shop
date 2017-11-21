@@ -5427,6 +5427,10 @@ footer .flicker img {
 	display: inline-block;
 	text-align: center;
 }
+.shopping-cart li textarea {
+	margin-top: 10px;
+	border: 1px solid #ebebeb;
+}
 .shopping-cart li a.btn{
 	letter-spacing:0px;
 	font-size:12px;
@@ -5498,7 +5502,7 @@ footer .flicker img {
 	position: absolute;
 	margin-top: 30px;
 }
-.shopping-cart .cart-ship-info input {
+.shopping-cart .cart-ship-info input  {
 	border: 1px solid #ebebeb;
 	width: 60px;
 	font-family: 'Montserrat', sans-serif;
@@ -5662,10 +5666,11 @@ footer .flicker img {
 .wish-list .shopping-cart .media-body h6{
 	margin-top:80px;
 }
-input:focus {
+input:focus, textarea:focus {
 	border: 1px solid #272727 !important;
 	outline: none !important;
 }
+
 .contact-box .boxes-in {
 	border: none;
 	text-align: left;
@@ -6034,4 +6039,25 @@ input:focus {
 	background-color: #af5875;
 	opacity: 1;
 	color: #fff;
+}
+.jGrowl-closer {
+	background-color: #FF8800;
+	opacity: 0;
+}
+.jgrowl{
+	border:none;
+	color: #fff;
+	width: 99%;
+	height: 10px;
+	font-size: 12px;
+	font-weight: bold;
+}
+.jgrowl.success{
+	background-color: #77B300;
+}
+.jgrowl.warning{
+	background-color: #FF8800;
+}
+.jgrowl.danger{
+	background-color: #CC0000;
 }

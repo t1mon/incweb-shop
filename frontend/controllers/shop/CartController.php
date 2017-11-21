@@ -3,6 +3,7 @@
 namespace frontend\controllers\shop;
 
 use shop\forms\Shop\AddToCartForm;
+use shop\helpers\JgrowlMessageHelper;
 use shop\readModels\Shop\ProductReadRepository;
 use shop\useCases\Shop\CartService;
 use Yii;
@@ -125,7 +126,7 @@ class CartController extends Controller
     {
         try {
             $this->service->clear();
-            Yii::$app->session->setFlash('success', '<strong>Корзина</strong> очищена');
+            Yii::$app->session->setFlash('info', '<strong>Корзина</strong> очищена!');
         } catch (\DomainException $e) {
             Yii::$app->errorHandler->logException($e);
             Yii::$app->session->setFlash('error', $e->getMessage());

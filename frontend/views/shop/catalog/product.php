@@ -355,11 +355,11 @@ $reviews_count =$product->getActiveReviewCount($reviews);
 $this->registerJs('$("[data-toggle=\'tooltip\']").tooltip(); $("[data-toggle=\'popover\']").popover(); ', \yii\web\View::POS_READY);
 $script = <<<JS
  
-$(".zoom_05").elevateZoom({
+/*$(".zoom_05").elevateZoom({
 tint:true, 
 tintColour:'#F90', 
 tintOpacity:0.5 
-}); 
+}); */
 
 
 JS;

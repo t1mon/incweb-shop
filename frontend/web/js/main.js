@@ -10,7 +10,7 @@ $(document).ready(function($) {
 $(window).load(function() {
 	$("#loader").fadeOut("slow");
 });
-
+    //$.jGrowl("Stick this!", { sticky: true, position: 'top-left' });
 /*-----------------------------------------------------------------------------------*/
 /*		STICKY NAVIGATION
 /*-----------------------------------------------------------------------------------*/

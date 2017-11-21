@@ -8,12 +8,13 @@ class CustomerForm extends Model
 {
     public $phone;
     public $name;
+    public $email;
 
     public function rules(): array
     {
         return [
-            [['phone', 'name'], 'required'],
-            [['phone', 'name'], 'string', 'max' => 255],
+            [['phone', 'name','email'], 'required'],
+            [['phone', 'name','email'], 'string', 'max' => 255],
         ];
     }
 }
