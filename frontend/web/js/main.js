@@ -178,6 +178,19 @@ $(".bnr-items-slider").owlCarousel({
 /*-----------------------------------------------------------------------------------*/
 /*    POPUP VIDEO
 /*-----------------------------------------------------------------------------------*/
+    $('.popup-link').magnificPopup({
+        type: 'image',
+		mainClass: 'mypopup',
+        zoom: {
+            enabled: true,
+            duration: 300 // продолжительность анимации. Не меняйте данный параметр также и в CSS
+        },
+        gallery:{
+        	enabled:true,
+            navigateByImgClick: true,
+            preload: [0, 1]
+        }
+    });
 $('.popup-vedio').magnificPopup({
 	type: 'inline',
 	fixedContentPos: false,

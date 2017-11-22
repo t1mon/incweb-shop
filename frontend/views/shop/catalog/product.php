@@ -44,7 +44,7 @@ $reviews_count =$product->getActiveReviewCount($reviews);
                                 <?php foreach ($product->photos as $i => $photo): ?>
 
                                    <li data-thumb="<?= $photo->getThumbFileUrl('file', 'thumb') ?>">
-                                       <img class="img-responsive zoom_05" data-zoom-image="<?= $photo->getImageFileUrl('file') ?>" src="<?= $photo->getThumbFileUrl('file', 'catalog_product_main') ?>"  alt="<?= Html::encode($product->name) ?>">
+                                       <a class="popup-link" href="<?= $photo->getThumbFileUrl('file','catalog_origin') ?>"><img class="img-responsive zoom_05" data-zoom-image="<?= $photo->getImageFileUrl('file') ?>" src="<?= $photo->getThumbFileUrl('file', 'catalog_product_main') ?>"  alt="<?= Html::encode($product->name) ?>"></a>
                                     </li>
 
                                 <?php endforeach; ?>
@@ -353,18 +353,4 @@ $reviews_count =$product->getActiveReviewCount($reviews);
 
 <?php
 $this->registerJs('$("[data-toggle=\'tooltip\']").tooltip(); $("[data-toggle=\'popover\']").popover(); ', \yii\web\View::POS_READY);
-$script = <<<JS
- 
-/*$(".zoom_05").elevateZoom({
-tint:true, 
-tintColour:'#F90', 
-tintOpacity:0.5 
-}); */
-
-
-JS;
-
-$this->registerJs($script,yii\web\View::POS_READY);
-//$this->registerJsFile('js/zoomsl-3.0.min.js');
-//$this->registerJsFile('/js/zoomsl-3.0.min.js');
 ?>

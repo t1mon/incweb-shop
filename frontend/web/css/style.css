@@ -6047,17 +6047,50 @@ input:focus, textarea:focus {
 .jgrowl{
 	border:none;
 	color: #fff;
-	width: 99%;
-	height: 10px;
+	width:300px;
 	font-size: 12px;
 	font-weight: bold;
 }
 .jgrowl.success{
-	background-color: #77B300;
+	background-color: #dff0d8;
+	border-color: #d0e9c6;
+	color: #3c763d;
+}
+.jgrowl.info{
+	background-color: #d9edf7;
+	border-color: #bcdff1;
+	color: #31708f;
 }
 .jgrowl.warning{
-	background-color: #FF8800;
+	background-color: #fcf8e3;
+	border-color: #faf2cc;
+	color: #8a6d3b;
 }
 .jgrowl.danger{
-	background-color: #CC0000;
+	background-color: #f2dede;
+	border-color: #ebcccc;
+	color: #a94442;
+}
+
+
+.mypopup , img.mfp-img{
+	background-color:rgba(255,255,255,0.5);
+}
+
+.mfp-arrow-left:after,
+.mfp-arrow-left:before,
+.mfp-arrow-right:after,
+.mfp-arrow-right:before,
+.mfp-a,
+.mfp-b {
+	color: black;
+}
+
+button.mfp-arrow {
+}
+
+button.mfp-arrow-left {
+}
+
+button.mfp-arrow-right {
 }

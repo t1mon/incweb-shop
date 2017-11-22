@@ -133,6 +133,7 @@ AppAsset::register($this);
               <li class="active"><a href="<?=Url::to(['/shop/catalog/index'])?>">Каталог</a></li>
               <li class="active"><a href="<?=Url::to(['/blog/post/index'])?>">Блог</a></li>
               <li class="active"><a href="<?=Url::to(['/contact/index'])?>">Контакты</a></li>
+              <li><a href="tel:+6494461709">61709</a></li>
               <!--
           <li><a href="12-contact.html">PAGES</a>
             <ul class="dropdown">
@@ -409,7 +410,7 @@ AppAsset::register($this);
             <h1><?=isset($this->params['breadcrumbs']) ? $this->title: ''?></h1>
             <!-- Breadcrumb -->
             <?= Breadcrumbs::widget([
-                'tag' => 'ol class="breadcrumb"',
+                'tag' => 'ol',
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>
         </div>

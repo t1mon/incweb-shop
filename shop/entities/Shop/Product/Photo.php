@@ -57,7 +57,7 @@ class Photo extends ActiveRecord
                     'catalog_list' => ['width' => 270, 'height' => 340],
                     'catalog_product_main' => ['processor' => [new WaterMarker(600, 400, '@frontend/web/image/logo.png'), 'process']],
                     'catalog_product_additional' => ['width' => 66, 'height' => 66],
-                    'catalog_origin' => ['processor' => [new WaterMarker(1280, 720, '@frontend/web/image/logo.png'), 'process']],
+                    'catalog_origin' => ['processor' => [new WaterMarker(1024, 768, '@frontend/web/image/logo.png'), 'process']],
                 ],
             ],
         ];

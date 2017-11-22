@@ -169,7 +169,7 @@ $js = <<<JS
 $('#submit-check').click(function(e) {
       if (!$("#checkbox3-4").prop("checked")){ 
           e.preventDefault();
-            $.jGrowl("Вы не дали свое согласие на обработку персональных данных!!!!!!!!!!!!!!!!!!!!!!!!!!!!",{theme:'jgrowl danger',life:5000});
+            $.jGrowl("Вы не дали свое согласие на обработку персональных данных!",{theme:'jgrowl danger',life:5000});
     }
           if (!$("#checkbox3-1").prop("checked")){ 
           e.preventDefault();
