@@ -35,6 +35,10 @@ class NetworkController extends Controller
         $network = $client->getId();
         $attributes = $client->getUserAttributes();
         $identity = ArrayHelper::getValue($attributes, 'id');
+        $userName = $attributes['first_name'] . ' ' . $attributes['last_name'];
+        $email = $attributes['email'];
+        print_r($attributes);
+        die();
 
         try {
             $user = $this->service->auth($network, $identity);
