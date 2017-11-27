@@ -177,7 +177,7 @@ use yii\helpers\Html;
                                                 <td width="169" height="45" align="center">
                                                     <div class="imgpop">
                                                         <a target="_blank" href="#">
-                                                            <img src="<?=\Yii::getAlias('@static/mail-image/logo-dark-new.png')?>" alt="" border="0" width="169" height="45" style="display:block; border:none; outline:none; text-decoration:none;">
+                                                            <img src="<?=\Yii::getAlias('@static/mail-image/logo-dark-new.png')?>" alt="" border="0"  style="display:block; border:none; outline:none; text-decoration:none;">
                                                         </a>
                                                     </div>
                                                 </td>
