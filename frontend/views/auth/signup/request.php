@@ -60,7 +60,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             <!-- CREATE AN ACCOUNT -->
                             <li class="col-md-12">
                                 <div class="checkbox">
-                                    <input id="checkbox1" class="styled" type="checkbox">
+                                    <input id="checkbox1" class="styled" type="checkbox" checked>
                                     <label for="checkbox1"> ДАЮ СВОЕ СОГЛАСИЕ НА ОБРАБОТКУ ПЕРСОНАЛЬНЫХ ДАННЫХ</label>
                                 </div>
                             </li>
@@ -87,5 +87,5 @@ $('#submit-check').click(function(e) {
 })
 
 JS;
-\Yii::$app->view->registerJs($js,\yii\web\View::POS_END);
+\Yii::$app->view->registerJs($js,\yii\web\View::POS_READY);
 ?>

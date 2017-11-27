@@ -140,7 +140,7 @@ class User extends ActiveRecord implements AggregateRoot
     public function requestPasswordReset(): void
     {
         if (!empty($this->password_reset_token) && self::isPasswordResetTokenValid($this->password_reset_token)) {
-            throw new \DomainException('Password resetting is already requested.');
+            throw new \DomainException('Сброс пароля уже запрошен.');
         }
         $this->password_reset_token = Yii::$app->security->generateRandomString() . '_' . time();
     }
@@ -148,7 +148,7 @@ class User extends ActiveRecord implements AggregateRoot
     public function resetPassword($password): void
     {
         if (empty($this->password_reset_token)) {
-            throw new \DomainException('Password resetting is not requested.');
+            throw new \DomainException('Не требуется сброс пароля.');
         }
         $this->setPassword($password);
         $this->password_reset_token = null;

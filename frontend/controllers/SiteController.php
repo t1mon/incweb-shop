@@ -2,6 +2,7 @@
 namespace frontend\controllers;
 
 use shop\helpers\JgrowlMessageHelper;
+use shop\helpers\SendEmailHelper;
 use yii\web\Controller;
 
 /**
@@ -36,8 +37,12 @@ class SiteController extends Controller
 /*
     public function actionMail()
     {
+        //print_r(\Yii::$app->params['dkim']['privateKey']);
+        $send = new SendEmailHelper(\Yii::$app->params['dkim']);
+        echo $send->getPrivate();
+        die();
         $this->layout = '@common/mail/layouts/html';
         return $this->render('@common/mail/auth/signup/confirm-html');
-    }
-*/
+    } */
+
 }

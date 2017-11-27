@@ -44,15 +44,17 @@ class SignupService
             $this->users->save($user);
             $this->roles->assign($user->id, Rbac::ROLE_USER);
         });
-
+        $dkim = \Yii::$app->params['dkim'];
+        $signer = new \Swift_Signers_DKIMSigner(trim($dkim['privateKey']), trim($dkim['domainName']), trim($dkim['selector']));
         $sent = $this->mailer
             ->compose(
                 ['html' => 'auth/signup/confirm-html', 'text' => 'auth/signup/confirm-text'],
                 ['user' => $user]
             )
             ->setTo($user->email)
-            ->setSubject('Подтверждение регистрации ' . Yii::$app->name)
-            ->send();
+            ->setSubject('Подтверждение регистрации ' . Yii::$app->name);
+        $sent->getSwiftMessage()->attachSigner($signer);
+        $sent->send();
         if (!$sent) {
             throw new \RuntimeException('Sending error.');
         }
