@@ -42,7 +42,7 @@ class User extends ActiveRecord implements AggregateRoot
         $user = new User();
         $user->username = $username;
         $user->email = $email;
-        $user->phone = $phone;
+        $user->phone = $user->trimPhone($phone);
         $user->setPassword(!empty($password) ? $password : Yii::$app->security->generateRandomString());
         $user->created_at = time();
         $user->status = self::STATUS_ACTIVE;
@@ -54,14 +54,14 @@ class User extends ActiveRecord implements AggregateRoot
     {
         $this->username = $username;
         $this->email = $email;
-        $this->phone = $phone;
+        $this->phone = $this->trimPhone($phone);
         $this->updated_at = time();
     }
 
     public function editProfile(string $email, string $phone): void
     {
         $this->email = $email;
-        $this->phone = $phone;
+        $this->phone = $this->trimPhone($phone);
         $this->updated_at = time();
     }
 
@@ -70,7 +70,7 @@ class User extends ActiveRecord implements AggregateRoot
         $user = new User();
         $user->username = $username;
         $user->email = $email;
-        $user->phone = $phone;
+        $user->phone = $user->trimPhone($phone);
         $user->setPassword($password);
         $user->created_at = time();
         $user->status = self::STATUS_WAIT;
@@ -276,5 +276,11 @@ class User extends ActiveRecord implements AggregateRoot
     private function generateAuthKey()
     {
         $this->auth_key = Yii::$app->security->generateRandomString();
+    }
+
+    private function trimPhone($phone)
+    {
+
+        return preg_replace('/[^\d]/', '', $phone);
     }
 }

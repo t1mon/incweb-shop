@@ -7,31 +7,85 @@
 use yii\helpers\Html;
 use kartik\form\ActiveForm;
 
-$this->title = 'Signup';
+$this->title = 'Регистрация';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-signup">
-    <h1><?= Html::encode($this->title) ?></h1>
+<div class="container">
+    <div class="shopping-cart">
 
-    <p>Please fill out the following fields to signup:</p>
+        <!-- SHOPPING INFORMATION -->
+        <div class="cart-ship-info">
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <h6>ДАННЫЕ ДЛЯ РЕГИСТРАЦИИ</h6>
+                    <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
+                        <ul class="row">
+                            <li class="col-md-12">
+                                <label> *UserName
+                                    <?= $form->field($model, 'username')->textInput(['autofocus' => true])->label(false) ?>
+                                </label>
+                            </li>
+                            <!-- Name -->
+                            <li class="col-md-6">
+                                <label> *ИМЯ
+                                    <input name="first-name" value="" placeholder="" type="text">
+                                </label>
+                            </li>
+                            <!-- LAST NAME -->
+                            <li class="col-md-6">
+                                <label> *ФАМИЛИЯ
+                                    <input name="last-name" value="" placeholder="" type="text">
+                                </label>
+                            </li>
+                            <!-- EMAIL ADDRESS -->
+                            <li class="col-md-6">
+                                <label> *EMAIL
+                                    <?= $form->field($model, 'email')->label(false) ?>
+                                </label>
+                            </li>
+                            <!-- PHONE -->
+                            <li class="col-md-6">
+                                <label> *ТЕЛЕФОН
+                                    <?= $form->field($model, 'phone')->widget(\yii\widgets\MaskedInput::className(), [
+                                        'mask' => '+7(999)-999-9999',
+                                    ])->label(false) ?>
+                                </label>
+                            </li>
+                            <li class="col-md-12">
+                                <label> *ПАРОЛЬ
+                                    <?= $form->field($model, 'password')->passwordInput()->label(false) ?>
+                                </label>
+                            </li>
 
-    <div class="row">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
-
-                <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
-
-                <?= $form->field($model, 'email') ?>
-
-                <?= $form->field($model, 'phone', ['addon' => ['prepend' => ['content'=>'+']]]) ?>
-
-                <?= $form->field($model, 'password')->passwordInput() ?>
-
-                <div class="form-group">
-                    <?= Html::submitButton('Signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
+                            <!-- CREATE AN ACCOUNT -->
+                            <li class="col-md-12">
+                                <div class="checkbox">
+                                    <input id="checkbox1" class="styled" type="checkbox">
+                                    <label for="checkbox1"> ДАЮ СВОЕ СОГЛАСИЕ НА ОБРАБОТКУ ПЕРСОНАЛЬНЫХ ДАННЫХ</label>
+                                </div>
+                            </li>
+                            <div class="form-group">
+                                <?= Html::submitButton('Зарегистироваться', ['id'=>'submit-check','class' => 'btn btn-dark', 'name' => 'signup-button']) ?>
+                            </div>
+                        </ul>
+                    <?php ActiveForm::end(); ?>
                 </div>
-
-            <?php ActiveForm::end(); ?>
+            </div>
         </div>
     </div>
 </div>
+
+
+
+<?php
+$js = <<<JS
+$('#submit-check').click(function(e) {
+      if (!$("#checkbox1").prop("checked")){ 
+          e.preventDefault();
+            $.jGrowl("Вы не дали свое согласие на обработку персональных данных!",{theme:'jgrowl danger',life:5000});
+    }
+})
+
+JS;
+\Yii::$app->view->registerJs($js,\yii\web\View::POS_END);
+?>

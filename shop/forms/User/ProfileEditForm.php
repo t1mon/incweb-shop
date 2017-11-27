@@ -26,7 +26,7 @@ class ProfileEditForm  extends Model
             [['phone', 'email'], 'required'],
             ['email', 'email'],
             [['email'], 'string', 'max' => 255],
-            [['phone'], 'integer'],
+            ['phone','match', 'pattern' => '/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/'],
             [['phone', 'email'], 'unique', 'targetClass' => User::class, 'filter' => ['<>', 'id', $this->_user->id]],
         ];
     }

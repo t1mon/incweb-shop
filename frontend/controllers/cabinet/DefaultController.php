@@ -2,6 +2,8 @@
 
 namespace frontend\controllers\cabinet;
 
+use shop\entities\User\User;
+use shop\repositories\NotFoundException;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 
@@ -29,6 +31,17 @@ class DefaultController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $user = $this->findModel(\Yii::$app->user->id);
+
+        return $this->render('index',['user'=>$user]);
+    }
+
+    protected function findModel($id)
+    {
+        if (($model = User::findOne($id)) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundException('The requested page does not exist.');
+        }
     }
 }

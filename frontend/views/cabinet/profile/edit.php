@@ -7,26 +7,32 @@
 use kartik\form\ActiveForm;
 use yii\helpers\Html;
 
-$this->title = 'Edit Profile';
-$this->params['breadcrumbs'][] = ['label' => 'Cabinet', 'url' => ['cabinet/default/index']];
-$this->params['breadcrumbs'][] = 'Profile';
+$this->title = 'Редактирование профиля';
+$this->params['breadcrumbs'][] = ['label' => 'Профиль', 'url' => ['cabinet/default/index']];
+$this->params['breadcrumbs'][] = 'Редактирование';
 ?>
-<div class="user-update">
-
+<div class="container">
     <div class="row">
-        <div class="col-sm-6">
+        <div class="user-update" style="font-family: initial">
 
-            <?php $form = ActiveForm::begin(); ?>
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
 
-            <?= $form->field($model, 'email')->textInput(['maxLength' => true]) ?>
-            <?= $form->field($model, 'phone', ['addon' => ['prepend' => ['content'=>'+']]])->textInput(['maxLength' => true]) ?>
+                    <?php $form = ActiveForm::begin(); ?>
 
-            <div class="form-group">
-                <?= Html::submitButton('Save', ['class' => 'btn btn-primary']) ?>
+                    <?= $form->field($model, 'email')->textInput(['maxLength' => true]) ?>
+                    <?= $form->field($model, 'phone')->textInput(['maxLength' => true])->widget(\yii\widgets\MaskedInput::className(), [
+                        'mask' => '+7(999)-999-9999',
+                    ])->label('Телефон') ?>
+
+                    <div class="form-group">
+                        <?= Html::submitButton('Сохранить', ['class' => 'btn btn-dark']) ?>
+                    </div>
+
+                    <?php ActiveForm::end(); ?>
+                </div>
             </div>
 
-            <?php ActiveForm::end(); ?>
         </div>
     </div>
-
 </div>

@@ -115,20 +115,29 @@ $reviews_count =$product->getActiveReviewCount($reviews);
                                 <div class="col-sm-12">
                                     <ul class="share-with">
                                         <li>
-                                            <p>ПОДЕЛИТЬСЯ:</p>
+                                            <!-- Put this script tag to the <head> of your page -->
+                                            <script type="text/javascript" src="https://vk.com/js/api/share.js?95" charset="windows-1251"></script>
+
+                                            <!-- Put this script tag to the place, where the Share button will be -->
+                                            <script type="text/javascript">
+                                                document.write(VK.Share.button(false,{type: "round", text: "Репостнуть"}));
+                                                </script>
+                                        </li>
+                                        <li>
+                                            <!-- Put this script tag to the <head> of your page -->
+                                            <script type="text/javascript" src="//vk.com/js/api/openapi.js?150"></script>
+
+                                            <script type="text/javascript">
+                                                VK.init({apiId: 6273822, onlyWidgets: true});
+                                            </script>
+
+                                            <!-- Put this div tag to the place, where the Like block will be -->
+                                            <div id="vk_like"></div>
+                                            <script type="text/javascript">
+                                                VK.Widgets.Like("vk_like", {type: "button"});
+                                            </script>
                                         </li>
                                     </ul>
-                                        <script type="text/javascript">(function() {
-                                                if (window.pluso)if (typeof window.pluso.start == "function") return;
-                                                if (window.ifpluso==undefined) { window.ifpluso = 1;
-                                                    var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
-                                                    s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
-                                                    s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
-                                                    var h=d[g]('body')[0];
-                                                    h.appendChild(s);
-                                                }})();</script>
-                                        <div class="pluso" data-background="transparent" data-options="medium,square,line,horizontal,counter,theme=06" data-services="vkontakte,facebook,twitter,odnoklassniki,google,moimir"></div>
-
                                 </div>
                             </div>
                             <?php ActiveForm::end() ?>
@@ -354,3 +363,4 @@ $reviews_count =$product->getActiveReviewCount($reviews);
 <?php
 $this->registerJs('$("[data-toggle=\'tooltip\']").tooltip(); $("[data-toggle=\'popover\']").popover(); ', \yii\web\View::POS_READY);
 ?>
+

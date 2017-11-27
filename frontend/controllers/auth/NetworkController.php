@@ -37,7 +37,10 @@ class NetworkController extends Controller
         $identity = ArrayHelper::getValue($attributes, 'id');
         $userName = $attributes['first_name'] . ' ' . $attributes['last_name'];
         $email = $attributes['email'];
-        print_r($attributes);
+        $accessToken = $client->getAccessToken()->getToken();
+
+        print_r($accessToken);
+
         die();
 
         try {

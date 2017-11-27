@@ -8,48 +8,68 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Url;
 
-$this->title = 'Login';
+$this->title = 'Авторизация';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<div class="container">
 
-<div class="row">
-    <div class="col-sm-6">
-        <div class="well">
-            <h2>New Customer</h2>
-            <p><strong>Register Account</strong></p>
-            <p>By creating an account you will be able to shop faster, be up to date on an order's status,
-                and keep track of the orders you have previously made.</p>
-            <a href="<?= Html::encode(Url::to(['/auth/signup/request'])) ?>" class="btn btn-primary">Continue</a>
-        </div>
-        <div class="well">
-            <h2>Social Login</h2>
-            <?= yii\authclient\widgets\AuthChoice::widget([
-                'baseAuthUrl' => ['auth/network/auth']
-            ]); ?>
-        </div>
-    </div>
-    <div class="col-sm-6">
-        <div class="well">
-            <h2>Returning Customer</h2>
-            <p><strong>I am a returning customer</strong></p>
+    <div class="shopping-cart">
 
-            <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
+        <!-- SHOPPING INFORMATION -->
+        <div class="cart-ship-info">
+            <div class="row">
 
-            <?= $form->field($model, 'username')->textInput() ?>
+                <!-- ESTIMATE SHIPPING & TAX -->
+                <div class="col-sm-6 col-sm-offset-3">
+                    <div class="order-place" style="margin-bottom: 50px">
+                    <h6>АВТОРИЗАЦИЯ</h6>
+                        <a href="<?= Html::encode(Url::to(['/auth/network/auth','authclient'=>'vk'])) ?>">
+                            <img src="<?= Yii::getAlias('@web/image/login_vkontakte.png') ?>" style="max-width: 189px;" alt="Вход на сайт через Вконтакте">
+                        </a>
+                        <h5>Авторизоваться через: <?= yii\authclient\widgets\AuthChoice::widget([
+                            'baseAuthUrl' => ['auth/network/auth']
+                            ]); ?></h5>
+                        <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
+                        <ul class="row">
+                            <!-- Name -->
+                            <li class="col-md-12">
+                                <label> *EMAIL
+                                    <?= $form->field($model, 'username')->textInput()->label(false) ?>
+                                </label>
+                            </li>
+                            <li class="col-md-12">
+                                <label> *ПАРОЛЬ
+                                    <?= $form->field($model, 'password')->passwordInput()->label(false) ?>
+                                </label>
+                            </li>
+                            <!-- SHIP TO BILLING ADDRESS -->
+                            <li class="col-md-6">
+                                <div class="checkbox">
+                                    <?=Html::checkbox('rememberMe',['id'=>'loginform-rememberme','class'=>'styled'])?>
+                                    <label for="loginform-rememberme"> ЗАПОМНИТЬ МЕНЯ </label>
+                                </div>
+                            </li>
+                            <label>  Если вы забыли свой пароль, вы можете <?= Html::a('выполнить сброс.', ['auth/reset/request']) ?></label>
+                        </ul>
+                        <?= Html::submitButton('ВОЙТИ', ['class' => 'btn btn-dark', 'name' => 'login-button']) ?>
+                        <?php ActiveForm::end(); ?>
+                    </div>
+                </div>
 
-            <?= $form->field($model, 'password')->passwordInput() ?>
+                <!-- SUB TOTAL --> <!--
+                <div class="col-sm-5">
+                    <div class="order-place">
+                        <h6>ЗАРЕГЕСТРИРОВАТЬ АККАУНТ</h6>
+                        <p>
+                            Создав учетную запись, вы сможете делать покупки быстрее, быть в курсе состояния заказа и отслеживать заказы, которые вы ранее делали.
+                        </p>
 
-            <?= $form->field($model, 'rememberMe')->checkbox() ?>
 
-            <div style="color:#999;margin:1em 0">
-                If you forgot your password you can <?= Html::a('reset it', ['auth/reset/request']) ?>.
+                            <a href="<?= Html::encode(Url::to(['/auth/signup/request'])) ?>" class="btn btn-small btn-dark pull-right">РЕГИСТРАЦИЯ</a>
+
+                    </div>
+                </div> -->
             </div>
-
-            <div>
-                <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
-            </div>
-
-            <?php ActiveForm::end(); ?>
         </div>
     </div>
 </div>

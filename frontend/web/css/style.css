@@ -6094,3 +6094,10 @@ button.mfp-arrow-left {
 
 button.mfp-arrow-right {
 }
+#add-mod .form-control{
+	border: 1px solid #ebebeb;
+}
+
+#add-mod .selectpicker{
+	border: 1px solid #ebebeb;
+}

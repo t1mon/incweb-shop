@@ -33,4 +33,11 @@ class SiteController extends Controller
         $this->layout = 'home';
         return $this->render('index');
     }
+/*
+    public function actionMail()
+    {
+        $this->layout = '@common/mail/layouts/html';
+        return $this->render('@common/mail/auth/signup/confirm-html');
+    }
+*/
 }

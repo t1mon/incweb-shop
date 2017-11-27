@@ -35,7 +35,7 @@ class SignupForm extends Model
             ['password', 'string', 'min' => 6],
 
             ['phone', 'required'],
-            ['phone', 'integer'],
+            ['phone','match', 'pattern' => '/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/'],
             ['phone', 'unique', 'targetClass' => User::class, 'message' => 'Такой телефон уже зарегистрирован.'],
         ];
     }
