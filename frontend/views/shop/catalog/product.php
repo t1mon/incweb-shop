@@ -130,7 +130,11 @@ $reviews_count =$product->getActiveReviewCount($reviews);
                                             <!-- Put this div tag to the place, where the Like block will be -->
                                             <div id="vk_like"></div>
                                             <script type="text/javascript">
-                                                VK.Widgets.Like("vk_like", {type: "button"});
+                                                VK.Widgets.Like("vk_like", {
+                                                    type: "button",
+                                                    image:"<?= $product->mainPhoto->getThumbFileUrl('file','catalog_origin') ?>",
+                                                    url: "<?= Url::to(['/shop/catalog', 'id' => $product->id])?>"
+                                                });
                                             </script>
                                         </li>
                                     </ul>
