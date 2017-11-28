@@ -13,11 +13,15 @@ class MailChimp implements Newsletter
         $this->listId = $listId;
     }
 
-    public function subscribe($email): void
+    public function subscribe($email, $name, $surname): void
     {
         $this->client->post('lists/' . $this->listId . '/members', [
             'email_address' => $email,
             'status' => 'subscribed',
+            'merge_fields' => [
+                'FNAME'=> $name,
+                'LNAME'=> $surname
+            ]
         ]);
         if ($error = $this->client->getLastError()) {
             throw new \RuntimeException($error);

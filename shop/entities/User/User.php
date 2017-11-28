@@ -21,6 +21,8 @@ use yii\db\ActiveRecord;
  * @property string $email
  * @property string $email_confirm_token
  * @property string $phone
+ * @property string $name
+ * @property string $surname
  * @property string $auth_key
  * @property integer $status
  * @property integer $created_at
@@ -58,23 +60,27 @@ class User extends ActiveRecord implements AggregateRoot
         $this->updated_at = time();
     }
 
-    public function editProfile(string $email, string $phone): void
+    public function editProfile(string $email, string $phone, string $name, string $surname): void
     {
         $this->email = $email;
         $this->phone = $this->trimPhone($phone);
+        $this->name = $name;
+        $this->surname = $surname;
         $this->updated_at = time();
     }
 
-    public static function requestSignup(string $username, string $email, string $phone, string $password): self
+    public static function requestSignup(string $email, string $phone, string $password, string $name, string $surname): self
     {
         $user = new User();
-        $user->username = $username;
+        $user->username = $email;
         $user->email = $email;
         $user->phone = $user->trimPhone($phone);
         $user->setPassword($password);
         $user->created_at = time();
         $user->status = self::STATUS_WAIT;
         $user->email_confirm_token = Yii::$app->security->generateRandomString();
+        $user->name = $name;
+        $user->surname = $surname;
         $user->generateAuthKey();
         $user->recordEvent(new UserSignUpRequested($user));
         return $user;
@@ -90,13 +96,19 @@ class User extends ActiveRecord implements AggregateRoot
         $this->recordEvent(new UserSignUpConfirmed($this));
     }
 
-    public static function signupByNetwork($network, $identity): self
+    public static function signupByNetwork($network, $identity, $accessToken, $attributes): self
     {
         $user = new User();
         $user->created_at = time();
         $user->status = self::STATUS_ACTIVE;
+        $user->token_vk = $accessToken;
+        $user->email = $attributes['email'];
+        $user->name = $attributes['first_name'];
+        $user->surname = $attributes['last_name'];
+        $user->username = $attributes['screen_name'];
         $user->generateAuthKey();
         $user->networks = [Network::create($network, $identity)];
+        $user->recordEvent(new UserSignUpConfirmed($user));
         return $user;
     }
 
@@ -213,7 +225,14 @@ class User extends ActiveRecord implements AggregateRoot
     {
         return static::findOne(['username' => $username, 'status' => self::STATUS_ACTIVE]);
     }
-
+    public function getSurnameName()
+    {
+        if ($this->surname==="" && $this->name==="")
+            $fio = $this->username;
+        else
+            $fio = $this->surname." ".$this->name;
+        return $fio;
+    }
     /**
      * Finds user by password reset token
      *

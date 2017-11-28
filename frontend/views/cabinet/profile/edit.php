@@ -21,6 +21,8 @@ $this->params['breadcrumbs'][] = 'Редактирование';
                     <?php $form = ActiveForm::begin(); ?>
 
                     <?= $form->field($model, 'email')->textInput(['maxLength' => true]) ?>
+                    <?= $form->field($model, 'name')->label('Имя') ?>
+                    <?= $form->field($model, 'surname')->label('Фамилия')?>
                     <?= $form->field($model, 'phone')->textInput(['maxLength' => true])->widget(\yii\widgets\MaskedInput::className(), [
                         'mask' => '+7(999)-999-9999',
                     ])->label('Телефон') ?>

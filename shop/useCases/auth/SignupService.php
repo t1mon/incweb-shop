@@ -3,7 +3,6 @@
 namespace shop\useCases\auth;
 
 use shop\access\Rbac;
-use shop\dispatchers\EventDispatcher;
 use shop\entities\User\User;
 use shop\forms\auth\SignupForm;
 use shop\repositories\UserRepository;
@@ -35,10 +34,11 @@ class SignupService
     public function signup(SignupForm $form): void
     {
         $user = User::requestSignup(
-            $form->username,
             $form->email,
             $form->phone,
-            $form->password
+            $form->password,
+            $form->name,
+            $form->surname
         );
         $this->transaction->wrap(function () use ($user) {
             $this->users->save($user);

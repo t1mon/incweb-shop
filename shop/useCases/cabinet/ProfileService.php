@@ -17,7 +17,7 @@ class ProfileService
     public function edit($id, ProfileEditForm $form): void
     {
         $user = $this->users->get($id);
-        $user->editProfile($form->email, $form->phone);
+        $user->editProfile($form->email, $form->phone,$form->name,$form->surname);
         $this->users->save($user);
     }
 }

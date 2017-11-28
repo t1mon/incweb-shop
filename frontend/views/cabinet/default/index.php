@@ -22,13 +22,13 @@ $this->params['breadcrumbs'][] = $this->title;
         <thead>
         <tr>
             <th>Имя</th>
-            <td>Иван</td>
+            <td><?= $user->name?$user->name : 'Пусто' ?></td>
         </tr>
         </thead>
         <tbody>
         <tr>
             <th>Фамилия</th>
-            <td>Чмель</td>
+            <td><?= $user->surname?$user->surname : 'Пусто' ?></td>
         </tr>
         <tr>
             <th>Логин</th>

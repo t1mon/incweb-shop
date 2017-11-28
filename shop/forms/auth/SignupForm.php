@@ -13,6 +13,8 @@ class SignupForm extends Model
     public $email;
     public $phone;
     public $password;
+    public $name;
+    public $surname;
 
     /**
      * @inheritdoc
@@ -20,10 +22,10 @@ class SignupForm extends Model
     public function rules()
     {
         return [
-            ['username', 'trim'],
-            ['username', 'required'],
+            [['username','name','surname'], 'trim'],
+           // ['username', 'required'],
             ['username', 'unique', 'targetClass' => User::class, 'message' => 'Такое имя пользователя уже существует.'],
-            ['username', 'string', 'min' => 2, 'max' => 255],
+            [['username','name','surname'], 'string', 'min' => 2, 'max' => 255],
 
             ['email', 'trim'],
             ['email', 'required'],

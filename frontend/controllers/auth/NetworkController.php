@@ -35,16 +35,13 @@ class NetworkController extends Controller
         $network = $client->getId();
         $attributes = $client->getUserAttributes();
         $identity = ArrayHelper::getValue($attributes, 'id');
-        $userName = $attributes['first_name'] . ' ' . $attributes['last_name'];
-        $email = $attributes['email'];
+        //$name = $attributes['first_name'];
+        //$surname= $attributes['last_name'];
+        //$email = $attributes['email'];
         $accessToken = $client->getAccessToken()->getToken();
 
-        print_r($accessToken);
-
-        die();
-
         try {
-            $user = $this->service->auth($network, $identity);
+            $user = $this->service->auth($network, $identity, $accessToken, $attributes);
             Yii::$app->user->login(new Identity($user), Yii::$app->params['user.rememberMeDuration']);
         } catch (\DomainException $e) {
             Yii::$app->errorHandler->logException($e);

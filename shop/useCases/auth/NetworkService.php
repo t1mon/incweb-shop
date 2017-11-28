@@ -14,12 +14,12 @@ class NetworkService
         $this->users = $users;
     }
 
-    public function auth($network, $identity): User
+    public function auth($network, $identity, $accessToken, $attributes): User
     {
         if ($user = $this->users->findByNetworkIdentity($network, $identity)) {
             return $user;
         }
-        $user = User::signupByNetwork($network, $identity);
+        $user = User::signupByNetwork($network, $identity, $accessToken ,$attributes);
         $this->users->save($user);
         return $user;
     }

@@ -20,21 +20,16 @@ $this->params['breadcrumbs'][] = $this->title;
                     <h6>ДАННЫЕ ДЛЯ РЕГИСТРАЦИИ</h6>
                     <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
                         <ul class="row">
-                            <li class="col-md-12">
-                                <label> *UserName
-                                    <?= $form->field($model, 'username')->textInput(['autofocus' => true])->label(false) ?>
-                                </label>
-                            </li>
                             <!-- Name -->
                             <li class="col-md-6">
                                 <label> *ИМЯ
-                                    <input name="first-name" value="" placeholder="" type="text">
+                                    <?= $form->field($model, 'name')->label(false) ?>
                                 </label>
                             </li>
                             <!-- LAST NAME -->
                             <li class="col-md-6">
                                 <label> *ФАМИЛИЯ
-                                    <input name="last-name" value="" placeholder="" type="text">
+                                    <?= $form->field($model, 'surname')->label(false) ?>
                                 </label>
                             </li>
                             <!-- EMAIL ADDRESS -->
