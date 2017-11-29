@@ -16,16 +16,19 @@ class UserSignupRequestedListener
 
     public function handle(UserSignUpRequested $event): void
     {
+        $dkim = \Yii::$app->params['dkim'];
+        $signer = new \Swift_Signers_DKIMSigner(trim($dkim['privateKey']), trim($dkim['domainName']), trim($dkim['selector']));
         $sent = $this->mailer
             ->compose(
                 ['html' => 'auth/signup/confirm-html', 'text' => 'auth/signup/confirm-text'],
                 ['user' => $event->user]
             )
             ->setTo($event->user->email)
-            ->setSubject('Signup confirm')
-            ->send();
+            ->setSubject('Подтверждение регистрации ' . \Yii::$app->name);
+        $sent->getSwiftMessage()->attachSigner($signer);
+        $sent->send();
         if (!$sent) {
-            throw new \RuntimeException('Email sending error.');
+            throw new \RuntimeException('Sending error.');
         }
     }
 }

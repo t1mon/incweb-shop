@@ -35,17 +35,14 @@ class NetworkController extends Controller
         $network = $client->getId();
         $attributes = $client->getUserAttributes();
         $identity = ArrayHelper::getValue($attributes, 'id');
-        //$name = $attributes['first_name'];
-        //$surname= $attributes['last_name'];
-        //$email = $attributes['email'];
         $accessToken = $client->getAccessToken()->getToken();
 
         try {
             $user = $this->service->auth($network, $identity, $accessToken, $attributes);
             Yii::$app->user->login(new Identity($user), Yii::$app->params['user.rememberMeDuration']);
-        } catch (\DomainException $e) {
+        } catch (\Exception $e) {
             Yii::$app->errorHandler->logException($e);
-            Yii::$app->session->setFlash('error', $e->getMessage());
+            Yii::$app->session->setFlash('error', "ERROR: Что-то пошло не так!");
         }
     }
 }

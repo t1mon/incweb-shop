@@ -23,12 +23,16 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="col-sm-6 col-sm-offset-3">
                     <div class="order-place" style="margin-bottom: 50px">
                     <h6>АВТОРИЗАЦИЯ</h6>
-                        <a href="<?= Html::encode(Url::to(['/auth/network/auth','authclient'=>'vk'])) ?>">
-                            <img src="<?= Yii::getAlias('@web/image/login_vkontakte.png') ?>" style="max-width: 189px;" alt="Вход на сайт через Вконтакте">
+                        <center>
+                        <a  href="<?= Html::encode(Url::to(['/auth/network/auth','authclient'=>'vk'])) ?>">
+                            <img class="img-responsive" src="<?= Yii::getAlias('@web/image/auth-vk.png') ?>" style="max-width:400px; " alt="Вход на сайт через Вконтакте">
                         </a>
-                        <h5>Авторизоваться через: <?= yii\authclient\widgets\AuthChoice::widget([
+                        <h4>ИЛИ</h4>
+                        </center>
+                        <!-- <h5>Авторизоваться через: <?= yii\authclient\widgets\AuthChoice::widget([
                             'baseAuthUrl' => ['auth/network/auth']
-                            ]); ?></h5>
+                            ]); ?>
+                        </h5> -->
                         <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
                         <ul class="row">
                             <!-- Name -->
