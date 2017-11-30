@@ -47,7 +47,7 @@ class SignupController extends Controller
                 $this->service->signup($form);
                 Yii::$app->session->setFlash('success', 'Проверьте электронную почту для завершения регистрации.');
                 return $this->goHome();
-            } catch (\DomainException $e) {
+            } catch (\Exception $e) {
                 Yii::$app->errorHandler->logException($e);
                 Yii::$app->session->setFlash('error', $e->getMessage());
             }

@@ -19,6 +19,17 @@ class SignupForm extends Model
     /**
      * @inheritdoc
      */
+    public function beforeValidate()
+    {
+        $this->phone = preg_replace('/[^\d]/', '', $this->phone);
+        return parent::beforeValidate();
+    }
+
+    public function afterValidate()
+    {   $this->phone = mb_substr(preg_replace('/[^\d]/', '', $this->phone),1);
+        parent::afterValidate();
+    }
+
     public function rules()
     {
         return [
