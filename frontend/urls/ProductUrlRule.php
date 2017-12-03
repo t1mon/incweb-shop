@@ -24,15 +24,27 @@ class ProductUrlRule extends Object implements UrlRuleInterface
 
     public function parseRequest($manager, $request)
     {
-        if (preg_match('#^' . $this->prefix . '/(.*[a-z])$#is',$request->pathInfo, $matches)) {
+        if (preg_match('#^' . $this->prefix . '/(.*[a-z0-9])$#is',$request->pathInfo, $matches)) {
             $path = $matches['1'];
-            $chunks = explode('/', $path);
-            $slug = end($chunks);
-            if (!$product = $this->repository->findBySlug($slug)) {
+
+            //$chunks = explode('/', $path);
+            //$slug = end($chunks);
+
+            $result = $this->cache->getOrSet(['product_route', 'path' => $path], function () use ($path) {
+
+                if (!$product = $this->repository->findBySlug($path)) {
+                    return ['id' => null, 'path' => null];
+                }
+                return ['id' => $product->id];
+            });
+
+            if (empty($result['id'])) {
                 return false;
             }
 
-            return ['shop/catalog/product/',['id' => $product->id]];
+
+
+            return ['shop/catalog/product/',['id' => $result['id']]];
         }
         return false;
     }
@@ -40,11 +52,24 @@ class ProductUrlRule extends Object implements UrlRuleInterface
     public function createUrl($manager, $route, $params)
     {
         if ($route == 'shop/catalog/product'){
-            if(!$product = $this->repository->find($params['id'])){
-                throw new InvalidParamException('Undefined ID');
-            }
 
-            $url = $this->prefix . '/' .$product->slug;
+            if (empty($params['id'])) {
+                throw new InvalidParamException('Empty id.');
+            }
+            $id = $params['id'];
+
+            $url = $this->cache->getOrSet(['product_route', 'id' => $id], function () use ($id) {
+                if (!$product = $this->repository->find($id)) {
+                    return null;
+                }
+                return $this->prefix . '/' .$product->slug;
+            });
+
+            //if(!$product = $this->repository->find($params['id'])){
+              //  throw new InvalidParamException('Undefined ID');
+            //}
+
+            //$url = $this->prefix . '/' .$product->slug;
             return $url;
         }
 
