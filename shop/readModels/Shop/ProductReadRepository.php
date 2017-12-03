@@ -86,6 +86,11 @@ class ProductReadRepository
         return Product::find()->active()->andWhere(['id' => $id])->one();
     }
 
+    public function findBySlug($slug): ?Product
+    {
+        return Product::find()->andWhere(['slug' => $slug])->one();
+    }
+
     private function getProvider(ActiveQuery $query): ActiveDataProvider
     {
         return new ActiveDataProvider([
