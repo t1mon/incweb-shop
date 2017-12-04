@@ -141,7 +141,7 @@ class Order extends ActiveRecord
     private function addStatus($value): void
     {
         foreach ($this->statuses as $status){
-            if ($status->value === $value)
+            if ($status->value === $value || $value==$this->current_status )
                 throw  new \DomainException('Выбранный вами статус заказа уже был создан ранее');
         }
         $this->recordEvent(new OrderChangeStatus($this));
