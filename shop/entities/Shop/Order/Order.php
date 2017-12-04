@@ -3,9 +3,12 @@
 namespace shop\entities\Shop\Order;
 
 use lhs\Yii2SaveRelationsBehavior\SaveRelationsBehavior;
+use shop\entities\EventTrait;
 use shop\entities\Shop\DeliveryMethod;
+use shop\entities\Shop\Order\events\OrderChangeStatus;
 use shop\entities\User\User;
 use shop\helpers\OrderHelper;
+use shop\services\sms\SmsRu;
 use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
 use yii\db\Exception;
@@ -31,6 +34,8 @@ use yii\helpers\Json;
  */
 class Order extends ActiveRecord
 {
+    use EventTrait;
+
     public $customerData;
     public $deliveryData;
     public $statuses = [];
@@ -52,7 +57,6 @@ class Order extends ActiveRecord
     {
         $this->customerData = $customerData;
         $this->note = $note;
-       // $this->current_status = $current_status;
         $this->addStatus($current_status);
 
     }
@@ -137,9 +141,10 @@ class Order extends ActiveRecord
     private function addStatus($value): void
     {
         foreach ($this->statuses as $status){
-            if ($status->value === $value && $this->current_status!=$value)
+            if ($status->value === $value)
                 throw  new \DomainException('Выбранный вами статус заказа уже был создан ранее');
         }
+        $this->recordEvent(new OrderChangeStatus($this));
         $this->statuses[] = new Status($value, time());
         $this->current_status = $value;
     }

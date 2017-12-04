@@ -12,7 +12,7 @@ class PriceHelper
     public static function percent ($new_price, $old_price) : string
     {
         if( $old_price>$new_price) {
-            $percent = 100 - (($new_price / $old_price) * 100);
+            $percent = (($old_price / $new_price ) * 100) - 100 ;
             return round($percent);
         }else{
             return false;

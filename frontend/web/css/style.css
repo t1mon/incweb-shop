@@ -116,8 +116,9 @@ a {
 }
 .font-montserrat {
 	font-family: 'Montserrat', sans-serif;
-	/*color: #9c3328;*/
-	color:rgba(221,0,31);
+	color: #af5875;
+	font-weight: 900;
+	/*color:rgba(221,0,31);*/
 }
 
 .font-playfair {
@@ -1701,8 +1702,8 @@ header .ownmenu .look-book .media-body a {
 	width: 58px;
 	float: right;
 	position: absolute;
-	/*background: #af5875;*/
-	background: rgba(221,0,31);
+	background: #af5875;
+	/*background: rgba(221,0,31);*/
 	line-height: 58px;
 	text-align: center;
 	color: #fff;
@@ -5502,8 +5503,25 @@ footer .flicker img {
 	position: absolute;
 	margin-top: 30px;
 }
+.shopping-cart .cart-ship-info .has-error .form-control {
+	border-color: #c0392b;
+}
+.shopping-cart .cart-ship-info .has-error .form-control:focus {
+	box-shadow:none;
+}
+.shopping-cart .cart-ship-info .has-success .form-control {
+	border-color: #00be4b;
+}
+.shopping-cart .cart-ship-info .has-succes .form-control:focus {
+	box-shadow:none;
+}
+#form-signup .has-error .help-block {
+	color: #c0392b;
+}
+
+
 .shopping-cart .cart-ship-info input  {
-	border: 1px solid #ebebeb;
+	border: 1px solid #555;
 	width: 60px;
 	font-family: 'Montserrat', sans-serif;
 	height: 44px;
@@ -6052,24 +6070,24 @@ input:focus, textarea:focus {
 	font-weight: bold;
 }
 .jgrowl.success{
-	background-color: #dff0d8;
+	background-color: #00be4b;
 	border-color: #d0e9c6;
-	color: #3c763d;
+	color: #fff;
 }
 .jgrowl.info{
-	background-color: #d9edf7;
+	background-color: #29ABE0;
 	border-color: #bcdff1;
-	color: #31708f;
+	color: #fff;
 }
 .jgrowl.warning{
-	background-color: #fcf8e3;
+	background-color: #F47C3C;
 	border-color: #faf2cc;
-	color: #8a6d3b;
+	color: #fff;
 }
 .jgrowl.danger{
-	background-color: #f2dede;
-	border-color: #ebcccc;
-	color: #a94442;
+	background-color: #d9534f;
+	border-color: #000;
+	color: #fff;
 }
 
 

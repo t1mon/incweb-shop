@@ -24,10 +24,10 @@ class SignupController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['index'],
+                'only' => ['request','confirm'],
                 'rules' => [
                     [
-                        'actions' => ['index'],
+                        'actions' => ['request','confirm'],
                         'allow' => true,
                         'roles' => ['?'],
                     ],

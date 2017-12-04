@@ -2,11 +2,19 @@
 
 namespace shop\repositories\Shop;
 
+use shop\dispatchers\SimpleEventDispatcher;
 use shop\entities\Shop\Order\Order;
 use shop\repositories\NotFoundException;
 
 class OrderRepository
 {
+    private $dispatcher;
+
+    public function __construct(SimpleEventDispatcher $dispatcher)
+    {
+        $this->dispatcher = $dispatcher;
+    }
+
     public function get($id): Order
     {
         if (!$order = Order::findOne($id)) {
@@ -20,6 +28,7 @@ class OrderRepository
         if (!$order->save()) {
             throw new \RuntimeException('Saving error.');
         }
+        $this->dispatcher->dispatchAll($order->releaseEvents());
     }
 
     public function remove(Order $order): void

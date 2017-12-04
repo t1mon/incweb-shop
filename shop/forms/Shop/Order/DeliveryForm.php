@@ -25,7 +25,7 @@ class DeliveryForm extends Model
     {
         return [
             [['method'], 'integer'],
-            [['index', 'address'], 'required'],
+            [['address', 'method'], 'required'],
             [['index'], 'string', 'max' => 255],
             [['address'], 'string'],
         ];

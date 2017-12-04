@@ -89,8 +89,8 @@ $this->params['breadcrumbs'][] = $this->title;
                                     </label>
                                 </li>
                                 <li class="col-md-12">
-                                    <label>
-                                        <?= $form->field($model, 'note')->textarea(['rows' => 5,'placeholder'=>'*КОММЕНТАРИЙ К ЗАКАЗУ']) ?>
+                                    <label>*КОММЕНТАРИЙ К ЗАКАЗУ
+                                        <?= $form->field($model, 'note')->textarea(['rows' => 5,'placeholder'=>'*КОММЕНТАРИЙ К ЗАКАЗУ'])->label(false) ?>
                                     </label>
                                 </li>
                                 <!-- CREATE AN ACCOUNT
