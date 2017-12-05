@@ -52,7 +52,12 @@ class ProductController extends Controller
             ],
         ];
     }
-
+/* КОСТЫЛЬ
+    public function beforeAction($action) {
+        $this->enableCsrfValidation = ($action->id !== "view");
+        return parent::beforeAction($action);
+    }
+*/
     /**
      * @return mixed
      */

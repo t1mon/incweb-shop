@@ -21,7 +21,7 @@ $url = Url::to(['product', 'id' =>$product->id]);
                 <?php endif;?>
                 <!-- Image -->
                 <?php if ($product->mainPhoto): ?>
-                    <img src="<?= Html::encode($product->mainPhoto->getThumbFileUrl('file', 'catalog_list')) ?>" alt="<?=Html::encode($product->name)?>">
+                    <img src="<?= Html::encode($product->mainPhoto->getThumbFileUrl('file', 'catalog_list')) ?>" alt="<?=Html::encode($product->name)?>" class="img-responsive">
                     <?php else:?>
                     <img src="<?= Url::to(['@web/image/new-item-1.jpg']) ?>" alt="">
                 <?php endif; ?>
@@ -43,7 +43,7 @@ $url = Url::to(['product', 'id' =>$product->id]);
                                     'name' => Html::encode($product->name),
                                     'value' => $product->rating,
                                     'disabled' => true,
-                                    'pluginOptions' => ['size'=>'xs','displayOnly' => true]
+                                    'pluginOptions' => ['size'=>'rs','displayOnly' => true]
                                 ]);
                                 ?>
                             </li>
