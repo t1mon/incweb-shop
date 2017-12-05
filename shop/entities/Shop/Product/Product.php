@@ -10,6 +10,7 @@ use shop\entities\Meta;
 use shop\entities\Shop\Brand;
 use shop\entities\Shop\Category;
 use shop\entities\Shop\Product\events\ProductAppearedInStock;
+use shop\entities\Shop\Product\events\ProductDraft;
 use shop\entities\Shop\Product\queries\ProductQuery;
 use shop\entities\Shop\Tag;
 use shop\entities\User\WishlistItem;
@@ -120,9 +121,10 @@ class Product extends ActiveRecord implements AggregateRoot
             throw new \DomainException('Product is already draft.');
         }
         $this->status = self::STATUS_DRAFT;
-        $this->db->createCommand()->delete('{{%shop_cart_items}}', [
+        /*$this->db->createCommand()->delete('{{%shop_cart_items}}', [
             'product_id' => $this->id,
-        ])->execute();
+        ])->execute(); */
+        $this->recordEvent(new ProductDraft($this));
     }
 
     public function isActive(): bool

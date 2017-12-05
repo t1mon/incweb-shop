@@ -3,6 +3,7 @@
 namespace shop\repositories\Shop;
 
 use shop\dispatchers\EventDispatcher;
+use shop\dispatchers\SimpleEventDispatcher;
 use shop\entities\Shop\Product\Product;
 use shop\repositories\events\EntityPersisted;
 use shop\repositories\events\EntityRemoved;
@@ -12,7 +13,7 @@ class ProductRepository
 {
     private $dispatcher;
 
-    public function __construct(EventDispatcher $dispatcher)
+    public function __construct(SimpleEventDispatcher $dispatcher)
     {
         $this->dispatcher = $dispatcher;
     }

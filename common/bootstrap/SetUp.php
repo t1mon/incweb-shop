@@ -17,10 +17,12 @@ use shop\dispatchers\SimpleEventDispatcher;
 use shop\entities\behaviors\FlySystemImageUploadBehavior;
 use shop\entities\Shop\Order\events\OrderChangeStatus;
 use shop\entities\Shop\Product\events\ProductAppearedInStock;
+use shop\entities\Shop\Product\events\ProductDraft;
 use shop\jobs\AsyncEventJobHandler;
 use shop\listeners\Shop\Category\CategoryPersistenceListener;
 use shop\listeners\Shop\Order\OrderChangeStatusListener;
 use shop\listeners\Shop\Product\ProductAppearedInStockListener;
+use shop\listeners\Shop\Product\ProductDraftListener;
 use shop\listeners\Shop\Product\ProductSearchPersistListener;
 use shop\listeners\Shop\Product\ProductSearchRemoveListener;
 use shop\listeners\User\UserSignupConfirmedListener;
@@ -118,6 +120,7 @@ class SetUp implements BootstrapInterface
                 UserSignUpConfirmed::class => [UserSignupConfirmedListener::class],
                 OrderChangeStatus::class =>   [OrderChangeStatusListener::class],
                 ProductAppearedInStock::class => [ProductAppearedInStockListener::class],
+                ProductDraft::class => [ProductDraftListener::class],
                 EntityPersisted::class => [
                     ProductSearchPersistListener::class,
                     CategoryPersistenceListener::class,
