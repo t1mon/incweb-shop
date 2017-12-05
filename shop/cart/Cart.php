@@ -5,6 +5,7 @@ namespace shop\cart;
 use shop\cart\cost\calculator\CalculatorInterface;
 use shop\cart\cost\Cost;
 use shop\cart\storage\StorageInterface;
+use shop\entities\Shop\Product\Product;
 
 class Cart
 {
@@ -14,6 +15,7 @@ class Cart
      * @var CartItem[]
      * */
     private $items;
+
 
     public function __construct(StorageInterface $storage, CalculatorInterface $calculator)
     {
@@ -101,6 +103,9 @@ class Cart
         if ($this->items === null) {
             $this->items = $this->storage->load();
         }
+
+
+
     }
 
     private function saveItems(): void

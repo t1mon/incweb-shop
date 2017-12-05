@@ -32,6 +32,7 @@ class DbStorage implements StorageInterface
             if ($product = Product::find()->active()->andWhere(['id' => $row['product_id']])->one()) {
                 return new CartItem($product, $row['modification_id'], $row['quantity']);
             }
+
             return false;
         }, $rows);
     }

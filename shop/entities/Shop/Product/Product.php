@@ -120,6 +120,9 @@ class Product extends ActiveRecord implements AggregateRoot
             throw new \DomainException('Product is already draft.');
         }
         $this->status = self::STATUS_DRAFT;
+        $this->db->createCommand()->delete('{{%shop_cart_items}}', [
+            'product_id' => $this->id,
+        ])->execute();
     }
 
     public function isActive(): bool
