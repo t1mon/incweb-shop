@@ -13,7 +13,7 @@ $url = Url::to(['product', 'id' =>$product->id]);
 ?>
 
         <!-- New Products -->
-        <span><li class="col-sm-4 animate fadeIn" data-wow-delay="0.4s">
+        <li class="col-sm-4 animate fadeIn" data-wow-delay="0.4s">
             <div style="cursor: pointer" class="items-in"  onclick="location.href='<?= Html::encode($url) ?>'">
                 <!-- Tags -->
                 <?php if ($product->price_old && $percent = PriceHelper::percent($product->price_new,$product->price_old)): ?>

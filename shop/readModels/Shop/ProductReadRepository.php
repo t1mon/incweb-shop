@@ -120,7 +120,7 @@ class ProductReadRepository
                 'pageSizeLimit' => [15, 100],
                 'defaultPageSize' => 15,
                 //'forcePageParam' => false,
-                'pageSizeParam' => false,
+                //'pageSizeParam' => false,
             ]
         ]);
     }
