@@ -13,7 +13,7 @@ class ProductRepository
 {
     private $dispatcher;
 
-    public function __construct(SimpleEventDispatcher $dispatcher)
+    public function __construct(EventDispatcher $dispatcher)
     {
         $this->dispatcher = $dispatcher;
     }
