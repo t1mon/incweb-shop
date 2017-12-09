@@ -11,116 +11,14 @@ use frontend\widgets\Shop\FeaturedProductsWidget;
 ?>
 <?php $this->beginContent('@frontend/views/layouts/main.php') ?>
 <?php $this->title = 'Онлайн магазин мебели в Самаре'?>
-<div class="row">
-    <div id="content" class="col-sm-12">
-        <h3>Featured</h3>
-
-        <?= FeaturedProductsWidget::widget([
-            'limit' => 4,
-        ]) ?>
-
-        <h3>Last Posts</h3>
-
-        <?= LastPostsWidget::widget([
-            'limit' => 4,
-        ]) ?>
-
-
-        <?= $content ?>
-    </div>
-</div>
-
-<?php /*$this->registerJs('
-$(\'#slideshow0\').owlCarousel({
-    items: 1,
-    loop: true,
-    autoplay:true,
-    autoplayTimeout:3000,
-    autoplayHoverPause:true,
-    nav: true,
-    navText: [\'<i class="fa fa-chevron-left fa-5x"></i>\', \'<i class="fa fa-chevron-right fa-5x"></i>\'],
-    dots: true
-});') ?>
-
-<?php $this->registerJs('
-$(\'#carousel0\').owlCarousel({
-    items: 6,
-    loop: true,
-    autoplay:true,
-    autoplayTimeout:3000,
-    autoplayHoverPause:true,
-    nav: true,
-    navText: [\'<i class="fa fa-chevron-left fa-5x"></i>\', \'<i class="fa fa-chevron-right fa-5x"></i>\'],
-    dots: true
-});') */?>
-
-
-
-
-
-
-
 
     <!--======= HOME MAIN SLIDER =========-->
     <section class="home-slider">
         <div class="tp-banner-container">
             <div class="tp-banner-fix" >
                 <ul>
-
                     <!-- Slider 1 -->
-                    <li data-transition="random" data-slotamount="7"> <img src="image/slides/slide-7.jpg" data-bgposition="center top" alt="" />
-                        <div class="overlay"></div>
-                        <!-- Layer -->
-                        <div class="tp-caption sft font-montserrat text-uppercase tp-resizeme rs-parallaxlevel-4"
-                             data-x="center"
-                             data-y="center" data-voffset="-50"
-                             data-speed="700"
-                             data-start="1000"
-                             data-easing="easeOutBack"
-                             data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-elementdelay="0.1"
-                             data-endelementdelay="0.1"
-                             data-endspeed="300"
-                             data-captionhidden="on"
-                             style="color: #fff; font-size: 120px; font-weight: bold; letter-spacing:-2px; "> GO your own way. </div>
-
-                        <!-- Layer -->
-                        <div class="tp-caption sfb  font-montserrat text-center tp-resizeme rs-parallaxlevel-4"
-                             data-x="center"
-                             data-y="center" data-voffset="40"
-                             data-speed="700"
-                             data-start="1700"
-                             data-easing="easeOutBack"
-                             data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-elementdelay="0.1"
-                             data-endelementdelay="0.1"
-                             data-endspeed="300"
-                             data-captionhidden="on"
-                             style="color: #fff; font-size: 18px;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor <br>
-                            incididunt ut labore et dolore magna aliqua. </div>
-
-                        <!-- Layer -->
-                        <div class="tp-caption sfb tp-resizeme rs-parallaxlevel-4"
-                             data-x="center"
-                             data-y="center" data-voffset="120"
-                             data-speed="700"
-                             data-start="2400"
-                             data-easing="easeOutBack"
-                             data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-elementdelay="0.1"
-                             data-endelementdelay="0.1"
-                             data-endspeed="300"
-                             data-captionhidden="on"> <a href="#." class="btn btn-1">Shop Now</a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="#" class="btn ">Discover</a> </div>
-                    </li>
-
-                    <!-- Slider 2 -->
-                    <li data-transition="fade" data-slotamount="7"> <img src="image/slides/slide-8.jpg" data-bgposition="center top" alt="" />
+                    <li data-transition="fade" data-slotamount="7"> <img src="<?=Yii::getAlias('@static/banners/karina-lerom.jpg')?>" data-bgposition="center top" alt="" />
                         <div class="overlay"></div>
                         <!-- Layer -->
                         <div class="tp-caption sft tp-resizeme rs-parallaxlevel-5"
@@ -135,7 +33,7 @@ $(\'#carousel0\').owlCarousel({
                              data-elementdelay="0.1"
                              data-endelementdelay="0.1"
                              data-endspeed="300"
-                             data-captionhidden="on"> <img src="image/logo-mountain.png" alt="" /> </div>
+                             data-captionhidden="on"> <img src="<?=Yii::getAlias('@static/banners/logo-lerom.png')?>" alt="" /> </div>
 
                         <!-- Layer -->
                         <div class="tp-caption customin font-playfair tp-resizeme rs-parallaxlevel-4"
@@ -151,7 +49,7 @@ $(\'#carousel0\').owlCarousel({
                              data-endelementdelay="0.1"
                              data-endspeed="300"
                              data-captionhidden="on"
-                             style="color: #fff; font-size: 80px; font-style:italic;"> Hello, Spring/Summer 2015 </div>
+                             style="color: #fff; font-size: 80px; font-style:italic;">  Скоро в продаже </div>
 
                         <!-- Layer -->
                         <div class="tp-caption sfb  font-playfair text-center tp-resizeme rs-parallaxlevel-4"
@@ -167,15 +65,34 @@ $(\'#carousel0\').owlCarousel({
                              data-endelementdelay="0.1"
                              data-endspeed="300"
                              data-captionhidden="on"
-                             style="color: #fff; font-size: 18px;  font-style:italic;"> Multipurpose E-Commerce Theme is suitable for furniture store, fashion shop, accessories, electric shop. We have included <br>
-                            multiple layouts for home page to give you best selections in customization. </div>
+                             style="color: #fff; font-size: 18px;  font-style:italic;"> Новая программа мебельной фабрики Лером.<br>
+                            Фасад имеет уникальное сочетание глубокого тиснения и эффекта патины, присущей классическому стилю.<br>
+                            Изящество фасада подчеркивает стекло с алмазной гравировкой и фацетом.</div>
 
                         <!-- Layer -->
-                        <div class="tp-caption sfb tp-resizeme rs-parallaxlevel-4"
+                        <!-- <div class="tp-caption sfb tp-resizeme rs-parallaxlevel-4"
+                              data-x="center"
+                              data-y="470"
+                              data-speed="700"
+                              data-start="4000"
+                              data-easing="easeOutBack"
+                              data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                              data-splitin="none"
+                              data-splitout="none"
+                              data-elementdelay="0.1"
+                              data-endelementdelay="0.1"
+                              data-endspeed="300"
+                              data-captionhidden="on"> <a href="#." class="btn btn-1">Shop Now</a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="#" class="btn ">Discover</a> </div> -->
+                    </li>
+                    <!-- Slider 2 -->
+                    <li data-transition="random" data-slotamount="7"> <img src="<?=Yii::getAlias('@static/banners/3.jpg')?>" data-bgposition="center top" alt="" />
+                        <div class="overlay"></div>
+                        <!-- Layer -->
+                        <div class="tp-caption sft font-montserrat text-uppercase tp-resizeme rs-parallaxlevel-4"
                              data-x="center"
-                             data-y="470"
+                             data-y="center" data-voffset="-50"
                              data-speed="700"
-                             data-start="4000"
+                             data-start="1000"
                              data-easing="easeOutBack"
                              data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
                              data-splitin="none"
@@ -183,11 +100,44 @@ $(\'#carousel0\').owlCarousel({
                              data-elementdelay="0.1"
                              data-endelementdelay="0.1"
                              data-endspeed="300"
-                             data-captionhidden="on"> <a href="#." class="btn btn-1">Shop Now</a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="#" class="btn ">Discover</a> </div>
+                             data-captionhidden="on"
+                             style="color: #fff; font-size: 60px; font-weight: bold; letter-spacing:-2px; "> Ортопедические матрасы. </div>
+
+                        <!-- Layer -->
+                        <div class="tp-caption sfb  font-montserrat text-center tp-resizeme rs-parallaxlevel-4"
+                             data-x="center"
+                             data-y="center" data-voffset="40"
+                             data-speed="700"
+                             data-start="1700"
+                             data-easing="easeOutBack"
+                             data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                             data-splitin="none"
+                             data-splitout="none"
+                             data-elementdelay="0.1"
+                             data-endelementdelay="0.1"
+                             data-endspeed="300"
+                             data-captionhidden="on"
+                             style="color: #fff; font-size: 18px;">  Благодаря всем трудам мы пришли к той продукции,<br> которая отвечает наивысшим показателям комфортного сна. </div>
+
+                        <!-- Layer -->
+                        <div class="tp-caption sfb tp-resizeme rs-parallaxlevel-4"
+                             data-x="center"
+                             data-y="center" data-voffset="120"
+                             data-speed="700"
+                             data-start="2400"
+                             data-easing="easeOutBack"
+                             data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                             data-splitin="none"
+                             data-splitout="none"
+                             data-elementdelay="0.1"
+                             data-endelementdelay="0.1"
+                             data-endspeed="300"
+                             data-captionhidden="on"> <a href="<?=\yii\helpers\Url::to('/catalog/matrasy')?>" class="btn btn-1">Посмотреть продукцию</a></div>
                     </li>
 
+
                     <!-- Slider 3 -->
-                    <li data-transition="random" data-slotamount="7"> <img src="image/slides/slide-6.jpg" data-bgposition="center center" alt="" />
+                    <li data-transition="random" data-slotamount="7"> <img src="<?=Yii::getAlias('@static/banners/font.jpg')?>" data-bgposition="center center" alt="" />
                         <!-- SLIDER LAYERS -->
                         <div class="tp-caption lfr tp-resizeme rs-parallaxlevel-4"
                              data-x="right"
@@ -202,7 +152,7 @@ $(\'#carousel0\').owlCarousel({
                              data-endelementdelay="0.1"
                              data-endspeed="300"
                              data-captionhidden="on"
-                             style="z-index: 1;"> <img src="image/slides/slide-9-1.png" alt=""> </div>
+                             style="z-index: 1;"> <img src="<?=Yii::getAlias('@static/banners/stul2.png')?>" alt=""> </div>
 
                         <!-- Layer -->
                         <div class="tp-caption font-montserrat text-center text-uppercase sft tp-resizeme rs-parallaxlevel-4"
@@ -218,8 +168,8 @@ $(\'#carousel0\').owlCarousel({
                              data-endelementdelay="0.1"
                              data-endspeed="300"
                              data-captionhidden="on"
-                             style="color: #272727; font-size: 18px; font-weight: normal; letter-spacing: 3px; border-top:1px solid #272727; border-bottom:1px solid #272727; padding:20px 0;"> Jack & Jones <br>
-                            White Skinny Jeans with Rips </div>
+                             style="color: #272727; font-size: 18px; font-weight: normal; letter-spacing: 3px; border-top:1px solid #272727; border-bottom:1px solid #272727; padding:20px 0;"> СТОЛЫ и СТУЛЬЯ <br>
+                            Огромный выбор кухонной мебели </div>
 
                         <!-- Layer -->
                         <div class="tp-caption sfb tp-resizeme rs-parallaxlevel-4"
@@ -235,7 +185,7 @@ $(\'#carousel0\').owlCarousel({
                              data-endelementdelay="0.1"
                              data-endspeed="300"
                              data-captionhidden="on"
-                             style="z-index: 10;"> <a href="#" class="btn btn-1">SHOP NOW</a> </div>
+                             style="z-index: 10;"> <a href="#" class="btn btn-1">ПОСМОТРЕТЬ ПРОДУКЦИЮ</a> </div>
                     </li>
                 </ul>
             </div>
@@ -287,108 +237,26 @@ $(\'#carousel0\').owlCarousel({
                 </ul>
             </div>
         </section>
+    <!--======= New Arrival =========-->
+    <section class="section-p-30px new-arrival new-arri-w-slide">
+    <div class="container">
 
-        <!--======= New Arrival =========-->
-        <section class="section-p-30px new-arrival new-arri-w-slide">
-            <div class="container">
+    <!--  Tittle -->
+    <div class="tittle tittle-2 animate fadeInUp" data-wow-delay="0.4s">
+        <h5>NEW ARRIVAL</h5>
+        <hr>
+        <p>Treding fashion</p>
+    </div>
 
-                <!--  Tittle -->
-                <div class="tittle tittle-2 animate fadeInUp" data-wow-delay="0.4s">
-                    <h5>NEW ARRIVAL</h5>
-                    <hr>
-                    <p>Treding fashion</p>
-                </div>
+    <!--  New Arrival Tabs Products  -->
+    <div class="popurlar_product client-slide animate fadeInUp" data-wow-delay="0.4s">
+        <?= FeaturedProductsWidget::widget([
+            'limit' => 6,
+        ]) ?>
 
-                <!--  New Arrival Tabs Products  -->
-                <div class="popurlar_product client-slide animate fadeInUp" data-wow-delay="0.4s">
-
-                    <!--  New Arrival  -->
-
-                    <div class="items-in">
-                        <!-- Image -->
-                        <img src="image/new-item-1.jpg" alt="">
-                        <!-- Hover Details -->
-                        <div class="over-item">
-                            <ul class="animated fadeIn">
-                                <li> <a href="image/new-item-1.jpg" data-lighter><i class="ion-search"></i></a></li>
-                                <li> <a href="#."><i class="ion-shuffle"></i></a></li>
-                                <li> <a href="#."><i class="fa fa-heart-o"></i></a></li>
-                                <li class="full-w"> <a href="#." class="btn">ADD TO CART</a></li>
-                                <!-- Rating Stars -->
-                                <li class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></li>
-                            </ul>
-                        </div>
-                        <!-- Item Name -->
-                        <div class="details-sec"> <a href="#.">LOOSE-FIT TRENCH COAT</a> <span class="font-montserrat">129.00 USD</span> </div>
-                    </div>
-
-                    <!--  New Arrival  -->
-
-                    <div class="items-in">
-                        <!-- Image -->
-                        <img src="image/new-item-2.jpg" alt="">
-                        <!-- Hover Details -->
-                        <div class="over-item">
-                            <ul class="animated fadeIn">
-                                <li> <a href="image/new-item-2.jpg" data-lighter><i class="ion-search"></i></a></li>
-                                <li> <a href="#."><i class="ion-shuffle"></i></a></li>
-                                <li> <a href="#."><i class="fa fa-heart-o"></i></a></li>
-                                <li class="full-w"> <a href="#." class="btn">ADD TO CART</a></li>
-                                <!-- Rating Stars -->
-                                <li class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></li>
-                            </ul>
-                        </div>
-                        <!-- Item Name -->
-                        <div class="details-sec"> <a href="#.">LOOSE-FIT TRENCH COAT</a> <span class="font-montserrat">129.00 USD</span> </div>
-                    </div>
-
-                    <!--  New Arrival  -->
-
-                    <div class="items-in">
-                        <!--  Tags  -->
-                        <div class="new-tag"> NEW </div>
-
-                        <!-- Image -->
-                        <img src="image/new-item-3.jpg" alt="">
-                        <!-- Hover Details -->
-                        <div class="over-item">
-                            <ul class="animated fadeIn">
-                                <li> <a href="image/new-item-3.jpg" data-lighter><i class="ion-search"></i></a></li>
-                                <li> <a href="#."><i class="ion-shuffle"></i></a></li>
-                                <li> <a href="#."><i class="fa fa-heart-o"></i></a></li>
-                                <li class="full-w"> <a href="#." class="btn">ADD TO CART</a></li>
-                                <!-- Rating Stars -->
-                                <li class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></li>
-                            </ul>
-                        </div>
-                        <!-- Item Name -->
-                        <div class="details-sec"> <a href="#.">LOOSE-FIT TRENCH COAT</a> <span class="font-montserrat">129.00 USD</span> </div>
-                    </div>
-
-                    <!--  New Arrival  -->
-
-                    <div class="items-in">
-                        <!--  Tags  -->
-                        <div class="hot-tag"> HOT </div>
-                        <!-- Image -->
-                        <img src="image/new-item-4.jpg" alt="">
-                        <!-- Hover Details -->
-                        <div class="over-item">
-                            <ul class="animated fadeIn">
-                                <li> <a href="image/new-item-4.jpg" data-lighter><i class="ion-search"></i></a></li>
-                                <li> <a href="#."><i class="ion-shuffle"></i></a></li>
-                                <li> <a href="#."><i class="fa fa-heart-o"></i></a></li>
-                                <li class="full-w"> <a href="#." class="btn">ADD TO CART</a></li>
-                                <!-- Rating Stars -->
-                                <li class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></li>
-                            </ul>
-                        </div>
-                        <!-- Item Name -->
-                        <div class="details-sec"> <a href="#.">LOOSE-FIT TRENCH COAT</a> <span class="font-montserrat">129.00 USD</span> </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    </div>
+    </div>
+    </section>
 
         <!--======= SEASONALS =========-->
         <section class="section-p-60px seasonals no-padding-b">
@@ -820,5 +688,25 @@ $(\'#carousel0\').owlCarousel({
             </div>
         </section>
     </div>
+<?php
+$script = <<<JS
+var url;
+    $('.rs').hover(
 
+ 
+         function(){
+             url = $(this).parents("div.items-in").attr('onclick');
+             $(this).parents("div.items-in").removeAttr('onclick');            
+        },
+            function(){ 
+            $(this).parents("div.items-in").attr('onclick',url);
+        }
+    
+    
+    
+    );
+JS;
+
+$this->registerJs($script,yii\web\View::POS_READY);
+?>
 <?php $this->endContent() ?>
