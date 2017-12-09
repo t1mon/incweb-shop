@@ -1,8 +1,11 @@
 <?php
 namespace frontend\controllers;
 
+use shop\entities\User\User;
 use shop\helpers\JgrowlMessageHelper;
 use shop\helpers\SendEmailHelper;
+use yii\filters\AccessControl;
+use yii\helpers\Json;
 use yii\web\Controller;
 
 /**
@@ -26,6 +29,23 @@ class SiteController extends Controller
         ];
     }
 
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['rally'],
+                'rules' => [
+                    [
+                        'actions' =>['rally'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+        ];
+    }
+
     /**
      * @return mixed
      */
@@ -33,6 +53,23 @@ class SiteController extends Controller
     {
         $this->layout = 'home';
         return $this->render('index');
+    }
+
+    public function actionRally()
+    {
+        $user = User::findOne(\Yii::$app->user->id);
+        if($user->networks) {
+            $isGroupVK = false;
+            $response = file_get_contents('https://api.vk.com/method/groups.isMember?group_id=132528657&user_id='.$user->networks[0]["identity"]);
+            $response = Json::decode($response);
+            if($response['response'])
+                $isGroupVK = true;
+            return $this->renderPartial('rally',['user'=>$user, 'isGroupVK'=>$isGroupVK]);
+        }
+        else {
+            \Yii::$app->session->setFlash('error', 'Ваш аккаунт не связан с аккаунтом Вконтакте');
+            return $this->redirect('/cabinet');
+        }
     }
 /*
     public function actionMail()

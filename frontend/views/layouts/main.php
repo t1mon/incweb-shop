@@ -405,6 +405,7 @@ AppAsset::register($this);
   <!-- Header End -->
     <div class="content">
     <!--======= SUB BANNER =========-->
+<?php if (Yii::$app->controller->id != 'site'):?>
     <section class="sub-banner animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
         <div class="container">
             <h1><?=isset($this->params['breadcrumbs']) ? $this->title: ''?></h1>
@@ -415,6 +416,7 @@ AppAsset::register($this);
             ]) ?>
         </div>
     </section>
+<?php endif; ?>
 <!---
 <div class="container">
         <div class="row">
@@ -430,8 +432,8 @@ AppAsset::register($this);
   <!--======= Footer =========-->
   <footer>
     <div class="container">
-      <div class="text-center"> <a href="#."><img src="image/logo.png" alt=""></a><br>
-        <img class="margin-t-40" src="image/hammer.png" alt="">
+      <div class="text-center"> <a href="#."><img src="/image/logo.png" alt=""></a><br>
+        <img class="margin-t-40" src="/image/hammer.png" alt="">
         <p class="intro-small margin-t-40">Multipurpose E-Commerce Theme is suitable for furniture store, fashion shop, accessories, electric shop. We have included multiple layouts for home page to give you best selections in customization.</p>
       </div>
       

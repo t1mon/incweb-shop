@@ -78,7 +78,7 @@ class ProductReadRepository
 
     public function getFeatured($limit): array
     {
-        return Product::find()->with('mainPhoto')->orderBy(['id' => SORT_DESC])->limit($limit)->all();
+        return Product::find()->with('mainPhoto')->orderBy(['id' => SORT_DESC])->active()->limit($limit)->all();
     }
 
     public function find($id): ?Product
@@ -120,7 +120,7 @@ class ProductReadRepository
                 'pageSizeLimit' => [15, 100],
                 'defaultPageSize' => 15,
                 //'forcePageParam' => false,
-                //'pageSizeParam' => false,
+                'pageSizeParam' => false,
             ]
         ]);
     }

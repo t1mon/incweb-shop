@@ -5946,7 +5946,7 @@ input:focus, textarea:focus {
 .coming-soon .avatar {
 	height: 200px;
 	width: 200px;
-	border-radius: 50%;
+	/* border-radius: 50%; */
 	position: relative;
 	overflow: hidden;
 	display: inline-block;
@@ -5959,18 +5959,36 @@ input:focus, textarea:focus {
 	color: #b8b8b8;
 }
 .coming-soon p {
-	color: #b8b8b8;
+	color: #fff;
 }
 .coming-soon h1 {
 	color: #fff;
 	letter-spacing: 20px;
-	color: #ebebeb;
 	font-size: 48px;
 }
 .coming-soon h3 {
+	color: #fff;
+	font-weight: bold;
+}
+.coming-soon h4 {
 	font-family: 'Playfair Display', serif;
 	font-style: italic;
-	color: #858585;
+	color: goldenrod;
+}
+.coming-soon ul{
+	font-size: 14px;
+	color: #fff;
+}
+.coming-soon li{
+	padding: 20px;
+	text-align: left;
+	border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.coming-soon li>b{
+	color: #00be4b;
+}
+.coming-soon li>a{
+	color: indianred;
 }
 /*==========================================================================
 	   Countdown styles
@@ -5990,15 +6008,15 @@ input:focus, textarea:focus {
 }
 .coming-soon .countdown li span {
 	font-size: 60px;
-	font-family: 'Playfair Display', serif;
-	font-style: italic;
+	/*font-family: 'Playfair Display', serif;*/
+	font-weight: bold;
 	color: #fff;
 }
 .coming-soon .countdown li p {
 	font-size: 14px;
 	font-family: 'Playfair Display', serif;
 	font-style: italic;
-	color: #858585;
+	color: #fff;
 }
 .coming-soon .social_icons {
 	margin-top: 80px;

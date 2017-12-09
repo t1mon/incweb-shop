@@ -55,8 +55,8 @@ $url = Url::to(['product', 'id' =>$product->id]);
 
                     <?php if ($product->price_old): ?>
                     <span class="text-line"><?= PriceHelper::format($product->price_old) ?><i class="fa fa-rub" aria-hidden="true"></i></span>
+                    <?php endif;?>
                 </div>
-                <?php endif;?>
             </div>
         </li>
 
