@@ -53,21 +53,16 @@ $this->params['breadcrumbs'][] = $this->title;
 
                                 <!-- *COUNTRY -->
                                 <li class="col-md-12">
-                                    <label> *МЕТОД ДОСТАВКИ
+                                    <label> *СПОСОБ ДОСТАВКИ
                                         <?= $form->field($model->delivery, 'method')->dropDownList($model->delivery->deliveryMethodsList(), ['prompt' => 'ВЫБОР СПОСОБА ДОСТАВКИ','class'=>'selectpicker'])->label(false) ?>
                                     </label>
                                 </li>
-
-                                <!-- EMAIL ADDRESS -->
-                                <li class="col-md-6">
-                                    <label> *EMAIL
-                                        <?= $form->field($model->customer, 'email')->textInput()->label(false) ?>
-                                    </label>
-                                </li>
                                 <!-- PHONE -->
-                                <li class="col-md-6">
+                                <li class="col-md-12">
                                     <label> *ТЕЛЕФОН
-                                        <?= $form->field($model->customer, 'phone')->textInput()->label(false) ?>
+                                        <?= $form->field($model->customer, 'phone')->widget(\yii\widgets\MaskedInput::className(), [
+                                            'mask' => '+7(999)-999-9999',
+                                        ])->label(false) ?>
                                     </label>
                                 </li>
                                 <!-- Name -->
@@ -90,7 +85,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 </li>
                                 <li class="col-md-12">
                                     <label>*КОММЕНТАРИЙ К ЗАКАЗУ
-                                        <?= $form->field($model, 'note')->textarea(['rows' => 5,'placeholder'=>'*КОММЕНТАРИЙ К ЗАКАЗУ'])->label(false) ?>
+                                        <?= $form->field($model, 'note')->textarea(['rows' => 5])->label(false) ?>
                                     </label>
                                 </li>
                                 <!-- CREATE AN ACCOUNT

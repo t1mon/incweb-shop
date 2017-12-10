@@ -55,7 +55,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         'attribute' => 'user_id',
                         'value'=> function (\shop\entities\Shop\Order\Order $model)
                         {
-                            $user = $model->user_id ? \shop\entities\User\User::findOne($model->user_id)->username : 'Пользователь не найден';
+                            $user = $model->user_id ? \shop\entities\User\User::findOne($model->user_id)->getSurnameName() : 'Пользователь не зарегестрирован';
                             return $user;
                         }
 

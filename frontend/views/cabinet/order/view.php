@@ -8,9 +8,9 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $order shop\entities\Shop\Order\Order */
 
-$this->title = 'Order ' . $order->id;
-$this->params['breadcrumbs'][] = ['label' => 'Cabinet', 'url' => ['cabinet/default/index']];
-$this->params['breadcrumbs'][] = ['label' => 'Orders', 'url' => ['index']];
+$this->title = 'Заказ # ' . $order->id;
+$this->params['breadcrumbs'][] = ['label' => 'Профиль', 'url' => ['cabinet/default/index']];
+$this->params['breadcrumbs'][] = ['label' => 'Зыказы', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-view">
@@ -20,18 +20,44 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $order,
         'attributes' => [
-            'id',
-            'created_at:datetime',
+            [
+                'label'=>'Дата заказа',
+                'attribute' => 'created_at',
+                'format'=>'datetime',
+
+            ],
             [
                 'attribute' => 'current_status',
+                'label' => 'Статус Заказа',
                 'value' => OrderHelper::statusLabel($order->current_status),
                 'format' => 'raw',
             ],
-            'delivery_method_name',
-            'deliveryData.index',
-            'deliveryData.address',
-            'cost',
-            'note:ntext',
+            [
+                'label'=>'Доставка',
+                'attribute' => 'delivery_method_name',
+
+            ],
+            [
+                'label'=>'Индекс',
+                'attribute' => 'deliveryData.index',
+
+            ],
+            [
+                'label'=>'Адрес доставки',
+                'attribute' => 'deliveryData.address',
+
+            ],
+            [
+                'label'=>'Стоимость',
+                'attribute' => 'cost',
+
+            ],
+            [
+                'label'=>'Комментарий',
+                'attribute' => 'note',
+                'format'=>'ntext',
+
+            ],
         ],
     ]) ?>
 
@@ -39,11 +65,11 @@ $this->params['breadcrumbs'][] = $this->title;
         <table class="table table-bordered">
             <thead>
             <tr>
-                <th class="text-left">Product Name</th>
-                <th class="text-left">Model</th>
-                <th class="text-left">Quantity</th>
-                <th class="text-right">Unit Price</th>
-                <th class="text-right">Total</th>
+                <th class="text-left">Продукт</th>
+                <th class="text-left">Модель</th>
+                <th class="text-left">Количество</th>
+                <th class="text-right">Стоимость</th>
+                <th class="text-right">Всего</th>
             </tr>
             </thead>
             <tbody>
@@ -66,11 +92,11 @@ $this->params['breadcrumbs'][] = $this->title;
             </tbody>
         </table>
     </div>
-
+<!--
     <?php if ($order->canBePaid()): ?>
         <p>
             <?= Html::a('Pay via Robokassa', ['/payment/robokassa/invoice', 'id' => $order->id], ['class' => 'btn btn-success']) ?>
         </p>
     <?php endif; ?>
-
+-->
 </div>

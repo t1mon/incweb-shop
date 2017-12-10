@@ -94,7 +94,7 @@ $reviews_count =$product->getActiveReviewCount($reviews);
                                 <div class="col-sm-12">
                                     <div class="item-select">
                                         <?php if ($modifications = $cartForm->modificationsList()): ?>
-                                            <?= $form->field($cartForm, 'modification')->dropDownList($modifications, ['prompt' => '--- Select ---','class'=>'selectpicker']) ?>
+                                            <?= $form->field($cartForm, 'modification')->dropDownList($modifications, ['prompt' => '--- Выбор модификации ---','class'=>'selectpicker'])->label('Модификация') ?>
                                         <?php endif; ?>
                                     </div>
                                 </div>
