@@ -5,7 +5,7 @@
 
 $confirmLink = Yii::$app->urlManager->createAbsoluteUrl(['auth/signup/confirm', 'token' => $user->email_confirm_token]);
 ?>
-Hello <?= $user->username ?>,
+Hello <?= $user->getSurnameName() ?>,
 
 Follow the link below to confirm your email:
 

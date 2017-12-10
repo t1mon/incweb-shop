@@ -30,7 +30,7 @@ $confirmLink = Yii::$app->urlManager->createAbsoluteUrl(['auth/signup/confirm', 
                                         <!-- Title -->
                                         <tr>
                                             <td style="font-family: Helvetica, arial, sans-serif; font-size: 30px; color: #333333; text-align:center; line-height: 30px;" st-title="fulltext-heading">
-                                                Здравствуйте <?=Html::encode($user->username) ?>
+                                                Здравствуйте <?=Html::encode($user->getSurnameName()) ?>
                                             </td>
                                         </tr>
                                         <!-- End of Title -->

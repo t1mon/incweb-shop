@@ -227,7 +227,7 @@ class User extends ActiveRecord implements AggregateRoot
     }
     public function getSurnameName()
     {
-        if ($this->surname==="" && $this->name==="")
+        if (empty($this->surname) && empty($this->name))
             $fio = $this->username;
         else
             $fio = $this->surname." ".$this->name;

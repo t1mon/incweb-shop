@@ -29,7 +29,7 @@ $resetLink = Yii::$app->get('frontendUrlManager')->createAbsoluteUrl(['auth/rese
                                         <!-- Title -->
                                         <tr>
                                             <td style="font-family: Helvetica, arial, sans-serif; font-size: 30px; color: #333333; text-align:center; line-height: 30px;" st-title="fulltext-heading">
-                                                Здравствуйте <?=Html::encode($user->username) ?>
+                                                Здравствуйте <?=Html::encode($user->getSurnameName()) ?>
                                             </td>
                                         </tr>
                                         <!-- End of Title -->

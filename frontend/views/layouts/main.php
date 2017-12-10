@@ -58,7 +58,7 @@ AppAsset::register($this);
 
 <!-- Page Wrap -->
 <div id="wrap">
-  
+
   <!-- Header -->
   <header class="header-style-2 header-style-3">
     <!-- Top Bar -->

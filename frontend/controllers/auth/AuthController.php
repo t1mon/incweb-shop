@@ -33,6 +33,7 @@ class AuthController extends Controller
             try {
                 $user = $this->service->auth($form);
                 Yii::$app->user->login(new Identity($user), $form->rememberMe ? Yii::$app->params['user.rememberMeDuration'] : 0);
+                Yii::$app->session->setFlash('info', 'Здравствуйте '.$user->getSurnameName());
                 return $this->goBack();
             } catch (\DomainException $e) {
                 Yii::$app->errorHandler->logException($e);

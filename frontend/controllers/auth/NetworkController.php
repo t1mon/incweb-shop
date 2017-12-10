@@ -40,6 +40,7 @@ class NetworkController extends Controller
         try {
             $user = $this->service->auth($network, $identity, $accessToken, $attributes);
             Yii::$app->user->login(new Identity($user), Yii::$app->params['user.rememberMeDuration']);
+            Yii::$app->session->setFlash('info', 'Здравствуйте '.$user->getSurnameName());
         } catch (\Exception $e) {
             Yii::$app->errorHandler->logException($e);
             Yii::$app->session->setFlash('error', "ERROR: Что-то пошло не так!");
