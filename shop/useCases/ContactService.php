@@ -20,6 +20,7 @@ class ContactService
     {
         $sent = $this->mailer->compose()
             ->setTo($this->adminEmail)
+            ->setFrom($form->email)
             ->setSubject($form->subject)
             ->setTextBody($form->body)
             ->send();
