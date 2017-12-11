@@ -30,6 +30,7 @@ class ProfileController extends Controller
         if ($form->load(Yii::$app->request->post()) && $form->validate()) {
             try {
                 $this->service->edit($user->id, $form);
+                Yii::$app->session->setFlash('info', 'Ваш профиль обновлен');
                 return $this->redirect(['/cabinet/default/index', 'id' => $user->id]);
             } catch (\DomainException $e) {
                 Yii::$app->errorHandler->logException($e);

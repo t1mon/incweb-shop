@@ -24,14 +24,50 @@ class ProfileEditForm  extends Model
         parent::__construct($config);
     }
 
+    public function beforeValidate()
+    {
+        $this->phone = preg_replace('/[^\d]/', '', $this->phone);
+        return parent::beforeValidate();
+    }
+
+    public function afterValidate()
+    {   $this->phone = mb_substr(preg_replace('/[^\d]/', '', $this->phone),1);
+        parent::afterValidate();
+    }
+
     public function rules(): array
     {
         return [
-            [['phone', 'email'], 'required'],
+            [['name','surname'], 'trim'],
+            // ['username', 'required'],
+            [['name','surname'], 'string', 'min' => 2, 'max' => 255],
+
+            ['email', 'trim'],
+            ['email', 'required'],
             ['email', 'email'],
-            [['email','name','surname'], 'string', 'max' => 255],
+            ['email', 'string', 'max' => 255],
+           // ['email', 'unique', 'targetClass' => User::class, 'message' => 'Такой email уже зарегистрирован.'],
+            ['email', 'email_valid'],
+            ['phone', 'required'],
             ['phone','match', 'pattern' => '/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/'],
-            [['phone', 'email'], 'unique', 'targetClass' => User::class, 'filter' => ['<>', 'id', $this->_user->id]],
+            ['phone', 'unique', 'targetClass' => User::class, 'message' => 'Такой телефон уже зарегистрирован.'],
+           // ['phone', 'phone_valid']
         ];
     }
+
+    public function email_valid()
+    {
+       if ($this->email == $this->_user->email)
+           $this->email = $this->_user->email;
+       else
+           if(User::find()->where(['email' => $this->email])->one())
+               $this->addError('email','Такой Email зарегистрирован.');
+    }
+/*
+    public function phone_valid()
+    {
+            if(User::find()->where(['phone' => $this->phone])->one())
+                $this->addError('email','Такой телефон зарегистрирован в системе');
+    }
+*/
 }
