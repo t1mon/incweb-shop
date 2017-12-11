@@ -16,17 +16,18 @@ class ContactController extends Controller
         $this->service = $service;
     }
 
+
     public function actionIndex()
     {
         $form = new ContactForm();
         if ($form->load(Yii::$app->request->post()) && $form->validate()) {
             try {
                 $this->service->send($form);
-                Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
+                Yii::$app->session->setFlash('success', 'Благодарим Вас за обращение к нам. Мы ответим вам как можно скорее.');
                 return $this->goHome();
             } catch (\Exception $e) {
                 Yii::$app->errorHandler->logException($e);
-                Yii::$app->session->setFlash('error', 'There was an error sending your message.');
+                Yii::$app->session->setFlash('error', 'При отправке вашего сообщения произошла ошибка.');
             }
             return $this->refresh();
         }

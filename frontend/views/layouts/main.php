@@ -65,8 +65,12 @@ AppAsset::register($this);
     <div class="top-bar">
       <div class="container">
         <!-- Language -->
-        <div class="language"> <a href="#." class="active">EN</a> <a href="#.">FR</a> <a href="#.">GE</a> </div>
-        <div class="top-links">
+        <!--<div class="language"> <a href="#." class="active">EN</a> <a href="#.">FR</a> <a href="#.">GE</a> </div>-->
+          <i class="fa fa-phone" aria-hidden="true"></i> 8 (846) 215-1665
+          <i class="fa fa-clock-o" aria-hidden="true"></i> 24/7
+
+
+          <div class="top-links">
             <ul>
                 <?php if (Yii::$app->user->isGuest): ?>
                     <li><a href="<?= Html::encode(Url::to(['/auth/auth/login'])) ?>">ВОЙТИ</a></li>
@@ -133,7 +137,7 @@ AppAsset::register($this);
               <li class="active"><a href="<?=Url::to(['/shop/catalog/index'])?>">Каталог</a></li>
               <li class="active"><a href="<?=Url::to(['/blog/post/index'])?>">Блог</a></li>
               <li class="active"><a href="<?=Url::to(['/contact/index'])?>">Контакты</a></li>
-              <li><a href="tel:+6494461709">61709</a></li>
+              <li><a href="tel:+78462151665"><i class="fa fa-phone" aria-hidden="true"></i> 8 (846) 215-1665 </a> </li>
               <!--
           <li><a href="12-contact.html">PAGES</a>
             <ul class="dropdown">

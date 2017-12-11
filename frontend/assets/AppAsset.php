@@ -30,7 +30,7 @@ class AppAsset extends AssetBundle
         //'js/jquery-1.11.3.js',
         '//cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.4.1/jquery.jgrowl.min.js',
         'js/jquery.elevatezoom.js',
-        'js/modernizr.js',
+        //'js/modernizr.js',
         'js/bootstrap.min.js',
         'js/wow.min.js',
         'js/own-menu.js',

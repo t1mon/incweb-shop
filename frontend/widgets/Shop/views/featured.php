@@ -34,7 +34,7 @@ use yii\helpers\Url;
                         <?php endif;?>
                         <li class="rs"> <a href="#."><i class="ion-shuffle"></i></a></li>
                         <li class="rs"> <a href="<?= Url::to(['/cabinet/wishlist/add', 'id' => $product->id]) ?> "><i class="fa fa-heart-o"></i></a></li>
-                        <li class="full-w rs"> <a href="<?= Url::to(['/shop/cart/add', 'id' => $product->id])?>" class="btn">ДОБАВИТЬ В КОРЗИНУ</a></li>
+                        <li class="full-w rs"> <a href="<?= Url::to(['/shop/cart/add', 'id' => $product->id])?>" class="btn" methods="post">ДОБАВИТЬ В КОРЗИНУ</a></li>
                         <!-- Rating Stars -->
                         <li class="stars"><?=\shop\helpers\StarHelper::drawStar((int)$product->rating)?></li>
                     </ul>

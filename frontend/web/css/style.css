@@ -3313,6 +3313,22 @@ header .ownmenu .look-book .media-body a {
 	position: relative;
 	padding: 10px 20px;
 }
+.contact_form .has-error .form-control {
+	border-color: #c0392b;
+}
+.contact_form .has-error .form-control:focus {
+	box-shadow:none;
+}
+.contact_form .has-success .form-control {
+	border-color: #00be4b;
+}
+.contact_form .has-success .form-control:focus {
+	box-shadow:none;
+}
+.contact_form .has-error .help-block.help-block-error{
+	color: #c0392b;
+}
+
 #map {
 	height: 320px;
 	margin-bottom: 30px;
@@ -5512,7 +5528,7 @@ footer .flicker img {
 .shopping-cart .cart-ship-info .has-success .form-control {
 	border-color: #00be4b;
 }
-.shopping-cart .cart-ship-info .has-succes .form-control:focus {
+.shopping-cart .cart-ship-info .has-success .form-control:focus {
 	box-shadow:none;
 }
 #form-signup .has-error .help-block {
