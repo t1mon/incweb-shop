@@ -65,7 +65,14 @@
 <div id="wrap">
 
     <!-- Coming Soon -->
-    <div class="coming-soon" style="background: url('<?=\Yii::getAlias('@static/rally/rally1.jpg')?>') center center fixed no-repeat; 	background-size: cover;
+    <div class="coming-soon" style="background: url('<?=\Yii::getAlias('@static/rally/rally1.jpg')?>') center center fixed no-repeat; 	  -webkit-background-size: 100%;
+            -moz-background-size: 100%;
+            -o-background-size: 100%;
+            background-size: 100%;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover; ;
             padding: 150px 0;
             text-align: center;">
         <div class="container">
