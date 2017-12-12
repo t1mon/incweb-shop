@@ -90,8 +90,8 @@ $this->params['breadcrumbs'][] = $this->title;
                         <h6>НАШ АДРЕС</h6>
                         <ul class="location">
                             <li> <i class="fa fa-location-arrow"></i>
-                                <p>г. Самара, ул. Придорожная 2
-                                    Самарская Троговая База</p>
+                                <p>г. Самара, ул. Осетинская 7
+                                    MEBEL-STYLE</p>
                             </li>
                             <li> <i class="fa fa-phone"></i>
                                 <p>Телефон: 8(846) 215 16 65</p>
@@ -161,9 +161,9 @@ $script = <<<JS
 var map;
 function initialize_map() {
 if ($('#map').length) {
-	var myLatLng = new google.maps.LatLng(53.121680, 50.072076);
+	var myLatLng = new google.maps.LatLng(53.15235907, 50.0743305);
 	var mapOptions = {
-		zoom: 15,
+		zoom: 16,
 		center: myLatLng,
 		scrollwheel: false,
 		panControl: false,
