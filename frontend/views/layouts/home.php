@@ -154,20 +154,6 @@ use yii\helpers\Url;
                             Фасад имеет уникальное сочетание глубокого тиснения и эффекта патины, присущей классическому стилю.<br>
                             Изящество фасада подчеркивает стекло с алмазной гравировкой и фацетом.</div>
 
-                        <!-- Layer -->
-                        <!-- <div class="tp-caption sfb tp-resizeme rs-parallaxlevel-4"
-                              data-x="center"
-                              data-y="470"
-                              data-speed="700"
-                              data-start="4000"
-                              data-easing="easeOutBack"
-                              data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                              data-splitin="none"
-                              data-splitout="none"
-                              data-elementdelay="0.1"
-                              data-endelementdelay="0.1"
-                              data-endspeed="300"
-                              data-captionhidden="on"> <a href="#." class="btn btn-1">Shop Now</a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="#" class="btn ">Discover</a> </div> -->
                     </li>
                     <!-- Slider 3 -->
                     <li data-transition="random" data-slotamount="7"> <img src="<?=Yii::getAlias('@static/banners/3.jpg')?>" data-bgposition="center center" alt="" />
@@ -396,27 +382,6 @@ use yii\helpers\Url;
     </div>
     </section>
 
-        <!--======= SEASONALS =========-->
-       <!-- <section class="section-p-60px seasonals no-padding-b">
-            <div class="container">
-
-                <div class="tittle tittle-2 animate fadeInUp" data-wow-delay="0.4s">
-                    <h5>SEASONALS</h5>
-                    <hr>
-                    <p>Tell your Story</p>
-                </div>
-            </div>
-            <ul>
-
-                <li class="animate fadeInUp" data-wow-delay="0.4s"><a href="#."><img src="image/seasonals-img-1.jpg" alt=""></a></li>
-
-                <li class="animate fadeInUp" data-wow-delay="0.6s"><a href="#."><img src="image/seasonals-img-2.jpg" alt=""></a></li>
-
-                <li class="animate fadeInUp" data-wow-delay="0.4s"><a href="#."><img src="image/seasonals-img-3.jpg" alt=""></a></li>
-
-                <li class="animate fadeInUp" data-wow-delay="0.6s"><a href="#."><img src="image/seasonals-img-4.jpg" alt=""></a></li>
-            </ul>
-        </section> -->
 
 
         <!--======= Core Feature =========-->
