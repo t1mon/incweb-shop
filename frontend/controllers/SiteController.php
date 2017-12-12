@@ -2,8 +2,10 @@
 namespace frontend\controllers;
 
 use shop\entities\User\User;
+use shop\forms\SubscribeForm;
 use shop\helpers\JgrowlMessageHelper;
 use shop\helpers\SendEmailHelper;
+use shop\services\newsletter\Newsletter;
 use yii\filters\AccessControl;
 use yii\helpers\Json;
 use yii\web\Controller;
@@ -13,6 +15,14 @@ use yii\web\Controller;
  */
 class SiteController extends Controller
 {
+    private $newsletter;
+
+    public function __construct($id, $module, Newsletter $newsletter, array $config = [])
+    {
+        $this->newsletter = $newsletter;
+        parent::__construct($id, $module, $config);
+    }
+
     /**
      * @inheritdoc
      */
@@ -60,7 +70,20 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $this->layout = 'home';
-        return $this->render('index');
+        $subscribeForm = new SubscribeForm();
+        if ($subscribeForm->load(\Yii::$app->request->post()) && $subscribeForm->validate()) {
+            try {
+                $this->newsletter->subscribe($subscribeForm->email,'','');
+                \Yii::$app->session->setFlash('info', 'Благодарим Вас за подписку на новости.');
+                //return $this->goHome();
+            } catch (\Exception $e) {
+                \Yii::$app->errorHandler->logException($e);
+                \Yii::$app->session->setFlash('warning', 'WARNING: Возможно ваш EMAIL уже есть в базе!');
+            }
+            return $this->refresh();
+        }
+
+        return $this->render('index', ['model'=>$subscribeForm]);
     }
 
     public function actionRally()
@@ -78,6 +101,21 @@ class SiteController extends Controller
             \Yii::$app->session->setFlash('error', 'Ваш аккаунт не связан с аккаунтом Вконтакте');
             return $this->redirect('/cabinet');
         }
+    }
+
+    public function actionSubscribe(SubscribeForm $subscribeForm)
+    {
+
+            try {
+                $this->newsletter->subscribe($subscribeForm->email,'','');
+                \Yii::$app->session->setFlash('info', 'Благодарим Вас за подписку на новости.');
+                //return $this->goHome();
+            } catch (\Exception $e) {
+                \Yii::$app->errorHandler->logException($e);
+                \Yii::$app->session->setFlash('error', 'При подписке на новости произошла ошибка.');
+            }
+            return $this->goHome();
+
     }
 /*
     public function actionMail()

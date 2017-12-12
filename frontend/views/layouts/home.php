@@ -5,6 +5,7 @@
 
 use frontend\widgets\Blog\LastPostsWidget;
 use frontend\widgets\Shop\FeaturedProductsWidget;
+use yii\helpers\Url;
 
 \frontend\assets\OwlCarouselAsset::register($this);
 
@@ -17,6 +18,56 @@ use frontend\widgets\Shop\FeaturedProductsWidget;
         <div class="tp-banner-container">
             <div class="tp-banner-fix" >
                 <ul>
+                    <!-- Slider 4 -->
+                    <li data-transition="random" data-slotamount="7"> <img src="<?=Yii::getAlias('@static/banners/3.jpg')?>" data-bgposition="center top" alt="" />
+                        <div class="overlay"></div>
+                        <!-- Layer -->
+                        <div class="tp-caption sft font-montserrat text-uppercase tp-resizeme rs-parallaxlevel-4"
+                             data-x="center"
+                             data-y="center" data-voffset="-50"
+                             data-speed="700"
+                             data-start="1000"
+                             data-easing="easeOutBack"
+                             data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                             data-splitin="none"
+                             data-splitout="none"
+                             data-elementdelay="0.1"
+                             data-endelementdelay="0.1"
+                             data-endspeed="300"
+                             data-captionhidden="on"
+                             style="color: #fff; font-size: 60px; font-weight: bold; letter-spacing:-2px; "> Ортопедические матрасы. </div>
+
+                        <!-- Layer -->
+                        <div class="tp-caption sfb  font-montserrat text-center tp-resizeme rs-parallaxlevel-4"
+                             data-x="center"
+                             data-y="center" data-voffset="40"
+                             data-speed="700"
+                             data-start="1700"
+                             data-easing="easeOutBack"
+                             data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                             data-splitin="none"
+                             data-splitout="none"
+                             data-elementdelay="0.1"
+                             data-endelementdelay="0.1"
+                             data-endspeed="300"
+                             data-captionhidden="on"
+                             style="color: #fff; font-size: 18px;">  Благодаря всем трудам мы пришли к той продукции,<br> которая отвечает наивысшим показателям комфортного сна. </div>
+
+                        <!-- Layer -->
+                        <div class="tp-caption sfb tp-resizeme rs-parallaxlevel-4"
+                             data-x="center"
+                             data-y="center" data-voffset="120"
+                             data-speed="700"
+                             data-start="2400"
+                             data-easing="easeOutBack"
+                             data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                             data-splitin="none"
+                             data-splitout="none"
+                             data-elementdelay="0.1"
+                             data-endelementdelay="0.1"
+                             data-endspeed="300"
+                             data-captionhidden="on"> <a href="<?=\yii\helpers\Url::to('/catalog/matrasy')?>" class="btn btn-1">Посмотреть продукцию</a></div>
+                    </li>
                     <!-- Slider 1 -->
                     <li data-transition="fade" data-slotamount="7"> <img src="<?=Yii::getAlias('@static/banners/karina-lerom.jpg')?>" data-bgposition="center top" alt="" />
                         <div class="overlay"></div>
@@ -49,7 +100,7 @@ use frontend\widgets\Shop\FeaturedProductsWidget;
                              data-endelementdelay="0.1"
                              data-endspeed="300"
                              data-captionhidden="on"
-                             style="color: #fff; font-size: 80px; font-style:italic;">  Скоро в продаже </div>
+                             style="color: #fff; font-size: 60px; font-weight: bold; letter-spacing:-2px;">  Скоро в продаже </div>
 
                         <!-- Layer -->
                         <div class="tp-caption sfb  font-playfair text-center tp-resizeme rs-parallaxlevel-4"
@@ -65,7 +116,7 @@ use frontend\widgets\Shop\FeaturedProductsWidget;
                              data-endelementdelay="0.1"
                              data-endspeed="300"
                              data-captionhidden="on"
-                             style="color: #fff; font-size: 18px;  font-style:italic;"> Новая программа мебельной фабрики Лером.<br>
+                             style="color: #fff; font-size: 20px; padding: 10px"> Новая программа мебельной фабрики Лером.<br>
                             Фасад имеет уникальное сочетание глубокого тиснения и эффекта патины, присущей классическому стилю.<br>
                             Изящество фасада подчеркивает стекло с алмазной гравировкой и фацетом.</div>
 
@@ -202,36 +253,36 @@ use frontend\widgets\Shop\FeaturedProductsWidget;
 
                     <!-- ADD 1 -->
                     <li class="col-sm-4">
-                        <div class="inn-sec animate fadeInLeft" data-wow-delay="0.6s"> <a href="#."> <img class="img-responsive" src="image/grid-bnr-img-1.jpg" alt="">
-                                <div class="upper"><span> <small>MEN’ </small> -20% ALL ODER</span> </div>
+                        <div class="inn-sec animate fadeInLeft" data-wow-delay="0.6s"> <a href="<?=Url::to('/catalog/skafy-kupe')?>"> <img class="img-responsive" src="<?=Yii::getAlias('@static/banners/kupe.jpg')?>" alt="Шкафы-купе для дома в Самаре">
+                                <div class="upper"><span> <small>ШКАФЫ - КУПЕ </small>ОТ -10% СКИДКИ</span> </div>
                             </a> </div>
 
                         <!-- ADD 2 -->
-                        <div class="inn-sec animate fadeInLeft" data-wow-delay="0.6s"> <a href="#."><img class="img-responsive" src="image/grid-bnr-img-2.jpg" alt="">
-                                <div class="upper"><span> <small>SHOES </small> NEW ARRIVAL</span> </div>
+                        <div class="inn-sec animate fadeInLeft" data-wow-delay="0.6s"> <a href="<?=Url::to('/catalog/detskaa')?>"><img class="img-responsive" src="<?=Yii::getAlias('@static/banners/detskya.jpg')?>" alt="Детские для дома в Самаре">
+                                <div class="upper"><span> <small>ДЕТСКИЕ </small> БОЛЬШОЙ ВЫБОР МОДУЛЕЙ</span> </div>
                             </a> </div>
                     </li>
 
                     <!-- ADD 3 -->
                     <li class="col-sm-4 animate fadeInUp" data-wow-delay="0.6s">
-                        <div class="inn-sec trd"> <a href="#."> <img class="img-responsive" src="image/grid-bnr-img-3.jpg" alt="">
-                                <div class="upper"> <span> <small>FASHION </small> UP TO</span>
-                                    <h2>70%</h2>
+                        <div class="inn-sec trd"> <a href="<?=Url::to('/catalog/korpusnay-mebel')?>"> <img class="img-responsive" src="<?=Yii::getAlias('@static/banners/gostinaya.jpg')?>" alt="Гостиные для дома в Самаре">
+                                <div class="upper"> <span> <small>ГОСТИНЫЕ </small> НОВЫЕ МОДЕЛИ</span>
+                                    <h2>-10%</h2>
                                 </div>
                             </a> </div>
                     </li>
 
                     <!-- ADD 1 -->
                     <li class="col-sm-4">
-                        <div class="inn-sec animate fadeInRight" data-wow-delay="0.6s"> <a href="#."> <img class="img-responsive" src="image/grid-bnr-img-4.jpg" alt="">
-                                <div class="upper"><span> <small>MEN’ </small> -20% ALL ODER</span> </div>
+                        <div class="inn-sec animate fadeInRight" data-wow-delay="0.6s"> <a href="<?=Url::to('/catalog/spalni')?>"> <img class="img-responsive" src="<?=Yii::getAlias('@static/banners/spalnya.jpg')?>" alt="Спальни для дома в Самаре">
+                                <div class="upper"><span> <small>СПАЛЬНИ </small> -10% СКИДКА НА КОМПЛЕКТ</span> </div>
                             </a> </div>
 
                         <!-- ADD 2 -->
-                        <div class="inn-sec last animate fadeInRight" data-wow-delay="0.6s"> <a href="#."><img class="img-responsive" src="image/grid-bnr-img-5.jpg" alt="">
-                                <div class="upper"><span> <small>SHOES </small></span>
-                                    <h2>-50%</h2>
-                                    <span> ALL PRODUCTS</span> </div>
+                        <div class="inn-sec animate fadeInRight" data-wow-delay="0.6s"> <a href="<?Url::to('/catalog/obedennye-zony')?>"><img class="img-responsive" src="<?=Yii::getAlias('@static/banners/stol.jpg')?>" alt="Обеденные зоны для дома в Самаре">
+                                <div class="upper"><span> <small>ОБЕДЕННЫЕ ЗОНЫ </small></span>
+                                    <h2>-10%</h2>
+                                    <span> ВСЯ ПРОДУКЦИЯ</span> </div>
                             </a> </div>
                     </li>
                 </ul>
@@ -243,9 +294,9 @@ use frontend\widgets\Shop\FeaturedProductsWidget;
 
     <!--  Tittle -->
     <div class="tittle tittle-2 animate fadeInUp" data-wow-delay="0.4s">
-        <h5>NEW ARRIVAL</h5>
+        <h5>НОВЫЕ ПОСТУПЛЕНИЯ</h5>
         <hr>
-        <p>Treding fashion</p>
+        <p>тенденция моды для дома</p>
     </div>
 
     <!--  New Arrival Tabs Products  -->
@@ -644,49 +695,24 @@ use frontend\widgets\Shop\FeaturedProductsWidget;
             <div class="container">
                 <!-- Tittle -->
                 <div class="tittle tittle-2 animate fadeInUp" data-wow-delay="0.4s">
-                    <h5>BRANDS</h5>
+                    <h5>БРЕНДЫ С КОТОРЫМИ МЫ РАБОТАЕМ</h5>
                     <hr>
-                    <p>Our Clients</p>
+                    <p>Проверенное качество годами</p>
                 </div>
 
                 <!--  Text Intro -->
-                <p class="font-montserrat intro text-center animate fadeInUp" data-wow-delay="0.4s">Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens danadelion.</p>
+                <p class="font-montserrat intro text-center animate fadeInUp" data-wow-delay="0.4s">Мы знаем толк в мебели. Поэтому сотрудничаем с лучшими фабриками России.</p>
                 <!--  Client Logo Slider -->
                 <div class="client-slide animate fadeInUp" data-wow-delay="0.4s">
-                    <div class="slide"><a href="#."><img class="img-responsive" src="image/client-logo-1.png" alt=""></a></div>
-                    <div class="slide"><a href="#."><img class="img-responsive" src="image/client-logo-2.png" alt=""></a></div>
-                    <div class="slide"><a href="#."><img class="img-responsive" src="image/client-logo-3.png" alt=""></a></div>
-                    <div class="slide"><a href="#."><img class="img-responsive" src="image/client-logo-4.png" alt=""></a></div>
-                    <div class="slide"><a href="#."><img class="img-responsive" src="image/client-logo-2.png" alt=""></a></div>
-                    <div class="slide"><a href="#."><img class="img-responsive" src="image/client-logo-4.png" alt=""></a></div>
+                    <div class="slide"><a href="#."><img class="img-responsive" src="<?=Yii::getAlias('@web/image/lerom.png')?>" alt=""></a></div>
+                    <div class="slide"><a href="#."><img class="img-responsive" src="<?=Yii::getAlias('@web/image/natura_vera.png')?>" alt=""></a></div>
+                    <div class="slide"><a href="#."><img class="img-responsive" src="<?=Yii::getAlias('@web/image/stolprom.png')?>" alt=""></a></div>
+                    <div class="slide"><a href="#."><img class="img-responsive" src="<?=Yii::getAlias('@web/image/avrora.png')?>" alt=""></a></div>
                 </div>
             </div>
         </section>
 
-        <!--======= Subcribe =========-->
-        <section class="subcribe news-letter animate fadeInUp" data-wow-delay="0.4s" data-stellar-background-ratio="0.8">
-            <div class="overlay">
-                <div class="container">
-                    <!-- Tittle -->
-                    <div class="tittle tittle-2 white animate fadeInUp" data-wow-delay="0.4s">
-                        <h5>EMAIL FOR NEWSLETTER</h5>
-                        <hr>
-                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. , consectetur,</p>
-                    </div>
-
-                    <!--  Subsribe Form -->
-                    <div class="news-letter-form animate fadeInUp" data-wow-delay="0.4s">
-                        <div class="sub-mail">
-                            <form>
-                                <input type="search" placeholder="YOUR EMAIL ADDRESS..">
-                                <!--  Button -->
-                                <button type="submit">SUBSCRIBLE</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<?=$content?>
     </div>
 <?php
 $script = <<<JS
