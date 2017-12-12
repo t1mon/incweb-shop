@@ -1741,7 +1741,7 @@ header .ownmenu .look-book .media-body a {
 	width: 58px;
 	float: right;
 	position: absolute;
-	right: 20px;
+	right: -250px;
 	top: 20px;
 	background: #8090a5;
 	line-height: 58px;

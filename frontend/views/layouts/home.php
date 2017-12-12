@@ -18,55 +18,89 @@ use yii\helpers\Url;
         <div class="tp-banner-container">
             <div class="tp-banner-fix" >
                 <ul>
-                    <!-- Slider 4 -->
-                    <li data-transition="random" data-slotamount="7"> <img src="<?=Yii::getAlias('@static/banners/3.jpg')?>" data-bgposition="center top" alt="" />
+                    <li data-transition="random" data-slotamount="7"> <img src="<?=Yii::getAlias('@static/banners/rally.jpg')?>" data-bgposition="center center" alt="" />
                         <div class="overlay"></div>
-                        <!-- Layer -->
-                        <div class="tp-caption sft font-montserrat text-uppercase tp-resizeme rs-parallaxlevel-4"
-                             data-x="center"
-                             data-y="center" data-voffset="-50"
+
+                        <!-- SLIDER LAYERS -->
+                        <div class="tp-caption white-line-box sft tp-resizeme rs-parallaxlevel-4"
+                             data-x="center" data-y="332"
+                             data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
                              data-speed="700"
                              data-start="1000"
-                             data-easing="easeOutBack"
-                             data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                             data-easing="Back.easeOut"
                              data-splitin="none"
                              data-splitout="none"
                              data-elementdelay="0.1"
                              data-endelementdelay="0.1"
                              data-endspeed="300"
                              data-captionhidden="on"
-                             style="color: #fff; font-size: 60px; font-weight: bold; letter-spacing:-2px; "> Ортопедические матрасы. </div>
+
+                             style="z-index: 10;"> </div>
 
                         <!-- Layer -->
-                        <div class="tp-caption sfb  font-montserrat text-center tp-resizeme rs-parallaxlevel-4"
+                        <div class="tp-caption white-line-box sfb tp-resizeme rs-parallaxlevel-4"
                              data-x="center"
-                             data-y="center" data-voffset="40"
-                             data-speed="700"
-                             data-start="1700"
-                             data-easing="easeOutBack"
+                             data-y="420"
                              data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                             data-speed="700"
+                             data-start="1000"
+                             data-easing="Back.easeOut"
                              data-splitin="none"
                              data-splitout="none"
                              data-elementdelay="0.1"
                              data-endelementdelay="0.1"
                              data-endspeed="300"
                              data-captionhidden="on"
-                             style="color: #fff; font-size: 18px;">  Благодаря всем трудам мы пришли к той продукции,<br> которая отвечает наивысшим показателям комфортного сна. </div>
+                             style="z-index: 10;"> </div>
+
+                        <!-- Layer -->
+                        <div class="tp-caption font-montserrat customin tp-resizeme rs-parallaxlevel-4"
+                             data-x="center"
+                             data-y="335"
+                             data-speed="700"
+                             data-start="1000"
+                             data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                             data-easing="Back.easeOut"
+                             data-splitin="none"
+                             data-splitout="none"
+                             data-elementdelay="0.1"
+                             data-endelementdelay="0.1"
+                             data-endspeed="300"
+                             data-captionhidden="on"
+                             style="color: #fff; font-size: 60px; text-transform: uppercase; font-weight: bold; letter-spacing:3px;"> РОЗЫГРЫШ </div>
+
+                        <!-- Layer -->
+                        <div class="tp-caption sfb tp-resizeme  font-playfair text-center rs-parallaxlevel-4"
+                             data-x="center"
+                             data-y="450"
+                             data-speed="700"
+                             data-start="1700"
+                             data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                             data-easing="Back.easeOut"
+                             data-splitin="none"
+                             data-splitout="none"
+                             data-elementdelay="0.1"
+                             data-endelementdelay="0.1"
+                             data-endspeed="300"
+                             data-captionhidden="on"
+                             style="color: #fff; font-size: 18px; font-weight: normal; font-style:italic; letter-spacing:0px;"> Победитель получит прихожую фабрики Лером, стоимостью более 20000 руб.<br>
+                            Абсолютно бесплатно. </div>
 
                         <!-- Layer -->
                         <div class="tp-caption sfb tp-resizeme rs-parallaxlevel-4"
                              data-x="center"
-                             data-y="center" data-voffset="120"
+                             data-y="520"
                              data-speed="700"
                              data-start="2400"
-                             data-easing="easeOutBack"
                              data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                             data-easing="Back.easeOut"
                              data-splitin="none"
                              data-splitout="none"
                              data-elementdelay="0.1"
                              data-endelementdelay="0.1"
                              data-endspeed="300"
-                             data-captionhidden="on"> <a href="<?=\yii\helpers\Url::to('/catalog/matrasy')?>" class="btn btn-1">Посмотреть продукцию</a></div>
+                             data-captionhidden="on"
+                             style="z-index: 10;"> <a href="<?=Url::to('/site/rally')?>" class="btn">ПРИНЯТЬ УЧАСТИЕ</a></div>
                     </li>
                     <!-- Slider 1 -->
                     <li data-transition="fade" data-slotamount="7"> <img src="<?=Yii::getAlias('@static/banners/karina-lerom.jpg')?>" data-bgposition="center top" alt="" />
@@ -100,7 +134,7 @@ use yii\helpers\Url;
                              data-endelementdelay="0.1"
                              data-endspeed="300"
                              data-captionhidden="on"
-                             style="color: #fff; font-size: 60px; font-weight: bold; letter-spacing:-2px;">  Скоро в продаже </div>
+                             style="color: #fff; font-size: 60px; text-transform: uppercase; font-weight: bold; letter-spacing:3px;">  СКОРО В ПРОДАЖЕ </div>
 
                         <!-- Layer -->
                         <div class="tp-caption sfb  font-playfair text-center tp-resizeme rs-parallaxlevel-4"
@@ -135,55 +169,87 @@ use yii\helpers\Url;
                               data-endspeed="300"
                               data-captionhidden="on"> <a href="#." class="btn btn-1">Shop Now</a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="#" class="btn ">Discover</a> </div> -->
                     </li>
-                    <!-- Slider 2 -->
-                    <li data-transition="random" data-slotamount="7"> <img src="<?=Yii::getAlias('@static/banners/3.jpg')?>" data-bgposition="center top" alt="" />
-                        <div class="overlay"></div>
-                        <!-- Layer -->
-                        <div class="tp-caption sft font-montserrat text-uppercase tp-resizeme rs-parallaxlevel-4"
-                             data-x="center"
-                             data-y="center" data-voffset="-50"
+                    <!-- Slider 3 -->
+                    <li data-transition="random" data-slotamount="7"> <img src="<?=Yii::getAlias('@static/banners/3.jpg')?>" data-bgposition="center center" alt="" />
+                        <!-- SLIDER LAYERS -->
+                        <div class="tp-caption lfr tp-resizeme rs-parallaxlevel-4"
+                             data-x="right"
+                             data-y="top"
+                             data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
                              data-speed="700"
                              data-start="1000"
-                             data-easing="easeOutBack"
-                             data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                             data-easing="Back.easeOut"
                              data-splitin="none"
                              data-splitout="none"
                              data-elementdelay="0.1"
                              data-endelementdelay="0.1"
                              data-endspeed="300"
                              data-captionhidden="on"
-                             style="color: #fff; font-size: 60px; font-weight: bold; letter-spacing:-2px; "> Ортопедические матрасы. </div>
+                             style="z-index: 1;"> <img src="<?=Yii::getAlias('@static/banners/matras.png')?>" alt=""> </div>
 
                         <!-- Layer -->
-                        <div class="tp-caption sfb  font-montserrat text-center tp-resizeme rs-parallaxlevel-4"
-                             data-x="center"
-                             data-y="center" data-voffset="40"
+                        <div class="tp-caption font-montserrat sft tp-resizeme rs-parallaxlevel-4"
+                             data-x="left"
+                             data-y="center" data-voffset="-140"
                              data-speed="700"
-                             data-start="1700"
-                             data-easing="easeOutBack"
+                             data-start="1000"
                              data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                             data-easing="Back.easeOut"
                              data-splitin="none"
                              data-splitout="none"
                              data-elementdelay="0.1"
                              data-endelementdelay="0.1"
                              data-endspeed="300"
                              data-captionhidden="on"
-                             style="color: #fff; font-size: 18px;">  Благодаря всем трудам мы пришли к той продукции,<br> которая отвечает наивысшим показателям комфортного сна. </div>
+                             style="color: #333333; font-size: 30px; font-weight: bold; letter-spacing: 0px;"> Ортопедические матрасы <br>
+                            Идеал для сна и тела </div>
+
+                        <!-- Layer -->
+                        <div class="tp-caption font-montserrat lfr tp-resizeme rs-parallaxlevel-4"
+                             data-x="250"
+                             data-y="center" data-voffset="-220"
+                             data-speed="700"
+                             data-start="1400"
+                             data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                             data-easing="Back.easeOut"
+                             data-splitin="none"
+                             data-splitout="none"
+                             data-elementdelay="0.1"
+                             data-endelementdelay="0.1"
+                             data-endspeed="300"
+                             data-captionhidden="on"> <span class="off-tag">-10%</span> </div>
+
+                        <!-- Layer -->
+                        <div class="tp-caption sfb tp-resizeme  font-playfair text-center rs-parallaxlevel-4"
+                             data-x="left"
+                             data-y="center" data-voffset="-70"
+                             data-speed="700"
+                             data-start="1700"
+                             data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                             data-easing="Back.easeOut"
+                             data-splitin="none"
+                             data-splitout="none"
+                             data-elementdelay="0.1"
+                             data-endelementdelay="0.1"
+                             data-endspeed="300"
+                             data-captionhidden="on"
+                             style="color: #ababab; font-size: 18px; font-weight: 200; font-style:italic; letter-spacing:0px;"> Товары для сна</div>
 
                         <!-- Layer -->
                         <div class="tp-caption sfb tp-resizeme rs-parallaxlevel-4"
-                             data-x="center"
-                             data-y="center" data-voffset="120"
+                             data-x="left"
+                             data-y="center" data-voffset="0"
                              data-speed="700"
                              data-start="2400"
-                             data-easing="easeOutBack"
                              data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                             data-easing="Back.easeOut"
                              data-splitin="none"
                              data-splitout="none"
                              data-elementdelay="0.1"
                              data-endelementdelay="0.1"
                              data-endspeed="300"
-                             data-captionhidden="on"> <a href="<?=\yii\helpers\Url::to('/catalog/matrasy')?>" class="btn btn-1">Посмотреть продукцию</a></div>
+                             data-captionhidden="on"
+                             style="z-index: 10;"> <a href="<?=Url::to('/catalog/matrasy')?>" class="btn btn-1">ПОСМОТРЕТЬ ПРОДУКЦИЮ</a> </div>
                     </li>
 
 
@@ -219,7 +285,7 @@ use yii\helpers\Url;
                              data-endelementdelay="0.1"
                              data-endspeed="300"
                              data-captionhidden="on"
-                             style="color: #272727; font-size: 18px; font-weight: normal; letter-spacing: 3px; border-top:1px solid #272727; border-bottom:1px solid #272727; padding:20px 0;"> СТОЛЫ и СТУЛЬЯ <br>
+                             style="color: #272727; font-size: 18px; font-weight: normal; letter-spacing: 3px; border-top:1px solid #272727; border-bottom:1px solid #272727; padding:20px 0;"> ОБЕДЕННЫЕ ЗОНЫ <br>
                             Огромный выбор кухонной мебели </div>
 
                         <!-- Layer -->
@@ -236,7 +302,7 @@ use yii\helpers\Url;
                              data-endelementdelay="0.1"
                              data-endspeed="300"
                              data-captionhidden="on"
-                             style="z-index: 10;"> <a href="#" class="btn btn-1">ПОСМОТРЕТЬ ПРОДУКЦИЮ</a> </div>
+                             style="z-index: 10;"> <a href="<?=Url::to('/catalog/obedennye-zony')?>" class="btn btn-1">ПОСМОТРЕТЬ ПРОДУКЦИЮ</a> </div>
                     </li>
                 </ul>
             </div>
@@ -245,6 +311,7 @@ use yii\helpers\Url;
 
     <!-- CONTENT START -->
     <div class="content">
+
 
         <!--======= NEW COLLECRION =========-->
         <section class="section-p-30px grid-collection">
@@ -286,168 +353,6 @@ use yii\helpers\Url;
                 </ul>
             </div>
         </section>
-    <!--======= New Arrival =========-->
-    <section class="section-p-30px new-arrival new-arri-w-slide">
-    <div class="container">
-
-    <!--  Tittle -->
-    <div class="tittle tittle-2 animate fadeInUp" data-wow-delay="0.4s">
-        <h5>НОВЫЕ ПОСТУПЛЕНИЯ</h5>
-        <hr>
-        <p>тенденция моды для дома</p>
-    </div>
-
-    <!--  New Arrival Tabs Products  -->
-    <div class="popurlar_product client-slide animate fadeInUp" data-wow-delay="0.4s">
-        <?= FeaturedProductsWidget::widget([
-            'limit' => 6,
-        ]) ?>
-
-    </div>
-    </div>
-    </section>
-
-        <!--======= SEASONALS =========-->
-        <section class="section-p-60px seasonals no-padding-b">
-            <div class="container">
-                <!--  Tittle -->
-                <div class="tittle tittle-2 animate fadeInUp" data-wow-delay="0.4s">
-                    <h5>SEASONALS</h5>
-                    <hr>
-                    <p>Tell your Story</p>
-                </div>
-            </div>
-            <ul>
-                <!-- Image 1 -->
-                <li class="animate fadeInUp" data-wow-delay="0.4s"><a href="#."><img src="image/seasonals-img-1.jpg" alt=""></a></li>
-                <!-- Image 1 -->
-                <li class="animate fadeInUp" data-wow-delay="0.6s"><a href="#."><img src="image/seasonals-img-2.jpg" alt=""></a></li>
-                <!-- Image 1 -->
-                <li class="animate fadeInUp" data-wow-delay="0.4s"><a href="#."><img src="image/seasonals-img-3.jpg" alt=""></a></li>
-                <!-- Image 1 -->
-                <li class="animate fadeInUp" data-wow-delay="0.6s"><a href="#."><img src="image/seasonals-img-4.jpg" alt=""></a></li>
-            </ul>
-        </section>
-
-        <!--======= Popurlar Product =========-->
-        <section class="section-p-60px small-r-items">
-            <div class="container">
-                <!--  Small Items Row -->
-                <div class="row">
-
-                    <!--  TOP SELLERS -->
-                    <div class="col-md-4 animate fadeInUp" data-wow-delay="0.4s">
-                        <!-- Tittle -->
-                        <h5>TOP SELLERS</h5>
-                        <!--  Item  1 -->
-                        <div class="media">
-                            <div class="media-left">
-                                <!--  Image -->
-                                <div class="item-img"> <a href="#"> <img class="media-object" src="image/small-item.jpg" alt=""> </a> </div>
-                            </div>
-                            <!--  Details -->
-                            <div class="media-body"> <a class="media-heading" href="#.">FLAT SOLE PATENT SANDAL</a> <span class="font-montserrat">129.00 USD</span> <a href="#." class="btn btn-small">ADD TO CART</a>
-                                <ul class="main-link">
-                                    <li> <a href="image/small-item.jpg" data-lighter><i class="ion-search"></i></a></li>
-                                    <li> <a href="#."><i class="ion-shuffle"></i></a></li>
-                                    <li> <a href="#."><i class="fa fa-heart-o"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!--  Item  2 -->
-                        <div class="media">
-                            <div class="media-left">
-                                <!--  Image -->
-                                <div class="item-img"> <a href="#"> <img class="media-object" src="image/small-item-3.jpg" alt=""> </a> </div>
-                            </div>
-                            <!--  Details -->
-                            <div class="media-body"> <a class="media-heading" href="#.">FLAT SOLE PATENT SANDAL</a> <span class="font-montserrat">129.00 USD</span> <a href="#." class="btn btn-small">ADD TO CART</a>
-                                <ul class="main-link">
-                                    <li> <a href="image/small-item-3.jpg" data-lighter><i class="ion-search"></i></a></li>
-                                    <li> <a href="#."><i class="ion-shuffle"></i></a></li>
-                                    <li> <a href="#."><i class="fa fa-heart-o"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--  SALE OFF -->
-                    <div class="col-md-4 animate fadeInUp" data-wow-delay="0.4s">
-                        <!-- Tittle -->
-                        <h5>SALE OFF</h5>
-                        <!--  Item  1 -->
-                        <div class="media">
-                            <div class="media-left">
-                                <!--  Image -->
-                                <div class="item-img"> <a href="#"> <img class="media-object" src="image/small-item-1.jpg" alt=""> </a> </div>
-                            </div>
-                            <!--  Details -->
-                            <div class="media-body"> <a class="media-heading" href="#.">FLAT SOLE PATENT SANDAL</a> <span class="font-montserrat">129.00 USD</span> <a href="#." class="btn btn-small">ADD TO CART</a>
-                                <ul class="main-link">
-                                    <li> <a href="image/small-item-1.jpg" data-lighter><i class="ion-search"></i></a></li>
-                                    <li> <a href="#."><i class="ion-shuffle"></i></a></li>
-                                    <li> <a href="#."><i class="fa fa-heart-o"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!--  Item  2 -->
-                        <div class="media">
-                            <div class="media-left">
-                                <!--  Image -->
-                                <div class="item-img"> <a href="#"> <img class="media-object" src="image/small-item-4.jpg" alt=""> </a> </div>
-                            </div>
-                            <!--  Details -->
-                            <div class="media-body"> <a class="media-heading" href="#.">FLAT SOLE PATENT SANDAL</a> <span class="font-montserrat">129.00 USD</span> <a href="#." class="btn btn-small">ADD TO CART</a>
-                                <ul class="main-link">
-                                    <li> <a href="image/small-item-4.jpg" data-lighter><i class="ion-search"></i></a></li>
-                                    <li> <a href="#."><i class="ion-shuffle"></i></a></li>
-                                    <li> <a href="#."><i class="fa fa-heart-o"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--  SALE OFF -->
-                    <div class="col-md-4 animate fadeInUp" data-wow-delay="0.4s">
-                        <!-- Tittle -->
-                        <h5>TOP RATE</h5>
-                        <!--  Item  1 -->
-                        <div class="media">
-                            <div class="media-left">
-                                <!--  Image -->
-                                <div class="item-img"> <a href="#"> <img class="media-object" src="image/small-item-2.jpg" alt=""> </a> </div>
-                            </div>
-                            <!--  Details -->
-                            <div class="media-body"> <a class="media-heading" href="#.">FLAT SOLE PATENT SANDAL</a> <span class="font-montserrat">129.00 USD</span> <a href="#." class="btn btn-small">ADD TO CART</a>
-                                <ul class="main-link">
-                                    <li> <a href="image/small-item-2.jpg" data-lighter><i class="ion-search"></i></a></li>
-                                    <li> <a href="#."><i class="ion-shuffle"></i></a></li>
-                                    <li> <a href="#."><i class="fa fa-heart-o"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!--  Item  2 -->
-                        <div class="media">
-                            <div class="media-left">
-                                <!--  Image -->
-                                <div class="item-img"> <a href="#"> <img class="media-object" src="image/small-item-5.jpg" alt=""> </a> </div>
-                            </div>
-                            <!--  Details -->
-                            <div class="media-body"> <a class="media-heading" href="#.">FLAT SOLE PATENT SANDAL</a> <span class="font-montserrat">129.00 USD</span> <a href="#." class="btn btn-small">ADD TO CART</a>
-                                <ul class="main-link">
-                                    <li> <a href="image/small-item-5.jpg" data-lighter><i class="ion-search"></i></a></li>
-                                    <li> <a href="#."><i class="ion-shuffle"></i></a></li>
-                                    <li> <a href="#."><i class="fa fa-heart-o"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!--======= Shades =========-->
         <section class="shades">
@@ -470,223 +375,49 @@ use yii\helpers\Url;
                 <!-- Btn -->
                 <a href="#." class="btn btn-small">JOIN NOW</a> </div>
         </section>
+    <!--======= New Arrival =========-->
+    <section class="section-p-30px new-arrival new-arri-w-slide">
+    <div class="container">
 
-        <!--======= Blog =========-->
-        <section class="section-p-60px testimonial testimonial-simple no-padding-b">
+    <!--  Tittle -->
+    <div class="tittle tittle-2 animate fadeInUp" data-wow-delay="0.4s">
+        <h5>НОВЫЕ ПОСТУПЛЕНИЯ</h5>
+        <hr>
+        <p>тенденция моды для дома</p>
+    </div>
+
+    <!--  New Arrival Tabs Products  -->
+    <div class="popurlar_product client-slide animate fadeInUp" data-wow-delay="0.4s">
+        <?= FeaturedProductsWidget::widget([
+            'limit' => 6,
+        ]) ?>
+
+    </div>
+    </div>
+    </section>
+
+        <!--======= SEASONALS =========-->
+       <!-- <section class="section-p-60px seasonals no-padding-b">
             <div class="container">
-                <!--  Tittle -->
+
                 <div class="tittle tittle-2 animate fadeInUp" data-wow-delay="0.4s">
-                    <h5>WHAT THE SAY ?</h5>
+                    <h5>SEASONALS</h5>
                     <hr>
-                    <p>Testtimonial</p>
-                </div>
-                <ul class="row">
-                    <!--  Text  1 -->
-                    <li class="col-sm-6 animate fadeInUp" data-wow-delay="0.4s">
-                        <div class="media">
-                            <div class="media-left">
-                                <!--  Image -->
-                                <div class="avatar"> <a href="#"> <img class="media-object" src="image/avatar-1.jpg" alt=""> </a> </div>
-                            </div>
-                            <!--  Details -->
-                            <div class="media-body">
-                                <p>“Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation”</p>
-                                <h6>TYRION LANNISTER</h6>
-                                <p>Founder-Ceo. Dell Corp</p>
-                            </div>
-                        </div>
-                    </li>
-
-                    <!--  Text  1 -->
-                    <li class="col-sm-6 animate fadeInUp" data-wow-delay="0.4s">
-                        <div class="media">
-                            <div class="media-left">
-                                <!--  Image -->
-                                <div class="avatar"> <a href="#"> <img class="media-object" src="image/avatar-2.jpg" alt=""> </a> </div>
-                            </div>
-                            <!--  Details -->
-                            <div class="media-body">
-                                <p>“Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation”</p>
-                                <h6>SANSA STARK</h6>
-                                <p>Founder-Ceo. Dell Corp</p>
-                            </div>
-                        </div>
-                    </li>
-
-                    <!--  Text  1 -->
-                    <li class="col-sm-6 animate fadeInUp" data-wow-delay="0.4s">
-                        <div class="media">
-                            <div class="media-left">
-                                <!--  Image -->
-                                <div class="avatar"> <a href="#"> <img class="media-object" src="image/avatar-3.jpg" alt=""> </a> </div>
-                            </div>
-                            <!--  Details -->
-                            <div class="media-body">
-                                <p>“Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation”</p>
-                                <h6>LADY SANSA</h6>
-                                <p>Founder-Ceo. Dell Corp</p>
-                            </div>
-                        </div>
-                    </li>
-
-                    <!--  Text  1 -->
-                    <li class="col-sm-6 animate fadeInUp" data-wow-delay="0.4s">
-                        <div class="media">
-                            <div class="media-left">
-                                <!--  Image -->
-                                <div class="avatar"> <a href="#"> <img class="media-object" src="image/avatar-4.jpg" alt=""> </a> </div>
-                            </div>
-                            <!--  Details -->
-                            <div class="media-body">
-                                <p>“Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation”</p>
-                                <h6>JOHN SNOW</h6>
-                                <p>Founder-Ceo. Dell Corp</p>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <!--======= Portfolio =========-->
-        <section class="section-p-30px portfolio">
-            <div class="container">
-                <!--  Tittle -->
-                <div class="tittle tittle-2 animate fadeInUp" data-wow-delay="0.4s">
-                    <h5>RECENT WORK</h5>
-                    <hr>
-                    <p>Show your Portfolio</p>
+                    <p>Tell your Story</p>
                 </div>
             </div>
-            <div class="container-fluid">
-                <!-- Portfolio Row -->
-                <ul class="port-folio-row row">
+            <ul>
 
-                    <!-- Project 1 -->
-                    <li class="col-sm-3 animate fadeInUp" data-wow-delay="0.2s"> <img src="image/port-img-1.jpg" alt="">
+                <li class="animate fadeInUp" data-wow-delay="0.4s"><a href="#."><img src="image/seasonals-img-1.jpg" alt=""></a></li>
 
-                        <!-- Hover Info -->
-                        <div class="hover-port">
-                            <div class="position-center-center">
-                                <h6>Navy check</h6>
-                                <a href="image/port-img-1.jpg" data-lighter><i class="fa fa-search"></i></a> <a href="#."><i class="fa fa-link"></i></a></div> </div>
-                    </li>
+                <li class="animate fadeInUp" data-wow-delay="0.6s"><a href="#."><img src="image/seasonals-img-2.jpg" alt=""></a></li>
 
-                    <!-- Project 2 -->
-                    <li class="col-sm-3 animate fadeInUp" data-wow-delay="0.4s"> <img src="image/port-img-2.jpg" alt="">
+                <li class="animate fadeInUp" data-wow-delay="0.4s"><a href="#."><img src="image/seasonals-img-3.jpg" alt=""></a></li>
 
-                        <!-- Hover Info -->
-                        <div class="hover-port">
-                            <div class="position-center-center">
-                                <h6>Navy check</h6>
-                                <a href="image/port-img-2.jpg" data-lighter><i class="fa fa-search"></i></a> <a href="#."><i class="fa fa-link"></i></a></div> </div>
-                    </li>
+                <li class="animate fadeInUp" data-wow-delay="0.6s"><a href="#."><img src="image/seasonals-img-4.jpg" alt=""></a></li>
+            </ul>
+        </section> -->
 
-                    <!-- Project 3 -->
-                    <li class="col-sm-3 animate fadeInUp" data-wow-delay="0.6s"> <img src="image/port-img-3.jpg" alt="">
-
-                        <!-- Hover Info -->
-                        <div class="hover-port">
-                            <div class="position-center-center">
-                                <h6>Navy check</h6>
-                                <a href="image/port-img-3.jpg" data-lighter><i class="fa fa-search"></i></a> <a href="#."><i class="fa fa-link"></i></a></div> </div>
-                    </li>
-
-                    <!-- Project 4 -->
-                    <li class="col-sm-3 animate fadeInUp" data-wow-delay="0.8s"> <img src="image/port-img-4.jpg" alt="">
-
-                        <!-- Hover Info -->
-                        <div class="hover-port">
-                            <div class="position-center-center">
-                                <h6>Navy check</h6>
-                                <a href="image/port-img-4.jpg" data-lighter><i class="fa fa-search"></i></a> <a href="#."><i class="fa fa-link"></i></a></div> </div>
-                    </li>
-
-                    <!-- Project 5 -->
-                    <li class="col-sm-3 animate fadeInUp" data-wow-delay="0.2s"> <img src="image/port-img-5.jpg" alt="">
-
-                        <!-- Hover Info -->
-                        <div class="hover-port">
-                            <div class="position-center-center">
-                                <h6>Navy check</h6>
-                                <a href="image/port-img-5.jpg" data-lighter><i class="fa fa-search"></i></a> <a href="#."><i class="fa fa-link"></i></a></div> </div>
-                    </li>
-
-                    <!-- Project 6 -->
-                    <li class="col-sm-3 animate fadeInUp" data-wow-delay="0.4s"> <img src="image/port-img-6.jpg" alt="">
-
-                        <!-- Hover Info -->
-                        <div class="hover-port">
-                            <div class="position-center-center">
-                                <h6>Navy check</h6>
-                                <a href="image/port-img-6.jpg" data-lighter><i class="fa fa-search"></i></a> <a href="#."><i class="fa fa-link"></i></a></div> </div>
-                    </li>
-
-                    <!-- Project 7 -->
-                    <li class="col-sm-3 animate fadeInUp" data-wow-delay="0.6s"> <img src="image/port-img-7.jpg" alt="">
-
-                        <!-- Hover Info -->
-                        <div class="hover-port">
-                            <div class="position-center-center">
-                                <h6>Navy check</h6>
-                                <a href="image/port-img-7.jpg" data-lighter><i class="fa fa-search"></i></a> <a href="#."><i class="fa fa-link"></i></a></div> </div>
-                    </li>
-
-                    <!-- Project 8 -->
-                    <li class="col-sm-3 animate fadeInUp" data-wow-delay="0.8s"> <img src="image/port-img-8.jpg" alt="">
-
-                        <!-- Hover Info -->
-                        <div class="hover-port">
-                            <div class="position-center-center">
-                                <h6>Navy check</h6>
-                                <a href="image/port-img-8.jpg" data-lighter><i class="fa fa-search"></i></a> <a href="#."><i class="fa fa-link"></i></a></div> </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <!--======= Blog =========-->
-        <section class="section-p-60px blog no-padding-b">
-            <div class="container">
-                <!--  Tittle -->
-                <div class="tittle tittle-2 animate fadeInUp" data-wow-delay="0.4s">
-                    <h5>RECENT BLOG</h5>
-                    <hr>
-                    <p>Our Blog</p>
-                </div>
-
-                <!--  Blog Posts -->
-                <div class="blog-posts">
-                    <ul class="row">
-                        <!--  Posts 1 -->
-                        <li class="col-sm-6 animate fadeInLeft" data-wow-delay="0.4s">
-                            <!--  Image -->
-                            <img class="img-responsive" src="image/blog-3.jpg" alt=""> <span class="tags">FASHION NEWS</span> <a href="#." class="tittle-post font-playfair">Mighty Healthy 2013 Spring/Summer</a>
-                            <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens danadelion.</p>
-                            <!--  Post Info -->
-                            <ul class="info">
-                                <li><i class="fa fa-user"></i> admin</li>
-                                <li><i class="fa fa-calendar-o"></i> 12 JULY</li>
-                                <li><i class="fa fa-eye"></i> 325</li>
-                            </ul>
-                        </li>
-
-                        <!--  Posts 2 -->
-                        <li class="col-sm-6 animate fadeInRight" data-wow-delay="0.4s">
-                            <!--  Image -->
-                            <img class="img-responsive" src="image/blog-4.jpg" alt=""> <span class="tags">MOTION GRAPHIC</span> <a href="#." class="tittle-post font-playfair">All in Black Venna</a>
-                            <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens danadelion.</p>
-                            <!--  Post Info -->
-                            <ul class="info">
-                                <li><i class="fa fa-user"></i> admin</li>
-                                <li><i class="fa fa-calendar-o"></i> 12 JULY</li>
-                                <li><i class="fa fa-eye"></i> 325</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
 
         <!--======= Core Feature =========-->
         <section class="section-p-60px our-clients">

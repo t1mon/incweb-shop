@@ -136,17 +136,6 @@
                     </script></center>
                 <a href="<?=\yii\helpers\Url::to(['rally'])?>"  class="btn btn-white">Обновить страницу</a><br>
             <?php endif;?>
-
-            <!--
-            <ul class="social_icons animate fadeInUp" data-wow-delay="0.4s">
-                <li class="facebook"><a href="#."> <i class="fa fa-facebook"></i></a></li>
-                <li class="twitter"><a href="#."> <i class="fa fa-twitter"></i></a></li>
-                <li class="googleplus"><a href="#."> <i class="fa fa-google"></i></a></li>
-                <li class="skype"><a href="#."> <i class="fa fa-skype"></i></a></li>
-                <li class="pinterest"><a href="#."> <i class="fa fa-pinterest"></i></a></li>
-                <li class="dribbble"><a href="#."> <i class="fa fa-dribbble"></i></a></li>
-                <li class="flickr"><a href="#."> <i class="fa fa-flickr"></i></a></li>
-            </ul> -->
         </div>
     </div>
 </div>

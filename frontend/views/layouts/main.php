@@ -119,10 +119,10 @@ AppAsset::register($this);
                     <li><a href="<?= Html::encode(Url::to(['/cabinet/default/index'])) ?>">ПРОФИЛЬ</a></li>
                     <li><a href="<?= Html::encode(Url::to(['/auth/auth/logout'])) ?>" data-method="post">ВЫЙТИ</a></li>
                 <?php endif; ?>
-                <li><a href="<?= Url::to(['/cabinet/wishlist/index']) ?>" id="wishlist-total"
+                <li><a href="<?= Html::encode(Url::to(['/cabinet/wishlist/index'])) ?>" id="wishlist-total"
                        title="Wish List"><i class="fa fa-heart"></i> <span class="hidden-xs hidden-sm hidden-md">Мои Желания</span></a>
                 </li>
-                <li><a href="<?= Url::to(['/shop/cart/index']) ?>" title="Shopping Cart"><i
+                <li><a href="<?= Url::to(['/shop/cart/index']) ?>" title="Корзина"><i
                                 class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Корзина</span></a>
                 </li>
                <!-- <li><a href="/index.php?route=checkout/checkout" title="Checkout"><i
@@ -478,7 +478,7 @@ AppAsset::register($this);
     <div class="container">
       <div class="text-center"> <a href="#."><img src="/image/logo.png" alt=""></a><br>
         <img class="margin-t-40" src="/image/hammer.png" alt="">
-        <p class="intro-small margin-t-40">Multipurpose E-Commerce Theme is suitable for furniture store, fashion shop, accessories, electric shop. We have included multiple layouts for home page to give you best selections in customization.</p>
+        <p class="intro-small margin-t-40">Мебельный ОНЛАЙН магазин в Самаре MEBEL-STYLE. Мы знаем, какую мебель вы предпочитаете.</p>
       </div>
       
       <!--  Footer Links -->
@@ -488,25 +488,23 @@ AppAsset::register($this);
             
             <!--  INFOMATION -->
             <li class="col-sm-6">
-              <h5>INFOMATION</h5>
+              <h5>ИНФОРМАЦИЯ</h5>
               <ul class="f-links">
-                <li><a href="#.">ABOUT US</a></li>
-                <li><a href="#."> DELIVERY INFOMATION</a></li>
-                <li><a href="#."> PRIVACY & POLICY</a></li>
-                <li><a href="#."> TEMRS & CONDITIONS</a></li>
-                <li><a href="#."> MANUFACTURES</a></li>
+                <li><a href="<?= Html::encode(Url::to(['/contact/index'])) ?>">КОНТАКТЫ</a></li>
+                <li><a href="#.">ИНФОРМАЦИЯ О ДОСТАВКЕ</a></li>
+                <li><a href="#.">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</a></li>
               </ul>
             </li>
             
             <!-- MY ACCOUNT -->
             <li class="col-sm-6">
-              <h5>MY ACCOUNT</h5>
+              <h5>ПРОФИЛЬ</h5>
               <ul class="f-links">
-                <li><a href="#.">MY ACCOUNT</a></li>
-                <li><a href="#."> LOGIN</a></li>
-                <li><a href="#."> MY CART</a></li>
-                <li><a href="#."> WISHLIST</a></li>
-                <li><a href="#."> CHECKOUT</a></li>
+                <li><a href="<?= Html::encode(Url::to(['/cabinet/default/index'])) ?>">МОЙ ПРОФИЛЬ</a></li>
+                <li><a href="<?= Html::encode(Url::to(['/auth/auth/login'])) ?>"> ВОЙТИ</a></li>
+                <li><a href="<?= Html::encode(Url::to(['/shop/cart/index'])) ?>"> МОЯ КОРЗИНА</a></li>
+                <li><a href="<?= Html::encode(Url::to(['/cabinet/wishlist/index']))?>"> МОЙ ЖЕЛАНИЯ</a></li>
+                <li><a href="<?= Html::encode(Url::to(['/shop/checkout/index']))?>"> ОФОРМИТЬ ЗАКАЗ</a></li>
               </ul>
             </li>
           </ul>
@@ -540,7 +538,7 @@ AppAsset::register($this);
       
       <!-- Rights -->
       <div class="rights">
-        <p>© 2015 HTML5 TEMPLATE SEBIAN. All Rights Reserved. Powered By WPELITE</p>
+        <p>© <?=date('Y')?> MEBEL-STYLE <?=Yii::powered()?> Разработка IncWeb</p>
       </div>
     </div>
   </footer>  

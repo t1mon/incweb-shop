@@ -43,6 +43,10 @@ class CheckoutController extends Controller
      */
     public function actionIndex()
     {
+        if (!$this->cart->getAmount()){
+            Yii::$app->session->setFlash('error', 'ERROR: Корзина ПУСТА');
+            return $this->render('/site/index');
+        }
         $form = new OrderForm($this->cart->getWeight());
 
         if ($form->load(Yii::$app->request->post()) && $form->validate()) {
