@@ -279,10 +279,8 @@ use yii\helpers\Url;
                             </a> </div>
 
                         <!-- ADD 2 -->
-                        <div class="inn-sec animate fadeInRight" data-wow-delay="0.6s"> <a href="<?Url::to('/catalog/obedennye-zony')?>"><img class="img-responsive" src="<?=Yii::getAlias('@static/banners/stol.jpg')?>" alt="Обеденные зоны для дома в Самаре">
-                                <div class="upper"><span> <small>ОБЕДЕННЫЕ ЗОНЫ </small></span>
-                                    <h2>-10%</h2>
-                                    <span> ВСЯ ПРОДУКЦИЯ</span> </div>
+                        <div class="inn-sec animate fadeInRight" data-wow-delay="0.6s"> <a href="<?=Url::to('/catalog/obedennye-zony')?>"> <img class="img-responsive" src="<?=Yii::getAlias('@static/banners/stol.jpg')?>" alt="Обеденные зоны для дома в Самаре">
+                                <div class="upper"><span> <small>ОБЕДЕННЫЕ ЗОНЫ </small>-10% СКИДКА НА КОМПЛЕКТ</span> </div>
                             </a> </div>
                     </li>
                 </ul>
