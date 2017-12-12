@@ -193,5 +193,5 @@ $this->registerJs($script,\yii\web\View::POS_READY);
 <!-- VK Widget -->
 <div id="vk_community_messages"></div>
 <script type="text/javascript">
-    VK.Widgets.CommunityMessages("vk_community_messages", 132528657, {expandTimeout: "15000",widgetPosition: "left",disableExpandChatSound: "1",tooltipButtonText: "Есть вопрос?", buttonType:'blue_circle'});
+    VK.Widgets.CommunityMessages("vk_community_messages", 132528657, {expandTimeout: "15000",widgetPosition: "left",disableExpandChatSound: "1",tooltipButtonText: "Есть вопрос?", buttonType:'blue_circle', expanded:"0"});
 </script>
