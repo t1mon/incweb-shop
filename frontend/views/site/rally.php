@@ -65,7 +65,9 @@
 <div id="wrap">
 
     <!-- Coming Soon -->
-    <div class="coming-soon" style="background: url('<?=\Yii::getAlias('@static/rally/rally1.jpg')?>') center center fixed no-repeat;">
+    <div class="coming-soon" style="background: url('<?=\Yii::getAlias('@static/rally/rally1.jpg')?>') center center fixed no-repeat; 	background-size: cover;
+            padding: 150px 0;
+            text-align: center;">
         <div class="container">
             <div class="avatar animate fadeInUp" data-wow-delay="0.4s"> <img src="<?=\Yii::getAlias('@static/rally/icon.png')?>" alt="" > </div>
             <h1 class="animate fadeInUp" data-wow-delay="0.4s">ВНИМАНИЕ РОЗЫГРЫШ</h1>

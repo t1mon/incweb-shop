@@ -107,7 +107,7 @@ AppAsset::register($this);
         <!-- Language -->
         <!--<div class="language"> <a href="#." class="active">EN</a> <a href="#.">FR</a> <a href="#.">GE</a> </div>-->
           <i class="fa fa-phone" aria-hidden="true"></i> 8 (846) 215-1665
-          <i class="fa fa-clock-o" aria-hidden="true"></i> 24/7
+          <i class="fa fa-clock-o" aria-hidden="true">24/7</i>
 
 
           <div class="top-links">
@@ -137,11 +137,11 @@ AppAsset::register($this);
             </ul>
           <!-- Social Icons -->
           <ul class="social_icons">
-            <li class="facebook"><a href="#."><i class="fa fa-vk"></i> </a></li>
+            <li class="facebook"><a href="<?=Url::to('https://vk.com/mebelstyle.online')?> " target="_blank"><i class="fa fa-vk"></i> </a></li>
             <li class="twitter"><a href="#."><i class="fa fa-twitter"></i> </a></li>
             <li class="dribbble"><a href="#."><i class="fa fa-instagram"></i> </a></li>
-            <li class="googleplus"><a href="#."><i class="fa fa-google-plus"></i> </a></li>
-            <li class="linkedin"><a href="#."><i class="fa fa-linkedin"></i> </a></li>
+           <!-- <li class="googleplus"><a href="#."><i class="fa fa-google-plus"></i> </a></li>
+            <li class="linkedin"><a href="#."><i class="fa fa-linkedin"></i> </a></li> -->
           </ul>
         </div>
       </div>
