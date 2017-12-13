@@ -11,7 +11,17 @@ use yii\helpers\Url;
 
 ?>
 <?php $this->beginContent('@frontend/views/layouts/main.php') ?>
-<?php $this->title = 'Онлайн магазин мебели в Самаре'?>
+<?php $this->title = 'MEBEL-STYLE: Онлайн магазин мебели в Самаре, интернет-магазин мебели'?>
+<?php
+$this->registerMetaTag([
+    'name' => 'keywords',
+    'content' => 'mebel-style, mebel style, гипермаркет мебели, интернет магазин мебели'
+]);
+$this->registerMetaTag([
+    'name' => 'description',
+    'content' => 'Мебель для дома в интернет-магазине MEBEL-STYLE. Огромный выбор моделей по низким ценам в наличии и под заказ; доставка, сборка, гарантия качества.'
+]);
+?>
 
     <!--======= HOME MAIN SLIDER =========-->
     <section class="home-slider">
