@@ -20,7 +20,7 @@ class OrderChangeStatusListener
     {
         $order = $event->order->customerData;
         if ($event->order->current_status != Status::NEW)
-        $this->sms->send($order->phone, 'MEBEL-STYLE'.PHP_EOL.' Статус заказа: '.OrderHelper::statusName($event->order->current_status));
+        $this->sms->send('7'.$order->phone, 'MEBEL-STYLE'.PHP_EOL.' Статус заказа: '.OrderHelper::statusName($event->order->current_status));
     }
 
 }

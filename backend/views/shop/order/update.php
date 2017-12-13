@@ -19,7 +19,9 @@ $this->params['breadcrumbs'][] = 'Редактирование';
     <div class="box box-default">
         <div class="box-header with-border">Клиент</div>
         <div class="box-body">
-            <?= $form->field($model->customer, 'phone')->textInput()->label('Телефон') ?>
+            <?= $form->field($model->customer, 'phone')->widget(\yii\widgets\MaskedInput::className(), [
+                'mask' => '+7(999)-999-9999',
+            ])->label('Телефон') ?>
             <?= $form->field($model->customer, 'name')->textInput()->label('Имя') ?>
         </div>
     </div>

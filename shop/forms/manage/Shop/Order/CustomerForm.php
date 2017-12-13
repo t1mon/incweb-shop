@@ -17,6 +17,20 @@ class CustomerForm extends Model
         parent::__construct($config);
     }
 
+    public function beforeValidate()
+    {
+        $this->phone = mb_substr(preg_replace('/[^\d]/', '', $this->phone),1);
+        //$this->phone = preg_replace('/[^\d]/', '', $this->phone);
+        return parent::beforeValidate();
+    }
+
+    public function afterValidate()
+    {
+        $this->phone = preg_replace('/[^\d]/', '', $this->phone);
+        //$this->phone = mb_substr(preg_replace('/[^\d]/', '', $this->phone),1);
+        parent::afterValidate();
+    }
+
     public function rules(): array
     {
         return [
