@@ -4,6 +4,5 @@ Allow: /catalog/
 Disallow: /cabinet
 Disallow: /login
 Disallow: /logout
-Disallow: /shop/checkout/
-Disallow: /shop/cart/
+Disallow: /shop
 
