@@ -94,7 +94,7 @@ $reviews_count =$product->getActiveReviewCount($reviews);
                                 <div class="col-sm-12">
                                     <div class="item-select">
                                         <?php if ($modifications = $cartForm->modificationsList()): ?>
-                                            <?= $form->field($cartForm, 'modification')->dropDownList($modifications, ['prompt' => '--- Выбор модификации ---','class'=>'selectpicker'])->label('Модификация') ?>
+                                            <?= $form->field($cartForm, 'modification')->dropDownList($modifications, ['prompt' => '--- Выбор модификации ---','class'=>'selectpicker','onchange'=>'renderPrice(this.value,'.\yii\helpers\Json::encode($cartForm->modificationsListJava()).');'])->label('Модификация') ?>
                                         <?php endif; ?>
                                     </div>
                                 </div>
@@ -361,6 +361,19 @@ $reviews_count =$product->getActiveReviewCount($reviews);
             </section> -->
 
 <?php
+$script = <<<JS
+
+var price = $product->price_new;
+  function renderPrice(value,modification) {
+    //console.log(modification[value]);
+    if (modification[value] == undefined)
+        $('.price').html(price +' <i class="fa fa-rub" aria-hidden="true"></i>');
+    else 
+        $('.price').html(modification[value]+' <i class="fa fa-rub" aria-hidden="true"></i>');
+  }  
+JS;
+
+$this->registerJs($script,yii\web\View::POS_HEAD);
 $this->registerJs('$("[data-toggle=\'tooltip\']").tooltip(); $("[data-toggle=\'popover\']").popover(); ', \yii\web\View::POS_READY);
 $this->registerJsFile('https://vk.com/js/api/share.js?95',['position' => \yii\web\View::POS_HEAD]);
 $this->registerJsFile('https://vk.com/js/api/openapi.js?150',['position' => \yii\web\View::POS_HEAD]);

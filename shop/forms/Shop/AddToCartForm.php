@@ -37,4 +37,11 @@ class AddToCartForm extends Model
             return $modification->code . ' - ' . $modification->name . ' (Цена: ' . PriceHelper::format($modification->price ?: $this->_product->price_new) . 'руб.)';
         });
     }
+
+    public function modificationsListJava(): array
+    {
+        return ArrayHelper::map($this->_product->modifications, 'id', function (Modification $modification) {
+            return PriceHelper::format($modification->price ?: $this->_product->price_new);
+        });
+    }
 }
