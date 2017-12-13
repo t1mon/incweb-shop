@@ -1,2 +1,8 @@
 User-agent: *
-Disallow:
+Disallow: /catalog
+Disallow: /cabinet
+Disallow: /login
+Disallow: /logout
+Disallow: /shop/checkout/
+Disallow: /shop/cart/
+
