@@ -6153,3 +6153,14 @@ button.mfp-arrow-right {
 #add-mod .selectpicker{
 	border: 1px solid #ebebeb;
 }
+
+#validate_red .has-error .bootstrap-select  {
+	border: 1px solid #a94442;
+}
+#validate_red .has-success .bootstrap-select  {
+	border: 1px solid green;
+}
+
+#validate_red p.help-block-error{
+	color: #a94442;
+}

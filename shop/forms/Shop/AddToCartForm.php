@@ -25,7 +25,12 @@ class AddToCartForm extends Model
     public function rules(): array
     {
         return array_filter([
-            $this->_product->modifications ? ['modification', 'required'] : false,
+            $this->_product->modifications ? ['modification', 'required', 'whenClient' => "function (attribute, value) {
+            if (value == ''){ 
+                $.jGrowl(\"Необходимо выбрать модификацию продукта!\", { life:'7000', theme: 'jgrowl warning',position: 'top-right' });
+                }
+            return true;
+    }"] : false,
             ['quantity', 'required'],
             ['quantity', 'integer', 'max' => $this->_product->quantity],
         ]);

@@ -88,7 +88,7 @@ $reviews_count =$product->getActiveReviewCount($reviews);
                         <?php if ($product->isAvailable()): ?>
                             <?php $form = ActiveForm::begin([
                                 'action' => ['/shop/cart/add', 'id' => $product->id],
-                                //'class' =>'',
+                                'id' =>'validate_red',
                             ]) ?>
                             <div class="row">
                                 <div class="col-sm-12">
@@ -359,10 +359,8 @@ $reviews_count =$product->getActiveReviewCount($reviews);
                     </div>
                 </section>
             </section> -->
-
 <?php
 $script = <<<JS
-
 var price = $product->price_new;
   function renderPrice(value,modification) {
     //console.log(modification[value]);

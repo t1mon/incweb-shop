@@ -8,6 +8,7 @@ use shop\readModels\Shop\ProductReadRepository;
 use shop\useCases\Shop\CartService;
 use Yii;
 use yii\filters\VerbFilter;
+use yii\helpers\Url;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 
@@ -79,7 +80,8 @@ class CartController extends Controller
         if ($form->load(Yii::$app->request->post()) && $form->validate()) {
             try {
                 $this->service->add($product->id, $form->modification, $form->quantity);
-                return $this->redirect(['index']);
+                Yii::$app->session->setFlash('success', 'Товар успешно добавлен в корзину!');
+                return $this->redirect(Yii::$app->request->referrer);
             } catch (\DomainException $e) {
                 Yii::$app->errorHandler->logException($e);
                 Yii::$app->session->setFlash('error', $e->getMessage());
