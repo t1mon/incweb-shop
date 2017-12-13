@@ -49,12 +49,9 @@ class ProfileEditForm  extends Model
             ['email', 'required'],
             ['email', 'email'],
             ['email', 'string', 'max' => 255],
-           // ['email', 'unique', 'targetClass' => User::class, 'message' => 'Такой email уже зарегистрирован.'],
             ['email', 'email_valid'],
             ['phone', 'required'],
             ['phone','match', 'pattern' => '/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/'],
-            ['phone', 'unique', 'targetClass' => User::class, 'message' => 'Такой телефон уже зарегистрирован.'],
-           // ['phone', 'phone_valid']
         ];
     }
 
