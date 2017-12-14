@@ -8,7 +8,7 @@ $params = array_merge(
 
 return [
     'id' => 'app-frontend',
-    'name'=>'Онлайн магазин мебели в Самаре',
+    'name'=>'MEBEL-STYLE: Онлайн магазин мебели в Самаре',
     'basePath' => dirname(__DIR__),
     'bootstrap' => [
         'log',
