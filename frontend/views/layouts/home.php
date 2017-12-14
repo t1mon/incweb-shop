@@ -385,7 +385,7 @@ $this->registerMetaTag([
     <!--  New Arrival Tabs Products  -->
     <div class="popurlar_product client-slide animate fadeInUp" data-wow-delay="0.4s">
         <?= FeaturedProductsWidget::widget([
-            'limit' => 6,
+            'limit' => 16,
         ]) ?>
 
     </div>

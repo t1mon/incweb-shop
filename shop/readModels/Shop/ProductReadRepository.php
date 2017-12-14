@@ -78,7 +78,7 @@ class ProductReadRepository
 
     public function getFeatured($limit): array
     {
-        return Product::find()->with('mainPhoto')->orderBy(['id' => 'rand()'])->active()->limit($limit)->all();
+        return Product::find()->with('mainPhoto')->orderBy(['rand()'=>SORT_DESC])->active()->limit($limit)->all();
     }
 
     public function find($id): ?Product

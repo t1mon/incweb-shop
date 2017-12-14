@@ -6,6 +6,7 @@ use shop\helpers\PriceHelper;
 use yii\helpers\Html;
 use yii\helpers\StringHelper;
 use yii\helpers\Url;
+use shop\helpers\ProductStingHelper;
 ?>
 
 
@@ -40,7 +41,7 @@ use yii\helpers\Url;
                     </ul>
                 </div>
                 <!-- Item Name -->
-                <div class="details-sec"> <a href="<?= Html::encode($url) ?>"><?= Html::encode($product->name) ?></a> <span class="font-montserrat"><?= PriceHelper::format($product->price_new) ?>
+                <div class="details-sec"> <a href="<?= Html::encode($url) ?>"><?= Html::encode(ProductStingHelper::cropName($product->name, 28)) ?></a> <span class="font-montserrat"><?= PriceHelper::format($product->price_new) ?>
                         <i class="fa fa-rub" aria-hidden="true"></i></span>
 
                     <?php if ($product->price_old): ?>
