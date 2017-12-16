@@ -12,7 +12,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use kartik\rating\StarRating;
 
-$this->title = $product->name;
+$this->title = $product->getSeoTitle();
 
 $this->registerMetaTag(['name' =>'description', 'content' => $product->meta->description]);
 $this->registerMetaTag(['name' =>'keywords', 'content' => $product->meta->keywords]);
