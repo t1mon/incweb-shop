@@ -77,7 +77,7 @@ $this->registerMetaTag([
                              data-endelementdelay="0.1"
                              data-endspeed="300"
                              data-captionhidden="on"
-                             style="color: #fff; font-size: 60px; text-transform: uppercase; font-weight: bold; letter-spacing:3px;"> РОЗЫГРЫШ </div>
+                             style="color: #fff; font-size: 40px; text-transform: uppercase; font-weight: bold; letter-spacing:3px;"> ХЧЕШЬ ПРИХОЖУЮ БЕСПЛАТНО </div>
 
                         <!-- Layer -->
                         <div class="tp-caption sfb tp-resizeme  font-playfair text-center rs-parallaxlevel-4"
@@ -350,27 +350,6 @@ $this->registerMetaTag([
             </div>
         </section>
 
-        <!--======= Shades =========-->
-        <section class="shades">
-            <div class="container">
-                <!--  Tittle -->
-                <div class="tittle tittle-2 animate fadeInUp" data-wow-delay="0.4s">
-                    <h5>A few shades of grey</h5>
-                    <hr>
-                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. , consectetur,</p>
-                </div>
-
-                <div class="row">
-                    <!-- Avatar -->
-                    <div class="avatar animate fadeInLeft" data-wow-delay="0.4s"> <img src="image/avatar-7.jpg" alt=""> </div>
-
-                    <!-- Avatar -->
-                    <div class="avatar animate fadeInRight" data-wow-delay="0.4s"> <img src="image/avatar-8.jpg" alt=""> </div>
-                </div>
-
-                <!-- Btn -->
-                <a href="#." class="btn btn-small">JOIN NOW</a> </div>
-        </section>
     <!--======= New Arrival =========-->
     <section class="section-p-30px new-arrival new-arri-w-slide">
     <div class="container">
@@ -385,7 +364,7 @@ $this->registerMetaTag([
     <!--  New Arrival Tabs Products  -->
     <div class="popurlar_product client-slide animate fadeInUp" data-wow-delay="0.4s">
         <?= FeaturedProductsWidget::widget([
-            'limit' => 16,
+            'limit' => 10,
         ]) ?>
 
     </div>
@@ -408,10 +387,10 @@ $this->registerMetaTag([
                 <p class="font-montserrat intro text-center animate fadeInUp" data-wow-delay="0.4s">Мы знаем толк в мебели. Поэтому сотрудничаем с лучшими фабриками России.</p>
                 <!--  Client Logo Slider -->
                 <div class="client-slide animate fadeInUp" data-wow-delay="0.4s">
-                    <div class="slide"><a href="#."><img class="img-responsive" src="<?=Yii::getAlias('@web/image/lerom.png')?>" alt=""></a></div>
-                    <div class="slide"><a href="#."><img class="img-responsive" src="<?=Yii::getAlias('@web/image/natura_vera.png')?>" alt=""></a></div>
-                    <div class="slide"><a href="#."><img class="img-responsive" src="<?=Yii::getAlias('@web/image/stolprom.png')?>" alt=""></a></div>
-                    <div class="slide"><a href="#."><img class="img-responsive" src="<?=Yii::getAlias('@web/image/avrora.png')?>" alt=""></a></div>
+                    <div class="slide"><a href="<?=Url::to(['/shop/catalog/brand','id'=>'2'])?>"><img class="img-responsive" src="<?=Yii::getAlias('@web/image/lerom.png')?>" alt=""></a></div>
+                    <div class="slide"><a href="<?=Url::to(['/shop/catalog/brand','id'=>'6'])?>"><img class="img-responsive" src="<?=Yii::getAlias('@web/image/natura_vera.png')?>" alt=""></a></div>
+                    <div class="slide"><a href="<?=Url::to(['/shop/catalog/brand','id'=>'5'])?>"><img class="img-responsive" src="<?=Yii::getAlias('@web/image/stolprom.png')?>" alt=""></a></div>
+                    <div class="slide"><a href="<?=Url::to(['/shop/catalog/brand','id'=>'7'])?>"><img class="img-responsive" src="<?=Yii::getAlias('@web/image/avrora.png')?>" alt=""></a></div>
                 </div>
             </div>
         </section>

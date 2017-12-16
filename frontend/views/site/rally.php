@@ -77,16 +77,16 @@
             text-align: center;">
         <div class="container">
             <div class="avatar animate fadeInUp" data-wow-delay="0.4s"> <img src="<?=\Yii::getAlias('@static/rally/icon.png')?>" alt="" > </div>
-            <h1 class="animate fadeInUp" data-wow-delay="0.4s">ВНИМАНИЕ РОЗЫГРЫШ</h1>
+            <!-- <h1 class="animate fadeInUp" data-wow-delay="0.4s">ВНИМАНИЕ РОЗЫГРЫШ</h1> -->
             <?php if($isGroupVK):?>
             <h3 class="animate fadeInUp" data-wow-delay="0.4s">Приветствуем вас <?=$user->getSurnameName()?></h3>
-                <h4 class="animate fadeInUp" data-wow-delay="0.4s">Поздравляем. Вы являетесь участником розыгрыша</h4>
-                <img class="margin-t-40 margin-b-40 animate fadeInUp" data-wow-delay="0.4s" src="/image/hammer-soon.png" alt="" >
-                <p class="animate fadeInUp" data-wow-delay="0.4s"> provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. </p>
+                <h4 class="animate fadeInUp" data-wow-delay="0.4s" style="font-weight:bold;color:  indianred">Поздравляем. Вы являетесь участником розыгрыша</h4>
+                <h3 class="animate fadeInUp" data-wow-delay="0.4s" >Розыгрыш состоится 15 марта 2018г</h3>
+                <!-- <img class="margin-t-40 margin-b-40 animate fadeInUp" data-wow-delay="0.4s" src="/image/hammer-soon.png" alt="" > -->
                 <ul>
                     <li><b>1 МЕСТО:</b> Победитель получает набор прихожей фабрики Лером. В набор мебели входит шкаф, вешалка для одежды + тумба</li>
                     <li><b>2 МЕСТО:</b> Победитель получает обувницу фабрики Лером</li>
-                    <li><b>3 МЕСТО:</b> Победитель получает единоразовую скидку 20% на любой ассортимент <a href="<?=\yii\helpers\Url::to(['/catalog'])?>">на сайте</a></li>
+                    <li><b>3 МЕСТО:</b> Победитель получает единоразовую скидку 20% на любой ассортимент не участвующий в акции <a href="<?=\yii\helpers\Url::to(['/catalog'])?>">посмотреть каталог</a></li>
                 </ul>
                 <a href="<?=\yii\helpers\Url::home()?>" class="btn btn-white">ПОСЕТИТЬ САЙТ</a>
                 <h3 class="countdown animate fadeInUp" data-wow-delay="0.4s">НАЧАЛО РОЗЫГРЫША ЧЕРЕЗ: </h3>
@@ -132,13 +132,14 @@
                     <!-- VK Widget -->
                     <div id="vk_groups"></div>
                     <script type="text/javascript">
-                        VK.Widgets.Group("vk_groups", {mode: 1, color1: '333', color2: 'FFF', color3: 'FFF',height: "300"}, 132528657);
+                        VK.Widgets.Group("vk_groups", {mode: 1, color1: '333', color2: 'FFF', color3: 'FFF',width: "auto", height:"auto"}, 132528657);
                     </script></center>
                 <a href="<?=\yii\helpers\Url::to(['rally'])?>"  class="btn btn-white">Обновить страницу</a><br>
             <?php endif;?>
         </div>
     </div>
 </div>
+
 <!-- Wrap End -->
 <script src="/js/jquery-1.11.3.js"></script>
 <script src="/js/wow.min.js"></script>
@@ -162,7 +163,7 @@
         "use strict";
 
         $('.countdown').downCount({
-            date: '12/14/2017 12:00:00' // M/D/Y
+            date: '03/15/2018 12:00:00' // M/D/Y
         });
     })(jQuery);
 </script>

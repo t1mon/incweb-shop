@@ -258,15 +258,25 @@ AppAsset::register($this);
         <!-- Second Row -->
         <div class="col-md-6">
           <ul class="row">
+              <li class="col-sm-12">
+                  <h5>НАША ГРУППА ВК</h5>
+                  <script type="text/javascript" src="//vk.com/js/api/openapi.js?151"></script>
+
+                  <!-- VK Widget -->
+                  <div id="vk_groups"></div>
+                  <script type="text/javascript">
+                      VK.Widgets.Group("vk_groups", {mode: 2, width: "auto", height:"auto"}, 132528657);
+                  </script>
+              </li>
             
             <!-- TWITTER -->
-            <li class="col-sm-6">
+           <!-- <li class="col-sm-6">
               <h5>TWITTER</h5>
               <p>Check out new work on my @Behance portfolio: "BCreative_Multipurpose Theme" http://on.be.net/1zOOfBQ </p>
-            </li>
+            </li> -->
             
             <!-- FLICKR PHOTO -->
-            <li class="col-sm-6">
+           <!-- <li class="col-sm-6">
               <h5>FLICKR PHOTO</h5>
               <ul class="flicker">
                 <li><a href="#."><img src="/image/flicker-1.jpg" alt=""></a></li>
@@ -276,7 +286,7 @@ AppAsset::register($this);
                 <li><a href="#."><img src="/image/flicker-5.jpg" alt=""></a></li>
                 <li><a href="#."><img src="/image/flicker-6.jpg" alt=""></a></li>
               </ul>
-            </li>
+            </li> -->
           </ul>
         </div>
       </div>
