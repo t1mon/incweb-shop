@@ -5,4 +5,7 @@ Disallow: /cabinet
 Disallow: /login
 Disallow: /logout
 Disallow: /shop
+Disallow: /auth
+Disallow: /shop/catalog/brand
+Disallow: /shop/catalog/tag
 
