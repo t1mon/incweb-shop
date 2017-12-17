@@ -49,9 +49,14 @@ class SiteController extends Controller
                     [
                         'actions' =>['rally'],
                         'allow' => true,
-                        'roles' => ['?','@'],
+                        'roles' => ['@'],
                     ],
                 ],
+                'denyCallback' => function($rule, $action) {
+                    if ($action->id == 'rally' && \Yii::$app->user->isGuest){
+                        \Yii::$app->session->setFlash('info', 'Для участия в розыгрыше, необходимо авторизоваться через ВКОНТАКТЕ');}
+                    return $this->redirect('/login');
+                },
             ],
         ];
     }
@@ -88,10 +93,7 @@ class SiteController extends Controller
 
     public function actionRally()
     {
-        if (\Yii::$app->user->isGuest){
-            \Yii::$app->session->setFlash('info', 'Для участия в розыгрыше нужно, авторизоваться через ВКОНТАКТЕ');
-            return $this->redirect('/login');
-        }
+
         $user = User::findOne(\Yii::$app->user->id);
         if($user->networks) {
             $isGroupVK = false;
