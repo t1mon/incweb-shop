@@ -49,7 +49,7 @@ class SiteController extends Controller
                     [
                         'actions' =>['rally'],
                         'allow' => true,
-                        'roles' => ['?'],
+                        'roles' => ['?','@'],
                     ],
                 ],
             ],
