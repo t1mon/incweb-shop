@@ -54,6 +54,7 @@ class SiteController extends Controller
                 ],
                 'denyCallback' => function($rule, $action) {
                     if ($action->id == 'rally' && \Yii::$app->user->isGuest){
+                        \Yii::$app->getUser()->setReturnUrl(\Yii::$app->request->url);
                         \Yii::$app->session->setFlash('info', 'Для участия в розыгрыше, необходимо авторизоваться через ВКОНТАКТЕ');}
                     return $this->redirect('/login');
                 },
