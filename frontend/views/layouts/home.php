@@ -77,7 +77,7 @@ $this->registerMetaTag([
                              data-endelementdelay="0.1"
                              data-endspeed="300"
                              data-captionhidden="on"
-                             style="color: #fff; font-size: 40px; text-transform: uppercase; font-weight: bold; letter-spacing:3px;"> ХЧЕШЬ ПРИХОЖУЮ БЕСПЛАТНО </div>
+                             style="color: #fff; font-size: 40px; text-transform: uppercase; font-weight: bold; letter-spacing:3px;"> ХОЧЕШЬ ПРИХОЖУЮ БЕСПЛАТНО </div>
 
                         <!-- Layer -->
                         <div class="tp-caption sfb tp-resizeme  font-playfair text-center rs-parallaxlevel-4"

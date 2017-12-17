@@ -38,7 +38,7 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <link href="<?= Html::encode(Url::canonical()) ?>" rel="canonical"/>
-    <link href="<?= Yii::getAlias('@web/favicon.ico') ?>" rel="icon" type="image/x-icon"/>
+    <link href="<?= Yii::getAlias('@web/favicon.ico') ?>" rel="shortcut icon" type="image/x-icon"/>
 
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
