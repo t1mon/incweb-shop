@@ -62,13 +62,13 @@ class SiteController extends Controller
         ];
     }
 
-    public function afterAction($action, $result)
+  /*  public function afterAction($action, $result)
     {
         if ($this->action->id == 'rally') {
             \Yii::$app->getUser()->setReturnUrl(\Yii::$app->request->url);
         }
         return parent::afterAction($action, $result);
-    }
+    }*/
 
     /**
      * @return mixed
