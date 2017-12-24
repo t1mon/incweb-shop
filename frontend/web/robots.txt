@@ -8,4 +8,8 @@ Disallow: /shop
 Disallow: /auth
 Disallow: /shop/catalog/brand
 Disallow: /shop/catalog/tag
+Disallow: /site/rally
+Disallow: /site/sub-rally
+Disallow: /site/payment-and-delivery
+Host: mebel-style.online
 

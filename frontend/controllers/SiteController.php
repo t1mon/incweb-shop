@@ -124,6 +124,16 @@ class SiteController extends Controller
             return $this->goHome();
 
     }
+
+    public function actionSubRally(){
+        \Yii::$app->getUser()->setReturnUrl(\Yii::$app->request->url);
+        return $this->render('sub-rally');
+    }
+
+    public function actionPaymentAndDelivery(){
+
+        return $this->render('payment-and-delivery');
+    }
 /*
     public function actionMail()
     {
