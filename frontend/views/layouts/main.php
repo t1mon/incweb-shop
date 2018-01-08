@@ -47,7 +47,7 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <link href="<?= Html::encode(Url::canonical()) ?>" rel="canonical"/>
-    <?php Yii::$app->view->registerLinkTag(['rel' => 'shortcut icon', 'type' => 'image/x-icon', 'href' => Url::to('/web/favicon.ico')]);?>
+    <?php Yii::$app->view->registerLinkTag(['rel' => 'shortcut icon', 'type' => 'image/x-icon', 'href' => Yii::getAlias('@web/favicon.ico')]);?>
     <!-- <link rel="shortcut icon" href="<?= Yii::getAlias('@web/favicon.ico') ?>" type="image/x-icon"/>
     <link rel="icon" href="<?= Yii::getAlias('@web/favicon.ico') ?>" type="image/x-icon"/> -->
 
