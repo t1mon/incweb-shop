@@ -87,6 +87,9 @@ AppAsset::register($this);
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/46982373" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
+    <!-- pozvonim-->
+    <script crossorigin="anonymous" async type="text/javascript" src="//api.pozvonim.com/widget/callback/v3/6ec34d3f2c2b1ff57be222c4315105fb/connect" id="check-code-pozvonim" charset="UTF-8"></script>
+    <!--pozvonim End-->
     <?php $this->head() ?>
 </head>
 <body>
