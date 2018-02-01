@@ -21,7 +21,7 @@ use shop\helpers\ProductStingHelper;
                 <?php endif;?>
                 <!-- Image -->
                 <?php if ($product->mainPhoto): ?>
-                    <img src="<?= Html::encode($product->mainPhoto->getThumbFileUrl('file', 'catalog_list')) ?>" alt="<?=Html::encode($product->name)?>">
+                    <img src="<?= Html::encode($product->mainPhoto->getThumbFileUrl('file', 'new_arrival_list_widget')) ?>" alt="<?=Html::encode($product->name)?>">
                 <?php else:?>
                     <img src="/image/new-item-1.jpg" alt="">
                 <?php endif;?>

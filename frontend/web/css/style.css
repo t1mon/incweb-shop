@@ -1241,7 +1241,7 @@ header .ownmenu .look-book .media-body a {
 	background: rgba(0,0,0,0.6);
 	opacity: 0;
 	text-align: center;
-	padding-top: 35%;
+	padding-top: 15%;
 	-webkit-transition: all 0.4s ease-in-out;
 	-moz-transition: all 0.4s ease-in-out;
 	-o-transition: all 0.4s ease-in-out;
@@ -1472,6 +1472,9 @@ header .ownmenu .look-book .media-body a {
 	float: none;
 	display: inline-block;
 	background: none;
+}
+.new-arrival .popurlar_product .over-item{
+	padding-top: 20%;
 }
 .new-arrival .nav-tabs li a {
 	border: none;

@@ -12,7 +12,7 @@ $url = Url::to(['product', 'id' =>$product->id]);
 ?>
 
         <!-- New Products -->
-        <li class="col-sm-4 animate fadeIn" data-wow-delay="0.4s">
+        <li class="col-sm-6 animate fadeIn" data-wow-delay="0.4s">
             <div style="cursor: pointer" class="items-in"  onclick="location.href='<?= Html::encode($url) ?>'">
                 <!-- Tags -->
                 <?php if ($product->price_old && $percent = PriceHelper::percent($product->price_new,$product->price_old)): ?>
@@ -49,7 +49,7 @@ $url = Url::to(['product', 'id' =>$product->id]);
                     </ul>
                 </div>
                 <!-- Item Name -->
-                <div class="details-sec"> <a href="<?= Html::encode($url) ?>"><?= Html::encode(ProductStingHelper::cropName($product->name, 28)) ?></a> <span class="font-montserrat"><?= PriceHelper::format($product->price_new) ?>
+                <div class="details-sec"> <a href="<?= Html::encode($url) ?>"><?= Html::encode(ProductStingHelper::cropName($product->name, 48)) ?></a> <span class="font-montserrat"><?= PriceHelper::format($product->price_new) ?>
                         <i class="fa fa-rub" aria-hidden="true"></i></span>
 
                     <?php if ($product->price_old): ?>

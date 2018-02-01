@@ -58,7 +58,7 @@ $(".clients-about-slider").owlCarousel({
         600:{
             items:2
         },
-        1200:{
+        400:{
             items:3,
 			nav: false
         }}
