@@ -117,8 +117,8 @@ class ProductReadRepository
                 ],
             ],
             'pagination' => [
-                'pageSizeLimit' => [15, 100],
-                'defaultPageSize' => 15,
+                'pageSizeLimit' => [20, 100],
+                'defaultPageSize' => 20,
                 //'forcePageParam' => false,
                 //'pageSizeParam' => false,
             ]
@@ -128,7 +128,7 @@ class ProductReadRepository
     public function search(SearchForm $form): DataProviderInterface
     {
         $pagination = new Pagination([
-            'pageSizeLimit' => [15, 100],
+            'pageSizeLimit' => [20, 100],
             'validatePage' => false,
         ]);
 

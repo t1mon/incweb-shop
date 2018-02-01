@@ -39,7 +39,7 @@ use yii\widgets\LinkPager;
             <p>Кол-во элементов:</p>
             <select class="selectpicker" onchange="location = this.value;">
                 <?php
-                $values = [15, 25, 50, 75, 100];
+                $values = [20, 30, 50, 80, 100];
                 $current = $dataProvider->getPagination()->getPageSize();
                 ?>
                 <?php foreach ($values as $value): ?>
@@ -50,7 +50,7 @@ use yii\widgets\LinkPager;
 
         <!--======= VIEW ITEM NUMBER =========-->
         <div class="view-num">
-            <p>Показано <?= $dataProvider->getCount() ?> из <?= $dataProvider->getTotalCount() ?></p>
+            <p>Показано <?=$dataProvider->getCount() ?> из <?= $dataProvider->getTotalCount() ?></p>
         </div>
     </div>
 
