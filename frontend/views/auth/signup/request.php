@@ -51,7 +51,10 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <?= $form->field($model, 'password')->passwordInput()->label(false) ?>
                                 </label>
                             </li>
-
+                            <li class="col-md-12">
+                            <?= $form->field($model, 'verifyCode')->widget(
+                                \himiklab\yii2\recaptcha\ReCaptcha::className())->label(false) ?>
+                            </li>
                             <!-- CREATE AN ACCOUNT -->
                             <li class="col-md-12">
                                 <div class="checkbox">

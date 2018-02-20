@@ -52,6 +52,7 @@ class SignupForm extends Model
             ['phone', 'required'],
             ['phone','match', 'pattern' => '/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/'],
             ['phone', 'unique', 'targetClass' => User::class, 'message' => 'Такой телефон уже зарегистрирован.'],
+            [['verifyCode'], \himiklab\yii2\recaptcha\ReCaptchaValidator::className()],
         ];
     }
 }

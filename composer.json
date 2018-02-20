@@ -42,7 +42,8 @@
         "yiisoft/yii2-redis": "^2.0",
         "yiisoft/yii2-queue": "^2.0",
         "league/flysystem": "^1.0",
-        "kartik-v/yii2-widget-rating": "*"
+        "kartik-v/yii2-widget-rating": "*",
+        "himiklab/yii2-recaptcha-widget" : "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
