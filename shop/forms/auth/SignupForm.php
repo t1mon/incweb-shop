@@ -15,6 +15,7 @@ class SignupForm extends Model
     public $password;
     public $name;
     public $surname;
+    public $verifyCode;
 
     /**
      * @inheritdoc
