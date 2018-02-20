@@ -19,9 +19,11 @@ $this->registerMetaTag(['name' =>'keywords', 'content' => $product->meta->keywor
 
 $this->params['breadcrumbs'][] = ['label' => 'Каталог продукции', 'url' => ['index']];
 $reviews = $product->reviews;
-foreach ($product->category->parents as $parent) {
-    if (!$parent->isRoot()) {
-        $this->params['breadcrumbs'][] = ['label' => $parent->name, 'url' => ['category', 'id' => $parent->id]];
+if (is_array($product)) {
+    foreach ($product->category->parents as $parent) {
+        if (!$parent->isRoot()) {
+            $this->params['breadcrumbs'][] = ['label' => $parent->name, 'url' => ['category', 'id' => $parent->id]];
+        }
     }
 }
 $this->params['breadcrumbs'][] = ['label' => $product->category->name, 'url' => ['category', 'id' => $product->category->id]];
