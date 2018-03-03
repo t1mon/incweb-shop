@@ -23,12 +23,13 @@ class CategoryForm extends CompositeForm
 
     public function __construct(Category $category = null, $config = [])
     {
-        if (is_array($category)) {
+        if ($category) {
             $this->name = $category->name;
             $this->slug = $category->slug;
             $this->title = $category->title;
             $this->description = $category->description;
-            $this->parentId = $category->parent ? $category->parent->id : null;
+            if (is_array($category))
+                $this->parentId = $category->parent ? $category->parent->id : null;
             $this->meta = new MetaForm($category->meta);
             $this->_category = $category;
         } else {
