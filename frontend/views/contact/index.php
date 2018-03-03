@@ -90,7 +90,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <h6>НАШ АДРЕС</h6>
                         <ul class="location">
                             <li> <i class="fa fa-location-arrow"></i>
-                                <p>г. Самара, ул. Осетинская 7
+                                <p>г. Самара, ул. Партизанская 17
                                     MEBEL-STYLE</p>
                             </li>
                             <li> <i class="fa fa-phone"></i>
@@ -107,11 +107,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>
 
                 <!-- NEWSLETTER -->
-                <div class="col-md-4 animate fadeInUp" data-wow-delay="0.4s">
+                <!--<div class="col-md-4 animate fadeInUp" data-wow-delay="0.4s">
                     <div class="boxes-in">
                         <h6>МЫ В ВКОНТАКТЕ</h6>
                         <!-- VK Widget -->
-                        <div id="vk_groups"></div>
+                       <!-- <div id="vk_groups"></div>
                         <script type="text/javascript">
                             VK.Widgets.Group("vk_groups", {mode: 4, wide: 1, height: "400"}, 132528657);
                         </script>
@@ -131,8 +131,8 @@ $this->params['breadcrumbs'][] = $this->title;
                             <li class="stumbleupon"><a href="#."> <i class="fa fa-stumbleupon"></i></a></li>
                             <li class="soundcloud"><a href="#."> <i class="fa fa-soundcloud"></i></a></li>
                         </ul> -->
-                    </div>
-                </div>
+                   <!-- </div>
+                </div> -->
 
                 <!-- TESTIMONIAL -->
                 <div class="col-md-4 animate fadeInRight" data-wow-delay="0.4s">
@@ -161,7 +161,7 @@ $script = <<<JS
 var map;
 function initialize_map() {
 if ($('#map').length) {
-	var myLatLng = new google.maps.LatLng(53.15235907, 50.0743305);
+	var myLatLng = new google.maps.LatLng(53.191095,50.167357);
 	var mapOptions = {
 		zoom: 16,
 		center: myLatLng,
@@ -193,5 +193,5 @@ $this->registerJs($script,\yii\web\View::POS_READY);
 <!-- VK Widget -->
 <div id="vk_community_messages"></div>
 <script type="text/javascript">
-    VK.Widgets.CommunityMessages("vk_community_messages", 132528657, {expandTimeout: "15000",widgetPosition: "left",disableExpandChatSound: "1",tooltipButtonText: "Есть вопрос?", buttonType:'blue_circle', expanded:"0"});
+    VK.Widgets.CommunityMessages("vk_community_messages", 132528657, {expandTimeout: "25000",widgetPosition: "left",disableExpandChatSound: "1",tooltipButtonText: "Есть вопрос?", buttonType:'blue_circle', expanded:"0"});
 </script>

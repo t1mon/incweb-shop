@@ -23,7 +23,7 @@ class CategoryForm extends CompositeForm
 
     public function __construct(Category $category = null, $config = [])
     {
-        if ($category) {
+        if (is_array($category)) {
             $this->name = $category->name;
             $this->slug = $category->slug;
             $this->title = $category->title;

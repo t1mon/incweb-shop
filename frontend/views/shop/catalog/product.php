@@ -59,7 +59,12 @@ $reviews_count =$product->getActiveReviewCount($reviews);
                             <div class="row">
                                 <div class="col-sm-12">
                                     <h5><?= mb_strtoupper(Html::encode($product->name)) ?></h5>
-                                    <span class="price"><?= PriceHelper::format($product->price_new) ?> <i class="fa fa-rub" aria-hidden="true"></i></span> </div>
+                                    <span class="price"><?= PriceHelper::format($product->price_new) ?> <i class="fa fa-rub" aria-hidden="true"></i>
+                                    <?php if ($product->price_old): ?>
+                                        <span class="text-line"><?= PriceHelper::format($product->price_old) ?><i class="fa fa-rub" aria-hidden="true"></i></span><sup style="background-color:#af5875; color: #fff;padding: 5px; font-size: 10px;"><small>-50%</small></sup>
+                                    <?php endif;?>
+                                        </span>
+                                </div>
                                 <div class="col-sm-12">
                                     <span class="code">КОД ПРОДУКТА: <?= Html::encode($product->code) ?></span>
                                     <span class="code">ФАБРИКА: <a href="<?= Html::encode(Url::to(['brand', 'id' => $product->brand->id])) ?>"><?= Html::encode($product->brand->name) ?></a></span>
@@ -68,6 +73,20 @@ $reviews_count =$product->getActiveReviewCount($reviews);
                                         <a href="<?= Html::encode(Url::to(['tag', 'id' => $tag->id])) ?>"><?= Html::encode($tag->name) ?></a>
                                     <?php endforeach; ?>
                                     </span>
+                                    <?php if ($product->isAvailable()): ?>
+                                    <?php $form = ActiveForm::begin([
+                                        'action' => ['/shop/cart/add', 'id' => $product->id],
+                                        'id' =>'validate_red',
+                                    ]) ?>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="item-select">
+                                                <?php if ($modifications = $cartForm->modificationsList()): ?>
+                                                    <?= $form->field($cartForm, 'modification')->dropDownList($modifications, ['prompt' => '--- Выбор модификации ---','class'=>'selectpicker','onchange'=>'renderPrice(this.value,'.\yii\helpers\Json::encode($cartForm->modificationsListJava()).');'])->label('Модификация') ?>
+                                                <?php endif; ?>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="some-info no-border"> <br>
                                         <!--<div class="in-stoke"> <i class="fa fa-check-circle"></i> В наличии</div>-->
                                         <div class="not-stoke blue-tooltip" data-toggle="tooltip" title='Под заказ. Срок выполнения заказа от 10 рабочих дней'> <i class="fa fa-info-circle" ></i>Под заказ </div>
@@ -87,20 +106,6 @@ $reviews_count =$product->getActiveReviewCount($reviews);
                             </div>
                             <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco,Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectusLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco,Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectusLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>-->
                             <!--<hr>-->
-                        <?php if ($product->isAvailable()): ?>
-                            <?php $form = ActiveForm::begin([
-                                'action' => ['/shop/cart/add', 'id' => $product->id],
-                                'id' =>'validate_red',
-                            ]) ?>
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="item-select">
-                                        <?php if ($modifications = $cartForm->modificationsList()): ?>
-                                            <?= $form->field($cartForm, 'modification')->dropDownList($modifications, ['prompt' => '--- Выбор модификации ---','class'=>'selectpicker','onchange'=>'renderPrice(this.value,'.\yii\helpers\Json::encode($cartForm->modificationsListJava()).');'])->label('Модификация') ?>
-                                        <?php endif; ?>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="row">
                                 <!-- QUIENTY -->
                                 <div class="col-sm-12">
@@ -364,10 +369,11 @@ $reviews_count =$product->getActiveReviewCount($reviews);
 <?php
 $script = <<<JS
 var price = $product->price_new;
+var price_old = $product->price_old;
   function renderPrice(value,modification) {
     //console.log(modification[value]);
     if (modification[value] == undefined)
-        $('.price').html(price +' <i class="fa fa-rub" aria-hidden="true"></i>');
+        $('.price').html(price +' <i class="fa fa-rub" aria-hidden="true"></i>' + price_old );
     else 
         $('.price').html(modification[value]+' <i class="fa fa-rub" aria-hidden="true"></i>');
   }  

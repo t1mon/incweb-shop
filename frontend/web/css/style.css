@@ -5212,9 +5212,9 @@ footer .flicker img {
 }
 .item-detail-page .item-select .bootstrap-select .btn {
 	margin-top: 0px;
-	background: #fff !important;
-	border: 1px solid #ebebeb;
-	color: #c2c2c2;
+	/*background: #fff !important;*/
+	border: 1px solid #333333;
+	color: #333333;
 	font-size: 10px;
 	text-transform: uppercase;
 }
@@ -5237,7 +5237,7 @@ footer .flicker img {
 	padding: 0 20px;
 }
 .item-detail-page .fun-share input {
-	border: 1px solid #ebebeb;
+	border: 1px solid #333333;
 	width: 60px;
 	height: 44px;
 	float: left;
@@ -5256,7 +5256,7 @@ footer .flicker img {
 	line-height: 42px;
 	padding: 0px 24px;
 	margin-right: 10px;
-	border: 1px solid #ebebeb;
+	border: 1px solid #333333;
 }
 .item-detail-page .share-sec:hover {
 	background: #af5875;

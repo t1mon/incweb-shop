@@ -34,7 +34,7 @@ $url = Url::to(['product', 'id' =>$product->id]);
                         <?php endif; ?>
                         <li class="rs"> <a href="#" onclick="compare.add('<?= $product->id ?>');"><i class="ion-shuffle"></i></a></li>
                         <li class="rs"> <a data-method="post" href="<?= Url::to(['/cabinet/wishlist/add', 'id' => $product->id]) ?> "><i class="fa fa-heart-o"></i></a></li>
-                        <li class="full-w rs"> <a href="<?= Url::to(['/shop/cart/add', 'id' => $product->id]) ?>" class="btn">Добавить в Корзину</a></li>
+                        <!--<li class="full-w rs"> <a href="<?//= Url::to(['/shop/cart/add', 'id' => $product->id]) ?>" class="btn">Добавить в Корзину</a></li>-->
                         <!-- Rating Stars -->
                             <li class="stars">
                                 <?php
@@ -42,7 +42,7 @@ $url = Url::to(['product', 'id' =>$product->id]);
                                     'name' => Html::encode($product->name),
                                     'value' => $product->rating,
                                     'disabled' => true,
-                                    'pluginOptions' => ['size'=>'rs','displayOnly' => true]
+                                    'pluginOptions' => ['size'=>'md','displayOnly' => true]
                                 ]);
                                 ?>
                             </li>
@@ -51,12 +51,12 @@ $url = Url::to(['product', 'id' =>$product->id]);
                 <!-- Item Name -->
                 <div class="details-sec"> <a href="<?= Html::encode($url) ?>"><?= Html::encode(ProductStingHelper::cropName($product->name, 48)) ?></a> <span class="font-montserrat"><?= PriceHelper::format($product->price_new) ?>
                         <i class="fa fa-rub" aria-hidden="true"></i></span>
-
                     <?php if ($product->price_old): ?>
                     <span class="text-line"><?= PriceHelper::format($product->price_old) ?><i class="fa fa-rub" aria-hidden="true"></i></span>
                     <?php endif;?>
                 </div>
             </div>
+            <a href="<?= Url::to(['/shop/cart/add', 'id' => $product->id]) ?>" class="btn small btn-dark" style="width: 100%">Добавить в Корзину</a>
         </li>
 
 <!---onclick="location.href='<?= Html::encode($url) ?>'"-->
