@@ -61,7 +61,7 @@ $reviews_count =$product->getActiveReviewCount($reviews);
                                     <h5><?= mb_strtoupper(Html::encode($product->name)) ?></h5>
                                     <span class="price"><?= PriceHelper::format($product->price_new) ?> <i class="fa fa-rub" aria-hidden="true"></i>
                                     <?php if ($product->price_old && $percent = PriceHelper::percent($product->price_new,$product->price_old)): ?>
-                                        <span class="text-line"><?= PriceHelper::format($product->price_old) ?><i class="fa fa-rub" aria-hidden="true"></i></span><sup style="background-color:#af5875; color: #fff;padding: 5px; font-size: 10px;"><small><?=Html::encode($percent)?>%</small></sup>
+                                        <span class="text-line"><?= PriceHelper::format($product->price_old) ?><i class="fa fa-rub" aria-hidden="true"></i></span><sup style="background-color:#af5875; color: #fff;padding: 5px; font-size: 10px; margin-left: 5px;"><small><?=Html::encode($percent)?>%</small></sup>
                                     <?php endif;?>
                                         </span>
                                 </div>
@@ -182,7 +182,7 @@ $reviews_count =$product->getActiveReviewCount($reviews);
 
                             <!-- REVIEW -->
                             <div role="tabpanel" class="tab-pane fade" id="review">
-                                <h6><?=$reviews_count?> ОТЗЫВЫ ДЛЯ ПРОДУКТА <?=mb_strtoupper(Html::encode($product->name))?></h6>
+                                <h6>(<?=$reviews_count?>) ОТЗЫВЫ ПОКУПАТЕЛЕЙ <?=mb_strtoupper(Html::encode($product->name))?></h6>
 
                                 <!-- REVIEW PEOPLE 1 -->
                                 <?php
@@ -208,7 +208,7 @@ $reviews_count =$product->getActiveReviewCount($reviews);
 
                                     <div class="panel-panel-info">
                                         <div class="panel-body">
-                                            Пожалуйста войдите <?= Html::a('Log In', ['/auth/auth/login']) ?> чтобы добавить отзыв.
+                                            <?= Html::a('Пожалуйста авторизуйтесь', ['/auth/auth/login']) ?> чтобы добавить отзыв.
                                         </div>
                                     </div>
 
