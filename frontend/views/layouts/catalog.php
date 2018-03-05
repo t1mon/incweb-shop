@@ -17,16 +17,23 @@ use frontend\widgets\Shop\CategoriesWidget;
             <!--======= SIDE BAR =========-->
             <div class="col-sm-3 animate fadeInLeft" data-wow-delay="0.2s">
                 <div class="side-bar">
-                    <h4>Меню</h4>
-
-                    <!-- HEADING -->
-                    <div class="heading">
-                        <h6>КАТЕГОРИИ</h6>
+                    <h4>Фильтр</h4>
+                    <div class="dropdown visible-xs hidden-sm hidden-md hidden-lg">
+                        <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-dark" data-target="#" href="#">
+                            Категории <span class="caret"></span>
+                        </a>
+                        <?= \frontend\widgets\Shop\CategoryWidgetPhone::widget()?>
                     </div>
+                    <!-- HEADING -->
+                    <div class="heading hidden-xs visible-sm visible-md visible-lg">
+                        <h6>КАТЕГОРИИ</h6>
+
                     <!-- CATEGORIES -->
+
                         <?= CategoriesWidget::widget([
                             'active' => $this->params['active_category'] ?? null
                         ]) ?>
+                    </div>
 
                 </div>
             </div>
