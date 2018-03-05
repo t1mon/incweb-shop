@@ -60,8 +60,8 @@ $reviews_count =$product->getActiveReviewCount($reviews);
                                 <div class="col-sm-12">
                                     <h5><?= mb_strtoupper(Html::encode($product->name)) ?></h5>
                                     <span class="price"><?= PriceHelper::format($product->price_new) ?> <i class="fa fa-rub" aria-hidden="true"></i>
-                                    <?php if ($product->price_old): ?>
-                                        <span class="text-line"><?= PriceHelper::format($product->price_old) ?><i class="fa fa-rub" aria-hidden="true"></i></span><sup style="background-color:#af5875; color: #fff;padding: 5px; font-size: 10px;"><small>-50%</small></sup>
+                                    <?php if ($product->price_old && $percent = PriceHelper::percent($product->price_new,$product->price_old)): ?>
+                                        <span class="text-line"><?= PriceHelper::format($product->price_old) ?><i class="fa fa-rub" aria-hidden="true"></i></span><sup style="background-color:#af5875; color: #fff;padding: 5px; font-size: 10px;"><small><?=Html::encode($percent)?>%</small></sup>
                                     <?php endif;?>
                                         </span>
                                 </div>
@@ -370,10 +370,12 @@ $reviews_count =$product->getActiveReviewCount($reviews);
 $script = <<<JS
 var price = $product->price_new;
 var price_old = $product->price_old;
+var percent = Math.round(((price / price_old ) * 100) - 100) ;
+         
   function renderPrice(value,modification) {
     //console.log(modification[value]);
     if (modification[value] == undefined)
-        $('.price').html(price +' <i class="fa fa-rub" aria-hidden="true"></i>' + price_old );
+        $('.price').html(price +' <i class="fa fa-rub" aria-hidden="true"></i>' + '<span class="text-line">'+ price_old + '<i class="fa fa-rub" aria-hidden="true"></i></span><sup style="background-color:#af5875; color: #fff;padding: 5px; font-size: 10px;"><small>'+ percent +'%</small></sup>' );
     else 
         $('.price').html(modification[value]+' <i class="fa fa-rub" aria-hidden="true"></i>');
   }  
