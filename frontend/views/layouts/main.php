@@ -97,6 +97,7 @@ AppAsset::register($this);
     <!-- pozvonim-->
     <!--<script crossorigin="anonymous" async type="text/javascript" src="//api.pozvonim.com/widget/callback/v3/6ec34d3f2c2b1ff57be222c4315105fb/connect" id="check-code-pozvonim" charset="UTF-8"></script>-->
     <!--pozvonim End-->
+    <script type="text/javascript">(window.Image ? (new Image()) : document.createElement('img')).src = 'https://vk.com/rtrg?p=VK-RTRG-221769-4a4DJ';</script>
     <?php $this->head() ?>
 </head>
 <body>
