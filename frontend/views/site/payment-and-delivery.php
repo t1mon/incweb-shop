@@ -18,14 +18,86 @@
 <section class="section-p-30px about-us">
     <div class="container">
         <div class="text-center sma-hed animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
-            <h5>THE MOST INFLUENTIAL PERSONAL STYLE BLOGGERS RIGHT NOW</h5>
-            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal as opposed to using 'Content here, </p>
+            <h4>Доставка по Самаре</h4>
+            <!--<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal as opposed to using 'Content here, </p>-->
         </div>
         <div class="about-detail animate fadeInUp" data-wow-delay="0.4s" style="visibility: hidden; animation-delay: 0.4s; animation-name: none;">
-            <p class="text-center">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.<br>
-                <br>
-                On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. </p>
+            <p style="color: #333333" class="text-center">
+                Тарифы на доставку мебели в MEBEL-STYLE являются едиными для доставки товаров, приобретенных в  Интернет-магазине MEBEL-STYLE. При наличии товара на складе доставка осуществляется в течение двух дней после покупки или в иные сроки, согласованные при покупке.
+
+                Доставка на следующий день доступна при оформлении заказа до 14:00 текущего дня и в случае наличия свободных квот на выбранную вами дату доставки. Уточняйте такую возможность у оператора Интернет-магазина MEBEL-STYLE.
+            </p>
 
         </div>
+
+        <h4 style="margin: 50px"><b>Стоимость доставки мебели до подъезда</b></h4>
+        <table class="table table-bordered table-responsive">
+            <thead class="thead-default">
+            <tr>
+                <th>#зоны</th>
+                <th>Зона доставки</th>
+                <th>Корпусная мебель</th>
+                <th>Мягкая мебель</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1 зона</th>
+                <td>В пределах границ города Самара</td>
+                <td>599 руб.</td>
+                <td>799 руб.</td>
+            </tr>
+            <tr>
+                <th scope="row">2 зона</th>
+                <td>До 50 км от границ города Самара</td>
+                <td>1199 руб.</td>
+                <td>1299 руб.</td>
+            </tr>
+            <tr>
+                <th scope="row">3 зона</th>
+                <td>От 51 до 100 км от границ города Самара</td>
+                <td>1599 руб.</td>
+                <td>1699 руб.</td>
+            </tr>
+            <tr>
+                <th scope="row">4 зона</th>
+                <td>Более 100 км от границ города Самара</td>
+                <td>599 руб. +23 руб./км</td>
+                <td>799 руб.+ 23 руб./км</td>
+            </tr>
+            </tbody>
+        </table>
+        <h4 style="margin: 50px"><b>Стоимость дополнительных сервисов</b></h4>
+        <table class="table table-bordered table-responsive">
+            <thead class="thead-default">
+            <tr>
+                <th>Дополнительная услуга</th>
+                <th>Стоимость услуги</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Подъём/занос товара в помещение</td>
+                <td>399 руб. до 3-х единиц товара (артикулов)<span style="color: red;font-size: 1.1em" >*</span></td>
+            </tr>
+            <tr>
+                <td>Перемещение товара вручную, за каждые 15 метров</td>
+                <td>99 руб. за единицу товара</td>
+            </tr>
+            <tr>
+                <td>Сборка дивана в день доставки</td>
+                <td>399 руб. за единицу товара</td>
+            </tr>
+            <tr>
+                <td>Разборка дивана с целью уменьшения габаритов</td>
+                <td>349 руб. за единицу товара</td>
+            </tr>
+            </tbody>
+        </table>
+        <p>
+            <span style="color: red;font-size: 1.1em" >*</span>При расчете стоимости подъема мебели на этаж и доставки мягкой мебели, стоимость данных услуг рассчитывается в зависимости от количества единиц товара (количества артикулов): до 3-х единиц – по стандартному тарифу; от 4-х до 6-ти единиц - по двойному тарифу; от 7-ми до 9-ти единиц - по тройному тарифу и т.д.
+        </p>
+
+        <h6 class="text-center">За подробной информацией можно обратиться в Единую Информационную Службу по телефону 8(846)215-16-65</h6>
     </div>
 </section>

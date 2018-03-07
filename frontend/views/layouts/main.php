@@ -128,8 +128,8 @@ AppAsset::register($this);
       <div class="container">
         <!-- Language -->
         <!--<div class="language"> <a href="#." class="active">EN</a> <a href="#.">FR</a> <a href="#.">GE</a> </div>-->
-          <i class="fa fa-phone" aria-hidden="true"></i> 8 (846) 215-1665
-          <i class="fa fa-clock-o" aria-hidden="true">24/7</i>
+          <i  style="font-size: 1.3em" class="fa fa-phone" aria-hidden="true"> <a href="tel:8 (846) 215-16-65"><b>8 (846) 215-16-65</b></a></i>
+          <!--<i class="fa fa-clock-o" aria-hidden="true">24/7</i>-->
 
 
           <div class="top-links">
@@ -183,6 +183,7 @@ AppAsset::register($this);
               <li class="active"><a href="<?=Url::to(['/site/index'])?>">Главная</a></li>
               <li class="active"><a href="<?=Url::to(['/shop/catalog/index'])?>">Каталог</a></li>
               <li class="active"><a href="<?=Url::to(['/blog/post/index'])?>">Блог</a></li>
+              <li class="active"><a href="<?=Url::to(['/site/payment-and-delivery'])?>">Доставка/Оплата</a></li>
               <li class="active"><a href="<?=Url::to(['/contact/index'])?>">Контакты</a></li>
               <li><a href="tel:+78462151665"><i class="fa fa-phone" aria-hidden="true"></i> 8 (846) 215-1665 </a> </li>
 
