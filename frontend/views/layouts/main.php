@@ -322,7 +322,9 @@ AppAsset::register($this);
   	<a href="#" class="cd-top"><i class="fa fa-angle-up"></i></a> 
   <!-- GO TO TOP End -->
 </div>
-
+<!--EnvyBoxWidget-->
+<link rel="stylesheet" href="https://cdn.envybox.io/widget/cbk.css">
+<script type="text/javascript" src="https://cdn.envybox.io/widget/cbk.js?wcb_code=bee93ba5a71f30a9a5f28a223c5cc964" charset="UTF-8" async></script>
 <!-- Wrap End -->
 <?php $this->endBody() ?>
 </body>
