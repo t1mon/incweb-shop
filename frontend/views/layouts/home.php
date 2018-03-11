@@ -316,7 +316,7 @@ $this->registerMetaTag([
     <section class="section-p-60px about-us">
         <div class="container">
             <div class="row">
-                <div class="col-md-5 animate fadeInLeft" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
+                <div class="col-md-8 animate fadeInLeft" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
                     <div class="sma-hed">
                         <h2 style="font-size: 1.3em">Мебельная компания «Мебель Стайл» -</h2>
                     </div>
@@ -366,7 +366,7 @@ $this->registerMetaTag([
                     </div>
                 </div>
 
-                <div class="col-md-7 animate fadeInRight hide-xs" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;"> <img class="img-responsive" src="<?=Yii::getAlias('@static/banners/ofis.jpg')?>" alt=""> </div>
+                <div class="col-md-4 animate fadeInRight hidden-xs" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;"> <img class="img-responsive" src="<?=Yii::getAlias('@static/banners/ofis.jpg')?>" alt=""> </div>
             </div>
         </div>
     </section>
