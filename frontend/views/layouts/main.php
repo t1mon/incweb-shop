@@ -14,6 +14,7 @@ use yii\widgets\Breadcrumbs;
 use shop\entities\Shop\Category;
 
 AppAsset::register($this);
+\frontend\assets\FontAwesomeAsset::register($this);
 \frontend\widgets\JgrowlWidget::widget();
 ?>
 <?php $this->beginPage() ?>

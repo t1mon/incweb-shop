@@ -250,7 +250,7 @@ jQuery('.tp-banner-fix').show().revolution({
 	dottedOverlay:"none",
 	delay:10000,
 	startwidth:1170,
-	startheight:700,
+	startheight:400,
 	navigationType:"bullet",
 	navigationArrows:"solo",
 	navigationStyle:"preview4",

@@ -1143,7 +1143,7 @@ header .ownmenu .look-book .media-body a {
 .grid-collection {
 }
 .grid-collection .inn-sec {
-	background: #af5875;
+	background: #fff;
 	position: relative;
 	overflow: hidden;
 	width: 100%;
@@ -1194,8 +1194,8 @@ header .ownmenu .look-book .media-body a {
 	display: inline-block;
 	width: 100%;
 	font-weight: bold;
-	font-size: 18px;
-	color: #af5875;
+	font-size: 20px;
+	color: #fff;
 }
 .grid-collection .trd .upper {
 	text-align: left;
@@ -5812,7 +5812,7 @@ input:focus, textarea:focus {
 	font-family: 'Montserrat', sans-serif;
 }
 .about-us .about-detail p {
-	color: #b8b8b8;
+	color: #333;
 }
 .about-us .video-btn {
 	color: #fff;
