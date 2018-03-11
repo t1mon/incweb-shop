@@ -318,7 +318,7 @@ $this->registerMetaTag([
             <div class="row">
                 <div class="col-md-8 animate fadeInLeft" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
                     <div class="sma-hed">
-                        <h2 style="font-size: 1.3em">Мебельная компания «Мебель Стайл» -</h2>
+                        <h2 style="font-size: 1.3em">Онлайн магазин мебели «Мебель Стайл»</h2>
                     </div>
                     <div class="about-detail">
                         <p style="text-indent: 20px;">
