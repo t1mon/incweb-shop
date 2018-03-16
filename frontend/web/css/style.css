@@ -1253,7 +1253,7 @@ header .ownmenu .look-book .media-body a {
 	display: none;
 }
 .popurlar_product .items-in:hover .over-item {
-	opacity: 1;
+	/*opacity: 1;*/
 }
 .popurlar_product .items-in:hover .over-item a {
 	background: #fff;
