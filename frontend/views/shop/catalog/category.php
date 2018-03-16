@@ -30,16 +30,17 @@ $this->params['active_category'] = $category;
     'category' => $category
 ]) */?>
 
-<?php if (trim($category->description)): ?>
-    <!--<div class="panel panel-default">
-        <div class="panel-body"> -->
-            <?=$category->description?>
-      <!--  </div>
-    </div> -->
-<?php endif; ?>
+
 
 <?= $this->render('_list', [
     'dataProvider' => $dataProvider
 ]) ?>
+    <?php if (trim($category->description)): ?>
+        <!--<div class="panel panel-default">
+            <div class="panel-body"> -->
+        <?=$category->description?>
+        <!--  </div>
+      </div> -->
+    <?php endif; ?>
 </div>
 

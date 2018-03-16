@@ -17,7 +17,7 @@ use shop\helpers\ProductStingHelper;
             <div style="cursor: pointer" class="items-in" onclick="location.href='<?= Html::encode($url) ?>'">
                 <!-- Tags -->
                 <?php if ($product->price_old && $percent = PriceHelper::percent($product->price_new,$product->price_old)): ?>
-                    <div class="hot-tag"> -<?=Html::encode($percent)?>% </div>
+                    <div class="hot-tag"><?=Html::encode($percent)?>% </div>
                 <?php endif;?>
                 <!-- Image -->
                 <?php if ($product->mainPhoto): ?>

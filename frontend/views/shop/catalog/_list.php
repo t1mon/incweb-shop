@@ -69,7 +69,8 @@ use yii\widgets\LinkPager;
             'nextPageLabel' => '&rsaquo;',
             'prevPageLabel' => '&lsaquo;',
             //'disabledPageCssClass'=>'',
-            'options'=> ['class' =>'pagination animate fadeInUp','data-wow-delay'=>'0.4s']
+            'options'=> ['class' =>'pagination animate fadeInUp','data-wow-delay'=>'0.4s'],
+            'maxButtonCount'=>5
         ]) ?>
 <!--<div class="row">
     <div class="col-sm-6 text-left">
