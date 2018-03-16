@@ -90,8 +90,8 @@ $this->params['breadcrumbs'][] = $this->title;
                         <h6>НАШ АДРЕС</h6>
                         <ul class="location">
                             <li> <i class="fa fa-location-arrow"></i>
-                                <p>г. Самара, ул. Партизанская 17
-                                    MEBEL-STYLE</p>
+                                <p>г. Самара, ул. Партизанская 17 ТЦ Мега-Мебель
+                                    3 этаж офис 304 "MEBEL-STYLE"</p>
                             </li>
                             <li> <i class="fa fa-phone"></i>
                                 <p>Телефон: 8(846) 215 16 65</p>
@@ -100,7 +100,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <p>support@mebel-style.online</p>
                             </li>
                             <li> <i class="fa fa-clock-o"></i>
-                                <p>ОТКРЫТ: 9:00 - 20:00</p>
+                                <p>ОТКРЫТ: 9:00 - 20:00 ПН-ПТ</p>
                             </li>
                         </ul>
                     </div>
@@ -141,11 +141,11 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="media">
                             <div class="media-left">
                                 <!--  Image -->
-                                <div class="avatar"> <a href="#."> <img class="media-object" src="/image/avatar-11.png" alt=""> </a> </div>
+                                <div class="avatar"> <a target="_blank" href="https://vk.com/id52154333"> <img class="media-object" src="/image/avatar-pavel.jpg" alt=""> </a> </div>
                             </div>
                             <!--  Details -->
                             <div class="media-body">
-                                <h5>АНАСТАСИЯ</h5>
+                                <h5>ПАВЕЛ</h5>
                                 <p>Менеджер по работе с клиентами</p>
                                 <!--<span><i class="fa fa-skype"></i> adnan.arif69</span> </div>-->
                         </div>
@@ -193,5 +193,5 @@ $this->registerJs($script,\yii\web\View::POS_READY);
 <!-- VK Widget -->
 <div id="vk_community_messages"></div>
 <script type="text/javascript">
-    VK.Widgets.CommunityMessages("vk_community_messages", 132528657, {expandTimeout: "25000",widgetPosition: "left",disableExpandChatSound: "1",tooltipButtonText: "Есть вопрос?", buttonType:'blue_circle', expanded:"0"});
+    VK.Widgets.CommunityMessages("vk_community_messages", 132528657, {expandTimeout: "225000",widgetPosition: "left",disableExpandChatSound: "1",tooltipButtonText: "Есть вопрос?", buttonType:'blue_circle', expanded:"0"});
 </script>
