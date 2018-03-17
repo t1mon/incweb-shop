@@ -48,7 +48,7 @@ class AppAsset extends AssetBundle
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
         //'yii\bootstrap\BootstrapPluginAsset',
-       // 'frontend\assets\FontAwesomeAsset',
+        //'frontend\assets\FontAwesomeAsset',
 
     ];
 }

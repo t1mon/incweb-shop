@@ -18,67 +18,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <!-- Map -->
     <div id="map" class="animate fadeInUp" data-wow-delay="0.4s"></div>
-
-    <!--======= Contact Us =========-->
-    <section class="section-p-30px conact-us no-padding-b animate fadeInUp" data-wow-delay="0.4s">
-        <!--======= CONTACT FORM =========-->
-        <div class="container">
-            <!-- Tittle -->
-            <div class="tittle">
-                <p>Пожалуйста, обращаться к нам, если у вас есть какие-либо вопросы, комментарии или сообщения.
-                    Мы постараюсь ответить в кротчайшие сроки!</p>
-            </div>
-            <div class="contact section-p-30px no-padding-b">
-                <div class="contact_form">
-                    <!--======= FORM  =========-->
-                    <?php $form = ActiveForm::begin(['id' => 'contact-form', 'class' => 'contact_form']); ?>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <ul class="row">
-                                    <li class="col-sm-12">
-                                        <label>
-                                            <?= $form->field($model, 'name')->textInput(['placeholder'=>'*ВВЕДИТЕ ИМЯ'])->label(false) ?>
-                                        </label>
-                                    </li>
-                                    <li class="col-sm-12">
-                                        <label>
-                                            <?= $form->field($model, 'email')->textInput(['placeholder'=>'*ВВЕДИТЕ EMAIL'])->label(false) ?>
-                                        </label>
-                                    </li>
-                                    <li class="col-sm-12">
-                                        <label>
-                                            <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [  'options' => ['placeholder' => 'Введите код слева'],
-
-                                                'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
-                                            ])->label(false) ?>
-                                        </label>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-md-6">
-                                <ul class="row">
-                                    <li class="col-sm-12">
-                                        <label>
-                                            <?= $form->field($model, 'subject')->textInput(['placeholder'=>'*ВВЕДИТЕ ТЕМУ ПИСЬМА'])->label(false) ?>
-                                        </label>
-                                    </li>
-                                    <li class="col-sm-12">
-                                        <label>
-                                            <?= $form->field($model, 'body')->textarea(['rows' => 6, 'placeholder'=>'*ВВЕДИТЕ СООБЩЕНИЕ'])->label(false) ?>
-                                        </label>
-                                    </li>
-                                    <li class="col-sm-12 no-margin">
-                                        <?= Html::submitButton('ОТПРАВИТЬ ПИСЬМО', ['class' => 'btn', 'name' => 'contact-button']) ?>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    <?php ActiveForm::end(); ?>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!--======= BOXES =========-->
     <section class="section-p-60px contact-box animate fadeInUp" data-wow-delay="0.4s">
         <div class="container">
@@ -111,28 +50,28 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="boxes-in">
                         <h6>МЫ В ВКОНТАКТЕ</h6>
                         <!-- VK Widget -->
-                       <!-- <div id="vk_groups"></div>
-                        <script type="text/javascript">
-                            VK.Widgets.Group("vk_groups", {mode: 4, wide: 1, height: "400"}, 132528657);
-                        </script>
-                        <!--======= FOOTER ICONS =========-->
-                       <!-- <ul class="social_icons">
-                            <li class="facebook"><a href="#."> <i class="fa fa-facebook"></i></a></li>
-                            <li class="twitter"><a href="#."> <i class="fa fa-twitter"></i></a></li>
-                            <li class="googleplus"><a href="#."> <i class="fa fa-google"></i></a></li>
-                            <li class="skype"><a href="#."> <i class="fa fa-skype"></i></a></li>
-                            <li class="pinterest"><a href="#."> <i class="fa fa-pinterest"></i></a></li>
-                            <li class="dribbble"><a href="#."> <i class="fa fa-dribbble"></i></a></li>
-                            <li class="flickr"><a href="#."> <i class="fa fa-flickr"></i></a></li>
-                            <li class="behance"><a href="#."> <i class="fa fa-behance"></i></a></li>
-                            <li class="linkedin"><a href="#."> <i class="fa fa-linkedin"></i></a></li>
-                            <li class="youtube"><a href="#."> <i class="fa fa-youtube"></i></a></li>
-                            <li class="instagram"><a href="#."> <i class="fa fa-instagram"></i></a></li>
-                            <li class="stumbleupon"><a href="#."> <i class="fa fa-stumbleupon"></i></a></li>
-                            <li class="soundcloud"><a href="#."> <i class="fa fa-soundcloud"></i></a></li>
-                        </ul> -->
-                   <!-- </div>
-                </div> -->
+                <!-- <div id="vk_groups"></div>
+                 <script type="text/javascript">
+                     VK.Widgets.Group("vk_groups", {mode: 4, wide: 1, height: "400"}, 132528657);
+                 </script>
+                 <!--======= FOOTER ICONS =========-->
+                <!-- <ul class="social_icons">
+                     <li class="facebook"><a href="#."> <i class="fa fa-facebook"></i></a></li>
+                     <li class="twitter"><a href="#."> <i class="fa fa-twitter"></i></a></li>
+                     <li class="googleplus"><a href="#."> <i class="fa fa-google"></i></a></li>
+                     <li class="skype"><a href="#."> <i class="fa fa-skype"></i></a></li>
+                     <li class="pinterest"><a href="#."> <i class="fa fa-pinterest"></i></a></li>
+                     <li class="dribbble"><a href="#."> <i class="fa fa-dribbble"></i></a></li>
+                     <li class="flickr"><a href="#."> <i class="fa fa-flickr"></i></a></li>
+                     <li class="behance"><a href="#."> <i class="fa fa-behance"></i></a></li>
+                     <li class="linkedin"><a href="#."> <i class="fa fa-linkedin"></i></a></li>
+                     <li class="youtube"><a href="#."> <i class="fa fa-youtube"></i></a></li>
+                     <li class="instagram"><a href="#."> <i class="fa fa-instagram"></i></a></li>
+                     <li class="stumbleupon"><a href="#."> <i class="fa fa-stumbleupon"></i></a></li>
+                     <li class="soundcloud"><a href="#."> <i class="fa fa-soundcloud"></i></a></li>
+                 </ul> -->
+                <!-- </div>
+             </div> -->
 
                 <!-- TESTIMONIAL -->
                 <div class="col-md-4 animate fadeInRight" data-wow-delay="0.4s">
@@ -148,12 +87,71 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <h5>ПАВЕЛ</h5>
                                 <p>Менеджер по работе с клиентами</p>
                                 <!--<span><i class="fa fa-skype"></i> adnan.arif69</span> </div>-->
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+    </section>
+    <!--======= Contact Us =========-->
+    <section class="section-p-30px conact-us no-padding-b animate fadeInUp" data-wow-delay="0.4s">
+        <!--======= CONTACT FORM =========-->
+        <div class="container">
+            <!-- Tittle -->
+            <div class="tittle">
+                <p>Пожалуйста, обращаться к нам, если у вас есть какие-либо вопросы, комментарии или сообщения.
+                    Мы постараюсь ответить в кротчайшие сроки!</p>
+            </div>
+            <div class="contact section-p-30px no-padding-b">
+                <div class="contact_form">
+                    <!--======= FORM  =========-->
+                    <?php $form = ActiveForm::begin(['id' => 'contact-form', 'class' => 'contact_form']); ?>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="row">
+                                    <li class="col-sm-12">
+                                        <label>
+                                            <?= $form->field($model, 'name')->textInput(['placeholder'=>'ВВЕДИТЕ ИМЯ'])->label(false) ?>
+                                        </label>
+                                    </li>
+                                    <li class="col-sm-12">
+                                        <label>
+                                            <?= $form->field($model, 'email')->textInput(['placeholder'=>'ВВЕДИТЕ EMAIL'])->label(false) ?>
+                                        </label>
+                                    </li>
+                                    <li class="col-sm-12">
+                                        <label>
+                                            <?= $form->field($model, 'verifyCode')->widget(
+                                                \himiklab\yii2\recaptcha\ReCaptcha::className())->label(false) ?>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="row">
+                                    <li class="col-sm-12">
+                                        <label>
+                                            <?= $form->field($model, 'subject')->textInput(['placeholder'=>'ВВЕДИТЕ ТЕМУ ПИСЬМА'])->label(false) ?>
+                                        </label>
+                                    </li>
+                                    <li class="col-sm-12">
+                                        <label>
+                                            <?= $form->field($model, 'body')->textarea(['rows' => 6, 'placeholder'=>'ВВЕДИТЕ СООБЩЕНИЕ'])->label(false) ?>
+                                        </label>
+                                    </li>
+                                    <li class="col-sm-12 no-margin">
+                                        <?= Html::submitButton('ОТПРАВИТЬ ПИСЬМО', ['class' => 'btn', 'name' => 'contact-button']) ?>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    <?php ActiveForm::end(); ?>
+                </div>
+            </div>
         </div>
     </section>
+
+
 </div>
 
 <?php

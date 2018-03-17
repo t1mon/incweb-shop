@@ -14,7 +14,7 @@ use yii\widgets\Breadcrumbs;
 use shop\entities\Shop\Category;
 
 AppAsset::register($this);
-\frontend\assets\FontAwesomeAsset::register($this);
+//\frontend\assets\FontAwesomeAsset::register($this);
 \frontend\widgets\JgrowlWidget::widget();
 ?>
 <?php $this->beginPage() ?>
@@ -88,13 +88,6 @@ AppAsset::register($this);
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/46982373" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
-    <script type="text/javascript">
-        document.write(unescape("%3Cscript src='" + "//yandex.mightycall.ru/CallbackWidget/js/MightyCallCBW.js' type='text/javascript'%3E%3C/script%3E"));
-        document.write(unescape("%3Cscript src='" + "//mightycallstorage.blob.core.windows.net/cbw/8ba1dc5d-7385-4c5c-b937-bacd5fe71948__widget.js' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-    <script type="text/javascript">
-        InitCallbackWidget();
-    </script>
     <!-- pozvonim-->
     <!--<script crossorigin="anonymous" async type="text/javascript" src="//api.pozvonim.com/widget/callback/v3/6ec34d3f2c2b1ff57be222c4315105fb/connect" id="check-code-pozvonim" charset="UTF-8"></script>-->
     <!--pozvonim End-->

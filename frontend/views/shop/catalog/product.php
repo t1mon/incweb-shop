@@ -88,8 +88,29 @@ $reviews_count =$product->getActiveReviewCount($reviews);
                                         </div>
                                     </div>
                                     <div class="some-info no-border"> <br>
-                                        <!--<div class="in-stoke"> <i class="fa fa-check-circle"></i> В наличии</div>-->
-                                        <div class="not-stoke blue-tooltip" data-toggle="tooltip" title='Под заказ. Срок выполнения заказа от 10 рабочих дней'> <i class="fa fa-info-circle" ></i>Под заказ </div>
+                                        <div class="in-stoke"> <i class="fa fa-check-circle"></i> В наличии</div>
+                                       <!-- <div class="not-stoke blue-tooltip" data-toggle="tooltip" title='Под заказ. Срок выполнения заказа от 10 рабочих дней'> <i class="fa fa-info-circle" ></i>Под заказ </div>-->
+                                      <!--  <button type="button" class="btn btn-small btn-dark" data-toggle="modal" data-target="#exampleModal">Заказать в Один клик</button> -->
+                                        <!-- Modal -->
+                                        <!--<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        ...
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> -->
                                         <div class="stars">
                                             <?php
                                             echo StarRating::widget([
@@ -379,9 +400,13 @@ var percent = Math.round(((price / price_old ) * 100) - 100) ;
     else 
         $('.price').html(modification[value]+' <i class="fa fa-rub" aria-hidden="true"></i>');
   }  
+  $('#one_click').preventDefault();
+  $('#one_click').click(function() {
+    
+  });
 JS;
 
-$this->registerJs($script,yii\web\View::POS_HEAD);
+$this->registerJs($script,yii\web\View::POS_BEGIN);
 $this->registerJs('$("[data-toggle=\'tooltip\']").tooltip(); $("[data-toggle=\'popover\']").popover(); ', \yii\web\View::POS_READY);
 $this->registerJsFile('https://vk.com/js/api/share.js?95',['position' => \yii\web\View::POS_HEAD]);
 $this->registerJsFile('https://vk.com/js/api/openapi.js?150',['position' => \yii\web\View::POS_HEAD]);

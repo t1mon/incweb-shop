@@ -3291,7 +3291,7 @@ header .ownmenu .look-book .media-body a {
 	box-shadow: none;
 	border-radius: 0px;
 	background: #fff;
-	border: 1px solid #ebebeb;
+	border: 1px solid #333333;
 }
 .contact_form label {
 	width: 100%;
@@ -3338,16 +3338,16 @@ header .ownmenu .look-book .media-body a {
 	margin-bottom: 30px;
 }
 .contact ::-webkit-input-placeholder {
- color: #272727;
+ color: #b8b8b8;
 }
 .contact :-moz-placeholder { /* Firefox 18- */
- color: #272727;
+ color: #b8b8b8;
 }
 .contact ::-moz-placeholder {  /* Firefox 19+ */
- color: #272727;
+ color: #b8b8b8;
 }
 .contact :-ms-input-placeholder {
- color: #272727;
+ color: #b8b8b8;
 }
 .contact .form-control:focus {
 	border: 1px solid #272727 !important;

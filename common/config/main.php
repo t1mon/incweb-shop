@@ -28,6 +28,7 @@ return [
         ],
         'assetManager' => [
             'class' => 'yii\web\AssetManager',
+            'appendTimestamp' => true,
             'bundles' => [
                 'yii\web\JqueryAsset' => [
                     'js' => [
