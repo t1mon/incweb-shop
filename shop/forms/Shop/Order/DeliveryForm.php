@@ -6,6 +6,7 @@ use shop\entities\Shop\DeliveryMethod;
 use shop\helpers\PriceHelper;
 use yii\base\Model;
 use yii\helpers\ArrayHelper;
+use yii\validators\RequiredValidator;
 
 class DeliveryForm extends Model
 {
@@ -25,7 +26,13 @@ class DeliveryForm extends Model
     {
         return [
             [['method'], 'integer'],
-            [['address', 'method'], 'required'],
+            [['method'], 'required'],
+            [['address'], 'required','when' => function($model) {
+                if ($model->method != 2) return true; }, 'whenClient' => 'function (attribute, value) {
+    if ($("#deliveryform-method").val() != 2) return true;
+}'
+
+                ],
             [['index'], 'string', 'max' => 255],
             [['address'], 'string'],
         ];
@@ -36,7 +43,15 @@ class DeliveryForm extends Model
         $methods = DeliveryMethod::find()->availableForWeight($this->_weight)->orderBy('sort')->all();
 
         return ArrayHelper::map($methods, 'id', function (DeliveryMethod $method) {
-            return $method->name . ' (' . PriceHelper::format($method->cost) . ')';
+            return $method->name /*. ' (' . PriceHelper::format($method->cost) . ')'*/;
         });
+    }
+
+    public function attributeLabels()
+    {
+        return [
+            'method' => 'Способ доставки',
+            'address' => 'Адрес доставки',
+        ];
     }
 }

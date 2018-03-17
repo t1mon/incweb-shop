@@ -54,7 +54,13 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <!-- *COUNTRY -->
                                 <li class="col-md-12">
                                     <label> *СПОСОБ ДОСТАВКИ
-                                        <?= $form->field($model->delivery, 'method')->dropDownList($model->delivery->deliveryMethodsList(), ['prompt' => 'ВЫБОР СПОСОБА ДОСТАВКИ','class'=>'selectpicker'])->label(false) ?>
+                                        <?= $form->field($model->delivery, 'method')->dropDownList($model->delivery->deliveryMethodsList(), ['class'=>'selectpicker'])->label(false) ?>
+                                    </label>
+                                </li>
+                                <li class="col-md-12">
+                                    <!-- ADDRESS -->
+                                    <label>*АДРЕС ДОСТАВКИ
+                                        <?= $form->field($model->delivery, 'address')->textInput()->label(false) ?>
                                     </label>
                                 </li>
                                 <!-- PHONE -->
@@ -71,20 +77,14 @@ $this->params['breadcrumbs'][] = $this->title;
                                         <?= $form->field($model->customer, 'name')->textInput()->label(false) ?>
                                     </label>
                                 </li>
-                                <li class="col-md-12">
-                                    <!-- ADDRESS -->
-                                    <label>*АДРЕС ДОСТАВКИ
-                                        <?= $form->field($model->delivery, 'address')->textInput()->label(false) ?>
-                                    </label>
-                                </li>
                                 <!-- TOWN/CITY -->
                                 <li class="col-md-12">
-                                    <label>*ИНДЕКС
+                                    <label>ИНДЕКС
                                         <?= $form->field($model->delivery, 'index')->textInput()->label(false) ?>
                                     </label>
                                 </li>
                                 <li class="col-md-12">
-                                    <label>*КОММЕНТАРИЙ К ЗАКАЗУ
+                                    <label>КОММЕНТАРИЙ К ЗАКАЗУ
                                         <?= $form->field($model, 'note')->textarea(['rows' => 5])->label(false) ?>
                                     </label>
                                 </li>

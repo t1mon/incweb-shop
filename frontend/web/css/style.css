@@ -5565,8 +5565,8 @@ footer .flicker img {
 .shopping-cart .bootstrap-select .btn {
 	margin-top: 10px;
 	background: #fff !important;
-	border: 1px solid #333;
-	color: #b8b8b8;
+	border: 2px solid #1E90FF;
+	color: #333333;
 	font-size: 10px;
 	letter-spacing: 2px;
 }

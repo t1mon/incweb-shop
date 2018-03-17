@@ -43,4 +43,12 @@ class CustomerForm extends Model
             ['phone','match', 'pattern' => '/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/'],
         ];
     }
+
+    public function attributeLabels()
+    {
+        return [
+            'name' => 'ФИО',
+            'phone' => 'Номер телефона',
+        ];
+    }
 }
