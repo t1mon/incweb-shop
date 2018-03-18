@@ -150,7 +150,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                         </div>
                                     </li>
                                 </ul>
-                                <?= Html::submitButton('ОФОРМИТЬ ЗАКАЗ', ['id'=>'submit-check' , 'class' => 'btn btn-small btn-dark pull-right','form' => 'order']) ?>
+                                <?= Html::submitButton('ОФОРМИТЬ ЗАКАЗ', ['id'=>'submit-check' , 'class' => 'btn btn-small btn-dark pull-right','form' => 'order','onclick'=>'yaCounter46982373.reachGoal("ORDER"); return true;']) ?>
                         </div>
                     </div>
                 </div>
