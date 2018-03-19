@@ -28,8 +28,7 @@ class CategoryForm extends CompositeForm
             $this->slug = $category->slug;
             $this->title = $category->title;
             $this->description = $category->description;
-            if (is_array($category))
-                $this->parentId = $category->parent ? $category->parent->id : null;
+            $this->parentId = $category->getParent() ? $category->getParent()->one() : null;
             $this->meta = new MetaForm($category->meta);
             $this->_category = $category;
         } else {

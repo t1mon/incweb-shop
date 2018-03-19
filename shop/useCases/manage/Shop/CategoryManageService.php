@@ -54,7 +54,7 @@ class CategoryManageService
                 $form->meta->keywords
             )
         );
-        if (is_array($form->parentId) && ($form->parentId !== $category->parent->id)) {
+        if ($form->parentId !== $category->getParent()->one()) {
             $parent = $this->categories->get($form->parentId);
             $category->appendTo($parent);
         }
@@ -65,7 +65,7 @@ class CategoryManageService
     {
         $category = $this->categories->get($id);
         $this->assertIsNotRoot($category);
-        if ($prev = $category->prev) {
+        if ($prev = $category->getPrev()->one()) {
             $category->insertBefore($prev);
         }
         $this->categories->save($category);
@@ -75,7 +75,7 @@ class CategoryManageService
     {
         $category = $this->categories->get($id);
         $this->assertIsNotRoot($category);
-        if ($next = $category->next) {
+        if ($next = $category->getNext()->one()) {
             $category->insertAfter($next);
         }
         $this->categories->save($category);

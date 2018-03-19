@@ -12,13 +12,11 @@ $this->registerMetaTag(['name' =>'description', 'content' => $category->meta->de
 $this->registerMetaTag(['name' =>'keywords', 'content' => $category->meta->keywords]);
 
 $this->params['breadcrumbs'][] = ['label' => 'Каталог продукции', 'url' => ['index']];
-if (is_array($category)) {
-    foreach ($category->parents as $parent) {
+    foreach ($category->getParents()->all() as $parent) {
         if (!$parent->isRoot()) {
             $this->params['breadcrumbs'][] = ['label' => $parent->name, 'url' => ['category', 'id' => $parent->id]];
         }
     }
-}
 $this->params['breadcrumbs'][] = $category->name;
 
 $this->params['active_category'] = $category;

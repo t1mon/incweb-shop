@@ -43,9 +43,9 @@ class CategoryReadRepository
     {
         $query = Category::find()->andWhere(['>', 'depth', 0])->orderBy('lft');
 
-        if (is_array($category)) {
+        if ($category) {
             $criteria = ['or', ['depth' => 1]];
-            foreach (ArrayHelper::merge([$category], $category->parents) as $item) {
+            foreach (ArrayHelper::merge([$category], $category->getParents()->all()) as $item) {
                 $criteria[] = ['and', ['>', 'lft', $item->lft], ['<', 'rgt', $item->rgt], ['depth' => $item->depth + 1]];
             }
             $query->andWhere($criteria);
