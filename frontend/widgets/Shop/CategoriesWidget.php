@@ -30,8 +30,8 @@ class CategoriesWidget extends Widget
             $active = $this->active && ($this->active->id == $view->category->id || $this->active->isChildOf($view->category));
             return Html::beginTag('li',['class'=>'drop-menu']).Html::a(
                 $indent . Html::encode($view->category->name) /*. ' <span>(' . $view->count . ')</span>'*/,
-                ['/shop/catalog/category', 'id' => $view->category->id]
-               // ['class' => $active ? 'list-group-item active' : 'list-group-item']
+                ['/shop/catalog/category', 'id' => $view->category->id],
+                ['class' => $active ? 'active' : '']
             ).Html::endTag('li');
         }, $this->categories->getTreeWithSubsOf($this->active))), [
             'class' => 'cate',

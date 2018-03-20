@@ -22,7 +22,9 @@ use frontend\widgets\Shop\CategoriesWidget;
                         <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-dark" data-target="#" href="#">
                             Категории <span class="caret"></span>
                         </a>
-                        <?= \frontend\widgets\Shop\CategoryWidgetPhone::widget()?>
+                        <?= \frontend\widgets\Shop\CategoryWidgetPhone::widget([
+                            'active' => $this->params['active_category'] ?? null
+                        ])?>
                     </div>
                     <!-- HEADING -->
                     <div class="heading hidden-xs visible-sm visible-md visible-lg">
@@ -34,7 +36,6 @@ use frontend\widgets\Shop\CategoriesWidget;
                             'active' => $this->params['active_category'] ?? null
                         ]) ?>
                     </div>
-
                 </div>
             </div>
 

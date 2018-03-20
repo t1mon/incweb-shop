@@ -4752,7 +4752,7 @@ footer .flicker img {
 	color: #af5875;
 	margin: 0px;
 	font-size: 12px;
-	font-weight: normal;
+	font-weight: 900;
 	border-bottom: 1px solid #272727;
 	display: inline-block;
 	padding-bottom: 10px;
@@ -4760,12 +4760,14 @@ footer .flicker img {
 .side-bar .cate li {
 	line-height: 40px;
 	border-bottom: 1px solid #ebebeb;
+	border-right: 1px solid #af5875 ;
 }
 .side-bar .cate li a {
 	color: #272727;
 	width: 100%;
 	font-size: 12px;
 	display: inline-block;
+	font-weight: 100;
 }
 .side-bar .cate li a span {
 	color: #b8b8b8;
@@ -4773,6 +4775,14 @@ footer .flicker img {
 .side-bar .cate li a:hover {
 	color: #af5875;
 	padding-left: 5px;
+	background-color:#ebebeb;
+}
+.side-bar .cate li > .active{
+ /*background-color:#af5875 ;175 88 117
+	background-color: rgb(175,88,117) ;*/
+	color:#af5875 ;
+	padding-left: 5px;
+	font-weight: bold;
 }
 .side-bar .cate .drop-menu .drop-menu {
 	position: relative;
