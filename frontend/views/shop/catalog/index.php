@@ -6,7 +6,7 @@
 
 use yii\helpers\Html;
 
-$this->title = 'Каталог продукции';
+$this->title = 'Каталог Мебели';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 

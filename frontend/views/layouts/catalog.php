@@ -7,7 +7,9 @@ use frontend\widgets\Shop\CategoriesWidget;
 
 ?>
 <?php $this->beginContent('@frontend/views/layouts/main.php') ?>
-
+<?php if (Yii::$app->controller->action->id == 'index'):?>
+<?php $this->title = 'Каталог мебели - каталог товаров и цены в Самаре'?>
+<?php endif;?>
 <section class="section-p-30px pages-in">
     <div class="container">
         <div class="row">
