@@ -307,7 +307,7 @@ $this->registerMetaTag([
                              data-endelementdelay="0.1"
                              data-endspeed="300"
                              data-captionhidden="on"
-                             style="z-index: 10;"> <a href="<?=Url::to('/catalog/obedennye-zony')?>" class="btn btn-1">ПОСМОТРЕТЬ ПРОДУКЦИЮ</a> </div>
+                             style="z-index: 10;"> <a href="<?=Url::to('/catalog/obedennye-zonyy')?>" class="btn btn-1">ПОСМОТРЕТЬ ПРОДУКЦИЮ</a> </div>
                     </li>
                 </ul>
             </div>
@@ -412,7 +412,7 @@ $this->registerMetaTag([
                             </a> </div>
 
                         <!-- ADD 2 -->
-                        <div class="inn-sec animate fadeInRight" data-wow-delay="0.6s"> <a href="<?=Url::to('/catalog/obedennye-zony')?>"> <img class="img-responsive" src="<?=Yii::getAlias('@static/banners/stol-menu.jpg')?>" alt="Обеденные зоны для дома в Самаре">
+                        <div class="inn-sec animate fadeInRight" data-wow-delay="0.6s"> <a href="<?=Url::to('/catalog/obedennye-zonyy')?>"> <img class="img-responsive" src="<?=Yii::getAlias('@static/banners/stol-menu.jpg')?>" alt="Обеденные зоны для дома в Самаре">
                                 <div class="upper"><span> <small>ОБЕДЕННЫЕ ЗОНЫ </small></span> </div>
                             </a> </div>
                     </li>
