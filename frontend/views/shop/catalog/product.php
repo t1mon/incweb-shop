@@ -17,7 +17,7 @@ $this->title = $product->getSeoTitle();
 $this->registerMetaTag(['name' =>'description', 'content' => $product->meta->description]);
 $this->registerMetaTag(['name' =>'keywords', 'content' => $product->meta->keywords]);
 
-$this->params['breadcrumbs'][] = ['label' => 'Каталог продукции', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Каталог мебели', 'url' => ['index']];
 $reviews = $product->reviews;
 
     foreach ($product->category->getParents()->all() as $parent) {

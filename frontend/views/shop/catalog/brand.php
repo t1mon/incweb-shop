@@ -11,7 +11,7 @@ $this->title = $brand->getSeoTitle();
 $this->registerMetaTag(['name' =>'description', 'content' => $brand->meta->description]);
 $this->registerMetaTag(['name' =>'keywords', 'content' => $brand->meta->keywords]);
 
-$this->params['breadcrumbs'][] = ['label' => 'Каталог продукции', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Каталог мебели', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $brand->name;
 ?>
 
