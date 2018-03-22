@@ -4,13 +4,13 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model shop\entities\Shop\Product\Review */
+/* @var $model shop\entities\Shop\Product\FakeReviews */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Reviews', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Fake Reviews', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="review-view">
+<div class="fake-reviews-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -29,12 +29,12 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
+            'product_id',
             'created_at',
-            'user_id',
+            'user_name',
             'vote',
             'text:ntext',
             'active',
-            'product_id',
         ],
     ]) ?>
 

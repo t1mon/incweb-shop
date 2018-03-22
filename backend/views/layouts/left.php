@@ -44,6 +44,7 @@
                             ['label' => 'Характеристики', 'icon' => 'file-o', 'url' => ['/shop/characteristic/index'], 'active' => $this->context->id == 'shop/characteristic'],
                             ['label' => 'Способы Доставки', 'icon' => 'file-o', 'url' => ['/shop/delivery/index'], 'active' => $this->context->id == 'shop/delivery'],
                             ['label' => 'Отзывы', 'icon' => 'file-o', 'url' => ['/shop/review/index'], 'active' => $this->context->id == 'shop/review'],
+                            ['label' => 'Fake Отзывы', 'icon' => 'file-o', 'url' => ['/shop/fake-reviews/index'], 'active' => $this->context->id == 'shop/fake-reviews'],
                         ]],
                         ['label' => 'Блог', 'icon' => 'folder text-red', 'items' => [
                             ['label' => 'Посты', 'icon' => 'file-o', 'url' => ['/blog/post/index'], 'active' => $this->context->id == 'blog/post'],

@@ -4,33 +4,31 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel backend\forms\Shop\ReviewSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Reviews';
+$this->title = 'Fake Reviews';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="review-index">
+<div class="fake-reviews-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Review', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Fake Reviews', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
+
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
+            'product_id',
             'created_at',
-            'user_id',
+            'user_name',
             'vote',
-            'text:ntext',
-            // 'active',
-            // 'product_id',
+            //'text:ntext',
+            //'active',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
