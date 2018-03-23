@@ -98,7 +98,7 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 <!-- LOADER ===========================================-->
 
-<div id="loader">
+<!--<div id="loader">
   <div class="loader">
     <div class="position-center-center"> <img src="/image/logo-dark-new.png" alt="">
       
@@ -110,7 +110,7 @@ AppAsset::register($this);
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <!-- Page Wrap -->
 <div id="wrap">
