@@ -2626,6 +2626,12 @@ header .ownmenu .look-book .media-body a {
 .more {
 	color: #af5875;
 }
+#commentform-text{
+	border: 1px solid #666666;
+}
+.margin{
+	margin-left: 20px; ;
+}
 .comments {
 	margin-top: 40px;
 }

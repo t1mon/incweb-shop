@@ -148,7 +148,7 @@ class CatalogController extends Controller
         if (!$product = $this->products->find($id)) {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
-
+        \Yii::$app->getUser()->setReturnUrl(\Yii::$app->request->url);
         $this->layout = 'blank';
         $cartForm = new AddToCartForm($product);
         $reviewForm = new ReviewForm();

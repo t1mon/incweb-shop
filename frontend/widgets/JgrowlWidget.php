@@ -62,7 +62,7 @@ class JgrowlWidget extends \yii\bootstrap\Widget
                     $css = $this->alertTypes[$type];
                     $js = <<<JS
         
-            $.jGrowl("$message",{theme:'$css',life:7000});
+            $.jGrowl("$message",{theme:'$css',life:10000});
 JS;
                     \Yii::$app->view->registerJs($js,\yii\web\View::POS_END);
 

@@ -17,4 +17,13 @@ class CommentForm extends Model
             ['parentId', 'integer'],
         ];
     }
+
+    public function attributeLabels()
+    {
+        return [
+            'text' => 'Текст комментария'
+
+        ];
+
+    }
 }

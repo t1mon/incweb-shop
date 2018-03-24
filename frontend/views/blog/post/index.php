@@ -6,11 +6,9 @@
 
 use yii\helpers\Html;
 
-$this->title = 'Blog';
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Блог интернет магазина мебели MEBEL-STYLE';
+$this->params['breadcrumbs'][] = 'Блог';
 ?>
-
-<h1><?= Html::encode($this->title) ?></h1>
 
 <?= $this->render('_list', [
     'dataProvider' => $dataProvider

@@ -113,7 +113,7 @@ class PostController extends Controller
         if (!$post = $this->posts->find($id)) {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
-
+        \Yii::$app->getUser()->setReturnUrl(\Yii::$app->request->url);
         return $this->render('post', [
             'post' => $post,
         ]);
@@ -135,6 +135,7 @@ class PostController extends Controller
         if ($form->load(Yii::$app->request->post()) && $form->validate()) {
             try {
                 $comment = $this->service->create($post->id, Yii::$app->user->id, $form);
+                Yii::$app->session->setFlash('info', 'Комментарий добавлен!');
                 return $this->redirect(['post', 'id' => $post->id, '#' => 'comment_' . $comment->id]);
             } catch (\DomainException $e) {
                 Yii::$app->errorHandler->logException($e);

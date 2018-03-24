@@ -12,12 +12,24 @@ use yii\helpers\Html;
 ?>
 
 <div id="comments" class="inner-bottom-xs">
-    <h2>Comments</h2>
+    <h3>Комментарии</h3>
     <?php foreach ($items as $item): ?>
         <?= $this->render('_comment', ['item' => $item]) ?>
     <?php endforeach; ?>
 </div>
+<?php if (Yii::$app->user->isGuest): ?>
 
+    <div class="panel-panel-info">
+        <div class="panel-body">
+            <p style="color: #e84545">Для возможности комментирования статьи, необходима авторизация любым удобном способом!</p>
+            <?= \yii\helpers\Html::a('Вход на сайт', ['/auth/auth/login'],['class'=>'btn btn-dark']) ?> <br><br>
+            <a  href="<?= Html::encode(\yii\helpers\Url::to(['/auth/network/auth','authclient'=>'vk'])) ?>">
+                <img class="img-responsive" src="<?= Yii::getAlias('@web/image/auth-vk.png') ?>" style="max-width:350px; " alt="Вход на сайт через Вконтакте">
+            </a>
+        </div>
+    </div>
+
+<?php else: ?>
 <div id="reply-block" class="leave-reply">
     <?php $form = ActiveForm::begin([
         'action' => ['comment', 'id' => $post->id],
@@ -27,12 +39,12 @@ use yii\helpers\Html;
     <?= $form->field($commentForm, 'text')->textarea(['rows' => 5]) ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Send own comment', ['class' => 'btn btn-primary']) ?>
+        <?= Html::submitButton('Комментировать', ['class' => 'btn btn-dark']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
 </div>
-
+<?php endif;?>
 <?php $this->registerJs("
     jQuery(document).on('click', '#comments .comment-reply', function () {
         var link = jQuery(this);

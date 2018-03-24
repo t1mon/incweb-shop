@@ -94,7 +94,7 @@ class PostManageService
         $this->transaction->wrap(function () use ($post, $form) {
 
             $post->revokeTags();
-            $this->posts->save($post);
+            //$this->posts->save($post);
 
             foreach ($form->tags->existing as $tagId) {
                 $tag = $this->tags->get($tagId);

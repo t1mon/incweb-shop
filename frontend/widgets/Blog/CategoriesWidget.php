@@ -22,15 +22,15 @@ class CategoriesWidget extends Widget
 
     public function run(): string
     {
-        return Html::tag('div', implode(PHP_EOL, array_map(function (Category $category) {
+        return Html::tag('ul', implode(PHP_EOL, array_map(function (Category $category) {
             $active = $this->active && ($this->active->id == $category->id);
-            return Html::a(
-                Html::encode($category->name),
+            return Html::beginTag('li',['class'=>'']).Html::a(
+                    strtoupper(Html::encode($category->name)),
                 ['/blog/post/category', 'slug' => $category->slug],
-                ['class' => $active ? 'list-group-item active' : 'list-group-item']
+                ['class' => $active ? 'active' : '']
             );
         }, $this->categories->getAll())), [
-            'class' => 'list-group',
+            'class' => 'cate',
         ]);
     }
 }

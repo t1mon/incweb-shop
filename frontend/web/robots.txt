@@ -6,5 +6,6 @@ Disallow: /shop
 Disallow: /auth
 Disallow: /site/rally
 Disallow: /site/sub-rally
+Disallow: /blog
 Host: mebel-style.online
 

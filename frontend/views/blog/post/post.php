@@ -11,7 +11,7 @@ $this->title = $post->getSeoTitle();
 $this->registerMetaTag(['name' =>'description', 'content' => $post->meta->description]);
 $this->registerMetaTag(['name' =>'keywords', 'content' => $post->meta->keywords]);
 
-$this->params['breadcrumbs'][] = ['label' => 'Blog', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Блог', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $post->category->name, 'url' => ['category', 'slug' => $post->category->slug]];
 $this->params['breadcrumbs'][] = $post->title;
 
@@ -40,8 +40,9 @@ foreach ($post->tags as $tag) {
         'URI.SafeIframeRegexp'=>'%^(https?:)?//(www\.youtube(?:-nocookie)?\.com/embed/|player\.vimeo\.com/video/)%',
     ]) ?>
 </article>
-
+<?php if($tagLinks):?>
 <p>Tags: <?= implode(', ', $tagLinks) ?></p>
+<?php endif;?>
 
 <?= CommentsWidget::widget([
     'post' => $post,
