@@ -50,7 +50,7 @@ use yii\widgets\LinkPager;
 
         <!--======= VIEW ITEM NUMBER =========-->
         <div class="view-num">
-            <p>Показано <?=$dataProvider->getCount() ?> из <?= $dataProvider->getTotalCount() ?></p>
+            <p><?=\shop\helpers\ProductStingHelper::productFields($dataProvider)?></p>
         </div>
     </div>
 
