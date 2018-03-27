@@ -19,7 +19,6 @@ $this->params['breadcrumbs'][] = $page->title;
 ?>
 <article class="page-view">
 
-    <h1><?= Html::encode($page->title) ?></h1>
 
     <?= Yii::$app->formatter->asHtml($page->content, [
         'Attr.AllowedRel' => array('nofollow'),

@@ -57,12 +57,14 @@ $url = Url::to(['product', 'id' =>$product->id]);
                 </div>
             </div>
             <div class="col-md-5">
-                <button class="btn btn-consultation">Купить в 1 клик</button>
+                <a href="#consultationModal" class="btn btn-consultation" data-toggle="modal" productName='<?=$product->name?>'productId='<?=$product->id?>'>Купить в 1 клик</a>
             </div>
             <div class="col-md-7">
                 <a href="<?= Url::to(['/shop/cart/add', 'id' => $product->id]) ?>" class="btn small btn-dark" style="width: 100%" onclick="yaCounter46982373.reachGoal('ADD_CART'); return true;">Добавить в Корзину</a>
             </div>
         </li>
+
+
 
 <!---onclick="location.href='<?= Html::encode($url) ?>'"-->
 <?php
@@ -82,6 +84,12 @@ var url;
     
     
     );
+    $('.btn-consultation').click(function() {
+        var productName = $(this).attr('productName');
+        productId = $(this).attr('productId');
+        $('#consultationModal h4').text(productName);
+      
+    });
 JS;
 
 $this->registerJs($script,yii\web\View::POS_READY);

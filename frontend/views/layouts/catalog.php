@@ -57,6 +57,30 @@ use frontend\widgets\Shop\CategoriesWidget;
         </div>
     </div>
 </section>
+<!-- HTML-код модального окна -->
+<div id="consultationModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Заголовок модального окна -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <!-- Основное содержимое модального окна -->
+            <div class="modal-body">
+                <div class="avatar"><a target="_blank" href="https://vk.com/id52154333"><img class="media-object img-circle" src="/image/avatar-pavel.jpg" align="left" alt=""></a>
+                    <em>Здравствуйте! Меня зовут Павел. Я готов перезвонить вам, и проконсультировать вас по возникшему вопросу. Просто заполните обязательные поля снизу и я вам позвоню.  </em>
+                </div>
+            </div>
+            <!-- Футер модального окна -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-dark" data-dismiss="modal">Отменить покупку</button>
+                <button type="button" class="btn btn-consultation">Купить</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <?php
 $script = <<<JS
 $("#price-range").noUiSlider({

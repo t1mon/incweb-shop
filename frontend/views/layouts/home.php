@@ -333,7 +333,7 @@ $this->registerMetaTag([
                             <!--  WORLD WIDE SHIP -->
                             <li class="animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
                                 <div class="media">
-                                    <div class="media-left"> <i class="fa fa-handshake-o"></i> </div>
+                                    <div class="media-left"> <i class="fa fa-thumbs-o-up"></i> </div>
                                     <div class="media-body">
                                         <h4 class="media-heading" style="font-size: 1em;">НИЗКИЕ ЦЕНЫ</h4>
                                         <p>Вы экономите свои деньги преобретая товар у нас</p>
