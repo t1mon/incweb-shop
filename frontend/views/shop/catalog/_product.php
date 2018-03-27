@@ -70,6 +70,7 @@ $url = Url::to(['product', 'id' =>$product->id]);
 <?php
 $script = <<<JS
 var url;
+
     $('.rs').hover(
 
  
@@ -88,6 +89,7 @@ var url;
         var productName = $(this).attr('productName');
         productId = $(this).attr('productId');
         $('#consultationModal h4').text(productName);
+        yaCounter46982373.reachGoal('CONSULTATION_CLICK');
       
     });
     
@@ -95,28 +97,34 @@ var url;
         name = $("#name_consultation").val();
         phone = $("#phone_consultation").val();
         message = $("#message_consultation").val();
+        product_name = $(".modal-title").text();
         if (name == ''){
-            $.jGrowl("Не запонено поле Имя",{theme:'default',life:10000});
+            $.jGrowl("Не запонено поле Имя",{theme:'jgrowl warning',life:10000});
             $("#name_consultation").focus();
             return false;}
         if (phone == ''){
-            $.jGrowl("Не запонено поле Телефон",{theme:'default',life:10000});
+            $.jGrowl("Не запонено поле Телефон",{theme:'jgrowl warning',life:10000});
             $("#phone_consultation").focus();
             return false;} 
         if (!/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/.exec(phone)){
-            $.jGrowl("Неправильный номер Телефона",{theme:'default',life:10000});
+            $.jGrowl("Неправильный номер Телефона",{theme:'jgrowl warning',life:10000});
             $("#phone_consultation").focus();
             return false;}    
-       
                 $.ajax({
                         url: 'shop/catalog/consultation',
                         type: 'POST',
-                        data: {name:name,phone:phone,message:message},
+                        data: {name:name,phone:phone,message:message,product_name:product_name},
                         success: function(res){
-                        console.log(res);
+                            if(res){
+                                $("#consultationModal").modal('hide');
+                                $.jGrowl("Спасибо! Ваша заявка отправлена! В ближайшее время с вами свяжется ваш персональный менеджер",{theme:'default',life:10000});
+                                yaCounter46982373.reachGoal('CONSULTATION_SEND');
+                            }
+                            
+                        //console.log(res);
                         },
                         error: function(){
-                        $.jGrowl("ERROR!",{theme:'default',life:10000});
+                        $.jGrowl("ERROR!",{theme:'jgrowl danger',life:10000});
                         }
                         });
                 

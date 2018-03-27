@@ -28,9 +28,9 @@ use yii\helpers\Html;
                                         <!-- Title -->
                                         <tr>
                                             <td style="font-family: Helvetica, arial, sans-serif; font-size: 30px; color: #333333; text-align:center; line-height: 30px;" st-title="fulltext-heading">
-                                                Имя: <?=Html::encode($name) ?>
-                                                Телефон: <?=Html::encode($phone) ?>
-                                                Сообщение: <?=Html::encode($message) ?>
+                                                Имя: <?=Html::encode($name) ?><br>
+                                                Телефон: <?=Html::encode($phone) ?><br>
+                                                Сообщение: <?=Html::encode($message) ?><br>
                                             </td>
                                         </tr>
                                         <!-- End of Title -->

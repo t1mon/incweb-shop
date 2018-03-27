@@ -175,9 +175,11 @@ class CatalogController extends Controller
             $sent = $this->mailer
                 ->compose(
                     ['html' => 'auth/consult/consult-html', 'text' => 'auth/consult/consult-text'],
-                    ['name' => \Yii::$app->request->post('name')],
-                    ['phone' => \Yii::$app->request->post('phone')],
-                    ['message' => \Yii::$app->request->post('message')]
+                    [
+                        'name' => \Yii::$app->request->post('name'),
+                        'phone' => \Yii::$app->request->post('phone'),
+                        'message' => \Yii::$app->request->post('message')
+                    ]
                 )
                 ->setTo('gorin163@gmail.com')
                 ->setSubject('Пользователь запросил консультацию');
