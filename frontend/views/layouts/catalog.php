@@ -71,11 +71,24 @@ use frontend\widgets\Shop\CategoriesWidget;
                 <div class="avatar"><a target="_blank" href="https://vk.com/id52154333"><img class="media-object img-circle" src="/image/avatar-pavel.jpg" align="left" alt=""></a>
                     <em>Здравствуйте! Меня зовут Павел. Я готов перезвонить вам, и проконсультировать вас по возникшему вопросу. Просто заполните обязательные поля снизу и я вам позвоню.  </em>
                 </div>
+
+                        <!--======= FORM  =========-->
+                        <form role="form" id="consultation_form" class="contact-form" method="post" onsubmit="return false">
+                            <div class="row">
+                                <div class="col-md-12">
+                                                <input class="form-control" name="name" id="name_consultation" placeholder="*ИМЯ" type="text">
+                                                <input class="form-control " name="phone" id="phone_consultation" placeholder="*ТЕЛЕФОН" type="text">
+                                                <textarea class="form-control" name="message" id="message_consultation" rows="5" placeholder="Комментарий - Можете указать удобное для вас время звонка!"></textarea>
+                                </div>
+                            </div>
+                        </form>
+
+
             </div>
             <!-- Футер модального окна -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-dark" data-dismiss="modal">Отменить покупку</button>
-                <button type="button" class="btn btn-consultation">Купить</button>
+                <button id="submit_consultation" type="button" class="btn btn-consultation">Купить</button>
             </div>
         </div>
     </div>
@@ -107,7 +120,7 @@ $("#price-range").noUiSlider({
         prefix: '$'
       }
         }
-  })
+  });
 
 JS;
 

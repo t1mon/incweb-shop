@@ -90,6 +90,40 @@ var url;
         $('#consultationModal h4').text(productName);
       
     });
+    
+    $('#submit_consultation').click(function() {
+        name = $("#name_consultation").val();
+        phone = $("#phone_consultation").val();
+        message = $("#message_consultation").val();
+        if (name == ''){
+            $.jGrowl("Не запонено поле Имя",{theme:'default',life:10000});
+            $("#name_consultation").focus();
+            return false;}
+        if (phone == ''){
+            $.jGrowl("Не запонено поле Телефон",{theme:'default',life:10000});
+            $("#phone_consultation").focus();
+            return false;} 
+        if (!/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/.exec(phone)){
+            $.jGrowl("Неправильный номер Телефона",{theme:'default',life:10000});
+            $("#phone_consultation").focus();
+            return false;}    
+       
+                $.ajax({
+                        url: 'shop/catalog/consultation',
+                        type: 'POST',
+                        data: {name:name,phone:phone,message:message},
+                        success: function(res){
+                        console.log(res);
+                        },
+                        error: function(){
+                        $.jGrowl("ERROR!",{theme:'default',life:10000});
+                        }
+                        });
+                
+ 
+});
+    
+    
 JS;
 
 $this->registerJs($script,yii\web\View::POS_READY);

@@ -10,6 +10,7 @@ use shop\readModels\Shop\CategoryReadRepository;
 use shop\readModels\Shop\ProductReadRepository;
 use shop\readModels\Shop\TagReadRepository;
 use yii\db\Exception;
+use yii\mail\MailerInterface;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use shop\useCases\manage\Shop\ReviewManageService;
@@ -23,6 +24,7 @@ class CatalogController extends Controller
     private $brands;
     private $tags;
     private $review;
+    private $mailer;
 
     public function __construct(
         $id,
@@ -32,6 +34,7 @@ class CatalogController extends Controller
         BrandReadRepository $brands,
         TagReadRepository $tags,
         ReviewManageService $review,
+        MailerInterface $mailer,
         $config = []
     )
     {
@@ -41,6 +44,7 @@ class CatalogController extends Controller
         $this->brands = $brands;
         $this->tags = $tags;
         $this->review = $review;
+        $this->mailer = $mailer;
     }
 
     /**
@@ -161,5 +165,31 @@ class CatalogController extends Controller
             'cartForm' => $cartForm,
             'reviewForm' => $reviewForm,
         ]);
+    }
+
+    public function actionConsultation()
+    {
+        if (\Yii::$app->request->isAjax) {
+            $dkim = \Yii::$app->params['dkim'];
+            $signer = new \Swift_Signers_DKIMSigner(trim($dkim['privateKey']), trim($dkim['domainName']), trim($dkim['selector']));
+            $sent = $this->mailer
+                ->compose(
+                    ['html' => 'auth/consult/consult-html', 'text' => 'auth/consult/consult-text'],
+                    ['name' => \Yii::$app->request->post('name')],
+                    ['phone' => \Yii::$app->request->post('phone')],
+                    ['message' => \Yii::$app->request->post('message')]
+                )
+                ->setTo('gorin163@gmail.com')
+                ->setSubject('Пользователь запросил консультацию');
+            $sent->getSwiftMessage()->attachSigner($signer);
+            $sent->send();
+
+            if (!$sent) {
+                throw new \RuntimeException('Sending error.');
+            } else
+                return 1;
+            //return  \Yii::$app->request->post('name').\Yii::$app->request->post('phone').\Yii::$app->request->post('message');
+        }
+
     }
 }
