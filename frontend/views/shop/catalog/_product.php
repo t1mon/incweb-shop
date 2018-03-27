@@ -56,7 +56,12 @@ $url = Url::to(['product', 'id' =>$product->id]);
                     <?php endif;?>
                 </div>
             </div>
-            <a href="<?= Url::to(['/shop/cart/add', 'id' => $product->id]) ?>" class="btn small btn-dark" style="width: 100%" onclick="yaCounter46982373.reachGoal('ADD_CART'); return true;">Добавить в Корзину</a>
+            <div class="col-md-5">
+                <button class="btn btn-consultation">Купить в 1 клик</button>
+            </div>
+            <div class="col-md-7">
+                <a href="<?= Url::to(['/shop/cart/add', 'id' => $product->id]) ?>" class="btn small btn-dark" style="width: 100%" onclick="yaCounter46982373.reachGoal('ADD_CART'); return true;">Добавить в Корзину</a>
+            </div>
         </li>
 
 <!---onclick="location.href='<?= Html::encode($url) ?>'"-->

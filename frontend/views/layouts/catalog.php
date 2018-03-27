@@ -8,7 +8,18 @@ use frontend\widgets\Shop\CategoriesWidget;
 ?>
 <?php $this->beginContent('@frontend/views/layouts/main.php') ?>
 <?php if (Yii::$app->controller->action->id == 'index'):?>
-<?php $this->title = 'Каталог мебели - каталог товаров и цены в Самаре'?>
+<?php $this->title = 'Каталог мебели - каталог товаров и цены в Самаре';
+    $this->registerMetaTag([
+        'name' => 'keywords',
+        'content' => 'мебель каталог товаров цены, мебель официальный каталог,мебель Самара каталог, мебель Самара каталог товаров цены'
+    ]);
+    $this->registerMetaTag([
+        'name' => 'description',
+        'content' => 'Мебель для дома в интернет-магазине MEBEL-STYLE. Огромный выбор моделей по низким ценам в наличии и под заказ; доставка, сборка, гарантия качества.'
+    ]);
+
+    ?>
+
 <?php endif;?>
 <section class="section-p-30px pages-in">
     <div class="container">

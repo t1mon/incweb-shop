@@ -15,7 +15,7 @@ use yii\helpers\Url;
 <?php
 $this->registerMetaTag([
     'name' => 'keywords',
-    'content' => 'Магазин мебели, mebel style, гипермаркет мебели, интернет магазин мебели'
+    'content' => 'мебель в Самаре, мебель Самара каталог, много мебели Самара, официальный мебельный сайт, цена мебельного'
 ]);
 $this->registerMetaTag([
     'name' => 'description',

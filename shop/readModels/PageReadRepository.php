@@ -20,4 +20,5 @@ class PageReadRepository
     {
         return Page::find()->andWhere(['slug' => $slug])->andWhere(['>', 'depth', 0])->one();
     }
+
 }

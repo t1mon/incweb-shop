@@ -25,7 +25,7 @@ class PageForm extends CompositeForm
             $this->title = $page->title;
             $this->slug = $page->slug;
             $this->content = $page->content;
-            $this->parentId = $page->parent ? $page->parent->id : null;
+            $this->parentId = $page->getParent() ? $page->getParent()->one()->id : null;
             $this->meta = new MetaForm($page->meta);
             $this->_page = $page;
         } else {

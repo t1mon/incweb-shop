@@ -25,9 +25,9 @@ class PageController extends Controller
      * @throws NotFoundHttpException
      * @internal param string $slug
      */
-    public function actionView($id)
+    public function actionView($slug)
     {
-        if (!$page = $this->pages->find($id)) {
+        if (!$page = $this->pages->findBySlug($slug)) {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
 
