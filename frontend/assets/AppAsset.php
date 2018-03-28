@@ -32,7 +32,7 @@ class AppAsset extends AssetBundle
         'js/jquery.elevatezoom.js',
         //'js/modernizr.js',
         'js/bootstrap.min.js',
-        'js/wow.min.js',
+        //'js/wow.min.js',
         'js/own-menu.js',
         'js/owl.carousel.min.js',
         'js/jquery.magnific-popup.min.js',

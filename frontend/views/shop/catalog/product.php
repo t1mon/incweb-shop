@@ -58,7 +58,7 @@ $reviews_count =$product->getActiveReviewCount($reviews);
                         <div class="col-sm-6 animate fadeInRight" data-wow-delay="0.4s">
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <h5><?= mb_strtoupper(Html::encode($product->name)) ?></h5>
+                                    <span style="font-size: 15px;font-weight: normal;text-transform: uppercase;"><?= mb_strtoupper(Html::encode($product->name)) ?></span>
                                     <span class="price"><?= PriceHelper::format($product->price_new) ?> <i class="fa fa-rub" aria-hidden="true"></i>
                                     <?php if ($product->price_old && $percent = PriceHelper::percent($product->price_new,$product->price_old)): ?>
                                         <span class="text-line"><?= PriceHelper::format($product->price_old) ?><i class="fa fa-rub" aria-hidden="true"></i></span><sup style="background-color:#af5875; color: #fff;padding: 5px; font-size: 10px; margin-left: 5px;"><small><?=Html::encode($percent)?>%</small></sup>
@@ -68,11 +68,13 @@ $reviews_count =$product->getActiveReviewCount($reviews);
                                 <div class="col-sm-12">
                                     <span class="code">КОД ПРОДУКТА: <?= Html::encode($product->code) ?></span>
                                     <span class="code">ФАБРИКА: <a href="<?= Html::encode(Url::to(['brand', 'id' => $product->brand->id])) ?>"><?= Html::encode($product->brand->name) ?></a></span>
+                                    <?php if ($product->tags):?>
                                     <span class="code">Теги:
                                     <?php foreach ($product->tags as $tag): ?>
                                         <a href="<?= Html::encode(Url::to(['tag', 'id' => $tag->id])) ?>"><?= Html::encode($tag->name) ?></a>
                                     <?php endforeach; ?>
                                     </span>
+                                    <?php endif;?>
                                     <?php if ($product->isAvailable()): ?>
                                     <?php $form = ActiveForm::begin([
                                         'action' => ['/shop/cart/add', 'id' => $product->id],
@@ -203,7 +205,7 @@ $reviews_count =$product->getActiveReviewCount($reviews);
 
                             <!-- REVIEW -->
                             <div role="tabpanel" class="tab-pane fade" id="review">
-                                <h6>(<?=$reviews_count?>) ОТЗЫВЫ ПОКУПАТЕЛЕЙ <?=mb_strtoupper(Html::encode($product->name))?></h6>
+                                <span>(<?=$reviews_count?>) ОТЗЫВЫ ПОКУПАТЕЛЕЙ <?=mb_strtoupper(Html::encode($product->name))?></span>
 
                                 <!-- REVIEW PEOPLE 1 -->
                                 <?php
@@ -218,13 +220,13 @@ $reviews_count =$product->getActiveReviewCount($reviews);
                                             <!--  Details -->
                                             <div class="media-body">
                                                 <p class="font-playfair">“<?=$review->text?>”</p>
-                                                <h6><?=$user['username'];?> <span class="pull-right"><?=date('G:h:m d/m/y',$review->created_at)?></span> </h6>
+                                                <span><?=$user['username'];?> <span class="pull-right"><?=date('G:h:m d/m/y',$review->created_at)?></span> </span>
                                             </div>
                                         </div>
                                     <?php endif;?>
                                 <?php endforeach;?>
                                 <!-- ADD REVIEW -->
-                                <h6 class="margin-t-40">ДОБАВИТЬ ОТЗЫВ</h6>
+                                <!--<span class="margin-t-40">ДОБАВИТЬ ОТЗЫВ</span>-->
                                 <?php if (Yii::$app->user->isGuest): ?>
 
                                     <div class="panel-panel-info">

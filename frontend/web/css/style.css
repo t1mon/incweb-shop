@@ -4778,7 +4778,7 @@ footer .flicker img {
 	margin-bottom: 10px;
 	margin-top: 50px;
 }
-.side-bar .heading h6 {
+.side-bar .heading h6 , .side-bar .heading span {
 	color: #af5875;
 	margin: 0px;
 	font-size: 12px;
@@ -5275,6 +5275,7 @@ footer .flicker img {
 	line-height: 42px;
 	float: left;
 	margin-right: 10px;
+	margin-top: 20px;
 	padding: 0 20px;
 }
 .item-detail-page .fun-share input {

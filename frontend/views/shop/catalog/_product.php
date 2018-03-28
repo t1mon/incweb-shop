@@ -88,7 +88,7 @@ var url;
     $('.btn-consultation').click(function() {
         var productName = $(this).attr('productName');
         productId = $(this).attr('productId');
-        $('#consultationModal h4').text(productName);
+        $('#consultationModal span').text(productName);
         yaCounter46982373.reachGoal('CONSULTATION_CLICK');
       
     });

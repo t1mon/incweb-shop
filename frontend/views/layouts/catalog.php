@@ -30,7 +30,7 @@ use frontend\widgets\Shop\CategoriesWidget;
             <!--======= SIDE BAR =========-->
             <div class="col-sm-3 animate fadeInLeft" data-wow-delay="0.2s">
                 <div class="side-bar">
-                    <h4>Фильтр</h4>
+                    <span style="font-size: 1.5em; font-weight: bold;">Фильтр</span>
                     <div class="dropdown visible-xs hidden-sm hidden-md hidden-lg">
                         <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-dark" data-target="#" href="#">
                             Категории <span class="caret"></span>
@@ -41,7 +41,7 @@ use frontend\widgets\Shop\CategoriesWidget;
                     </div>
                     <!-- HEADING -->
                     <div class="heading hidden-xs visible-sm visible-md visible-lg">
-                        <h6>КАТЕГОРИИ</h6>
+                        <span>КАТЕГОРИИ</span>
 
                     <!-- CATEGORIES -->
 
@@ -64,7 +64,7 @@ use frontend\widgets\Shop\CategoriesWidget;
             <!-- Заголовок модального окна -->
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title"></h4>
+                <span class="modal-title"></span>
             </div>
             <!-- Основное содержимое модального окна -->
             <div class="modal-body">
