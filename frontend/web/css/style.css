@@ -1243,7 +1243,9 @@ header .ownmenu .look-book .media-body a {
 /*=======================================================
       Popurlar Product
 ========================================================*/
-.popurlar_product {
+.popurlar_product .items-in:hover {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 .popurlar_product .items-in {
 	position: relative;
@@ -1272,6 +1274,7 @@ header .ownmenu .look-book .media-body a {
 }
 .popurlar_product .items-in:hover .over-item {
 	/*opacity: 1;*/
+
 }
 .popurlar_product .items-in:hover .over-item a {
 	background: #fff;
@@ -1324,10 +1327,10 @@ header .ownmenu .look-book .media-body a {
 .popurlar_product .details-sec {
 	position: relative;
 	z-index: 99;
-	background: #ddc5d6;
+	/*background: #ddc5d6;*/
 	padding-bottom: 10px;
 	text-align: center;
-	border-bottom: 1px solid #af5875;
+	border-bottom: 1px solid #ddc5d6;;
 }
 .popurlar_product .details-sec a {
 	display: inline-block;
