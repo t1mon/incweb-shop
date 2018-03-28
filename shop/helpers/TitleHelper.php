@@ -19,7 +19,7 @@ class TitleHelper
         if (!$categoryName)
             throw new NotFoundHttpException('Category Name is NULL .');
         $category = Category::find()->where(['name'=>$categoryName])->one();
-        return $category->title?:$category->name;
+        return $category?$category->title:$category->name;
 
 
     }
