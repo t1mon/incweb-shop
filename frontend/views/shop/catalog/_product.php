@@ -88,7 +88,7 @@ var url;
     $('.btn-consultation').click(function() {
         var productName = $(this).attr('productName');
         productId = $(this).attr('productId');
-        $('#consultationModal span').text(productName);
+        $('#consultationModal h4').text(productName);
         yaCounter46982373.reachGoal('CONSULTATION_CLICK');
       
     });
@@ -111,7 +111,7 @@ var url;
             $("#phone_consultation").focus();
             return false;}    
                 $.ajax({
-                        url: 'shop/catalog/consultation',
+                        url: '/shop/catalog/consultation',
                         type: 'POST',
                         data: {name:name,phone:phone,message:message,product_name:product_name},
                         success: function(res){
