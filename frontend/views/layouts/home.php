@@ -15,12 +15,11 @@ use yii\helpers\Url;
 <?php
 $this->registerMetaTag([
     'name' => 'keywords',
-    'content' => 'мебель в Самаре, мебель Самара каталог, много мебели Самара, официальный мебельный сайт, цена мебельного'
+    'content' => 'Мебель в Самаре, купить мебель в Самаре, много мебели в Самаре, где купить мебель в самаре, интернет магазин мебели, мебельный магазин, хорошая мебель, цена мебель товар '
 ]);
 $this->registerMetaTag([
     'name' => 'description',
-    'content' => ' Купить мебель вы можете в интернет магазине mebel-style.online, мы работаем только по заказам через интернет магазин,
-                            именно поэтому у нас самые низкие цены.'
+    'content' => ' Купить хорошую мебель в Самаре в ассортименте от проверенных производителей. Гарантия качества, низкой цены на мебель из нашего каталога.'
 ]);
 ?>
     <!--======= HOME MAIN SLIDER =========-->
@@ -316,75 +315,88 @@ $this->registerMetaTag([
     <section class="section-p-60px about-us">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 animate fadeInLeft" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
+                <div class="col-md-12 animate fadeInLeft" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
                     <div class="sma-hed">
                         <h1 style="font-size: 1.3em; font-weight: bold;">Мебель в Самаре. Купить мебель по ценам производителя.</h1>
                     </div>
                     <div class="about-detail">
-                        <p style="text-indent: 20px;">
-                            <h2 style="font:inherit;">Почему мебель в Самаре покупают у нас, мы специализирующаяся
-                                компания по продаже современной корпусной, мягкой мебели, столов, стульев и ортопедических
-                                матрасов.</h2> В нашем ассортименте
-                                вы найдете много мебели от современных производителей, как эконом сегмента,
-                                так и премиум класса.
-
-                            <br><br>
-                                На нашем официальном мебельном сайте вы найдете самые доступные мебельные цены
-                                в Самаре от производителей фабрик ’’Disavi’’, ’’Лером’’, ’’Аврора’’, ’’Сантан’’,
-                                ’’Aurora’’, ’’СтолПром’’, "Мебель из Малазии", а так же есть возможность обсудить
-                                индивидуальные размеры мебели под заказ. Каталог мебельной продукции составляет сотни
-                                наименований. У наших поставщиков используются исключительно качественные и экологически
-                                чистые материалы.
-                        <br><br>
-                                Купить мебель вы можете в интернет магазине mebel-style.online, мы работаем только по заказам
-                                через интернет магазин, именно поэтому у нас самые низкие цены, мы не включаем в стоимость
-                                товаров аренду огромных площадей, все что Вам нужно это просто оформить заказ на понравившийся
-                                товар и наши менеджеры свяжутся с Вами в ближайшее время и помогут с выбором товара. Посмотреть
-                                образцы расцветок мебели можно в офисе на ул. Партизанской 17, 3 этаж, офис 304, "ТЦ Мега Мебель",
-                                вход с задней стороны.
-
+                        <p>
+                            Практичные потребители, умеющие ценить качественную продукцию, не задаются вопросом, <b>где купить мебель в Самаре</b>. Они знают, что если нужно оформить модный, красивый и максимально комфортный интерьер, необходимо отправиться в «MEBEL-STYLE».
+                            Высокая популярность нашего интернет-магазина не является результатом дорогой рекламной кампании. Внимание и любовь потребителей мы заслужили благодаря большому ассортименту качественной, надежной продукции, грамотной ценовой политике, высокому уровню сервиса. Каждому потребителю мы поможем купить мебель в Самаре, идеально оформить интерьер без необоснованных затрат.
                         </p>
-                        <span class="text-center" style="font-size: 1.2em;font-weight: bold;">Наши преимущества</span>
-                        <!--  About Featured -->
-                        <ul class="about-feat">
-
-                            <!--  WORLD WIDE SHIP -->
-                            <li class="animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
-                                <div class="media">
-                                    <div class="media-left"> <i class="fa fa-thumbs-o-up"></i> </div>
-                                    <div class="media-body">
-                                        <span class="media-heading" style="font-size: 1em;">НИЗКИЕ ЦЕНЫ</span>
-                                        <p>Вы экономите свои деньги преобретая товар у нас</p>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <!--  MONEY BACK -->
-                            <li class="animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
-                                <div class="media">
-                                    <div class="media-left"> <i class="fa fa-truck"></i> </div>
-                                    <div class="media-body">
-                                        <span class="media-heading" style="font-size: 1em;">ДОСТАВКА И СБОРКА В ОДИН ДЕНЬ</span>
-                                            <p>Вам останется только принять работу</p>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <!--  BEST SUPPORT -->
-                            <li class="animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
-                                <div class="media">
-                                    <div class="media-left"> <i class="fa fa-user"></i> </div>
-                                    <div class="media-body">
-                                        <span style="font-size: 1em;" class="media-heading">ПЕРСОНАЛЬНЫЙ МЕНЕДЖЕР КАЖДОМУ КЛИЕНТУ</span>
-                                        <p>24/7 На протяжении всего времени заказа</p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+                    <p>
+                        <b style="font-size: 1.3em;">Весь спектр мебельной продукции в нашем каталоге</b><br>
+                            Создать в доме уютную обстановку, обеспечить жилью современный, стильный вид помогает хорошая мебель, соответствующая личным предпочтениям и новейшим тенденциям. В нашем интернет-магазине вы найдете все, что требуется для комфортного домашнего очага:
+                    </p>
+                        <ol class="ol_home">
+                            <li ><a href="<?=Url::to('/catalog/korpusnay-mebel')?>">корпусные конструкции;</a></li>
+                            <li><a href="<?=Url::to('/catalog/magkaa-mebel')?>">мягкие уголки, диваны и кресла;</a></li>
+                            <li><a href="<?=Url::to('/catalog/obedennye-zonyy')?>">столы разных типов и стулья;</a></li>
+                            <li><a href="<?=Url::to('/catalog/matrasy')?>">ортопедические матрасы.</a></li>
+                        </ol><br>
+                        <p>
+                            У нас вы можете заказать лучшую <b>мебель в Самаре</b>, изготовленную известными фабриками: Аврора, Лером, СтолПром, Disavi, Aurora, Мебель из Малайзии. Потребители успели оценить по достоинству высокое качество этой продукции, ее эстетические показатели.
+                            Ассортимент товаров, представленных в нашем каталоге, включает несколько сотен наименований. Это является гарантией оптимального выбора, дает возможность каждому покупателю найти изделия, отвечающие всем требованиям. Все изделия имеют сертификаты, подтверждающие качество и экологическую безопасность.
+                        </p>
+                        <p>
+                            <b style="font-size: 1.3em;">Удобная и выгодная покупка предметов обстановки в MEBEL-STYLE</b><br>
+                            <b>Много мебели в Самаре</b> предлагают специализированные розничные предприятия. Но не всегда удается сделать удачную покупку предметов для дома. На долгие поиски нужного изделия у жителя мегаполиса нет времени, ассортимент любого магазина ограничен, не предоставляет весь спектр продукции. Может не устраивать цена изделий, включающая различные надбавки, наценки.
+                            Наш <b>интернет-магазин мебели</b> устраняет все эти препятствия. У нас:
+                        </p>
+                        <ol class="ol_home">
+                                <li>вы можете выбрать, заказать нужный товар, не выходя из дома;</li>
+                                <li>представлен полный ассортимент мебели во всех ценовых сегментах;</li>
+                                <li>предлагается оперативная доставка заказа.</li>
+                        </ol><br>
+                        <p>
+                            Каталог оснащен фильтрами, обеспечивающими оперативный поиск нужного предмета. Качественные фото, описания позволяют сделать грамотный выбор. Вы можете посмотреть образцы в ТЦ «Мега Мебель», расположенном на Партизанской улице д.17 на 3 этаже в офисе 304 (вход со двора).<br>
+                            <b>Мебельный магазин</b> в сети позволяет выгодно приобрести качественную продукцию. Изделия поставляются с фабрик без участия посредников, нет розничных наценок, покрывающих расходы на содержание торговых залов. Поэтому у нас <b>цена</b> на <b>товары мебели</b> минимальная, обновление домашнего интерьера не потребует чрезмерных затрат.
+                        </p>
                     </div>
                 </div>
 
-                <div class="col-md-4 animate fadeInRight hidden-xs" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;"> <img class="img-responsive" src="<?=Yii::getAlias('@static/banners/ofis.jpg')?>" alt="Магазин мебели «Мебель Стайл»"> </div>
+                <div class="col-md-6 animate fadeInRight hidden-xs" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
+                    <img class="img-responsive" src="<?=Yii::getAlias('@static/banners/ofis.jpg')?>" alt="Магазин мебели «Мебель Стайл»">
+                </div>
+                <div class="col-md-6 animate fadeInRight hidden-xs" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
+                    <span class="text-center" style="font-size: 1.3em;font-weight: bold;">Наши преимущества</span>
+                    <!--  About Featured -->
+                    <ul class="about-feat">
+
+                        <!--  WORLD WIDE SHIP -->
+                        <li class="animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
+                            <div class="media">
+                                <div class="media-left"> <i class="fa fa-thumbs-o-up"></i> </div>
+                                <div class="media-body">
+                                    <span class="media-heading" style="font-size: 1em;">НИЗКИЕ ЦЕНЫ</span>
+                                    <p>Вы экономите свои деньги преобретая товар у нас</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!--  MONEY BACK -->
+                        <li class="animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
+                            <div class="media">
+                                <div class="media-left"> <i class="fa fa-truck"></i> </div>
+                                <div class="media-body">
+                                    <span class="media-heading" style="font-size: 1em;">ДОСТАВКА И СБОРКА В ОДИН ДЕНЬ</span>
+                                    <p>Вам останется только принять работу</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!--  BEST SUPPORT -->
+                        <li class="animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
+                            <div class="media">
+                                <div class="media-left"> <i class="fa fa-user"></i> </div>
+                                <div class="media-body">
+                                    <span style="font-size: 1em;" class="media-heading">ПЕРСОНАЛЬНЫЙ МЕНЕДЖЕР КАЖДОМУ КЛИЕНТУ</span>
+                                    <p>24/7 На протяжении всего времени заказа</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>

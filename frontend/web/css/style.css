@@ -6209,3 +6209,7 @@ button.mfp-arrow-right {
 #validate_red p.help-block-error{
 	color: #a94442;
 }
+.ol_home li {
+	list-style-type: circle;
+	padding-left: 10px;
+}
