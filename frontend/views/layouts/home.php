@@ -312,6 +312,51 @@ $this->registerMetaTag([
             </div>
         </div>
     </section>
+    <!--======= NEW COLLECRION =========-->
+    <section class="section-p-30px grid-collection">
+        <div class="container">
+            <ul class="row">
+
+                <!-- ADD 1 -->
+                <li class="col-sm-4">
+                    <div class="inn-sec animate fadeInLeft" data-wow-delay="0.6s"> <a href="<?=Url::to('/catalog/korpusnay-mebel')?>"> <img class="img-responsive" src="<?=Yii::getAlias('@static/banners/ghost-menu.jpg')?>" alt="Шкафы-купе для дома в Самаре">
+                            <div class="upper"><span> <small>ГОСТИНЫЕ </small></span> </div>
+                        </a> </div>
+
+                    <!-- ADD 2 -->
+                    <div class="inn-sec animate fadeInLeft" data-wow-delay="0.6s"> <a href="<?=Url::to('/catalog/matrasy')?>"><img class="img-responsive" src="<?=Yii::getAlias('@static/banners/matras-menu.jpg')?>" alt="Детские для дома в Самаре">
+                            <div class="upper"><span> <small>ОРТОПЕДИЧЕСКИЕ МАТРАСЫ </small></span> </div>
+                        </a> </div>
+                </li>
+
+                <!-- ADD 3 -->
+                <li class="col-sm-4">
+                    <div class="inn-sec animate fadeInDown" data-wow-delay="0.6s">
+                        <a href="<?=Url::to('/catalog/spalni')?>"> <img class="img-responsive" src="<?=Yii::getAlias('@static/banners/spalnya-menu.jpg')?>" alt="Гостиные для дома в Самаре">
+                            <div class="upper"> <span> <small>СПАЛЬНИ </small></span></div>
+                        </a>
+                    </div>
+                    <div class="inn-sec animate fadeInUp" data-wow-delay="0.6s">
+                        <a href="<?=Url::to('/catalog/magkaa-mebel')?>"> <img class="img-responsive" src="<?=Yii::getAlias('@static/banners/divan-menu.jpg')?>" alt="Гостиные для дома в Самаре">
+                            <div class="upper"> <span> <small>МЯГКАЯ МЕБЕЛЬ </small></span></div>
+                        </a>
+                    </div>
+                </li>
+
+                <!-- ADD 1 -->
+                <li class="col-sm-4">
+                    <div class="inn-sec animate fadeInRight" data-wow-delay="0.6s"> <a href="<?=Url::to('/catalog/skafy-kupe')?>"> <img class="img-responsive" src="<?=Yii::getAlias('@static/banners/kupe-menu.jpg')?>" alt="Спальни для дома в Самаре">
+                            <div class="upper"><span> <small>ШКАФЫ-КУПЕ </small></span> </div>
+                        </a> </div>
+
+                    <!-- ADD 2 -->
+                    <div class="inn-sec animate fadeInRight" data-wow-delay="0.6s"> <a href="<?=Url::to('/catalog/obedennye-zonyy')?>"> <img class="img-responsive" src="<?=Yii::getAlias('@static/banners/stol-menu.jpg')?>" alt="Обеденные зоны для дома в Самаре">
+                            <div class="upper"><span> <small>ОБЕДЕННЫЕ ЗОНЫ </small></span> </div>
+                        </a> </div>
+                </li>
+            </ul>
+        </div>
+    </section>
     <section class="section-p-60px about-us">
         <div class="container">
             <div class="row">
@@ -404,51 +449,7 @@ $this->registerMetaTag([
     <div class="content">
 
 
-        <!--======= NEW COLLECRION =========-->
-        <section class="section-p-30px grid-collection">
-            <div class="container">
-                <ul class="row">
 
-                    <!-- ADD 1 -->
-                    <li class="col-sm-4">
-                        <div class="inn-sec animate fadeInLeft" data-wow-delay="0.6s"> <a href="<?=Url::to('/catalog/korpusnay-mebel')?>"> <img class="img-responsive" src="<?=Yii::getAlias('@static/banners/ghost-menu.jpg')?>" alt="Шкафы-купе для дома в Самаре">
-                                <div class="upper"><span> <small>ГОСТИНЫЕ </small></span> </div>
-                            </a> </div>
-
-                        <!-- ADD 2 -->
-                        <div class="inn-sec animate fadeInLeft" data-wow-delay="0.6s"> <a href="<?=Url::to('/catalog/matrasy')?>"><img class="img-responsive" src="<?=Yii::getAlias('@static/banners/matras-menu.jpg')?>" alt="Детские для дома в Самаре">
-                                <div class="upper"><span> <small>ОРТОПЕДИЧЕСКИЕ МАТРАСЫ </small></span> </div>
-                            </a> </div>
-                    </li>
-
-                    <!-- ADD 3 -->
-                    <li class="col-sm-4">
-                        <div class="inn-sec animate fadeInDown" data-wow-delay="0.6s">
-                            <a href="<?=Url::to('/catalog/spalni')?>"> <img class="img-responsive" src="<?=Yii::getAlias('@static/banners/spalnya-menu.jpg')?>" alt="Гостиные для дома в Самаре">
-                                <div class="upper"> <span> <small>СПАЛЬНИ </small></span></div>
-                            </a>
-                        </div>
-                        <div class="inn-sec animate fadeInUp" data-wow-delay="0.6s">
-                            <a href="<?=Url::to('/catalog/magkaa-mebel')?>"> <img class="img-responsive" src="<?=Yii::getAlias('@static/banners/divan-menu.jpg')?>" alt="Гостиные для дома в Самаре">
-                                <div class="upper"> <span> <small>МЯГКАЯ МЕБЕЛЬ </small></span></div>
-                            </a>
-                        </div>
-                    </li>
-
-                    <!-- ADD 1 -->
-                    <li class="col-sm-4">
-                        <div class="inn-sec animate fadeInRight" data-wow-delay="0.6s"> <a href="<?=Url::to('/catalog/skafy-kupe')?>"> <img class="img-responsive" src="<?=Yii::getAlias('@static/banners/kupe-menu.jpg')?>" alt="Спальни для дома в Самаре">
-                                <div class="upper"><span> <small>ШКАФЫ-КУПЕ </small></span> </div>
-                            </a> </div>
-
-                        <!-- ADD 2 -->
-                        <div class="inn-sec animate fadeInRight" data-wow-delay="0.6s"> <a href="<?=Url::to('/catalog/obedennye-zonyy')?>"> <img class="img-responsive" src="<?=Yii::getAlias('@static/banners/stol-menu.jpg')?>" alt="Обеденные зоны для дома в Самаре">
-                                <div class="upper"><span> <small>ОБЕДЕННЫЕ ЗОНЫ </small></span> </div>
-                            </a> </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
 
     <!--======= New Arrival =========-->
     <section class="section-p-30px new-arrival new-arri-w-slide">
