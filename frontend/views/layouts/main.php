@@ -122,7 +122,7 @@ AppAsset::register($this);
       <div class="container">
         <!-- Language -->
         <!--<div class="language"> <a href="#." class="active">EN</a> <a href="#.">FR</a> <a href="#.">GE</a> </div>-->
-          <i  style="font-size: 1.3em" class="fa fa-phone" aria-hidden="true"> <a href="tel:8 (846) 215-16-65"><b>8 (846) 215-16-65</b></a></i>
+          <i  style="font-size: 1.3em" class="fa fa-phone" aria-hidden="true"> <a href="tel:+78462151665"><b>8(846)215-16-65,</b></a><a href="tel:+79270061701"> +7(927)006-17-01</a></i>
           <!--<i class="fa fa-clock-o" aria-hidden="true">24/7</i>-->
 
 
@@ -154,8 +154,8 @@ AppAsset::register($this);
           <!-- Social Icons -->
           <ul class="social_icons">
             <li class="facebook"><a href="<?=Url::to('https://vk.com/mebelstyle.online')?> " target="_blank"><i class="fa fa-vk"></i> </a></li>
-            <li class="twitter"><a href="#."><i class="fa fa-twitter"></i> </a></li>
-            <li class="dribbble"><a href="#."><i class="fa fa-instagram"></i> </a></li>
+            <!--<li class="twitter"><a href="#."><i class="fa fa-twitter"></i> </a></li>
+            <li class="dribbble"><a href="#."><i class="fa fa-instagram"></i> </a></li> -->
            <!-- <li class="googleplus"><a href="#."><i class="fa fa-google-plus"></i> </a></li>
             <li class="linkedin"><a href="#."><i class="fa fa-linkedin"></i> </a></li> -->
           </ul>
@@ -179,7 +179,7 @@ AppAsset::register($this);
               <li class="active"><a href="<?=Url::to(['/blog/post/index'])?>">Блог</a></li>
               <li class="active"><a href="<?=Url::to(['/page/delivery'])?>">Доставка/Оплата</a></li>
               <li class="active"><a href="<?=Url::to(['/contact/index'])?>">Контакты</a></li>
-              <li><a href="tel:+78462151665"><i class="fa fa-phone" aria-hidden="true"></i> 8 (846) 215-1665 </a> </li>
+              <li><a href="tel:+79270061701"><i class="fa fa-phone" aria-hidden="true"></i> +7(927)006-17-01</a> </li>
 
           <!--======= Shopping Cart =========-->
               <?= CartWidget::widget() ?>

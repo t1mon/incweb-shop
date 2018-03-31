@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     3 этаж офис 304 "MEBEL-STYLE"</p>
                             </li>
                             <li> <i class="fa fa-phone"></i>
-                                <p>Телефон: 8(846) 215 16 65</p>
+                                <p>Телефон: 8(846)215-16-65, +7(927)006-17-01</p>
                             </li>
                             <li> <i class="fa fa-envelope"></i>
                                 <p>support@mebel-style.online</p>
