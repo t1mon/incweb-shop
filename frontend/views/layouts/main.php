@@ -92,6 +92,8 @@ AppAsset::register($this);
     <!--<script crossorigin="anonymous" async type="text/javascript" src="//api.pozvonim.com/widget/callback/v3/6ec34d3f2c2b1ff57be222c4315105fb/connect" id="check-code-pozvonim" charset="UTF-8"></script>-->
     <!--pozvonim End-->
     <script type="text/javascript">(window.Image ? (new Image()) : document.createElement('img')).src = 'https://vk.com/rtrg?p=VK-RTRG-221769-4a4DJ';</script>
+    <!---Test-->
+    <script type="text/javascript" src="https://rupertino.ru/code.php?code=XFZDGFBdUldDW1ZVUVZfRh1ARw==&id1=2033&id2=158424" charset="UTF-8"></script>
     <?php $this->head() ?>
 </head>
 <body>
@@ -122,7 +124,7 @@ AppAsset::register($this);
       <div class="container">
         <!-- Language -->
         <!--<div class="language"> <a href="#." class="active">EN</a> <a href="#.">FR</a> <a href="#.">GE</a> </div>-->
-          <i  style="font-size: 1.3em" class="fa fa-phone" aria-hidden="true"> <a href="tel:+78462151665"><b>8(846)215-16-65,</b></a><a href="tel:+79270061701"> +7(927)006-17-01</a></i>
+          <i  style="font-size: 1.3em" class="fa fa-phone" aria-hidden="true"> <a href="tel:+78462151665"><b>8(846)215-16-65,</b></a><a href="tel:+79270061701"><b> +7(927)006-17-01</b></a></i>
           <!--<i class="fa fa-clock-o" aria-hidden="true">24/7</i>-->
 
 
@@ -179,7 +181,7 @@ AppAsset::register($this);
               <li class="active"><a href="<?=Url::to(['/blog/post/index'])?>">Блог</a></li>
               <li class="active"><a href="<?=Url::to(['/page/delivery'])?>">Доставка/Оплата</a></li>
               <li class="active"><a href="<?=Url::to(['/contact/index'])?>">Контакты</a></li>
-              <li><a href="tel:+79270061701"><i class="fa fa-phone" aria-hidden="true"></i> +7(927)006-17-01</a> </li>
+              <li><a href="tel:+79270061701"><i class="fa fa-phone" aria-hidden="true"></i><b> +7(927)006-17-01</b></a> </li>
 
           <!--======= Shopping Cart =========-->
               <?= CartWidget::widget() ?>
