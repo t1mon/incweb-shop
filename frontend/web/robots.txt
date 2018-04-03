@@ -2,10 +2,10 @@ User-agent: *
 Disallow: /cabinet
 Disallow: /login
 Disallow: /logout
-Disallow: /shop
 Disallow: /auth
+Disallow: /signup
 Disallow: /site/rally
 Disallow: /site/sub-rally
 Disallow: /blog
 Host: mebel-style.online
-
+Sitemap: https://mebel-style.online/sitemap.xml
