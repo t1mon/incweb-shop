@@ -441,43 +441,6 @@ function renderPrice(value,modification) {
     else 
         $('.price').html(modification[value]+' <i class="fa fa-rub" aria-hidden="true"></i>');
   }  
-    
-    $('#submit_consultation').click(function() {
-        name = $("#name_consultation").val();
-        phone = $("#phone_consultation").val();
-        message = $("#message_consultation").val();
-        product_name = $(".modal-title").text();
-        if (name == ''){
-            $.jGrowl("Не запонено поле Имя",{theme:'jgrowl warning',life:10000});
-            $("#name_consultation").focus();
-            return false;}
-        if (phone == ''){
-            $.jGrowl("Не запонено поле Телефон",{theme:'jgrowl warning',life:10000});
-            $("#phone_consultation").focus();
-            return false;} 
-        if (!/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/.exec(phone)){
-            $.jGrowl("Неправильный номер Телефона",{theme:'jgrowl warning',life:10000});
-            $("#phone_consultation").focus();
-            return false;}    
-                $.ajax({
-                        url: '/shop/catalog/consultation',
-                        type: 'POST',
-                        data: {name:name,phone:phone,message:message,product_name:product_name},
-                        success: function(res){
-                            if(res){
-                                $("#consultationModal").modal('hide');
-                                $.jGrowl("Спасибо! Ваша заявка отправлена! В ближайшее время с вами свяжется ваш персональный менеджер",{theme:'default',life:10000});
-                                yaCounter46982373.reachGoal('CONSULTATION_SEND');
-                            }
-                            
-                        //console.log(res);
-                        },
-                        error: function(){
-                        $.jGrowl("ERROR!",{theme:'jgrowl danger',life:10000});
-                        }
-                        });
-                
- });
 
 JS;
 $script2 = <<<JS
@@ -521,7 +484,7 @@ $script2 = <<<JS
 JS;
 
 $this->registerJs($script,yii\web\View::POS_HEAD);
-$this->registerJs($script,yii\web\View::POS_READY);
+$this->registerJs($script2,yii\web\View::POS_READY);
 $this->registerJs('$("[data-toggle=\'tooltip\']").tooltip(); $("[data-toggle=\'popover\']").popover(); ', \yii\web\View::POS_READY);
 $this->registerJsFile('https://vk.com/js/api/share.js?95',['position' => \yii\web\View::POS_HEAD]);
 $this->registerJsFile('https://vk.com/js/api/openapi.js?150',['position' => \yii\web\View::POS_HEAD]);

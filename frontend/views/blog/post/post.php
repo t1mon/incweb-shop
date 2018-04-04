@@ -29,7 +29,9 @@ foreach ($post->tags as $tag) {
     <p><span class="glyphicon glyphicon-calendar"></span> <?= Yii::$app->formatter->asDatetime($post->created_at); ?></p>
 
     <?php if ($post->photo): ?>
+    <a href="<?= Html::encode($post->getThumbFileUrl('photo', 'origin')) ?>" data-lighter>
         <p><img src="<?= Html::encode($post->getThumbFileUrl('photo', 'origin')) ?>" alt="" class="img-responsive" /></p>
+    </a>
     <?php endif; ?>
 
     <?= Yii::$app->formatter->asHtml($post->content, [
@@ -47,5 +49,14 @@ foreach ($post->tags as $tag) {
 <?= CommentsWidget::widget([
     'post' => $post,
 ]) ?>
+<?php
+$script = <<<JS
+ img = $('img').each(function() {
+   $(this).wrap('<a href="'+ $(this).attr('src') +'" data-lighter></a>');
+ });
+//img.wrap('<a href="'+ img.attr('src') +'" data-lighter></a>');
 
+JS;
+$this->registerJs($script,yii\web\View::POS_READY);
+?>
 
