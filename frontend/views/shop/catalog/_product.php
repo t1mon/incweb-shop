@@ -56,11 +56,11 @@ $url = Url::to(['product', 'id' =>$product->id]);
                     <?php endif;?>
                 </div>
             </div>
-            <div class="col-md-5">
-                <a href="#consultationModal" class="btn btn-consultation" data-toggle="modal" productName='<?=$product->name?>'productId='<?=$product->id?>'>Купить в 1 клик</a>
+            <div class="col-md-6">
+                <a href="#consultationModal" class="btn btn-consultation btn-consultation_product" data-toggle="modal" productName='<?=$product->name?>'productId='<?=$product->id?>'>Заказать консультацию</a>
             </div>
-            <div class="col-md-7">
-                <a href="<?= Url::to(['/shop/cart/add', 'id' => $product->id]) ?>" class="btn small btn-dark" style="width: 100%" onclick="yaCounter46982373.reachGoal('ADD_CART'); return true;">Добавить в Корзину</a>
+            <div class="col-md-6">
+                <a href="<?= Url::to(['/shop/cart/add', 'id' => $product->id]) ?>" class="btn btn-dark btn-consultation_dark" style="width: 100%" onclick="yaCounter46982373.reachGoal('ADD_CART'); return true;">Добавить в Корзину</a>
             </div>
         </li>
 

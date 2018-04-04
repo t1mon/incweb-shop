@@ -26,6 +26,14 @@ header .logo {
 }
 }
 @media(max-width:1024px) {
+	.btn-consultation_product{
+		font-size: 8px;
+		font-weight: bold;
+	}
+	.btn-consultation_dark{
+		font-size: 8px;
+		font-weight: bold;
+	}
 }
 @media(min-width:992px) and (max-width:1199px) {
 .in-the-look li {

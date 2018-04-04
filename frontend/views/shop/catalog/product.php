@@ -138,8 +138,10 @@ $reviews_count =$product->getActiveReviewCount($reviews);
                                         <?= $form->field($cartForm, 'quantity')->textInput()->label(false) ?>
                                         <?= Html::submitButton('Добавить в корзину', ['class' => 'btn btn-small btn-dark']) ?>
 
-                                        <a href="#."  class="share-sec" onclick="compare.add('47');"><i class="ion-shuffle"></i></a>
-                                        <a class="share-sec"  href="<?= Url::to(['/cabinet/wishlist/add', 'id' => $product->id]) ?>" data-method="post"><i class="fa fa-heart-o"></i></a> </div>
+                                        <!--<a href="#."  class="share-sec" onclick="compare.add('47');"><i class="ion-shuffle"></i></a>
+                                        <a class="share-sec"  href="<?= Url::to(['/cabinet/wishlist/add', 'id' => $product->id]) ?>" data-method="post"><i class="fa fa-heart-o"></i></a> -->
+                                        <a href="#consultationModal" class="btn btn-small btn-consultation" data-toggle="modal" productName='<?=$product->name?>'>Заказать консультацию</a>
+                                    </div>
                                 </div>
                                 <!-- SHARE -->
                                 <div class="col-sm-12">
@@ -389,26 +391,137 @@ $reviews_count =$product->getActiveReviewCount($reviews);
                     </div>
                 </section>
             </section> -->
+                <!-- HTML-код модального окна -->
+                <div id="consultationModal" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <!-- Заголовок модального окна -->
+                            <div class="modal-header"><?=$product->name?>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                <span class="modal-title"></span>
+                            </div>
+                            <!-- Основное содержимое модального окна -->
+                            <div class="modal-body">
+                                <div class="avatar"><a target="_blank" href="https://vk.com/id52154333"><img class="media-object img-circle" src="/image/avatar-pavel.jpg" align="left" alt=""></a>
+                                    <em>Здравствуйте! Меня зовут Павел. Я готов перезвонить вам, и проконсультировать вас по возникшему вопросу. Просто заполните обязательные поля снизу и я вам позвоню.  </em>
+                                </div>
+
+                                <!--======= FORM  =========-->
+                                <form role="form" id="consultation_form" class="contact-form" method="post" onsubmit="return false">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input class="form-control" name="name" id="name_consultation" placeholder="*ИМЯ" type="text">
+                                            <input class="form-control " name="phone" id="phone_consultation" placeholder="*ТЕЛЕФОН" type="text">
+                                            <textarea class="form-control" name="message" id="message_consultation" rows="5" placeholder="Комментарий - Можете указать удобное для вас время звонка!"></textarea>
+                                        </div>
+                                    </div>
+                                </form>
+
+
+                            </div>
+                            <!-- Футер модального окна -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-dark" data-dismiss="modal">Отменить покупку</button>
+                                <button id="submit_consultation" type="button" class="btn btn-consultation">Купить</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 <?php
+$test = $product->price_old!=''?$product->price_old:0;
 $script = <<<JS
 var price = $product->price_new;
-var price_old = $product->price_old;
-var percent = Math.round(((price / price_old ) * 100) - 100) ;
-         
-  function renderPrice(value,modification) {
+var price_old = $test;
+var percent = Math.round(((price / price_old ) * 100) - 100) ;      
+  
+function renderPrice(value,modification) {
     //console.log(modification[value]);
     if (modification[value] == undefined)
         $('.price').html(price +' <i class="fa fa-rub" aria-hidden="true"></i>' + '<span class="text-line">'+ price_old + '<i class="fa fa-rub" aria-hidden="true"></i></span><sup style="background-color:#af5875; color: #fff;padding: 5px; font-size: 10px;"><small>'+ percent +'%</small></sup>' );
     else 
         $('.price').html(modification[value]+' <i class="fa fa-rub" aria-hidden="true"></i>');
   }  
-  $('#one_click').preventDefault();
-  $('#one_click').click(function() {
     
-  });
+    $('#submit_consultation').click(function() {
+        name = $("#name_consultation").val();
+        phone = $("#phone_consultation").val();
+        message = $("#message_consultation").val();
+        product_name = $(".modal-title").text();
+        if (name == ''){
+            $.jGrowl("Не запонено поле Имя",{theme:'jgrowl warning',life:10000});
+            $("#name_consultation").focus();
+            return false;}
+        if (phone == ''){
+            $.jGrowl("Не запонено поле Телефон",{theme:'jgrowl warning',life:10000});
+            $("#phone_consultation").focus();
+            return false;} 
+        if (!/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/.exec(phone)){
+            $.jGrowl("Неправильный номер Телефона",{theme:'jgrowl warning',life:10000});
+            $("#phone_consultation").focus();
+            return false;}    
+                $.ajax({
+                        url: '/shop/catalog/consultation',
+                        type: 'POST',
+                        data: {name:name,phone:phone,message:message,product_name:product_name},
+                        success: function(res){
+                            if(res){
+                                $("#consultationModal").modal('hide');
+                                $.jGrowl("Спасибо! Ваша заявка отправлена! В ближайшее время с вами свяжется ваш персональный менеджер",{theme:'default',life:10000});
+                                yaCounter46982373.reachGoal('CONSULTATION_SEND');
+                            }
+                            
+                        //console.log(res);
+                        },
+                        error: function(){
+                        $.jGrowl("ERROR!",{theme:'jgrowl danger',life:10000});
+                        }
+                        });
+                
+ });
+
+JS;
+$script2 = <<<JS
+    $('#submit_consultation').click(function() {
+        name = $("#name_consultation").val();
+        phone = $("#phone_consultation").val();
+        message = $("#message_consultation").val();
+        product_name = $(".modal-title").text();
+        if (name == ''){
+            $.jGrowl("Не запонено поле Имя",{theme:'jgrowl warning',life:10000});
+            $("#name_consultation").focus();
+            return false;}
+        if (phone == ''){
+            $.jGrowl("Не запонено поле Телефон",{theme:'jgrowl warning',life:10000});
+            $("#phone_consultation").focus();
+            return false;} 
+        if (!/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/.exec(phone)){
+            $.jGrowl("Неправильный номер Телефона",{theme:'jgrowl warning',life:10000});
+            $("#phone_consultation").focus();
+            return false;}    
+                $.ajax({
+                        url: '/shop/catalog/consultation',
+                        type: 'POST',
+                        data: {name:name,phone:phone,message:message,product_name:product_name},
+                        success: function(res){
+                            if(res){
+                                $("#consultationModal").modal('hide');
+                                $.jGrowl("Спасибо! Ваша заявка отправлена! В ближайшее время с вами свяжется ваш персональный менеджер",{theme:'default',life:10000});
+                                yaCounter46982373.reachGoal('CONSULTATION_SEND');
+                            }
+                            
+                        //console.log(res);
+                        },
+                        error: function(){
+                        $.jGrowl("ERROR!",{theme:'jgrowl danger',life:10000});
+                        }
+                        });
+                
+ });
+
 JS;
 
-$this->registerJs($script,yii\web\View::POS_BEGIN);
+$this->registerJs($script,yii\web\View::POS_HEAD);
+$this->registerJs($script,yii\web\View::POS_READY);
 $this->registerJs('$("[data-toggle=\'tooltip\']").tooltip(); $("[data-toggle=\'popover\']").popover(); ', \yii\web\View::POS_READY);
 $this->registerJsFile('https://vk.com/js/api/share.js?95',['position' => \yii\web\View::POS_HEAD]);
 $this->registerJsFile('https://vk.com/js/api/openapi.js?150',['position' => \yii\web\View::POS_HEAD]);

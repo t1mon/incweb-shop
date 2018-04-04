@@ -188,6 +188,14 @@ section {
 	border-color: #FF4500;
 	border-radius: 10px;
 }
+.btn-consultation_product{
+	font-size: 10px;
+	font-weight: bold;
+}
+.btn-consultation_dark{
+	font-size: 10px;
+	font-weight: bold;
+}
 .btn-dark {
 	color: #272727;
 	border-color: #272727;
