@@ -17,8 +17,6 @@ $this->params['breadcrumbs'][] = $category->name;
 $this->params['active_category'] = $category;
 ?>
 
-<h1><?= Html::encode($category->getHeadingTile()) ?></h1>
-
 <?php if (trim($category->description)): ?>
     <div class="panel panel-default">
         <div class="panel-body">

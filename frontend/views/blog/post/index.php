@@ -7,7 +7,7 @@
 use yii\helpers\Html;
 
 $this->title = 'Блог интернет магазина мебели MEBEL-STYLE';
-$this->params['breadcrumbs'][] = 'Блог';
+$this->params['breadcrumbs'][] = 'Блог интернет магазина мебели MEBEL-STYLE';
 ?>
 
 <?= $this->render('_list', [

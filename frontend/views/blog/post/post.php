@@ -24,7 +24,7 @@ foreach ($post->tags as $tag) {
 ?>
 
 <article>
-    <h1><?= Html::encode($post->title) ?></h1>
+
 
     <p><span class="glyphicon glyphicon-calendar"></span> <?= Yii::$app->formatter->asDatetime($post->created_at); ?></p>
 
