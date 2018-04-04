@@ -140,7 +140,7 @@ $reviews_count =$product->getActiveReviewCount($reviews);
 
                                         <!--<a href="#."  class="share-sec" onclick="compare.add('47');"><i class="ion-shuffle"></i></a>
                                         <a class="share-sec"  href="<?= Url::to(['/cabinet/wishlist/add', 'id' => $product->id]) ?>" data-method="post"><i class="fa fa-heart-o"></i></a> -->
-                                        <a href="#consultationModal" class="btn btn-small btn-consultation" data-toggle="modal" productName='<?=$product->name?>'>Заказать консультацию</a>
+                                        <a href="#consultationModal" class="btn btn-small btn-consultation" data-toggle="modal" productName='<?=$product->name?>'>Получить консультацию</a>
                                     </div>
                                 </div>
                                 <!-- SHARE -->
