@@ -13,6 +13,7 @@ use shop\entities\Blog\Tag;
 use shop\services\WaterMarker;
 use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
+use yii\helpers\Inflector;
 use yii\web\UploadedFile;
 use yiidreamteam\upload\ImageUploadBehavior;
 
@@ -24,6 +25,7 @@ use yiidreamteam\upload\ImageUploadBehavior;
  * @property string $description
  * @property string $content
  * @property string $photo
+ * @property string $slug
  * @property integer $status
  * @property integer $comments_count
  *
@@ -42,13 +44,14 @@ class Post extends ActiveRecord
 
     public $meta;
 
-    public static function create($categoryId, $title, $description, $content, Meta $meta): self
+    public static function create($categoryId, $title, $description, $content,$slug, Meta $meta): self
     {
         $post = new static();
         $post->category_id = $categoryId;
         $post->title = $title;
         $post->description = $description;
         $post->content = $content;
+        $post->slug = $slug;
         $post->meta = $meta;
         $post->status = self::STATUS_DRAFT;
         $post->created_at = time();
@@ -62,12 +65,13 @@ class Post extends ActiveRecord
     }
 
 
-    public function edit($categoryId, $title, $description, $content, Meta $meta): void
+    public function edit($categoryId, $title, $description, $content, $slug, Meta $meta): void
     {
         $this->category_id = $categoryId;
         $this->title = $title;
         $this->description = $description;
         $this->content = $content;
+        $this->slug = $slug;
         $this->meta = $meta;
     }
 

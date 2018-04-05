@@ -10,6 +10,7 @@ use shop\repositories\Blog\CategoryRepository;
 use shop\repositories\Blog\PostRepository;
 use shop\repositories\Blog\TagRepository;
 use shop\services\TransactionManager;
+use yii\helpers\Inflector;
 
 class PostManageService
 {
@@ -40,6 +41,7 @@ class PostManageService
             $form->title,
             $form->description,
             $form->content,
+            $slug = Inflector::slug($form->title),
             new Meta(
                 $form->meta->title,
                 $form->meta->description,
@@ -80,6 +82,7 @@ class PostManageService
             $form->title,
             $form->description,
             $form->content,
+            $form->slug = Inflector::slug($form->title),
             new Meta(
                 $form->meta->title,
                 $form->meta->description,

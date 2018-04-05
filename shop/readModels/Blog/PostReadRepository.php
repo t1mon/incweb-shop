@@ -57,6 +57,11 @@ class PostReadRepository
         return Post::find()->active()->andWhere(['id' => $id])->one();
     }
 
+    public function findBySlug($slug): ?Post
+    {
+        return Post::find()->andWhere(['slug' => $slug])->one();
+    }
+
     private function getProvider(ActiveQuery $query): ActiveDataProvider
     {
         return new ActiveDataProvider([

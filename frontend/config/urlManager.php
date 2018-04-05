@@ -24,8 +24,8 @@ return [
 
         'blog' => 'blog/post/index',
         'blog/tag/<slug:[\w\-]+>' => 'blog/post/tag',
-        'blog/<id:\d+>' => 'blog/post/post',
-        'blog/<id:\d+>/comment' => 'blog/post/comment',
+        'blog/post/<slug:[\w\-]+>' => 'blog/post/post',
+        'blog/post/<slug:[\w\-]+>/comment' => 'blog/post/comment',
         'blog/<slug:[\w\-]+>' => 'blog/post/category',
 
         'catalog/page/<page:\d+>' => 'shop/catalog/index',

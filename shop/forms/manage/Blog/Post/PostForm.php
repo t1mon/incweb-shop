@@ -8,6 +8,7 @@ use shop\forms\CompositeForm;
 use shop\forms\manage\MetaForm;
 use shop\validators\SlugValidator;
 use yii\helpers\ArrayHelper;
+use yii\helpers\Inflector;
 use yii\web\UploadedFile;
 
 /**
@@ -16,11 +17,17 @@ use yii\web\UploadedFile;
  */
 class PostForm extends CompositeForm
 {
+    const SCENARIO_CREATE = 'create';
+    const SCENARIO_UPDATE = 'update';
+
     public $categoryId;
     public $title;
     public $description;
     public $content;
     public $photo;
+    public $slug;
+
+    private  $_post;
 
     public function __construct(Post $post = null, $config = [])
     {
@@ -31,6 +38,8 @@ class PostForm extends CompositeForm
             $this->content = $post->content;
             $this->meta = new MetaForm($post->meta);
             $this->tags = new TagsForm($post);
+            $this->slug = $post->slug;
+            $this->_post =$post;
         } else {
             $this->meta = new MetaForm();
             $this->tags = new TagsForm();
@@ -42,10 +51,13 @@ class PostForm extends CompositeForm
     {
         return [
             [['categoryId', 'title'], 'required'],
+            //[['title'], 'unique','targetClass' => Post::class, 'filter' => $this->title ? Inflector::slug($this->title) : null,'on' => self::SCENARIO_CREATE],
+            [['slug','title'], 'unique','targetClass' => Post::class, 'filter' => $this->_post ? ['<>', 'id', $this->_post->id] : null,'on' => self::SCENARIO_CREATE],
             [['title'], 'string', 'max' => 255],
             [['categoryId'], 'integer'],
             [['description', 'content'], 'string'],
             [['photo'], 'image'],
+            ['slug', SlugValidator::class],
         ];
     }
 

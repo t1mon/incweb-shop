@@ -6,7 +6,7 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-$url = Url::to(['post', 'id' =>$model->id]);
+$url = Url::to(['post', 'slug' =>$model->slug]);
 ?>
 
 

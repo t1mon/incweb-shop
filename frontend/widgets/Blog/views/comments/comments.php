@@ -32,7 +32,7 @@ use yii\helpers\Html;
 <?php else: ?>
 <div id="reply-block" class="leave-reply">
     <?php $form = ActiveForm::begin([
-        'action' => ['comment', 'id' => $post->id],
+        'action' => ['comment', 'slug' => $post->slug],
     ]); ?>
 
     <?= Html::activeHiddenInput($commentForm, 'parentId') ?>

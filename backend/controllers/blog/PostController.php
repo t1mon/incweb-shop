@@ -69,6 +69,7 @@ class PostController extends Controller
     public function actionCreate()
     {
         $form = new PostForm();
+        $form->scenario = PostForm::SCENARIO_CREATE;
         if ($form->load(Yii::$app->request->post()) && $form->validate()) {
             try {
                 $post = $this->service->create($form);
@@ -90,8 +91,8 @@ class PostController extends Controller
     public function actionUpdate($id)
     {
         $post = $this->findModel($id);
-
         $form = new PostForm($post);
+        $form->scenario = PostForm::SCENARIO_CREATE;
         if ($form->load(Yii::$app->request->post()) && $form->validate()) {
             try {
                 $this->service->edit($post->id, $form);

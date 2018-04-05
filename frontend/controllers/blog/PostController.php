@@ -108,9 +108,9 @@ class PostController extends Controller
      * @return mixed
      * @throws NotFoundHttpException
      */
-    public function actionPost($id)
+    public function actionPost($slug)
     {
-        if (!$post = $this->posts->find($id)) {
+        if (!$post = $this->posts->findBySlug($slug)) {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
         \Yii::$app->getUser()->setReturnUrl(\Yii::$app->request->url);
@@ -124,9 +124,9 @@ class PostController extends Controller
      * @return mixed
      * @throws NotFoundHttpException
      */
-    public function actionComment($id)
+    public function actionComment($slug)
     {
-        if (!$post = $this->posts->find($id)) {
+        if (!$post = $this->posts->findBySlug($slug)) {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
 
@@ -136,7 +136,7 @@ class PostController extends Controller
             try {
                 $comment = $this->service->create($post->id, Yii::$app->user->id, $form);
                 Yii::$app->session->setFlash('info', 'Комментарий добавлен!');
-                return $this->redirect(['post', 'id' => $post->id, '#' => 'comment_' . $comment->id]);
+                return $this->redirect(['post', 'slug' => $post->slug, '#' => 'comment_' . $comment->id]);
             } catch (\DomainException $e) {
                 Yii::$app->errorHandler->logException($e);
                 Yii::$app->session->setFlash('error', $e->getMessage());

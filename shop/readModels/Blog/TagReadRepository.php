@@ -10,4 +10,9 @@ class TagReadRepository
     {
         return Tag::findOne($id);
     }
+
+    public function findBySlug($slug): ?Tag
+    {
+        return Tag::find()->andWhere(['slug' => $slug])->one();
+    }
 }
