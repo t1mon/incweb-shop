@@ -52,7 +52,7 @@ foreach ($post->tags as $tag) {
 <?php
 $script = <<<JS
  img = $('img').each(function() {
-   $(this).wrap('<a href="'+ $(this).attr('src') +'" data-lighter></a>');
+   $(this).wrap('<span style="display:inline-grid;text-align:center;"><a href="'+ $(this).attr('src') +'" data-lighter></a>'+$(this).attr('title')+'</span>');
  });
 //img.wrap('<a href="'+ img.attr('src') +'" data-lighter></a>');
 
