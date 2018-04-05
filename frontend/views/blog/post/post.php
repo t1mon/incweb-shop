@@ -33,7 +33,7 @@ foreach ($post->tags as $tag) {
         <p><img src="<?= Html::encode($post->getThumbFileUrl('photo', 'origin')) ?>" alt="" class="img-responsive" /></p>
     </a>
     <?php endif; ?>
-
+<div class="lighter-add">
     <?= Yii::$app->formatter->asHtml($post->content, [
         'Attr.AllowedRel' => array('nofollow'),
         'HTML.SafeObject' => true,
@@ -41,6 +41,7 @@ foreach ($post->tags as $tag) {
         'HTML.SafeIframe' => true,
         'URI.SafeIframeRegexp'=>'%^(https?:)?//(www\.youtube(?:-nocookie)?\.com/embed/|player\.vimeo\.com/video/)%',
     ]) ?>
+</div>
 </article>
 <?php if($tagLinks):?>
 <p>Tags: <?= implode(', ', $tagLinks) ?></p>
@@ -51,7 +52,7 @@ foreach ($post->tags as $tag) {
 ]) ?>
 <?php
 $script = <<<JS
- img = $('img').each(function() {
+ img = $('.lighter-add img').each(function() {
    $(this).wrap('<span style="display:inline-grid;text-align:center;"><a href="'+ $(this).attr('src') +'" data-lighter></a>'+$(this).attr('title')+'</span>');
  });
 //img.wrap('<a href="'+ img.attr('src') +'" data-lighter></a>');

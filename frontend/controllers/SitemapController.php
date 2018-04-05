@@ -71,7 +71,7 @@ class SitemapController extends Controller
         return $this->renderSitemap('sitemap-pages', function () {
             return $this->sitemap->generateMap(array_map(function (Page $page) {
                 return new MapItem(
-                    Url::to(['/page/view', 'id' => $page->id], true),
+                    Url::to(['/page/view', 'slug' => $page->slug], true),
                     null,
                     MapItem::WEEKLY
                 );
@@ -84,7 +84,7 @@ class SitemapController extends Controller
         return $this->renderSitemap('sitemap-blog-categories', function () {
             return $this->sitemap->generateMap(array_map(function (BlogCategory $category) {
                 return new MapItem(
-                    Url::to(['/blog/posts/category', 'slug' => $category->slug], true),
+                    Url::to(['/blog/post/category', 'slug' => $category->slug], true),
                     null,
                     MapItem::WEEKLY
                 );
@@ -106,7 +106,7 @@ class SitemapController extends Controller
         return $this->renderSitemap(['sitemap-blog-posts', $start], function () use ($start) {
             return $this->sitemap->generateMap(array_map(function (Post $post) {
                 return new MapItem(
-                    Url::to(['/blog/post/post', 'id' => $post->id], true),
+                    Url::to(['/blog/post/post', 'slug' => $post->slug], true),
                     null,
                     MapItem::DAILY
                 );
