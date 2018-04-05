@@ -46,7 +46,9 @@ foreach ($post->tags as $tag) {
 <?php if($tagLinks):?>
 <p>Tags: <?= implode(', ', $tagLinks) ?></p>
 <?php endif;?>
-
+<script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+<script src="//yastatic.net/share2/share.js"></script>
+<span>Понравилась статья:</span><div class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,moimir,gplus,twitter" data-counter=""></div>
 <?= CommentsWidget::widget([
     'post' => $post,
 ]) ?>
