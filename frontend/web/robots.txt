@@ -8,6 +8,7 @@ Disallow: /site/rally
 Disallow: /site/sub-rally
 Disallow: /shop/cart/index
 Disallow: /shop/checkout/index
+Disallow: /shop/cart/add
 
 Host: mebel-style.online
 Sitemap: https://mebel-style.online/sitemap.xml
