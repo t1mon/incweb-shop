@@ -310,7 +310,7 @@ AppAsset::register($this);
       
       <!-- Rights -->
       <div class="rights">
-        <p>© <?=date('Y')?> MEBEL-STYLE <?=Yii::powered()?> Разработка IncWeb</p>
+          <p>© <?=date('Y')?> MEBEL-STYLE <?=Yii::powered()?> <a href="https://incweb.ru" target="_blank">Разработка IncWeb</a></p>
       </div>
     </div>
   </footer>  
