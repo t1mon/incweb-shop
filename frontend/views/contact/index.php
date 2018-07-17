@@ -80,11 +80,12 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="media">
                             <div class="media-left">
                                 <!--  Image -->
-                                <div class="avatar"> <a target="_blank" href="https://vk.com/id52154333"> <img class="media-object" src="/image/avatar-pavel.jpg" alt=""> </a> </div>
+                                <div class="avatar"><a target="_blank" href="https://vk.com/agibalova163"><img class="media-object img-circle" src="/image/avatar-11.png" align="left" alt=""></a>
+                                </div>
                             </div>
                             <!--  Details -->
                             <div class="media-body">
-                                <h5>ПАВЕЛ</h5>
+                                <h5>Анастасия</h5>
                                 <p>Менеджер по работе с клиентами</p>
                                 <!--<span><i class="fa fa-skype"></i> adnan.arif69</span> </div>-->
                             </div>

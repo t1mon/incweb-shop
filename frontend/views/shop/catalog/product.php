@@ -402,8 +402,8 @@ $reviews_count =$product->getActiveReviewCount($reviews);
                             </div>
                             <!-- Основное содержимое модального окна -->
                             <div class="modal-body">
-                                <div class="avatar"><a target="_blank" href="https://vk.com/id52154333"><img class="media-object img-circle" src="/image/avatar-pavel.jpg" align="left" alt=""></a>
-                                    <em>Здравствуйте! Меня зовут Павел. Я готов перезвонить вам, и проконсультировать вас по возникшему вопросу. Просто заполните обязательные поля снизу и я вам позвоню.  </em>
+                                <div class="avatar"><a target="_blank" href="https://vk.com/agibalova163"><img class="media-object img-circle" src="/image/avatar-11.png" align="left" alt=""></a>
+                                    <em>Здравствуйте! Меня зовут Анастасия. Я готова перезвонить вам, и проконсультировать вас по возникшему вопросу. Просто заполните обязательные поля снизу и я вам позвоню.  </em>
                                 </div>
 
                                 <!--======= FORM  =========-->
