@@ -91,6 +91,11 @@ class ProductReadRepository
         return Product::find()->andWhere(['slug' => $slug])->one();
     }
 
+    public function getCategory($id)
+    {
+        return Product::findOne($id)->category->name;
+    }
+
     private function getProvider(ActiveQuery $query): ActiveDataProvider
     {
         return new ActiveDataProvider([
@@ -142,63 +147,68 @@ class ProductReadRepository
             ],
         ]);
 
-        $response = $this->client->search([
-            'index' => 'shop',
-            'type' => 'products',
-            'body' => [
-                '_source' => ['id'],
-                'from' => $pagination->getOffset(),
-                'size' => $pagination->getLimit(),
-                'sort' => array_map(function ($attribute, $direction) {
-                    return [$attribute => ['order' => $direction === SORT_ASC ? 'asc' : 'desc']];
-                }, array_keys($sort->getOrders()), $sort->getOrders()),
-                'query' => [
-                    'bool' => [
-                        'must' => array_merge(
-                            array_filter([
-                                !empty($form->category) ? ['term' => ['categories' => $form->category]] : false,
-                                !empty($form->brand) ? ['term' => ['brand' => $form->brand]] : false,
-                                !empty($form->text) ? ['multi_match' => [
-                                    'query' => $form->text,
-                                    'fields' => [ 'name^3', 'description' ]
-                                ]] : false,
-                            ]),
-                            array_map(function (ValueForm $value) {
-                                return ['nested' => [
-                                    'path' => 'values',
-                                    'query' => [
-                                        'bool' => [
-                                            'must' => array_filter([
-                                                ['match' => ['values.characteristic' => $value->getId()]],
-                                                !empty($value->equal) ? ['match' => ['values.value_string' => $value->equal]] : false,
-                                                !empty($value->from) ? ['range' => ['values.value_int' => ['gte' => $value->from]]] : false,
-                                                !empty($value->to) ? ['range' => ['values.value_int' => ['lte' => $value->to]]] : false,
-                                            ]),
-                                        ],
-                                    ],
-                                ]];
-                            }, array_filter($form->values, function (ValueForm $value) { return $value->isFilled(); }))
-                        )
-                    ],
-                ],
-            ],
-        ]);
-
-        $ids = ArrayHelper::getColumn($response['hits']['hits'], '_source.id');
-
-        if ($ids) {
-            $query = Product::find()
-                ->active()
-                ->with('mainPhoto')
-                ->andWhere(['id' => $ids])
-                ->orderBy(new Expression('FIELD(id,' . implode(',', $ids) . ')'));
-        } else {
-            $query = Product::find()->andWhere(['id' => 0]);
+        $query = Product::find()->alias('p')->active('p')->with('mainPhoto', 'category');
+        if (!empty($form->text)){
+            $query->andWhere(['or', ['like', 'code', $form->text], ['like', 'name', $form->text]]);
         }
+
+//        $response = $this->client->search([
+//            'index' => 'shop',
+//            'type' => 'products',
+//            'body' => [
+//                '_source' => ['id'],
+//                'from' => $pagination->getOffset(),
+//                'size' => $pagination->getLimit(),
+//                'sort' => array_map(function ($attribute, $direction) {
+//                    return [$attribute => ['order' => $direction === SORT_ASC ? 'asc' : 'desc']];
+//                }, array_keys($sort->getOrders()), $sort->getOrders()),
+//                'query' => [
+//                    'bool' => [
+//                        'must' => array_merge(
+//                            array_filter([
+//                                !empty($form->category) ? ['term' => ['categories' => $form->category]] : false,
+//                                !empty($form->brand) ? ['term' => ['brand' => $form->brand]] : false,
+//                                !empty($form->text) ? ['multi_match' => [
+//                                    'query' => $form->text,
+//                                    'fields' => [ 'name^3', 'description' ]
+//                                ]] : false,
+//                            ]),
+//                            array_map(function (ValueForm $value) {
+//                                return ['nested' => [
+//                                    'path' => 'values',
+//                                    'query' => [
+//                                        'bool' => [
+//                                            'must' => array_filter([
+//                                                ['match' => ['values.characteristic' => $value->getId()]],
+//                                                !empty($value->equal) ? ['match' => ['values.value_string' => $value->equal]] : false,
+//                                                !empty($value->from) ? ['range' => ['values.value_int' => ['gte' => $value->from]]] : false,
+//                                                !empty($value->to) ? ['range' => ['values.value_int' => ['lte' => $value->to]]] : false,
+//                                            ]),
+//                                        ],
+//                                    ],
+//                                ]];
+//                            }, array_filter($form->values, function (ValueForm $value) { return $value->isFilled(); }))
+//                        )
+//                    ],
+//                ],
+//            ],
+//        ]);
+//
+//        $ids = ArrayHelper::getColumn($response['hits']['hits'], '_source.id');
+//
+//        if ($ids) {
+//            $query = Product::find()
+//                ->active()
+//                ->with('mainPhoto')
+//                ->andWhere(['id' => $ids])
+//                ->orderBy(new Expression('FIELD(id,' . implode(',', $ids) . ')'));
+//        } else {
+//            $query = Product::find()->andWhere(['id' => 0]);
+//        }
 
         return new SimpleActiveDataProvider([
             'query' => $query,
-            'totalCount' => $response['hits']['total'],
+            'totalCount' => $query->count(),
             'pagination' => $pagination,
             'sort' => $sort,
         ]);

@@ -2,6 +2,7 @@
 
 namespace shop\forms\manage\Shop\Product;
 
+use Faker\Factory;
 use yii\base\Model;
 use yii\web\UploadedFile;
 

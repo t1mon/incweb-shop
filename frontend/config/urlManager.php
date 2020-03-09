@@ -31,7 +31,7 @@ return [
         'catalog/page/<page:\d+>' => 'shop/catalog/index',
         'catalog' => 'shop/catalog/index',
         'page/<slug:[\w\-]+>' => 'page/view',
-        //'catalog:\w+>' => 'shop/catalog/index',
+//        '<catalog:\w+>' => 'shop/catalog/search',
 
         ['class' => 'frontend\urls\ProductUrlRule' ],
         //'<catalog:\w+>/page/<page:\d+>' => 'shop/catalog/index',

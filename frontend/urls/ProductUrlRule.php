@@ -24,12 +24,9 @@ class ProductUrlRule extends Object implements UrlRuleInterface
 
     public function parseRequest($manager, $request)
     {
-        if (preg_match('#^' . $this->prefix . '/(.*[a-z0-9])$#is',$request->pathInfo, $matches)) {
+        if (preg_match('#^catalog/[\w\-]+/(.*[a-z0-9])$#is',$request->pathInfo, $matches)) {
             $path = $matches['1'];
-
-            //$chunks = explode('/', $path);
-            //$slug = end($chunks);
-
+            $category = explode('/',$matches['0']);
             $result = $this->cache->getOrSet(['product_route', 'path' => $path], function () use ($path) {
 
                 if (!$product = $this->repository->findBySlug($path)) {
@@ -37,13 +34,10 @@ class ProductUrlRule extends Object implements UrlRuleInterface
                 }
                 return ['id' => $product->id];
             });
-
-            if (empty($result['id'])) {
-                return false;
+            if (empty($result['id'])) { return false; }
+            if ($category[1] != $this->repository->getCategory($result['id'])){
+                throw new UrlNormalizerRedirectException(['shop/catalog/product', 'id' => $result['id']],301);
             }
-
-
-
             return ['shop/catalog/product/',['id' => $result['id']]];
         }
         return false;
@@ -62,19 +56,10 @@ class ProductUrlRule extends Object implements UrlRuleInterface
                 if (!$product = $this->repository->find($id)) {
                     return null;
                 }
-                return $this->prefix . '/' .$product->slug;
+                return $this->prefix . '/'.$product->category->name.'/' .$product->slug;
             });
-
-            //if(!$product = $this->repository->find($params['id'])){
-              //  throw new InvalidParamException('Undefined ID');
-            //}
-
-            //$url = $this->prefix . '/' .$product->slug;
             return $url;
         }
-
         return false;
     }
-
-
 }

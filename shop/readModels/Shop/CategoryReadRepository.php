@@ -53,23 +53,23 @@ class CategoryReadRepository
             $query->andWhere(['depth' => 1]);
         }
 
-        $aggs = $this->client->search([
-            'index' => 'shop',
-            'type' => 'products',
-            'body' => [
-                'size' => 0,
-                'aggs' => [
-                    'group_by_category' => [
-                        'terms' => [
-                            'field' => 'categories',
-                        ]
-                    ]
-                ],
-            ],
-        ]);
+//        $aggs = $this->client->search([
+//            'index' => 'shop',
+//            'type' => 'products',
+//            'body' => [
+//                'size' => 0,
+//                'aggs' => [
+//                    'group_by_category' => [
+//                        'terms' => [
+//                            'field' => 'categories',
+//                        ]
+//                    ]
+//                ],
+//            ],
+//        ]);
 
-        $counts = ArrayHelper::map($aggs['aggregations']['group_by_category']['buckets'], 'key', 'doc_count');
-
+        //$counts = ArrayHelper::map($aggs['aggregations']['group_by_category']['buckets'], 'key', 'doc_count');
+            $counts = $query->count();
         return array_map(function (Category $category) use ($counts) {
             return new CategoryView($category, ArrayHelper::getValue($counts, $category->id, 0));
         }, $query->all());

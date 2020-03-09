@@ -49,6 +49,8 @@ return [
             'parsers' => [
                 'application/json' => 'yii\web\JsonParser',
             ],
+            'csrfParam' => '_csrf-api',
+            'cookieValidationKey' => $params['cookieValidationKey'],
         ],
         'response' => [
             'formatters' => [
@@ -59,6 +61,7 @@ return [
                 ],
             ],
         ],
+
         'user' => [
             'identityClass' => 'common\auth\Identity',
             'enableAutoLogin' => false,
@@ -82,6 +85,8 @@ return [
                 'profile' => 'user/profile/index',
                 'POST oauth2/<action:\w+>' => 'oauth2/rest/<action>',
 
+                'POST shop/products/add' => 'shop/product/add',
+                'DELETE shop/products/remove' => 'shop/product/remove',
                 'GET shop/products/<id:\d+>' => 'shop/product/view',
                 'GET shop/products/category/<id:\d+>' => 'shop/product/category',
                 'GET shop/products/brand/<id:\d+>' => 'shop/product/brand',

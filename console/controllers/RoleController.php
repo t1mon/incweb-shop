@@ -3,6 +3,7 @@
 namespace console\controllers;
 
 use shop\entities\User\User;
+use shop\forms\manage\User\UserCreateForm;
 use shop\useCases\manage\UserManageService;
 use Yii;
 use yii\console\Controller;
@@ -40,5 +41,17 @@ class RoleController extends Controller
             throw new Exception('User is not found');
         }
         return $model;
+    }
+
+    public function actionCreateUser(){
+        $form = new UserCreateForm();
+        $form->username = $this->prompt('Username:', ['required' => true]);
+        $form->phone = $this->prompt('Phone:', ['required' => true]);
+        $form->email = $this->prompt('Email:', ['required' => true]);
+        $form->password = $this->prompt('Password:', ['required' => true]);
+        //$form = new UserCreateForm($form);
+        $form->role = 'user';
+        $this->service->create($form);
+        $this->stdout('Done!' . PHP_EOL);
     }
 }

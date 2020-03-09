@@ -5,8 +5,8 @@ use shop\helpers\PriceHelper;
 use shop\helpers\ProductHelper;
 use yii\grid\ActionColumn;
 use yii\helpers\Html;
-use yii\grid\GridView;
-
+//use yii\grid\GridView;
+use kartik\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $searchModel backend\forms\Shop\ProductSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -22,6 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="box">
         <div class="box-body">
+            <?php \yii\widgets\Pjax::begin();?>
             <?= GridView::widget([
                 'dataProvider' => $dataProvider,
                 'filterModel' => $searchModel,
@@ -29,8 +30,10 @@ $this->params['breadcrumbs'][] = $this->title;
                     return $model->quantity <= 1 ? ['style' => 'background: #fdc'] : [];
                 },
                 'columns' => [
+
                     [
-                            'label' => 'Фото',
+
+                             'label' => 'Фото',
                         'value' => function (Product $model) {
                             return $model->mainPhoto ? Html::img($model->mainPhoto->getThumbFileUrl('file', 'admin')) : null;
                         },
@@ -80,6 +83,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     ],
                 ],
             ]); ?>
+            <?php \yii\widgets\Pjax::end();?>
         </div>
     </div>
 </div>

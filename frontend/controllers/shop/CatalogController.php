@@ -133,7 +133,7 @@ class CatalogController extends Controller
             catch (\Exception $e){
                 $dataProvider = null;
                 \Yii::$app->errorHandler->logException($e);
-                \Yii::$app->session->setFlash('error', 'BAD REQUEST');
+                \Yii::$app->session->setFlash('error', 'Bad Request code:'.$e->getCode());
             }
             return $this->render('search', [
                 'dataProvider' => $dataProvider,

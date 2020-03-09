@@ -1,14 +1,19 @@
 <?php
 namespace frontend\controllers;
 
+use Faker\Factory;
 use shop\entities\User\User;
+use shop\forms\manage\Shop\Product\PhotosForm;
+use shop\forms\manage\Shop\Product\PhotosFormConsole;
 use shop\forms\SubscribeForm;
 use shop\helpers\JgrowlMessageHelper;
 use shop\helpers\SendEmailHelper;
 use shop\services\newsletter\Newsletter;
+use shop\useCases\manage\Shop\ProductManageService;
 use yii\filters\AccessControl;
 use yii\helpers\Json;
 use yii\web\Controller;
+use yii\web\UploadedFile;
 
 /**
  * Site controller
@@ -16,10 +21,15 @@ use yii\web\Controller;
 class SiteController extends Controller
 {
     private $newsletter;
+    private $service;
 
-    public function __construct($id, $module, Newsletter $newsletter, array $config = [])
+    public function __construct($id, $module,
+                               ProductManageService $service,
+                               // Newsletter $newsletter,
+                                array $config = [])
     {
-        $this->newsletter = $newsletter;
+        $this->service = $service;
+        //$this->newsletter = $newsletter;
         parent::__construct($id, $module, $config);
     }
 
@@ -37,6 +47,11 @@ class SiteController extends Controller
                 'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
             ],
         ];
+    }
+    public function beforeAction($action)
+    {
+        $this->enableCsrfValidation = false;
+        return parent::beforeAction($action);
     }
 
     public function behaviors()
@@ -62,6 +77,12 @@ class SiteController extends Controller
         ];
     }
 
+    public function actionAddTest(){
+        $faker = Factory::create();
+        $var = 26879;
+        echo ( $var % 2 ) ? 'не четное' : 'четное';
+    }
+
   /*  public function afterAction($action, $result)
     {
         if ($this->action->id == 'rally') {
@@ -79,7 +100,7 @@ class SiteController extends Controller
         $subscribeForm = new SubscribeForm();
         if ($subscribeForm->load(\Yii::$app->request->post()) && $subscribeForm->validate()) {
             try {
-                $this->newsletter->subscribe($subscribeForm->email,'','');
+                //$this->newsletter->subscribe($subscribeForm->email,'','');
                 \Yii::$app->session->setFlash('info', 'Благодарим Вас за подписку на новости.');
                 //return $this->goHome();
             } catch (\Exception $e) {
@@ -114,7 +135,7 @@ class SiteController extends Controller
     {
 
             try {
-                $this->newsletter->subscribe($subscribeForm->email,'','');
+                //$this->newsletter->subscribe($subscribeForm->email,'','');
                 \Yii::$app->session->setFlash('info', 'Благодарим Вас за подписку на новости.');
                 //return $this->goHome();
             } catch (\Exception $e) {

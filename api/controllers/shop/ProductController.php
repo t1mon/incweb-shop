@@ -8,14 +8,19 @@ use shop\entities\Shop\Product\Modification;
 use shop\entities\Shop\Product\Photo;
 use shop\entities\Shop\Product\Product;
 use shop\entities\Shop\Tag;
+use shop\forms\manage\Shop\Product\PhotosFormConsole;
+use shop\forms\manage\Shop\Product\ProductCreateForm;
 use shop\readModels\Shop\CategoryReadRepository;
 use shop\readModels\Shop\TagReadRepository;
 use shop\readModels\Shop\BrandReadRepository;
 use shop\readModels\Shop\ProductReadRepository;
+use shop\useCases\manage\Shop\ProductManageService;
 use yii\data\DataProviderInterface;
 use yii\helpers\Url;
 use yii\rest\Controller;
+use yii\web\BadRequestHttpException;
 use yii\web\NotFoundHttpException;
+use yii\web\UploadedFile;
 
 class ProductController extends Controller
 {
@@ -23,11 +28,13 @@ class ProductController extends Controller
     private $categories;
     private $brands;
     private $tags;
+    private $manageService;
 
     public function __construct(
         $id,
         $module,
         ProductReadRepository $products,
+        ProductManageService $manageService,
         CategoryReadRepository $categories,
         BrandReadRepository $brands,
         TagReadRepository $tags,
@@ -36,6 +43,7 @@ class ProductController extends Controller
     {
         parent::__construct($id, $module, $config);
         $this->products = $products;
+        $this->manageService = $manageService;
         $this->categories = $categories;
         $this->brands = $brands;
         $this->tags = $tags;
@@ -177,6 +185,32 @@ class ProductController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
         return $this->serializeView($product);
+    }
+
+    public function actionAdd()
+    {
+        $productForm = new ProductCreateForm();
+
+        $productForm->name = \Yii::$app->request->post('name');
+        $productForm->categories->main = \Yii::$app->request->post('category');
+        $productForm->price->new = \Yii::$app->request->post('price');
+        $productForm->code = \Yii::$app->request->post('code');
+        $productForm->brandId = \Yii::$app->request->post('brand');
+        $productForm->description = \Yii::$app->request->post('description');
+        $productForm->photos->files = UploadedFile::getInstancesByName('files');
+        $product =  $this->manageService->create($productForm);
+        $this->manageService->activate($product->id);
+        return $product->id;
+    }
+
+    public function actionRemove($id)
+    {
+        try {
+            $this->manageService->remove($id);
+            \Yii::$app->getResponse()->setStatusCode(204);
+        } catch (\DomainException $e) {
+            throw new BadRequestHttpException($e->getMessage(), null, $e);
+        }
     }
 
     public function serializeListItem(Product $product): array

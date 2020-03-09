@@ -23,7 +23,7 @@ class ProfileController extends Controller
      *     security={{"Bearer": {}, "OAuth2": {}}}
      * )
      */
-    public function actionIndex(): User
+    public function actionIndex(): array
     {
         return $this->serializeUser($this->findModel());
     }

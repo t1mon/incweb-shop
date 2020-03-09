@@ -5,6 +5,7 @@ namespace shop\useCases\manage\Shop;
 use shop\entities\Meta;
 use shop\entities\Shop\Product\Product;
 use shop\entities\Shop\Tag;
+use shop\forms\manage\Shop\Product\PhotosFormConsole;
 use shop\forms\manage\Shop\Product\QuantityForm;
 use shop\forms\manage\Shop\Product\CategoriesForm;
 use shop\forms\manage\Shop\Product\ModificationForm;
@@ -18,6 +19,7 @@ use shop\repositories\Shop\ProductRepository;
 use shop\repositories\Shop\TagRepository;
 use shop\services\TransactionManager;
 use yii\helpers\Inflector;
+use yii\web\UploadedFile;
 
 class ProductManageService
 {
@@ -178,6 +180,14 @@ class ProductManageService
     }
 
     public function addPhotos($id, PhotosForm $form): void
+    {
+        $product = $this->products->get($id);
+        foreach ($form->files as $file) {
+            $product->addPhoto($file);
+        }
+        $this->products->save($product);
+    }
+    public function addPhotosConsole($id, PhotosFormConsole $form): void
     {
         $product = $this->products->get($id);
         foreach ($form->files as $file) {
